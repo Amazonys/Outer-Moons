@@ -271,8 +271,6 @@ planet_map_gen.gleba = function()
           ["blood-grape"] = {},
           ["blood-grape-vibrant"] = {},
           ["brambles"] = {},
-          ["polycephalum-slime"] = {},
-          ["polycephalum-balloon"] = {},
           ["fuchsia-pita"] = {},
           ["wispy-lichen"] = {},
           ["grey-cracked-mud-decal"] = {},
@@ -481,17 +479,11 @@ planet_map_gen.mefitis = function()
           ["chlorine-puddle"] = {},
           ["chlorine-puddle-small"] = {},
 		  
-          --["vulcanus-rock-decal-large"] = {},
-          ["vulcanus-dune-decal"] = {},
-          ["vulcanus-sand-decal"] = {},
           ["crater-small"] = {},
           ["crater-large"] = {},
-          ["pumice-relief-decal"] = {},
-          ["small-volcanic-rock"] = {},
-          ["medium-volcanic-rock"] = {},
-          ["tiny-volcanic-rock"] = {},
-          ["tiny-rock-cluster"] = {},
-          ["waves-decal"] = {},
+          ["small-cryovolcanic-rock"] = {},
+          ["medium-cryovolcanic-rock"] = {},
+          ["tiny-cryovolcanic-rock"] = {},
         }
       },
       ["entity"] =
@@ -500,9 +492,8 @@ planet_map_gen.mefitis = function()
         {
           ["chlorine-geyser"] = {},
           ["heavy-metal"] = {},
-          ["huge-volcanic-rock"] = {},
-          ["big-volcanic-rock"] = {},
-          ["mefitis-crater-cliff"] = {},
+          ["huge-cryovolcanic-rock"] = {},
+          ["big-cryovolcanic-rock"] = {},
         }
       }
     }
@@ -587,8 +578,8 @@ planet_map_gen.aiolos = function()
       cliffiness = "cliffiness_basic",
       cliff_elevation = "cliff_elevation_from_elevation",
 	  
-	--  ["entity:beryllium-ore:probability"] = "aiolos_beryllium_probability",
-    --  ["entity:beryllium-ore:richness"] = "aiolos_beryllium_richness",
+	 ["entity:beryllium-ore:probability"] = "aiolos_beryllium_ore_probability",
+     ["entity:beryllium-ore:richness"] = "aiolos_beryllium_ore_richness",
     },
     
     cliff_settings =
@@ -601,6 +592,7 @@ planet_map_gen.aiolos = function()
     {
       ["beryllium_ore"] = {},
       ["aiolos_peaks"] = {},
+      ["aiolos_plants"] = {},
     },
     autoplace_settings =
     {
@@ -620,12 +612,13 @@ planet_map_gen.aiolos = function()
       {
         settings =
         {
-        --  ["fulgoran-ruin-tiny"] = {},
-       --   ["fulgoran-gravewort"] = {},
-       --   ["urchin-cactus"] = {},
-          ["medium-fulgora-rock"] = {},
-          ["small-fulgora-rock"] = {},
-          ["tiny-fulgora-rock"] = {},
+          ["medium-aiolos-rock"] = {},
+          ["small-aiolos-rock"] = {},
+          ["tiny-aiolos-rock"] = {},
+		  
+          ["polycephalum-slime"] = {},
+          ["polycephalum-balloon"] = {},
+          ["aiolos-asterisk"] = {},
         }
       },
       ["entity"] =
@@ -633,16 +626,8 @@ planet_map_gen.aiolos = function()
         settings =
         {
           ["beryllium-ore"] = {},
-        -- ["fulgoran-ruin-vault"] = {},
-        --  ["fulgoran-ruin-attractor"] = {},
-        --  ["fulgoran-ruin-colossal"] = {},
-        --  ["fulgoran-ruin-huge"] = {},
-        --  ["fulgoran-ruin-big"] = {},
-        --  ["fulgoran-ruin-stonehenge"] = {},
-        --  ["fulgoran-ruin-medium"] = {},
-        --  ["fulgoran-ruin-small"] = {},
-        --  ["fulgurite"] = {},
-          ["big-fulgora-rock"] = {}
+          ["huge-aiolos-rock"] = {},
+          ["big-aiolos-rock"] = {},
         }
       }
     }
@@ -656,7 +641,7 @@ planet_map_gen.feronia = function()
     cliff_settings =
     {
       name = "cliff-feronia",
-      control = "gleba_cliff",
+      control = "feronia_cliff",
       cliff_elevation_0 = 40,
       cliff_elevation_interval = 60,
       richness = 1.19,
@@ -664,10 +649,10 @@ planet_map_gen.feronia = function()
     },
     property_expression_names =
     {
-      elevation = "gleba_elevation",
-      aux = "gleba_aux",
-      moisture = "gleba_moisture",
-      temperature = "gleba_temperature",
+      elevation = "fulgora_elevation",
+      aux = "aux_basic",
+      temperature = "temperature_basic",
+      moisture = "mefitis_moisture",
       cliffiness = "gleba_cliffiness",
       cliff_elevation = "cliff_elevation_from_elevation",
       --["entity:cobalt-ore:richness"] = "gleba_stone_richness",
@@ -677,8 +662,8 @@ planet_map_gen.feronia = function()
     autoplace_controls =
     {
       ["cobalt_ore"] = {},
-      ["gleba_water"] = {},
-      ["gleba_cliff"] = {},
+      ["feronia_cliff"] = {},
+      ["feronia_plants"] = {},
     },
     autoplace_settings =
     {
@@ -686,8 +671,30 @@ planet_map_gen.feronia = function()
       {
         settings =
         {
+          ["iodic-ocean"] = {},
+		  ["feronia-1"] = {},
+		  ["feronia-2"] = {},
+		  ["feronia-3"] = {},
         }
       },
+	  ["decorative"] =
+      {
+        settings =
+        {
+          ["small-feronia-rock"] = {},
+          ["medium-feronia-rock"] = {},
+          ["tiny-feronia-rock"] = {},
+          ["pink-flower-bush"] = {},
+          ["blue-flower-bush"] = {},
+          ["feronia-carpet-grass"] = {},
+          ["feronia-blue-carpet-grass"] = {},
+          ["feronia-small-grass"] = {},
+          ["feronia-pita"] = {},
+          ["feronia-pita-mini"] = {},
+		  
+        }
+      },
+	  
       ["entity"] =
       {
         settings =

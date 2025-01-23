@@ -262,6 +262,12 @@ data:extend(
     order = "c-z-c",
     category = "cliff"
   },
+   {
+    type = "autoplace-control",
+    name = "feronia_cliff",
+    order = "c-z-d",
+    category = "cliff"
+  },
   --- Terrain
   {
     type = "autoplace-control",
@@ -309,6 +315,20 @@ data:extend(
     type = "autoplace-control",
     name = "aiolos_peaks",
     order = "c-z-g",
+    category = "terrain",
+    can_be_disabled = false
+  },
+  {
+    type = "autoplace-control",
+    name = "aiolos_plants",
+    order = "c-z-h",
+    category = "terrain",
+    can_be_disabled = false
+  },
+  {
+    type = "autoplace-control",
+    name = "feronia_plants",
+    order = "c-z-i",
     category = "terrain",
     can_be_disabled = false
   },

@@ -897,18 +897,18 @@ data:extend({
                     line_length = 1,
                     repeat_count = 80,
                     animation_speed = 0.5,
-                    shift = util.by_pixel_hr(0, -24),
+                    shift = util.by_pixel_hr(0, -32),
                     draw_as_shadow = true,
-                    scale = 0.3125,
+                    scale = 0.28,
                 },
                 {
                     priority = "high",
                     width = 590,
                     height = 590,
                     frame_count = 80,
-                    shift = util.by_pixel_hr(0, -24),
+                    shift = util.by_pixel_hr(0, -32),
                     animation_speed = 0.5,
-                    scale = 0.3125,
+                    scale = 0.28,
                     stripes = {
                         {
                             filename = "__outer_moons__/graphics/entity/disruptor/disruptor-hr-animation-1.png",
@@ -1016,10 +1016,10 @@ data:extend({
                 animation = {
                     priority = "high",
                     size = { 590, 590 },
-                    shift = util.by_pixel_hr(0, -24),
+                    shift = util.by_pixel_hr(0, -32),
                     frame_count = 80,
                     draw_as_glow = true,
-                    scale = 0.3125,
+                    scale = 0.28,
                     animation_speed = 0.5,
                     blend_mode = "additive",
                     stripes = {
@@ -4308,7 +4308,7 @@ data:extend({
 					  filename = "__outer_moons__/graphics/entity/scrubber/scrubber-pipe-connection-east.png",
 					  width = 105,
 					  height = 290,
-					  shift = util.by_pixel( 26.5, -13.5),
+					  shift = util.by_pixel( 26, -13),
 					  line_length = 1,
 					  repeat_count = 60,
 					  scale = 0.5
@@ -4326,7 +4326,7 @@ data:extend({
 					  filename = "__outer_moons__/graphics/entity/scrubber/scrubber-pipe-connection-west.png",
 					  width = 105,
 					  height = 290,
-					  shift = util.by_pixel( -26.5, -13.5),
+					  shift = util.by_pixel( -26, -13),
 					  line_length = 1,
 					  repeat_count = 60,
 					  scale = 0.5
@@ -4350,7 +4350,7 @@ data:extend({
 					  filename = "__outer_moons__/graphics/entity/scrubber/scrubber-pipe-connection-east.png",
 					  width = 105,
 					  height = 290,
-					  shift = util.by_pixel( 26.5, -13.5),
+					  shift = util.by_pixel( 26, -13),
 					  line_length = 1,
 					  repeat_count = 60,
 					  scale = 0.5
@@ -4368,7 +4368,7 @@ data:extend({
 					  filename = "__outer_moons__/graphics/entity/scrubber/scrubber-pipe-connection-west.png",
 					  width = 105,
 					  height = 290,
-					  shift = util.by_pixel( -26.5, -13.5),
+					  shift = util.by_pixel( -26, -13),
 					  line_length = 1,
 					  repeat_count = 60,
 					  scale = 0.5
@@ -4418,7 +4418,7 @@ data:extend({
 		  fade_in_ticks = 4,
 		  fade_out_ticks = 20
 		},
-		--fluid_boxes_off_when_no_fluid_recipe = true,
+		fluid_boxes_off_when_no_fluid_recipe = true,
 		fluid_boxes =
 		{
 		  {
@@ -4733,7 +4733,7 @@ data:extend({
 			}
 		  }
 		},
-		--fluid_boxes_off_when_no_fluid_recipe = true,
+		fluid_boxes_off_when_no_fluid_recipe = true,
 		fluid_boxes =
 		{
 		  {
@@ -4742,6 +4742,7 @@ data:extend({
 			pipe_covers = shadowlesspipecoverspictures(),
 			volume = 1000,
 			pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {1.5, -2.5} }},
+			enable_working_visualisations = { "input-pipe" },
 			secondary_draw_orders = { north = -1 }
 		  },
 		  {
@@ -4750,6 +4751,7 @@ data:extend({
 			pipe_covers = shadowlesspipecoverspictures(),
 			volume = 1000,
 			pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {-1.5, -2.5} }},
+			enable_working_visualisations = { "input-pipe" },
 			secondary_draw_orders = { north = -1 }
 		  },
 		  {
@@ -4758,6 +4760,7 @@ data:extend({
 			pipe_covers = shadowlesspipecoverspictures(),
 			volume = 100,
 			pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {1.5, 2.5} }},
+			enable_working_visualisations = { "output-pipe" },
 			secondary_draw_orders = { north = -1 }
 		  },
 		  {
@@ -4766,6 +4769,7 @@ data:extend({
 			pipe_covers = shadowlesspipecoverspictures(),
 			volume = 100,
 			pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {-1.5, 2.5} }},
+			enable_working_visualisations = { "output-pipe" },
 			secondary_draw_orders = { north = -1 }
 		  },
 		},
@@ -4810,6 +4814,90 @@ data:extend({
 			},
 			working_visualisations = {
 				{
+					always_draw = true,
+					name = "input-pipe",
+					enabled_by_name = true,
+					north_animation = {
+					  filename = "__outer_moons__/graphics/entity/quantum-stabilizer/quantum-stabilizer-pipe-connections-north.png",
+					  width = 320,
+					  height = 128,
+					  shift = util.by_pixel( 0, -80),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					north_secondary_draw_order = -10, -- behind main animation
+					east_animation = {
+					  filename = "__outer_moons__/graphics/entity/quantum-stabilizer/quantum-stabilizer-pipe-connections-east.png",
+					  width = 128,
+					  height = 320,
+					  shift = util.by_pixel( 86, 0),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					south_animation = {
+					  filename = "__outer_moons__/graphics/entity/quantum-stabilizer/quantum-stabilizer-pipe-connections-south.png",
+					  width = 320,
+					  height = 128,
+					  shift = util.by_pixel( 0, 80),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					west_animation = {
+					  filename = "__outer_moons__/graphics/entity/quantum-stabilizer/quantum-stabilizer-pipe-connections-west.png",
+					  width = 128,
+					  height = 320,
+					  shift = util.by_pixel( -86, 0),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+				},
+				{
+					always_draw = true,
+					name = "output-pipe",
+					enabled_by_name = true,
+					south_animation = {
+					  filename = "__outer_moons__/graphics/entity/quantum-stabilizer/quantum-stabilizer-pipe-connections-north.png",
+					  width = 320,
+					  height = 128,
+					  shift = util.by_pixel( 0, -80),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					south_secondary_draw_order = -10, -- behind main animation
+					west_animation = {
+					  filename = "__outer_moons__/graphics/entity/quantum-stabilizer/quantum-stabilizer-pipe-connections-east.png",
+					  width = 128,
+					  height = 320,
+					  shift = util.by_pixel( 86, 0),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					north_animation = {
+					  filename = "__outer_moons__/graphics/entity/quantum-stabilizer/quantum-stabilizer-pipe-connections-south.png",
+					  width = 320,
+					  height = 128,
+					  shift = util.by_pixel( 0, 80),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					east_animation = {
+					  filename = "__outer_moons__/graphics/entity/quantum-stabilizer/quantum-stabilizer-pipe-connections-west.png",
+					  width = 128,
+					  height = 320,
+					  shift = util.by_pixel( -86, 0),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+				},
+				{
 					fadeout = true,
 					secondary_draw_order = 1,
 					animation = {
@@ -4842,7 +4930,7 @@ data:extend({
 				--tint_as_overlay = true,
 				priority = "extra-high",
 				filename = "__outer_moons__/graphics/entity/convector/convector-frozen.png",
-				scale = 0.45,
+				scale = 0.3,
 				width = 360,
 				height = 350,
 				--shift = util.by_pixel( 0, 0),
@@ -4862,8 +4950,8 @@ data:extend({
 		circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
 		circuit_connector = circuit_connector_definitions["foundry"],
         resistances = { { type = "fire", percent = 70 } },
-        collision_box = { { -1.9, -1.9 }, { 1.9, 1.9 } },
-        selection_box = { { -2, -2 }, { 2, 2 } },
+        collision_box = { { -1.4, -1.4 }, { 1.4, 1.4 } },
+        selection_box = { { -1.5, -1.5 }, { 1.5, 1.5 } },
 		effect_receiver = { base_effect = { productivity = 0.5 }},
         damaged_trigger_effect = hit_effects.entity(),
         module_slots = 8,
@@ -4901,36 +4989,37 @@ data:extend({
 		{
 		  {
 			production_type = "input",
-			pipe_picture = util.empty_sprite(),
-			pipe_covers = shadowlesspipecoverspictures(),
+			pipe_picture = require("__space-age__.prototypes.entity.electromagnetic-plant-pictures").pipe_pictures,
+			pipe_covers = pipecoverspictures(),
 			volume = 1000,
-			pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {1.5, -1.5} }},
-			secondary_draw_orders = { north = -1 }
+			secondary_draw_orders = { north = -1 },
+			pipe_connections = {{ flow_direction="input-output", direction = defines.direction.west, position = {-1, 0} }}
 		  },
 		  {
 			production_type = "input",
-			pipe_picture = util.empty_sprite(),
-			pipe_covers = shadowlesspipecoverspictures(),
+			pipe_picture = require("__space-age__.prototypes.entity.electromagnetic-plant-pictures").pipe_pictures,
+			pipe_picture_frozen = require("__space-age__.prototypes.entity.electromagnetic-plant-pictures").pipe_pictures_frozen,
+			pipe_covers = pipecoverspictures(),
 			volume = 1000,
-			pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {-1.5, -1.5} }},
-			secondary_draw_orders = { north = -1 }
+			secondary_draw_orders = { north = -1 },
+			pipe_connections = {{ flow_direction="input-output", direction = defines.direction.east, position = {1, 0} }}
 		  },
 		  {
 			production_type = "output",
-			pipe_picture = util.empty_sprite(),
-			pipe_covers = shadowlesspipecoverspictures(),
+			pipe_picture = require("__space-age__.prototypes.entity.electromagnetic-plant-pictures").pipe_pictures,
+			pipe_covers = pipecoverspictures(),
 			volume = 100,
-			pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {1.5, 1.5} }},
-			secondary_draw_orders = { north = -1 }
+			secondary_draw_orders = { north = -1 },
+			pipe_connections = {{ flow_direction="input-output", direction = defines.direction.south, position = {0, 1} }}
 		  },
 		  {
 			production_type = "output",
-			pipe_picture = util.empty_sprite(),
-			pipe_covers = shadowlesspipecoverspictures(),
+			pipe_picture = require("__space-age__.prototypes.entity.electromagnetic-plant-pictures").pipe_pictures,
+			pipe_covers = pipecoverspictures(),
 			volume = 100,
-			pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {-1.5, 1.5} }},
-			secondary_draw_orders = { north = -1 }
-		  },
+			secondary_draw_orders = { north = -1 },
+			pipe_connections = {{ flow_direction="input-output", direction = defines.direction.north, position = {0, -1} }}
+		  }
 		},
 		graphics_set = {
 			animation = {
@@ -4940,7 +5029,7 @@ data:extend({
 						priority = "high",
 						size = { 600, 400 },
 						shift = { 0, 0 },
-						scale = 0.5,
+						scale = 0.375,
 						line_length = 1,
 						repeat_count = 60,
 						draw_as_shadow = true,
@@ -4952,7 +5041,7 @@ data:extend({
 						filename = "__outer_moons__/graphics/entity/synthesizer/synthesizer-hr-animation.png",
 						size = { 320, 370 },
 						shift = { 0, 0 },
-						scale = 0.5,
+						scale = 0.375,
 						line_length = 8,
 						frame_count = 60,
 						animation_speed = 0.5,
@@ -5024,6 +5113,7 @@ data:extend({
 			pipe_covers = shadowlesspipecoverspictures(),
 			volume = 1000,
 			pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {1.5, -2.5} }},
+			enable_working_visualisations = { "input-pipe" },
 			secondary_draw_orders = { north = -1 }
 		  },
 		  {
@@ -5032,6 +5122,7 @@ data:extend({
 			pipe_covers = shadowlesspipecoverspictures(),
 			volume = 1000,
 			pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {-1.5, -2.5} }},
+			enable_working_visualisations = { "input-pipe" },
 			secondary_draw_orders = { north = -1 }
 		  },
 		  {
@@ -5040,6 +5131,7 @@ data:extend({
 			pipe_covers = shadowlesspipecoverspictures(),
 			volume = 100,
 			pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {1.5, 2.5} }},
+			enable_working_visualisations = { "output-pipe" },
 			secondary_draw_orders = { north = -1 }
 		  },
 		  {
@@ -5048,6 +5140,7 @@ data:extend({
 			pipe_covers = shadowlesspipecoverspictures(),
 			volume = 100,
 			pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {-1.5, 2.5} }},
+			enable_working_visualisations = { "output-pipe" },
 			secondary_draw_orders = { north = -1 }
 		  },
 		},
@@ -5077,6 +5170,90 @@ data:extend({
 				},
 			},
 			working_visualisations = {
+				{
+					always_draw = true,
+					name = "input-pipe",
+					enabled_by_name = true,
+					north_animation = {
+					  filename = "__outer_moons__/graphics/entity/particle-collider/particle-collider-pipe-connections-north.png",
+					  width = 320,
+					  height = 128,
+					  shift = util.by_pixel( 0, -80),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					north_secondary_draw_order = -10, -- behind main animation
+					east_animation = {
+					  filename = "__outer_moons__/graphics/entity/particle-collider/particle-collider-pipe-connections-east.png",
+					  width = 128,
+					  height = 320,
+					  shift = util.by_pixel( 76, 0),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					south_animation = {
+					  filename = "__outer_moons__/graphics/entity/particle-collider/particle-collider-pipe-connections-south.png",
+					  width = 320,
+					  height = 128,
+					  shift = util.by_pixel( 0, 70.5),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					west_animation = {
+					  filename = "__outer_moons__/graphics/entity/particle-collider/particle-collider-pipe-connections-west.png",
+					  width = 128,
+					  height = 320,
+					  shift = util.by_pixel( -76, 0),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+				},
+				{
+					always_draw = true,
+					name = "output-pipe",
+					enabled_by_name = true,
+					south_animation = {
+					  filename = "__outer_moons__/graphics/entity/particle-collider/particle-collider-pipe-connections-north.png",
+					  width = 320,
+					  height = 128,
+					  shift = util.by_pixel( 0, -80),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					south_secondary_draw_order = -10, -- behind main animation
+					west_animation = {
+					  filename = "__outer_moons__/graphics/entity/particle-collider/particle-collider-pipe-connections-east.png",
+					  width = 128,
+					  height = 320,
+					  shift = util.by_pixel( 76, 0),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					north_animation = {
+					  filename = "__outer_moons__/graphics/entity/particle-collider/particle-collider-pipe-connections-south.png",
+					  width = 320,
+					  height = 128,
+					  shift = util.by_pixel( 0, 70.5),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+					east_animation = {
+					  filename = "__outer_moons__/graphics/entity/particle-collider/particle-collider-pipe-connections-west.png",
+					  width = 128,
+					  height = 320,
+					  shift = util.by_pixel( -76, 0),
+					  line_length = 1,
+					  repeat_count = 120,
+					  scale = 0.5
+					},
+				},
 				{
 					fadeout = true,
 					secondary_draw_order = 1,

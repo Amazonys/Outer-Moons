@@ -1,14 +1,35 @@
 local resource_autoplace = require("resource-autoplace")
 local sounds = require("__base__.prototypes.entity.sounds")
-local simulations = require("__space-age__.prototypes.factoriopedia-simulations")
+local simulations = require("__outer_moons__.prototypes.factoriopedia-simulations")
 
 -- Initialize the core patch sets in a predictable order
-resource_autoplace.initialize_patch_set("saline-geyser", false, "selene")
+--resource_autoplace.initialize_patch_set("saline-geyser", false, "selene")
 --resource_autoplace.initialize_patch_set("titanium-ore", false, "selene")
 --resource_autoplace.initialize_patch_set("chlorine-geyser", true, "selene")
+resource_autoplace.initialize_patch_set("natural-gas", false, "aquilo")
 
-
-
+local function create_tiles()
+  return {
+    type = "direct",
+    action_delivery =
+    {
+      type = "instant",
+      source_effects =
+      {
+        {
+          type = "create-entity",
+          entity_name = "aquilo-tiles-inner-explosion",
+          offsets = {{0.5, 0.5}}
+        },
+        {
+          type = "create-entity",
+          entity_name = "aquilo-tiles-outer-explosion",
+          offsets = {{0.5, 0.5}}
+        }
+      }
+    }
+  }
+end
 
 local function resource(resource_parameters, autoplace_parameters)
   return
@@ -276,7 +297,7 @@ data:extend({
 		  walking_sound = sounds.ore,
 		  mining_visualisation_tint = {r = 158/256, g = 103/256, b = 75/256, a = 1.000},
 		  --category = "hard-solid",
-		  factoriopedia_simulation = simulations.factoriopedia_titanium_ore,
+		  factoriopedia_simulation = simulations.factoriopedia_phosphate_ore,
 		},
 		{
 		  probability_expression = 0
@@ -290,7 +311,7 @@ data:extend({
 		  minable =
 		  {
 			  mining_particle = "stone-particle",
-			  mining_time = 5,
+			  mining_time = 8,
 			  result = "heavy-metal",
 			 -- fluid_amount = 10,
 			 -- required_fluid = "nitric-acid"
@@ -302,7 +323,12 @@ data:extend({
 		  factoriopedia_simulation = simulations.factoriopedia_heavy_metal,
 		},
 		{
-		  probability_expression = 0
+			base_density = 2.5,
+			base_spots_per_km = 57,
+			has_starting_area_placement = true,
+			regular_rq_factor_multiplier = 2.25,
+			starting_rq_factor_multiplier = 2.5,
+			candidate_spot_count = 38,	
 		}
 	), 
 	resource(
@@ -313,34 +339,35 @@ data:extend({
 		  minable =
 		  {
 			  mining_particle = "stone-particle",
-			  mining_time = 2,
+			  mining_time = 1.5,
 			  result = "beryllium-ore",
 			 -- fluid_amount = 10,
 			 -- required_fluid = "nitric-acid"
 		  },
 		  walking_sound = sounds.ore,
 		  driving_sound = stone_driving_sound,
-		  category = "hard-solid",
+		  --category = "hard-solid",
 		  mining_visualisation_tint = {r = 123/256, g = 150/256, b = 116/256, a = 1.000},
 		  factoriopedia_simulation = simulations.factoriopedia_beryllium_ore,
 		},
 		{
-		  base_density = 1,
-		  regular_rq_factor_multiplier = 4.0,
-		  starting_rq_factor_multiplier = 4.5,
-		  base_spots_per_km = 11,	
-		  has_starting_area_placement = true
+			base_density = 1.5,
+			base_spots_per_km = 57,
+			has_starting_area_placement = true,
+		    regular_rq_factor_multiplier = 1.5,
+		    starting_rq_factor_multiplier = 2,
+			candidate_spot_count = 57,		
 		}
 	),    
 	resource(
 		{
 		  name = "cobalt-ore",
 		  order = "b",
-		  map_color = {r = 56/256, g = 58/256, b = 130/256, a = 1.000},
+		  map_color = {r = 68/256, g = 144/256, b = 240/256, a = 1.000},
 		  minable =
 		  {
 			  mining_particle = "stone-particle",
-			  mining_time = 2,
+			  mining_time = 4,
 			  result = "cobalt-ore",
 			 -- fluid_amount = 10,
 			 -- required_fluid = "nitric-acid"
@@ -348,11 +375,16 @@ data:extend({
 		  walking_sound = sounds.ore,
 		  driving_sound = stone_driving_sound,
 		  category = "hard-solid",
-		  mining_visualisation_tint = {r = 56/256, g = 58/256, b = 130/256, a = 1.000},
-		  factoriopedia_simulation = simulations.factoriopedia_osmium_ore,
+		  mining_visualisation_tint = {r = 68/256, g = 144/256, b = 240/256, a = 1.000},
+		  factoriopedia_simulation = simulations.factoriopedia_cobalt_ore,
 		},
 		{
-		  probability_expression = 0
+			base_density = 2.5,
+			base_spots_per_km = 57,
+			has_starting_area_placement = true,
+		    regular_rq_factor_multiplier = 2.5,
+		    starting_rq_factor_multiplier = 3.5,
+			candidate_spot_count = 57,		
 		}
 	), 
 	-- Fluids
@@ -390,6 +422,7 @@ data:extend({
 		driving_sound = oil_driving_sound,
 		collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
 		selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
+		created_effect = create_tiles("snow-flat"),
 		autoplace = resource_autoplace.resource_autoplace_settings
 		{
 		  name = "natural-gas",

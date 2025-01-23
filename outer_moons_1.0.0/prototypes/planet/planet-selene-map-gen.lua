@@ -587,15 +587,15 @@ data:extend{
     name = "selene_starting_regolith", -- don't use the slider for radius
     expression = "starting_spot_at_angle{ angle = selene_lowlands_angle - 10 * selene_starting_direction,\z
                                           distance = 100 * selene_starting_area_radius,\z
-                                          radius = 30 / 1.5,\z
+                                          radius = 40 / 1.5,\z
                                           x_distortion = 0.5 * selene_resource_wobble_x,\z
                                           y_distortion = 0.5 * selene_resource_wobble_y}"
   },
   {
     type = "noise-expression",
     name = "selene_starting_ice", -- don't use the slider for radius
-    expression = "starting_spot_at_angle{ angle = selene_craters_angle - 90 * selene_starting_direction,\z
-                                          distance = 150 * selene_starting_area_radius,\z
+    expression = "starting_spot_at_angle{ angle = selene_craters_angle - 135 * selene_starting_direction,\z
+                                          distance = 25 * selene_starting_area_radius,\z
                                           radius = 30 / 1.5,\z
                                           x_distortion = 0.5 * selene_resource_wobble_x,\z
                                           y_distortion = 0.5 * selene_resource_wobble_y}"
@@ -603,16 +603,11 @@ data:extend{
   {
     type = "noise-expression",
     name = "selene_starting_dry_ice", -- don't use the slider for radius
-    expression = "max(starting_spot_at_angle{ angle = selene_craters_angle + 90 * selene_starting_direction,\z
-                                              distance = 500 * selene_starting_area_radius,\z
-                                              radius = 30,\z
-                                              x_distortion = 0.75 * selene_resource_wobble_x,\z
-                                              y_distortion = 0.75 * selene_resource_wobble_y},\z
-                      starting_spot_at_angle{ angle = selene_craters_angle + 40 * selene_starting_direction,\z
-                                              distance = 200 * selene_starting_area_radius,\z
-                                              radius = 25 * selene_dry_ice_size,\z
-                                              x_distortion = 0.75 * selene_resource_wobble_x,\z
-                                              y_distortion = 0.75 * selene_resource_wobble_y})"
+    expression = "starting_spot_at_angle{ angle = selene_craters_angle + 45 * selene_starting_direction,\z
+                                          distance = 50 * selene_starting_area_radius,\z
+                                          radius = 20 / 1.5,\z
+                                          x_distortion = 0.5 * selene_resource_wobble_x,\z
+                                          y_distortion = 0.5 * selene_resource_wobble_y}"
   },
   {
     type = "noise-expression",
@@ -794,7 +789,7 @@ data:extend{
     -- -1 to 1: needs a positive region for resources & decoratives plus a subzero baseline and skirt for surrounding decoratives.
     expression = "max(selene_starting_ice,\z
                       min(1 - selene_starting_circle,\z
-                          selene_place_metal_spots(987, 15, 1.5,\z
+                          selene_place_metal_spots(1987, 20, 1.5,\z
                                                      selene_ice_size * min(1.3, selene_ore_dist) * 10,\z
                                                      control:ice:frequency,\z
                                                      selene_craters_resource_favorability)))"
@@ -808,16 +803,16 @@ data:extend{
     type = "noise-expression",
     name = "selene_ice_richness",
     expression = "selene_ice_region * random_penalty_between(0.9, 1, 1)\z
-                  * 3000 * selene_starting_area_multiplier\z
+                  * 4000 * selene_starting_area_multiplier\z
                   * control:ice:richness / selene_ice_size"
   },
   {
     type = "noise-expression",
     name = "selene_dry_ice_region",
     -- -1 to 1: needs a positive region for resources & decoratives plus a subzero baseline and skirt for surrounding decoratives.
-    expression = "max(selene_starting_ice,\z
+    expression = "max(selene_starting_dry_ice,\z
                       min(1 - selene_starting_circle,\z
-                          selene_place_metal_spots(789, 15, 1.5,\z
+                          selene_place_metal_spots(789, 15, 2.5,\z
                                                      selene_dry_ice_size * min(1.1, selene_ore_dist) * 10,\z
                                                      control:dry_ice:frequency,\z
                                                      selene_craters_resource_favorability)))"
@@ -905,7 +900,7 @@ data:extend{
   {
     type = "noise-expression",
     name = "selene_ore_dist",
-    expression = "max(1, distance / 2000)"
+    expression = "max(1, distance / 4000)"
   },
   {
     type = "noise-expression",

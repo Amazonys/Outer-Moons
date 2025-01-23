@@ -9,6 +9,7 @@ simulations.factoriopedia_metallic_regolith = { init = make_resource("metallic-r
 simulations.factoriopedia_ice = { init = make_resource("ice-ore") }
 simulations.factoriopedia_dry_ice = { init = make_resource("dry-ice-ore") }
 simulations.factoriopedia_titanium_ore = { init = make_resource("titanium-ore") }
+simulations.factoriopedia_phosphate_ore = { init = make_resource("phosphate-ore") }
 simulations.factoriopedia_beryllium_ore = { init = make_resource("beryllium-ore") }
 simulations.factoriopedia_heavy_metal = { init = make_resource("heavy-metal") }
 simulations.factoriopedia_cobalt_ore = { init = make_resource("cobalt-ore") }
@@ -124,6 +125,30 @@ simulations.factoriopedia_cliff_feronia =
     for x = -8, 8, 4 do
       game.surfaces[1].create_entity{name = "cliff-selene", position = {x, 0}, cliff_orientation = "west-to-east"}
     end
+  ]]
+}
+
+simulations.factoriopedia_selene_crater_cliff =
+{
+  planet = "selene",
+  hide_factoriopedia_gradient = true,
+  init =
+  [[
+    game.simulation.camera_zoom = 0.5
+    game.simulation.camera_position = {-0.5, 1.5}
+    for x = -28, 24, 1 do
+      for y = -10, 14 do
+        game.surfaces[1].set_tiles{{position = {x, y}, name = "selene-dust-1"}}
+      end
+    end
+
+    game.surfaces[1].create_entity{name = "selene-crater-cliff", position = {-0.5, -3.324}, cliff_orientation = "west-to-east"}
+    game.surfaces[1].create_entity{name = "selene-crater-cliff", position = {-5.44922, -1.875}, cliff_orientation = "south-to-east"}
+    game.surfaces[1].create_entity{name = "selene-crater-cliff", position = {4.4492, -1.875}, cliff_orientation = "west-to-south"}
+    game.surfaces[1].create_entity{name = "selene-crater-cliff", position = {-7.5, 1.625}, cliff_orientation = "south-to-north"}
+    game.surfaces[1].create_entity{name = "selene-crater-cliff", position = {6.5, 1.625}, cliff_orientation = "north-to-south"}
+    game.surfaces[1].create_entity{name = "selene-crater-cliff", position = {-5.44922, 5.121}, cliff_orientation = "east-to-north"}
+    game.surfaces[1].create_entity{name = "selene-crater-cliff", position = {4.4492, 5.121}, cliff_orientation = "north-to-west"}
   ]]
 }
 

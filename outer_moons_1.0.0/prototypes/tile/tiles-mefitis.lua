@@ -259,7 +259,7 @@ data:extend
   {
     type = "noise-expression",
     name = "mefitis_metal_tile",
-    expression = "max(0, mefitis_heavy_metal_probability)"
+    expression = "max(0, mefitis_dummy_probability)"
   },
   ---- LAVA
   {
@@ -448,7 +448,7 @@ data:extend
     },
     effect = "cryolava-2",
     fluid = "lava",
-    effect_color = { 255, 179, 50 },
+    effect_color = { 242, 187, 50 },
     effect_color_secondary = { 181, 85, 41 },
     particle_tints = tile_graphics.lava_particle_tints,
     destroys_dropped_items = true,
@@ -506,7 +506,7 @@ data:extend
     },
     effect = "cryolava",
     fluid = "lava",
-    effect_color = { 255, 179, 50 },
+    effect_color = { 173, 71, 24 },
     effect_color_secondary = { 181, 85, 41 },
     particle_tints = tile_graphics.lava_particle_tints,
     destroys_dropped_items = true,
@@ -754,7 +754,7 @@ data:extend
 		  probability_expression = "volcanic_smooth_stone_warm_range"
 		},
 		layer = 5,
-		map_color={120, 120, 120},
+		map_color={103, 50, 40},
 		vehicle_friction_modifier = 4,
 		sprite_usage_surface = "space",
 		variants = tile_variations_template_with_transitions(
@@ -785,7 +785,7 @@ data:extend
 		  probability_expression = "volcanic_ash_cracks_range"
 		},
 		layer = 6,
-		map_color={130, 130, 130},
+		map_color={94, 50, 41},
 		vehicle_friction_modifier = 4,
 		sprite_usage_surface = "space",
 		variants = tile_variations_template_with_transitions(
@@ -816,7 +816,7 @@ data:extend
 		  probability_expression = "volcanic_folds_range"
 		},
 		layer = 6,
-		map_color={110, 110, 110},
+		map_color={120, 70, 59},
 		vehicle_friction_modifier = 4,
 		sprite_usage_surface = "space",
 		variants = tile_variations_template_with_transitions(
@@ -847,7 +847,7 @@ data:extend
 		  probability_expression = "volcanic_folds_warm_range"
 		},
 		layer = 7,
-		map_color={100, 100, 100},
+		map_color={72, 33, 25},
 		vehicle_friction_modifier = 4,
 		sprite_usage_surface = "space",
 		variants = tile_variations_template_with_transitions(
@@ -878,7 +878,7 @@ data:extend
 		  probability_expression = "volcanic_soil_dark_range"
 		},
 		layer = 8,
-		map_color={90, 90, 90},
+		map_color={115, 66, 55},
 		vehicle_friction_modifier = 4,
 		sprite_usage_surface = "space",
 		variants = tile_variations_template_with_transitions(
@@ -909,104 +909,11 @@ data:extend
 		  probability_expression = "volcanic_soil_light_range"
 		},
 		layer = 9,
-		map_color={150, 150, 150},
+		map_color={133, 70, 55},
 		vehicle_friction_modifier = 4,
 		sprite_usage_surface = "space",
 		variants = tile_variations_template_with_transitions(
 		  "__outer_moons__/graphics/terrain/mineral-red-dirt-6.png",
-		  {
-			max_size = 4,
-			[1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
-			[2] = { probability = 1, weights = {0.018, 0.020, 0.015, 0.025, 0.015, 0.020, 0.025, 0.015, 0.025, 0.025, 0.010, 0.025, 0.020, 0.025, 0.025, 0.010 }, },
-			[4] = { probability = 0.1, weights = {0.018, 0.020, 0.015, 0.025, 0.015, 0.020, 0.025, 0.015, 0.025, 0.025, 0.010, 0.025, 0.020, 0.025, 0.025, 0.010 }, },
-		  }
-		),
-		transitions = lava_stone_transitions,
-		transitions_between_transitions = lava_stone_transitions_between_transitions,
-		walking_sound = sound_variations("__space-age__/sound/walking/soft-sand", 9, 0.6, volume_multiplier("main-menu", 2.9)),
-		landing_steps_sound = tile_sounds.landing.sand,
-		driving_sound = sand_driving_sound,
-		ambient_sounds = sand_ambient_sound,
-		scorch_mark_color = {r = 0.3, g = 0.3, b = 0.3, a = 1.000},
-		-- trigger_effect = tile_trigger_effects.sand_trigger_effect()
-	},
-	{
-		name = "mefitis-sand-1",
-		type = "tile",
-		order = "b[natural]-a[sand]",
-		subgroup = "mefitis-tiles",
-		collision_mask = tile_collision_masks.ground(),
-		autoplace = {
-		  probability_expression = "volcanic_cracks_hot_range"
-		},
-		layer = 10,
-		map_color={60, 60, 60},
-		vehicle_friction_modifier = 4,
-		sprite_usage_surface = "space",
-		variants = tile_variations_template_with_transitions(
-		  "__outer_moons__/graphics/terrain/mineral-red-sand-1.png",
-		  {
-			max_size = 4,
-			[1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
-			[2] = { probability = 1, weights = {0.018, 0.020, 0.015, 0.025, 0.015, 0.020, 0.025, 0.015, 0.025, 0.025, 0.010, 0.025, 0.020, 0.025, 0.025, 0.010 }, },
-			[4] = { probability = 0.1, weights = {0.018, 0.020, 0.015, 0.025, 0.015, 0.020, 0.025, 0.015, 0.025, 0.025, 0.010, 0.025, 0.020, 0.025, 0.025, 0.010 }, },
-		  }
-		),
-		transitions = lava_stone_transitions,
-		transitions_between_transitions = lava_stone_transitions_between_transitions,
-		walking_sound = sound_variations("__space-age__/sound/walking/soft-sand", 9, 0.6, volume_multiplier("main-menu", 2.9)),
-		landing_steps_sound = tile_sounds.landing.sand,
-		driving_sound = sand_driving_sound,
-		ambient_sounds = sand_ambient_sound,
-		scorch_mark_color = {r = 0.3, g = 0.3, b = 0.3, a = 1.000},
-		-- trigger_effect = tile_trigger_effects.sand_trigger_effect()
-	},
-	{
-		name = "mefitis-sand-2",
-		type = "tile",
-		order = "b[natural]-b[sand]",
-		subgroup = "mefitis-tiles",
-		collision_mask = tile_collision_masks.ground(),
-		autoplace = {
-		  probability_expression = "volcanic_cracks_warm_range"
-		},
-		layer = 11,
-		map_color={80, 80, 80},
-		vehicle_friction_modifier = 4,
-		sprite_usage_surface = "space",
-		variants = tile_variations_template_with_transitions(
-		  "__outer_moons__/graphics/terrain/mineral-red-sand-2.png",
-		  {
-			max_size = 4,
-			[1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },
-			[2] = { probability = 1, weights = {0.018, 0.020, 0.015, 0.025, 0.015, 0.020, 0.025, 0.015, 0.025, 0.025, 0.010, 0.025, 0.020, 0.025, 0.025, 0.010 }, },
-			[4] = { probability = 0.1, weights = {0.018, 0.020, 0.015, 0.025, 0.015, 0.020, 0.025, 0.015, 0.025, 0.025, 0.010, 0.025, 0.020, 0.025, 0.025, 0.010 }, },
-		  }
-		),
-		transitions = lava_stone_transitions,
-		transitions_between_transitions = lava_stone_transitions_between_transitions,
-		walking_sound = sound_variations("__space-age__/sound/walking/soft-sand", 9, 0.6, volume_multiplier("main-menu", 2.9)),
-		landing_steps_sound = tile_sounds.landing.sand,
-		driving_sound = sand_driving_sound,
-		ambient_sounds = sand_ambient_sound,
-		scorch_mark_color = {r = 0.3, g = 0.3, b = 0.3, a = 1.000},
-		-- trigger_effect = tile_trigger_effects.sand_trigger_effect()
-	},
-	{
-		name = "mefitis-sand-3",
-		type = "tile",
-		order = "b[natural]-c[sand]",
-		subgroup = "mefitis-tiles",
-		collision_mask = tile_collision_masks.ground(),
-		autoplace = {
-		  probability_expression = "volcanic_cracks_cold_range"
-		},
-		layer = 12,
-		map_color={160, 160, 160},
-		vehicle_friction_modifier = 4,
-		sprite_usage_surface = "space",
-		variants = tile_variations_template_with_transitions(
-		  "__outer_moons__/graphics/terrain/mineral-red-sand-3.png",
 		  {
 			max_size = 4,
 			[1] = { weights = {0.085, 0.085, 0.085, 0.085, 0.087, 0.085, 0.065, 0.085, 0.045, 0.045, 0.045, 0.045, 0.005, 0.025, 0.045, 0.045 } },

@@ -36,48 +36,6 @@ data:extend({
 	-- Ore
 	{
         type = "item",
-        name = "osmium-ore",
-        group = "intermediate-products",
-        icon = "__outer_moons__/graphics/icons/lead-ore.png",
-		pictures =
-		{
-		  { size = 64, filename = "__outer_moons__/graphics/icons/lead-ore.png", scale = 0.5, mipmap_count = 4 },
-		  { size = 64, filename = "__outer_moons__/graphics/icons/lead-ore-2.png", scale = 0.5, mipmap_count = 4 },
-		  { size = 64, filename = "__outer_moons__/graphics/icons/lead-ore-3.png", scale = 0.5, mipmap_count = 4 },
-		  { size = 64, filename = "__outer_moons__/graphics/icons/lead-ore-4.png", scale = 0.5, mipmap_count = 4 },
-		},
-        subgroup = "raw-resource",
-		default_import_location = "nauvis",
-        order = "g[lead-ore]",
-        inventory_move_sound = item_sounds.resource_inventory_move,
-        pick_sound = item_sounds.resource_inventory_pickup,
-        drop_sound = item_sounds.resource_inventory_move,
-        stack_size = 50,
-        weight = 2 * kg
-    },
-	{
-        type = "item",
-        name = "iridium-ore",
-        group = "intermediate-products",
-        icon = "__outer_moons__/graphics/icons/lead-ore.png",
-		pictures =
-		{
-		  { size = 64, filename = "__outer_moons__/graphics/icons/lead-ore.png", scale = 0.5, mipmap_count = 4 },
-		  { size = 64, filename = "__outer_moons__/graphics/icons/lead-ore-2.png", scale = 0.5, mipmap_count = 4 },
-		  { size = 64, filename = "__outer_moons__/graphics/icons/lead-ore-3.png", scale = 0.5, mipmap_count = 4 },
-		  { size = 64, filename = "__outer_moons__/graphics/icons/lead-ore-4.png", scale = 0.5, mipmap_count = 4 },
-		},
-        subgroup = "raw-resource",
-		default_import_location = "nauvis",
-        order = "g[lead-ore]",
-        inventory_move_sound = item_sounds.resource_inventory_move,
-        pick_sound = item_sounds.resource_inventory_pickup,
-        drop_sound = item_sounds.resource_inventory_move,
-        stack_size = 50,
-        weight = 2 * kg
-    },
-	{
-        type = "item",
         name = "lead-ore",
         group = "intermediate-products",
         icon = "__outer_moons__/graphics/icons/lead-ore.png",
@@ -427,6 +385,59 @@ data:extend({
 		drop_sound = item_sounds.metal_small_inventory_move,
 		stack_size = 100,
 		weight = 2 * kg,
+	},
+	
+	{
+		type = "item",
+		name = "cerium-plate",		
+        group = "intermediate-products",
+		icon = "__outer_moons__/graphics/icons/cerium-plate.png",
+		subgroup = "outer-processes",
+		order = "a[cerium-plate]",
+		inventory_move_sound = item_sounds.metal_small_inventory_move,
+		pick_sound = item_sounds.metal_small_inventory_pickup,
+		drop_sound = item_sounds.metal_small_inventory_move,
+		stack_size = 100,
+		weight = 2 * kg,
+	},
+	{
+		type = "item",
+		name = "lanthanum-plate",		
+        group = "intermediate-products",
+		icon = "__outer_moons__/graphics/icons/lanthanum-plate.png",
+		subgroup = "outer-processes",
+		order = "b[lanthanum-plate]",
+		inventory_move_sound = item_sounds.metal_small_inventory_move,
+		pick_sound = item_sounds.metal_small_inventory_pickup,
+		drop_sound = item_sounds.metal_small_inventory_move,
+		stack_size = 100,
+		weight = 2 * kg,
+	},
+	{
+		type = "item",
+		name = "neodymium-plate",		
+        group = "intermediate-products",
+		icon = "__outer_moons__/graphics/icons/neodymium-plate.png",
+		subgroup = "outer-processes",
+		order = "c[neodymium-plate]",
+		inventory_move_sound = item_sounds.metal_small_inventory_move,
+		pick_sound = item_sounds.metal_small_inventory_pickup,
+		drop_sound = item_sounds.metal_small_inventory_move,
+		stack_size = 100,
+		weight = 2 * kg,
+	},
+	{
+		type = "item",
+		name = "mischmetal-plate",		
+        group = "intermediate-products",
+		icon = "__outer_moons__/graphics/icons/mischmetal-plate.png",
+		subgroup = "outer-processes",
+		order = "d[mischmetal-plate]",
+		inventory_move_sound = item_sounds.metal_small_inventory_move,
+		pick_sound = item_sounds.metal_small_inventory_pickup,
+		drop_sound = item_sounds.metal_small_inventory_move,
+		stack_size = 100,
+		weight = 4 * kg,
 	},
 	-- Silicon	
 	-- Chemical
@@ -1149,6 +1160,33 @@ data:extend({
 	},
 	{
 		type = "item",
+		name = "teflilly-seed",
+		localised_name = {"item-name.teflilly-seed"},
+		icon = "__outer_moons__/graphics/icons/teflilly-seed.png",
+		pictures =
+		{
+		  { size = 64, filename = "__outer_moons__/graphics/icons/teflilly-seed.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/teflilly-seed-2.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/teflilly-seed-3.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/teflilly-seed-4.png", scale = 0.5, mipmap_count = 4 },
+		},
+		subgroup = "agriculture-processes",
+		order = "b[seeds]-b[teflilly-seed]",
+		plant_result = "teflilly-plant",
+		place_result = "teflilly-plant",
+		inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
+		pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
+		drop_sound = space_age_item_sounds.agriculture_inventory_move,
+		stack_size = 10,
+		default_import_location = "gleba",
+		weight = 10 * kg,
+		fuel_category = "chemical",
+		fuel_value = "4MJ"
+	},
+	
+	--Aiolos
+	{
+		type = "item",
 		name = "sunnycomb-seed",
 		localised_name = {"item-name.sunnycomb-seed"},
 		icon = "__outer_moons__/graphics/icons/sunnycomb-seed.png",
@@ -1159,7 +1197,7 @@ data:extend({
 		  { size = 64, filename = "__outer_moons__/graphics/icons/sunnycomb-seed-3.png", scale = 0.5, mipmap_count = 4 },
 		  { size = 64, filename = "__outer_moons__/graphics/icons/sunnycomb-seed-4.png", scale = 0.5, mipmap_count = 4 },
 		},
-		subgroup = "agriculture-processes",
+		subgroup = "aiolos-processes",
 		order = "b[seeds]-b[sunnycomb-seed]",
 		plant_result = "sunnycomb-plant",
 		place_result = "sunnycomb-plant",
@@ -1167,7 +1205,7 @@ data:extend({
 		pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
 		drop_sound = space_age_item_sounds.agriculture_inventory_move,
 		stack_size = 10,
-		default_import_location = "gleba",
+		default_import_location = "aiolos",
 		weight = 10 * kg,
 		fuel_category = "chemical",
 		fuel_value = "4MJ"
@@ -1352,6 +1390,32 @@ data:extend({
 	},
 	{
 		type = "capsule",
+		name = "teflilly",
+		icon = "__outer_moons__/graphics/icons/teflilly-1.png",
+		pictures =
+		{
+		  { size = 64, filename = "__outer_moons__/graphics/icons/teflilly-1.png",   scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/teflilly-2.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/teflilly-3.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/teflilly-4.png", scale = 0.5, mipmap_count = 4 }
+		},
+		subgroup = "agriculture-processes",
+		order = "a[agriculture]-b[teflilly]",
+		inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
+		pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
+		drop_sound = space_age_item_sounds.agriculture_inventory_move,
+		fuel_category = "chemical",
+		fuel_value = "2MJ",
+		stack_size = 50,
+		default_import_location = "gleba",
+		weight = 1 * kg,
+		spoil_ticks = 60 * minute,
+		spoil_result = "spoilage",
+		capsule_action = item_effects.yumako_regen
+	},
+	--Aiolos
+	{
+		type = "capsule",
 		name = "sunnycomb",
 		icon = "__outer_moons__/graphics/icons/sunnycomb-1.png",
 		pictures =
@@ -1361,7 +1425,7 @@ data:extend({
 		  { size = 64, filename = "__outer_moons__/graphics/icons/sunnycomb-3.png", scale = 0.5, mipmap_count = 4 },
 		  { size = 64, filename = "__outer_moons__/graphics/icons/sunnycomb-4.png", scale = 0.5, mipmap_count = 4 }
 		},
-		subgroup = "agriculture-processes",
+		subgroup = "aiolos-processes",
 		order = "a[agriculture]-b[sunnycomb]",
 		inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
 		pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
@@ -1369,7 +1433,7 @@ data:extend({
 		fuel_category = "chemical",
 		fuel_value = "2MJ",
 		stack_size = 50,
-		default_import_location = "gleba",
+		default_import_location = "aiolos",
 		weight = 1 * kg,
 		spoil_ticks = 60 * minute,
 		spoil_result = "spoilage",

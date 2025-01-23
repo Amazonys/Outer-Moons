@@ -10,7 +10,7 @@ local planet_map_gen = require("__space-age__/prototypes/planet/planet-map-gen")
 local planet_map_gen_new = require("__outer_moons__/prototypes/planet/planet-map-gen")
 
 local effects = require("__core__.lualib.surface-render-parameter-effects")
-local asteroid_util = require("__space-age__.prototypes.planet.asteroid-spawn-definitions")
+local asteroid_util = require("__outer_moons__.prototypes.planet.asteroid-spawn-definitions")
 --local planet_catalogue_vulcanus = require("__space-age__.prototypes.planet.procession-catalogue-vulcanus")
 
 data:extend(
@@ -43,7 +43,9 @@ data:extend(
     surface_render_parameters =
     {
       clouds = effects.default_clouds_effect_properties()
-    },
+    },	
+	asteroid_spawn_influence = 1,
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_selene, 0.1),
     persistent_ambient_sounds =
     {
       base_ambience = { filename = "__base__/sound/world/world_base_wind.ogg", volume = 0.3 },
@@ -770,7 +772,7 @@ data:extend(
       gravity = 1.5
     },
     asteroid_spawn_influence = 1,
-    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.fulgora_aquilo, 0.9),
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_selene, 0.9),
     persistent_ambient_sounds =
     {
       base_ambience = {filename = "__space-age__/sound/wind/base-wind-aquilo.ogg", volume = 0.5},
@@ -1060,61 +1062,42 @@ data:extend(
       ["day-night-cycle"] = 30 * minute,
       ["magnetic-field"] = 25,
       pressure = 1200,
-      ["solar-power"] = 10,
+      ["solar-power"] = 20,
       gravity = 12
     },
     asteroid_spawn_influence = 1,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.fulgora_aquilo, 0.9),
     persistent_ambient_sounds =
     {
-      base_ambience = {filename = "__space-age__/sound/wind/base-wind-aquilo.ogg", volume = 0.5},
-      wind = {filename = "__space-age__/sound/wind/wind-aquilo.ogg", volume = 0.8},
+      base_ambience = { filename = "__base__/sound/world/world_base_wind.ogg", volume = 0.3 },
+      wind = { filename = "__base__/sound/wind/wind.ogg", volume = 0.8 },
       crossfade =
       {
-        order = {"wind", "base_ambience"},
+        order = { "wind", "base_ambience" },
         curve_type = "cosine",
-        from = {control = 0.35, volume_percentage = 0.0},
-        to = {control = 2, volume_percentage = 100.0}
-      },
-      semi_persistent =
-      {
-        {
-          sound =
-          {
-            variations = sound_variations("__space-age__/sound/world/semi-persistent/ice-cracks", 5, 0.7),
-            advanced_volume_control =
-            {
-              fades = {fade_in = {curve_type = "cosine", from = {control = 0.5, volume_percentage = 0.0}, to = {2, 100.0}}}
-            }
-          },
-          delay_mean_seconds = 10,
-          delay_variance_seconds = 5
-        },
-        {
-          sound = {variations = sound_variations("__space-age__/sound/world/semi-persistent/cold-wind-gust", 5, 0.3)},
-          delay_mean_seconds = 15,
-          delay_variance_seconds = 9
-        }
+        from = { control = 0.35, volume_percentage = 0.0 },
+        to = { control = 2, volume_percentage = 100.0 }
       }
     },
     --entities_require_heating = true,
     surface_render_parameters =
     {
-      fog = effects.default_fog_effect_properties(),
-      -- clouds = effects.default_clouds_effect_properties(),
+      --fog = effects.default_fog_effect_properties(),
+      clouds = effects.default_clouds_effect_properties(),
 
       -- Should be based on the default day/night times, ie
       -- sun starts to set at 0.25
       -- sun fully set at 0.45
       -- sun starts to rise at 0.55
       -- sun fully risen at 0.75
-      day_night_cycle_color_lookup =
+	  day_night_cycle_color_lookup =
       {
-        {0.0, "__space-age__/graphics/lut/vulcanus-1-day.png"},
-        {0.20, "__space-age__/graphics/lut/vulcanus-1-day.png"},
-        {0.45, "__space-age__/graphics/lut/vulcanus-2-night.png"},
-        {0.55, "__space-age__/graphics/lut/vulcanus-2-night.png"},
-        {0.80, "__space-age__/graphics/lut/vulcanus-1-day.png"},
+        {0.0, "__space-age__/graphics/lut/fulgora-1-noon.png"},
+        {0.2, "__space-age__/graphics/lut/fulgora-1-noon.png"},
+        {0.3, "__space-age__/graphics/lut/fulgora-2-afternoon.png"},
+        {0.4, "__space-age__/graphics/lut/fulgora-3-after-sunset.png"},
+        {0.6, "__space-age__/graphics/lut/fulgora-4-before-dawn.png"},
+        {0.7, "__space-age__/graphics/lut/fulgora-5-morning.png"},
       },
 
       terrain_tint_effect =
@@ -1126,14 +1109,14 @@ data:extend(
         },
 
         offset = { 0.2, 0, 0.4, 0.8 },
-        intensity = { 0.5, 0.2, 0.3, 1.0 },
-        scale_u = { 3, 1, 1, 1 },
+        intensity = { 0.2, 0.4, 0.3, 0.25 },
+        scale_u = { 1.85, 1.85, 1.85, 1.85 },
         scale_v = { 1, 1, 1, 1 },
 
-        global_intensity = 0.3,
-        global_scale = 0.1,
-        zoom_factor = 3,
-        zoom_intensity = 0.6
+        global_intensity = 0.7,
+        global_scale = 0.25,
+        zoom_factor = 3.8,
+        zoom_intensity = 0.75
       }
     }
   },
@@ -1204,7 +1187,7 @@ data:extend(
     to = "selene",
     order = "a",
     length = 2500,
-    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
+    asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_selene)
   },
   {
     type = "space-connection",

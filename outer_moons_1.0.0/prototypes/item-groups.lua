@@ -1,5 +1,54 @@
 data:extend(
 {
+  ---- GROUPS
+  {
+    type = "item-group",
+    name = "environment",
+    icon = "__core__/graphics/icons/category/environment.png",
+    icon_size = 128,
+    order = "h"
+  },
+  {
+    type = "item-group",
+    name = "agriculture",
+    icon = "__outer_moons__/graphics/icons/category/agriculture.png",
+    icon_size = 128,
+    order = "i"
+  },
+  {
+    type = "item-group",
+    name = "enemies",
+    icon = "__core__/graphics/icons/category/enemies.png",
+    icon_size = 128,
+    order = "j"
+  },
+  {
+    type = "item-group",
+    name = "tiles",
+    icon = "__core__/graphics/icons/category/tiles-editor.png",
+    icon_size = 128,
+    order = "k"
+  },
+  --- Agriculture
+  {
+    type = "item-subgroup",
+    name = "nauvis-agriculture",
+    group = "agriculture",
+    order = "a"
+  },
+  
+  {
+    type = "item-subgroup",
+    name = "agriculture-processes",
+    group = "agriculture",
+    order = "c"
+  },
+  {
+    type = "item-subgroup",
+    name = "agriculture-products",
+    group = "agriculture",
+    order = "d"
+  },
   --- Logistics
   {
     type = "item-subgroup",
@@ -139,7 +188,13 @@ data:extend(
     type = "item-subgroup",
     name = "chlorine-fluid",
     group = "fluids",
-    order = "f"
+    order = "f-a"
+  },
+  {
+    type = "item-subgroup",
+    name = "fluorine-fluid",
+    group = "fluids",
+    order = "f-b"
   },
   {
     type = "item-subgroup",
@@ -255,6 +310,13 @@ data:extend(
     name = "chlorine-recipes",
     group = "fluids",
     order = "z-i"
+  },
+  
+  {
+    type = "item-subgroup",
+    name = "fluorine-recipes",
+    group = "fluids",
+    order = "z-j"
   },
   {
     type = "item-subgroup",
@@ -399,24 +461,6 @@ data:extend(
     name = "fulgora-processes",
     group = "intermediate-products",
     order = "r"
-  },
-  {
-    type = "item-subgroup",
-    name = "agriculture-processes",
-    group = "intermediate-products",
-    order = "o"
-  },
-  {
-    type = "item-subgroup",
-    name = "agriculture-products",
-    group = "intermediate-products",
-    order = "p-a"
-  },
-  {
-    type = "item-subgroup",
-    name = "nauvis-agriculture",
-    group = "intermediate-products",
-    order = "q"
   },
   {
     type = "item-subgroup",

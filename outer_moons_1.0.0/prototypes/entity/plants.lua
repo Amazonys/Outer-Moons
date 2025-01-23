@@ -196,6 +196,83 @@ local function gleba_tree_variations(name, variation_count, per_row, scale_multi
   return variations
 end
 
+local function razorgrass_variations()
+  local variation_count = 8 --variation_count or 5
+  local per_row = 4 -- per_row or 5
+  local scale_multiplier = .2
+  local width = 600
+  local height = 800
+  local variations = {}
+  local shift = util.by_pixel(0,-32) -- shift or futil.by_pixel(52, -40)
+  local sshift = util.by_pixel(22, -12)
+  for i = 1, variation_count do
+    local x = ((i - 1) % per_row) * width
+    local y = math.floor((i-1)/per_row) * height
+    local sx = ((i - 1) % per_row) * height -- Shadow images are rotated
+    local sy = math.floor((i-1)/per_row) * width -- Shadow images are rotated
+    local variation = {
+      trunk = {
+        filename = "__outer_moons__/graphics/entity/plant/razorgrass/razorgrass.png",
+        flags = { "mipmap" },
+        surface = "gleba",
+        width = width,
+        height = height,
+        x = x,
+        y = y,
+        frame_count = 1,
+        shift = shift,
+        scale = 0.33 * scale_multiplier
+      },
+      leaves = {
+        filename = "__outer_moons__/graphics/entity/plant/razorgrass/razorgrass-leaves.png",
+        flags = { "mipmap" },
+        surface = "gleba",
+        width = width,
+        height = height,
+        x = x,
+        y = y,
+        frame_count = 1,
+        shift = shift,
+        scale = 0.33 * scale_multiplier
+      },
+      normal = {
+        filename = "__outer_moons__/graphics/entity/plant/razorgrass/razorgrass-normal.png",
+        surface = "gleba",
+        width = width,
+        height = height,
+        x = x,
+        y = y,
+        frame_count = 1,
+        shift = shift,
+        scale = 0.33 * scale_multiplier
+      },
+      shadow = {
+        frame_count = 2,
+        lines_per_file = 1,
+        line_length = 1,
+        flags = { "mipmap", "shadow" },
+        surface = "gleba",
+        filenames =
+        {
+          "__outer_moons__/graphics/entity/plant/razorgrass/razorgrass-shadow.png",
+          "__outer_moons__/graphics/entity/plant/razorgrass/razorgrass-shadow2.png",
+        },
+        width = height,  --shadows are rotated
+        height = width,  --shadows are rotated
+        x = sx,
+        y = sy,
+        shift = sshift,
+        scale = 0.33 * scale_multiplier
+      },
+
+      -- underwater       = gleba_tree_underwater_things[name] and gleba_tree_underwater_things[name].underwater or nil,
+      -- water_reflection = gleba_tree_underwater_things[name] and gleba_tree_underwater_things[name].water_reflection or nil,
+    }
+    table.insert(variations, variation)
+  end
+  return variations
+end
+
 local function lerp_color(a, b, amount)
   return {
     r = a.r + (b.r - a.r) * amount,
@@ -226,6 +303,24 @@ end
 
 data:extend(
 {
+  {
+    type = "noise-expression",
+    name = "gleba_plants_noise",
+    expression = "abs(multioctave_noise{x = x, y = y, persistence = 0.8, seed0 = map_seed, seed1 = 700000, octaves = 3, input_scale = 1/20 * control:gleba_plants:frequency }\z
+                      * multioctave_noise{x = x, y = y, persistence = 0.8, seed0 = map_seed, seed1 = 200000, octaves = 3, input_scale = 1/6 * control:gleba_plants:frequency })"
+  },
+  {
+    type = "noise-expression",
+    name = "aiolos_plants_noise",
+    expression = "abs(multioctave_noise{x = x, y = y, persistence = 0.8, seed0 = map_seed, seed1 = 700000, octaves = 3, input_scale = 1/20 * control:aiolos_plants:frequency }\z
+                      * multioctave_noise{x = x, y = y, persistence = 0.8, seed0 = map_seed, seed1 = 200000, octaves = 3, input_scale = 1/6 * control:aiolos_plants:frequency })"
+  },
+  {
+    type = "noise-expression",
+    name = "feronia_plants_noise",
+    expression = "abs(multioctave_noise{x = x, y = y, persistence = 0.8, seed0 = map_seed, seed1 = 700000, octaves = 3, input_scale = 1/20 * control:feronia_plants:frequency }\z
+                      * multioctave_noise{x = x, y = y, persistence = 0.8, seed0 = map_seed, seed1 = 200000, octaves = 3, input_scale = 1/6 * control:feronia_plants:frequency })"
+  },
   --overwrite removal
   {
     type = "tree",
@@ -576,6 +671,23 @@ data:extend(
 	factoriopedia_alternative = nil,
 	colors = minor_tints(),
 	variations = gleba_tree_variations("sunnycomb", 10, 5, nil, 3200/5, 1120/2),
+	autoplace =
+    {
+      --control = "gleba_plants",
+      --order = "a[tree]-b[forest]-h",
+      probability_expression = "0",
+      richness_expression = "0"
+    },
+  },
+  {
+    type = "tree",
+    name = "teflilly",
+	icon = "__space-age__/graphics/icons/teflilly.png",
+    flags = plant_flags,
+	hidden_in_factoriopedia = true,
+	factoriopedia_alternative = nil,
+	colors = minor_tints(),
+	variations = gleba_tree_variations("teflilly"),
 	autoplace =
     {
       --control = "gleba_plants",
@@ -1325,173 +1437,7 @@ data:extend(
   },
   {
     type = "plant",
-    name = "sunnycomb-plant", -- sulfur
-    icon = "__space-age__/graphics/icons/sunnycomb.png",
-    flags = plant_flags,
-    minable =
-    {
-      mining_particle = "wooden-particle",
-      mining_time = 0.5,
-      results =
-      {
-        {type = "item", name = "sunnycomb", amount = 20},
-        {type = "item", name = "calcite", amount = 4},
-      },
-      mining_trigger =
-      {
-        {
-          type = "direct",
-          action_delivery =
-          {
-            {
-              type = "instant",
-              target_effects = spoilage_sound_trigger
-            }
-          }
-        }
-      }
-    },
-    mining_sound = sound_variations("__space-age__/sound/mining/axe-mining-sunnycomb", 5, 0.7),
-    mined_sound = sound_variations("__space-age__/sound/mining/mined-sunnycomb", 5, 0.6),
-    growth_ticks = 5 * minutes,
-    emissions_per_second = plant_emissions,
-    harvest_emissions = plant_harvest_emissions,
-    max_health = 50,
-    collision_box = {{-0.4, -0.8}, {0.4, 0.2}},
-    selection_box = {{-1, -1}, {1, 1}},
-    drawing_box_vertical_extension = 0.8,
-    subgroup = "trees",
-    order = "a[tree]-c[gleba]-b[sunnycomb]",
-    impact_category = "tree",
-    factoriopedia_simulation = simulations.factoriopedia_sunnycomb,
-	autoplace =
-    {
-      control = "gleba_plants",
-      order = "a[tree]-b[forest]-a",
-      probability_expression = "min(0.2, 0.3 * (1 - gleba_plants_noise) * control:gleba_plants:size)",
-      richness_expression = "random_penalty_at(2, 2)",
-      tile_restriction = {"lowland-dead-skin", "artificial-cuticle-soil", "overgrowth-cuticle-soil"}
-    },
-    variations = gleba_tree_variations("sunnycomb", 10, 5, nil, 3200/5, 1120/2),
-    colors = minor_tints(),
-    agricultural_tower_tint =
-    {
-      primary = {r = 0.620, g = 0.307, b = 0.461, a = 1.000}, -- #eac1f5ff
-      secondary = {r = 0.336, g = 0.624, b = 0.340, a = 1.000}, -- #885289ff
-    },
-    ambient_sounds =
-    {
-      sound =
-      {
-        variations = sound_variations("__space-age__/sound/world/plants/sunnycomb", 8, 0.7),
-        advanced_volume_control =
-        {
-          fades = {fade_in = {curve_type = "cosine", from = {control = 0.5, volume_percentage = 0.0}, to = {1.5, 100.0}}}
-        }
-      },
-      radius = 7.5,
-      min_entity_count = 2,
-      max_entity_count = 10,
-      entity_to_sound_ratio = 0.3,
-      average_pause_seconds = 10
-    },
-    created_effect = {
-      type = "direct",
-      action_delivery =
-      {
-        type = "instant",
-        source_effects =
-        {
-          {
-            type = "create-decorative",
-            decorative = "brown-cup",
-            spawn_min = 1,
-            spawn_max = 5,
-            spawn_min_radius = 0,
-            spawn_max_radius = 3
-          },
-          {
-            type = "create-decorative",
-            decorative = "mycelium",
-            spawn_min = 0,
-            spawn_max = 3,
-            spawn_min_radius = 0,
-            spawn_max_radius = 4
-          }
-        }
-      }
-    },
-    map_color = {255, 255, 255},
-  },
-  
-  -- Feronia
-  {
-    type = "tree",
-    name = "water-cane", -- wood
-    icon = "__outer_moons__/graphics/icons/water-cane.png",
-    flags = plant_flags,
-    minable =
-    {
-      count = 1,
-      mining_particle = "wooden-particle",
-      mining_time = 0.1,
-      result = "wood",
-      mining_trigger =
-      {
-        {
-          type = "direct",
-          action_delivery =
-          {
-            {
-              type = "instant",
-              target_effects = spoilage_sound_trigger
-            }
-          }
-        }
-      }
-    },
-    mining_sound = sound_variations("__space-age__/sound/mining/axe-mining-teflilly", 5, 0.8),
-    mined_sound = sound_variations("__space-age__/sound/mining/mined-teflilly", 5, 0.8),
-    emissions_per_second = plant_emissions,
-    max_health = 10,
-    collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
-    selection_box = {{-0.3, -1}, {0.3, 0.3}},
-    collision_mask = {layers={ground_tile=true, train=true, is_object=true, is_lower_object=true}}, -- not player
-    drawing_box_vertical_extension = 0.8,
-    subgroup = "trees",
-    order = "a[tree]-e[feronia]-a[water-cane]",
-    impact_category = "tree",
-    autoplace =
-    {
-    --  control = "gleba_plants",
-    --  order = "a[tree]-d[decorative]-a[water-cane]",
-    --  probability_expression = "min(0.8, (min(1, 1.5 * gleba_water_plant_ramp) + 0.5 * gleba_decal_noise - gleba_plants_noise - 0.5 * gleba_select(gleba_aux, 0.45, 0.55, 0.2, 0, 1) - 0.7) * control:gleba_plants:size)",
-      probability_expression = "0",
-    --  richness_expression = 1,
-      richness_expression = 0,
-    },
-    variations = gleba_tree_variations("water-cane", 16, 3, 1, 340, 290, util.by_pixel(30, -28)),
-    colors = minor_tints(),
-    ambient_sounds =
-    {
-      sound =
-      {
-        variations = sound_variations("__space-age__/sound/world/plants/sunnycomb", 8, 0.7),
-        advanced_volume_control =
-        {
-          fades = {fade_in = {curve_type = "cosine", from = {control = 0.5, volume_percentage = 0.0}, to = {1.5, 100.0}}}
-        }
-      },
-      radius = 7.5,
-      min_entity_count = 2,
-      max_entity_count = 10,
-      entity_to_sound_ratio = 0.3,
-      average_pause_seconds = 10
-    }
-  },
-  {
-    type = "tree",
-    name = "teflilly", -- 
+    name = "teflilly-plant", 
     icon = "__space-age__/graphics/icons/teflilly.png",
     flags = plant_flags,
     minable =
@@ -1500,8 +1446,8 @@ data:extend(
       mining_time = 0.5,
       results =
       {
-        {type = "item", name = "spoilage", amount = 5},
-        {type = "item", name = "wood", amount = 5}
+        {type = "item", name = "teflilly", amount = 20},
+        {type = "item", name = "wood", amount = 4}
       },
       mining_trigger =
       {
@@ -1520,23 +1466,25 @@ data:extend(
     mining_sound = sound_variations("__space-age__/sound/mining/axe-mining-teflilly", 5, 0.5),
     mined_sound = sound_variations("__space-age__/sound/mining/mined-teflilly", 5, 0.5),
     emissions_per_second = plant_emissions,
+    harvest_emissions = plant_harvest_emissions,
+	growth_ticks = 5 * minutes,
     max_health = 50,
     collision_box = {{-0.4, -0.8}, {0.4, 0.2}},
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "trees",
-    order = "a[tree]-e[feronia]-b[teflilly]",
+    order = "a[tree]-c[gleba]-b[teflilly]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_teflilly,
     autoplace =
     {
-    --  control = "gleba_plants",
-    --  order = "a[tree]-b[forest]-g",
-      probability_expression = "0",
-     -- probability_expression = "gleba_teflilly_region",
-      richness_expression = "0"
-     -- richness_expression = "random_penalty_at(3, 1)"
+      control = "gleba_plants",
+      order = "a[tree]-b[forest]-a",
+      probability_expression = "min(0.2, 0.3 * (1 - gleba_plants_noise) * control:gleba_plants:size)",
+      richness_expression = "random_penalty_at(2, 2)",
+      tile_restriction = {"lowland-dead-skin", "artificial-cuticle-soil", "overgrowth-cuticle-soil"}
     },
+    map_color = {255, 255, 255},
     variations = gleba_tree_variations("teflilly"),
     colors = {
       {r = 255, g = 255, b =  255},
@@ -1601,9 +1549,177 @@ data:extend(
       }
     }
   },
+  
   {
     type = "tree",
-    name = "hairyclubnub", -- Feronia
+    name = "water-cane", -- wood
+    icon = "__outer_moons__/graphics/icons/water-cane.png",
+    flags = plant_flags,
+    minable =
+    {
+      count = 1,
+      mining_particle = "wooden-particle",
+      mining_time = 0.1,
+      result = "wood",
+      mining_trigger =
+      {
+        {
+          type = "direct",
+          action_delivery =
+          {
+            {
+              type = "instant",
+              target_effects = spoilage_sound_trigger
+            }
+          }
+        }
+      }
+    },
+    mining_sound = sound_variations("__space-age__/sound/mining/axe-mining-teflilly", 5, 0.8),
+    mined_sound = sound_variations("__space-age__/sound/mining/mined-teflilly", 5, 0.8),
+    emissions_per_second = plant_emissions,
+    max_health = 10,
+    collision_box = {{-0.1, -0.1}, {0.1, 0.1}},
+    selection_box = {{-0.3, -1}, {0.3, 0.3}},
+    collision_mask = {layers={ground_tile=true, train=true, is_object=true, is_lower_object=true}}, -- not player
+    drawing_box_vertical_extension = 0.8,
+    subgroup = "trees",
+    order = "a[tree]-c[gleba]-i[water-cane]",
+    impact_category = "tree",
+    autoplace =
+    {
+        control = "gleba_plants",
+        order = "a[tree]-d[decorative]-a[water-cane]",
+        probability_expression = "min(0.8, (min(1, 1.5 * gleba_water_plant_ramp) + 0.5 * gleba_decal_noise - gleba_plants_noise - 0.5 * gleba_select(gleba_aux, 0.45, 0.55, 0.2, 0, 1) - 0.7) * control:gleba_plants:size)",
+		richness_expression = 1,
+    },
+    variations = gleba_tree_variations("water-cane", 16, 3, 1, 340, 290, util.by_pixel(30, -28)),
+    colors = minor_tints(),
+    ambient_sounds =
+    {
+      sound =
+      {
+        variations = sound_variations("__space-age__/sound/world/plants/sunnycomb", 8, 0.7),
+        advanced_volume_control =
+        {
+          fades = {fade_in = {curve_type = "cosine", from = {control = 0.5, volume_percentage = 0.0}, to = {1.5, 100.0}}}
+        }
+      },
+      radius = 7.5,
+      min_entity_count = 2,
+      max_entity_count = 10,
+      entity_to_sound_ratio = 0.3,
+      average_pause_seconds = 10
+    }
+  },
+  
+  -- Aiolos
+  {
+    type = "plant",
+    name = "sunnycomb-plant", -- sulfur
+    icon = "__space-age__/graphics/icons/sunnycomb.png",
+    flags = plant_flags,
+    minable =
+    {
+      mining_particle = "wooden-particle",
+      mining_time = 0.5,
+      results =
+      {
+        {type = "item", name = "sunnycomb", amount = 20},
+        {type = "item", name = "calcite", amount = 4},
+      },
+      mining_trigger =
+      {
+        {
+          type = "direct",
+          action_delivery =
+          {
+            {
+              type = "instant",
+              target_effects = spoilage_sound_trigger
+            }
+          }
+        }
+      }
+    },
+    mining_sound = sound_variations("__space-age__/sound/mining/axe-mining-sunnycomb", 5, 0.7),
+    mined_sound = sound_variations("__space-age__/sound/mining/mined-sunnycomb", 5, 0.6),
+    growth_ticks = 5 * minutes,
+    emissions_per_second = plant_emissions,
+    harvest_emissions = plant_harvest_emissions,
+    max_health = 50,
+    collision_box = {{-0.4, -0.8}, {0.4, 0.2}},
+    selection_box = {{-1, -1}, {1, 1}},
+    drawing_box_vertical_extension = 0.8,
+    subgroup = "trees",
+    order = "a[tree]-c[aiolos]-b[sunnycomb]",
+    impact_category = "tree",
+    factoriopedia_simulation = simulations.factoriopedia_sunnycomb,
+	autoplace =
+    {
+      control = "aiolos_plants",
+      order = "a[tree]-b[forest]-a",
+      probability_expression = "min(0.1, 0.2 * (1 - aiolos_plants_noise) * control:aiolos_plants:size)",
+      richness_expression = "random_penalty_at(2, 2)",
+      tile_restriction = {"aiolos-dust-1"}
+    },
+    variations = gleba_tree_variations("sunnycomb", 10, 5, nil, 3200/5, 1120/2),
+    colors = minor_tints(),
+    agricultural_tower_tint =
+    {
+      primary = {r = 0.620, g = 0.307, b = 0.461, a = 1.000}, -- #eac1f5ff
+      secondary = {r = 0.336, g = 0.624, b = 0.340, a = 1.000}, -- #885289ff
+    },
+    ambient_sounds =
+    {
+      sound =
+      {
+        variations = sound_variations("__space-age__/sound/world/plants/sunnycomb", 8, 0.7),
+        advanced_volume_control =
+        {
+          fades = {fade_in = {curve_type = "cosine", from = {control = 0.5, volume_percentage = 0.0}, to = {1.5, 100.0}}}
+        }
+      },
+      radius = 7.5,
+      min_entity_count = 2,
+      max_entity_count = 10,
+      entity_to_sound_ratio = 0.3,
+      average_pause_seconds = 10
+    },
+    created_effect = {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        source_effects =
+        {
+          {
+            type = "create-decorative",
+            decorative = "polycephalum-balloon",
+            spawn_min = 1,
+            spawn_max = 5,
+            spawn_min_radius = 0,
+            spawn_max_radius = 3
+          },
+          {
+            type = "create-decorative",
+            decorative = "polycephalum-slime",
+            spawn_min = 0,
+            spawn_max = 3,
+            spawn_min_radius = 0,
+            spawn_max_radius = 4
+          }
+        }
+      }
+    },
+    map_color = {255, 255, 255},
+  },
+  
+  
+  -- Feronia
+  {
+    type = "plant",
+    name = "hairyclubnub-plant", -- Feronia
     icon = "__space-age__/graphics/icons/hairyclubnub.png",
     flags = plant_flags,
     minable =
@@ -1631,28 +1747,40 @@ data:extend(
     },
     mining_sound = sound_variations("__space-age__/sound/mining/axe-mining-hairyclubnub", 5, 0.32),
     mined_sound = sound_variations("__space-age__/sound/mining/mined-hairyclubnub", 5, 0.32),
+    growth_ticks = 5 * minutes,
     emissions_per_second = plant_emissions,
+    harvest_emissions = plant_harvest_emissions,
     max_health = 200,
     collision_box = {{-0.4, -0.8}, {0.4, 0.2}},
-    collision_mask = {layers={player=true, ground_tile=true, train=true, is_object=true, is_lower_object=true}},
+    collision_mask = {layers={player=true, train=true, is_object=true}},
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "trees",
-    order = "a[tree]-e[feronia]-c[hairyclubnub]",
+    order = "a[tree]-e[feronia]-b[hairyclubnub]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_hairyclubnub,
     autoplace =
     {
-      --control = "gleba_plants",
-      --order = "a[tree]-b[forest]-j",
-      probability_expression = "0",
-     -- probability_expression = "main_probability",
-      richness_expression = "0",
-     -- richness_expression = "random_penalty_at(3, 1)",
-     -- local_expressions = {
-      --  main_box = "gleba_select(gleba_aux, 0, 0.3, 0.15, -10, 1) - 1",
-      --  main_probability = "min(0.02, gleba_water_plant_ramp * 0.2 * (main_box + gleba_plants_noise - 0.2) * control:gleba_plants:size)"
-      --}
+      control = "feronia_plants",
+      order = "a[tree]-b[forest]-a",
+      richness_expression = "random_penalty_at(1, 3)",	  
+      --probability_expression = "min(0.1, 0.2 * (1 - gleba_plants_noise) * control:feronia_plants:size)",
+      probability_expression = "min(0.45, trees_forest_path_cutout_faded,\z
+                      min(0,\z
+                          asymmetric_ramps{input=temperature, from_bottom=0, from_top=10, to_top=14, to_bottom=15},\z
+                          asymmetric_ramps{input=moisture, from_bottom=0.6, from_top=0.7, to_top=1, to_bottom=2})\z
+                      + min(0, distance/20 - 3)\z
+                      - 0.5 + control:feronia_plants:size\z
+                      + tree_small_noise\z
+                      + multioctave_noise{x = x,\z
+                                          y = y,\z
+                                          persistence = 0.65,\z
+                                          seed0 = map_seed,\z
+                                          seed1 = 'clubnub',\z
+                                          octaves = 3,\z
+                                          input_scale = 1/2.2 * control:feronia_plants:frequency,\z
+                                          output_scale = 0.9})",
+      tile_restriction = {"feronia-1", "feronia-2", "feronia-3"}
     },
     variations = gleba_tree_variations("hairyclubnub", 10, 5),
     colors = minor_tints(),
@@ -1671,25 +1799,10 @@ data:extend(
             spawn_min_radius = 0,
             spawn_max_radius = 0.5
           },
-          {
-            type = "create-decorative",
-            decorative = "green-hairy-grass",
-            spawn_min = 1,
-            spawn_max = 3,
-            spawn_min_radius = 0,
-            spawn_max_radius = 2
-          },
-          {
-            type = "create-decorative",
-            decorative = "green-carpet-grass",
-            spawn_min = 1,
-            spawn_max = 3,
-            spawn_min_radius = 0,
-            spawn_max_radius = 3
-          }
-        }
-      }
-    }
+		}
+	  },
+	},
+    map_color = {255, 255, 255},
   },
   {
     type = "plant",
@@ -1709,22 +1822,35 @@ data:extend(
     harvest_emissions = plant_harvest_emissions,
     max_health = 50,
     collision_box = {{-0.8, -0.8}, {0.8, 0.8}},
-    --collision_mask = {layers={player=true, ground_tile=true, train=true}},
+    collision_mask = {layers={player=true, train=true, is_object=true}},
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "trees",
-    order = "a[tree]-e[feronia]-d[jellystem]",
+    order = "a[tree]-e[feronia]-c[jellystem]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_jellystem,
     autoplace =
     {
-    --  control = "gleba_plants",
-    --  order = "a[tree]-b[forest]-b",
-      probability_expression = "0",
-     -- probability_expression = "min(0.2, 0.3 * (1 - gleba_plants_noise) * control:gleba_plants:size)",
-      richness_expression = "0",
-    --  richness_expression = "random_penalty_at(3, 1)",
-     -- tile_restriction = {"natural-jellynut-soil", "artificial-jellynut-soil", "overgrowth-jellynut-soil"}
+      control = "feronia_plants",
+      order = "a[tree]-b[forest]-b",
+      --probability_expression = "min(0.01, 0.02 * (1 - gleba_plants_noise) * control:feronia_plants:size)",
+	  probability_expression = "min(0.45, trees_forest_path_cutout_faded,\z
+                      min(0,\z
+                          asymmetric_ramps{input=temperature, from_bottom=0, from_top=10, to_top=14, to_bottom=15},\z
+                          asymmetric_ramps{input=moisture, from_bottom=0.6, from_top=0.7, to_top=1, to_bottom=2})\z
+                      + min(0, distance/20 - 3)\z
+                      - 0.5 + control:feronia_plants:size\z
+                      + tree_small_noise\z
+                      + multioctave_noise{x = x,\z
+                                          y = y,\z
+                                          persistence = 0.65,\z
+                                          seed0 = map_seed,\z
+                                          seed1 = 'brainstem',\z
+                                          octaves = 3,\z
+                                          input_scale = 1/2.5 * control:feronia_plants:frequency,\z
+                                          output_scale = 0.75})",
+      richness_expression = "random_penalty_at(3, 1)",
+      tile_restriction = {"feronia-1", "feronia-2", "feronia-3"}
     },
     variations = gleba_tree_variations("jellystem", 8, 4, 1.3),
     colors = {
@@ -1762,7 +1888,127 @@ data:extend(
       average_pause_seconds = 7
     },
     map_color = {255, 255, 255},
+	created_effect = {
+      type = "direct",
+      action_delivery =
+      {
+        type = "instant",
+        source_effects =
+        {
+          {
+            type = "create-decorative",
+            decorative = "nerve-roots-sparse",
+            spawn_min = 1,
+            spawn_max = 1,
+            spawn_min_radius = 0,
+            spawn_max_radius = 0.5
+          },
+        }
+      }
+	}
     -- tile_buildability_rules = { {area = {{-0.55, -0.55}, {0.55, 0.55}}, required_tiles = {"natural-jellynut-soil", "artificial-jellynut-soil"}, remove_on_collision = true} },
+  },
+  
+  {
+    type = "plant",
+    name = "razorgrass-plant",
+    icon = "__outer_moons__/graphics/icons/razorgrass-icon.png",
+    agricultural_tower_tint = {primary = {.2, .7, .7}, secondary = {.4, .9, .9}},
+    flags = plant_flags,
+    minable =
+    {
+      mining_particle = "wooden-particle",
+      mining_time = 0.5,
+      results =
+      {
+        {type = "item", name = "wood", amount = 50}
+      },
+    },
+    mining_sound = sound_variations("__space-age__/sound/mining/axe-mining-sunnycomb", 5, 0.7),
+    mined_sound = sound_variations("__space-age__/sound/mining/mined-sunnycomb", 5, 0.6),
+	growth_ticks = 5 * minutes,
+    emissions_per_second = plant_emissions,
+    harvest_emissions = plant_harvest_emissions,
+    max_health = 50,
+    collision_box = {{-0.4, -0.8}, {0.4, 0.2}},
+    selection_box = {{-1, -1}, {1, 1}},
+    drawing_box_vertical_extension = 0.8,
+    subgroup = "trees",
+    order = "a[tree]-e[feronia]-a[razorgrass]",
+    impact_category = "tree",
+    factoriopedia_simulation = {
+      planet = "feronia",
+      hide_factoriopedia_gradient = true,
+      init =
+      [[
+        game.simulation.camera_zoom = 1.4
+        game.simulation.camera_position = {-0.5, 0}
+        for x = -10, 9, 1 do
+          for y = -4, 4 do
+            game.surfaces[1].set_tiles{{position = {x, y}, name = "feronia-1"}}
+          end
+        end
+
+        game.surfaces[1].create_entity{name = "razorgrass-plant", position = {x=-2.54, y=-0.76}, tick_grown = 100}
+        game.surfaces[1].create_entity{name = "razorgrass-plant", position = {x=2.87, y=-0.37}, tick_grown = 8000}
+        game.surfaces[1].create_entity{name = "razorgrass-plant", position = {x=-4.68, y=1.83}, tick_grown = 1000}
+        game.surfaces[1].create_entity{name = "razorgrass-plant", position = {x=-0.10, y=0.67}, tick_grown = 10000}
+        game.surfaces[1].create_entity{name = "razorgrass-plant", position = {x=4.80, y=1.69}, tick_grown = 100}
+      ]]
+    },
+    autoplace =
+    {
+      control = "feronia_plants",
+      order = "a[tree]-b[forest]-b",
+      --probability_expression = "min(0.1, 0.15 * (1 - gleba_plants_noise) * control:feronia_plants:size)",
+      probability_expression = "min(0.45, trees_forest_path_cutout_faded,\z
+                      min(0,\z
+                          asymmetric_ramps{input=temperature, from_bottom=0, from_top=10, to_top=14, to_bottom=15},\z
+                          asymmetric_ramps{input=moisture, from_bottom=0.6, from_top=0.7, to_top=1, to_bottom=2})\z
+                      + min(0, distance/20 - 3)\z
+                      - 0.5 + control:feronia_plants:size\z
+                      + tree_small_noise\z
+                      + multioctave_noise{x = x,\z
+                                          y = y,\z
+                                          persistence = 0.65,\z
+                                          seed0 = map_seed,\z
+                                          seed1 = 'razorgrass',\z
+                                          octaves = 3,\z
+                                          input_scale = 1/1.1 * control:feronia_plants:frequency,\z
+                                          output_scale = 1})",
+      richness_expression = "random_penalty_at(2, 2)",
+      tile_restriction = {"feronia-1", "feronia-2", "feronia-3"}
+    },
+    variations = razorgrass_variations(),
+    colors = {
+      {r = 255, g = 255, b =  255},
+      {r = 233, g = 218, b =  225},
+      {r = 207, g = 202, b =  235},
+      {r = 255, g = 235, b =  235},
+      {r = 230, g = 217, b =  235},
+      {r = 242, g = 202, b =  235},
+      {r = 230, g = 235, b =  235},
+      {r = 194, g = 165, b  =  208},
+      {r = 215, g = 185, b =  208},
+      {r = 194, g = 185, b =  208},
+      {r = 252, g = 186, b =  209}
+    },
+    ambient_sounds =
+    {
+      sound =
+      {
+        variations = sound_variations("__space-age__/sound/world/plants/sunnycomb", 8, 0.7),
+        advanced_volume_control =
+        {
+          fades = {fade_in = {curve_type = "cosine", from = {control = 0.5, volume_percentage = 0.0}, to = {1.5, 100.0}}}
+        }
+      },
+      radius = 7.5,
+      min_entity_count = 2,
+      max_entity_count = 10,
+      entity_to_sound_ratio = 0.3,
+      average_pause_seconds = 10
+    },
   },
 })
 

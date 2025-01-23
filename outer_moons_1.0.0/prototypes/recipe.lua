@@ -946,6 +946,65 @@ data:extend({
 		  quaternary = {r = 0.290, g = 0.734, b = 0.455, a = 1.000},
 		}
 	},
+	{
+		type = "recipe",
+		name = "chloroform",
+		icon = "__outer_moons__/graphics/icons/fluid/chloroform.png",
+		category = "chemistry-or-cryogenics",
+		subgroup = "chlorine-recipes",
+		order = "e[chlorine]-c[chloroform]",
+		energy_required = 4,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "fluid", name = "methane", amount = 10},
+		  {type = "fluid", name = "chlorine", amount = 30}
+		},
+		results =
+		{
+		  {type = "fluid", name = "chloroform", amount = 10},
+		  {type = "fluid", name = "hydrochloric-acid", amount = 30},
+		},
+		allow_productivity = true,
+		main_product = "chloroform",
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.378, g = 0.677, b = 0.359, a = 1.000},
+		  secondary = {r = 0.378, g = 0.851, b = 0.341, a = 1.000},
+		  tertiary = {r = 0.478, g = 0.741, b = 0.571, a = 1.000},
+		  quaternary = {r = 0.290, g = 0.734, b = 0.455, a = 1.000},
+		}
+	},
+	-- Fluorine recipes
+	{
+		type = "recipe",
+		name = "hydrofluoric-acid",
+		icon = "__outer_moons__/graphics/icons/fluid/hydrofluoric-acid.png",
+		category = "chemistry-or-cryogenics",
+		subgroup = "fluorine-recipes",
+		order = "f[fluorine]-a[hydrofluoric-acid]",
+		energy_required = 2,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "fluid", name = "fluorine", amount = 10 },
+		  {type = "fluid", name = "hydrogen", amount = 10 },
+		  {type = "item", name = "copper-plate", amount = 1 },
+		},
+		results =
+		{
+		  {type = "fluid", name = "hydrofluoric-acid", amount = 20 },
+		},
+		allow_productivity = true,
+		main_product = "hydrofluoric-acid",
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.378, g = 0.677, b = 0.359, a = 1.000},
+		  secondary = {r = 0.378, g = 0.851, b = 0.341, a = 1.000},
+		  tertiary = {r = 0.478, g = 0.741, b = 0.571, a = 1.000},
+		  quaternary = {r = 0.290, g = 0.734, b = 0.455, a = 1.000},
+		}
+	},
 	-- Chemical products
 	{
 		type = "recipe",
@@ -2875,7 +2934,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "carbon-methanation",
-		icon = "__outer_moons__/graphics/icons/fluid/carbon-dioxide-electrolysis.png",
+		icon = "__outer_moons__/graphics/icons/fluid/methanation.png",
 		category = "electrolysis",
 		subgroup = "electrolytic-recipes",
 		order = "a[electrolysis]-cd[carbon-dioxide-electrolysis]",
@@ -2891,6 +2950,31 @@ data:extend({
 		{
 		  {type = "fluid", name = "methane", amount = 20},
 		  {type = "fluid", name = "oxygen", amount = 20},
+		},
+		allow_productivity = true,
+		enabled = false,
+		always_show_made_in = true,
+		always_show_products = true,
+		allow_decomposition = false,
+	},
+	{
+		type = "recipe",
+		name = "NaK-lubricant",
+		icon = "__outer_moons__/graphics/icons/fluid/NaK-lubricant.png",
+		category = "electrolysis",
+		subgroup = "electrolytic-recipes",
+		order = "a[electrolysis]-h[NaK]",
+		auto_recycle = false,
+		energy_required = 50,
+		ingredients =
+		{
+		  {type = "item", name = "salt", amount = 10},
+		  {type = "item", name = "potassium-salt", amount = 10},
+		},
+		results =
+		{
+		  {type = "fluid", name = "lubricant", amount = 10},
+		  {type = "fluid", name = "chlorine", amount = 10},
 		},
 		allow_productivity = true,
 		enabled = false,

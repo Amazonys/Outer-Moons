@@ -3,7 +3,7 @@ data:extend{
   {
     type = "noise-expression",
     name = "mefitis_ore_spacing",
-    expression = 128
+    expression = 64
   },
   {
     type = "noise-expression",
@@ -575,8 +575,17 @@ data:extend{
   },
   {
     type = "noise-expression",
-    name = "mefitis_starting_heavy_metal", -- don't use the slider for radius becuase it can make heavy_metal in the safe area
+    name = "mefitis_starting_dummy", -- don't use the slider for radius becuase it can make heavy_metal in the safe area
     expression = "starting_spot_at_angle{ angle = mefitis_basalts_angle - 90 * mefitis_starting_direction,\z
+                                          distance = 250 * mefitis_starting_area_radius,\z
+                                          radius = 30 / 1.5,\z
+                                          x_distortion = 0.5 * mefitis_resource_wobble_x,\z
+                                          y_distortion = 0.5 * mefitis_resource_wobble_y}"
+  },
+  {
+    type = "noise-expression",
+    name = "mefitis_starting_heavy_metal", -- don't use the slider for radius becuase it can make heavy_metal in the safe area
+    expression = "starting_spot_at_angle{ angle = mefitis_mountains_angle - 90 * mefitis_starting_direction,\z
                                           distance = 250 * mefitis_starting_area_radius,\z
                                           radius = 30 / 1.5,\z
                                           x_distortion = 0.5 * mefitis_resource_wobble_x,\z
@@ -707,6 +716,35 @@ data:extend{
                                                                radius = size,\z
                                                                favorability = favor_biome > 0.9})"
   },
+  
+  {
+    type = "noise-expression",
+    name = "mefitis_dummy_size",
+    expression = "slider_rescale(control:heavy_metal:size, 2)"
+  },
+  {
+    type = "noise-expression",
+    name = "mefitis_dummy_region",
+    -- -1 to 1: needs a positive region for resources & decoratives plus a subzero baseline and skirt for surrounding decoratives.
+    expression = "max(mefitis_starting_dummy,\z
+                      min(1 - mefitis_starting_circle,\z
+                          mefitis_place_metal_spots(789, 15, 2,\z
+                                                     mefitis_heavy_metal_size * min(1.2, mefitis_ore_dist) * 25,\z
+                                                     control:heavy_metal:frequency,\z
+                                                     mefitis_basalts_resource_favorability)))"
+  },
+  {
+    type = "noise-expression",
+    name = "mefitis_dummy_probability",
+    expression = "(control:heavy_metal:size > 0) * (1000 * ((1 + mefitis_dummy_region) * random_penalty_between(0.9, 1, 1) - 1))"
+  },
+  {
+    type = "noise-expression",
+    name = "mefitis_dummy_richness",
+    expression = "mefitis_dummy_region * random_penalty_between(0.9, 1, 1)\z
+                  * 8000 * mefitis_starting_area_multiplier\z
+                  * control:heavy_metal:richness / mefitis_dummy_size"
+  },
 
   
   {
@@ -720,10 +758,10 @@ data:extend{
     -- -1 to 1: needs a positive region for resources & decoratives plus a subzero baseline and skirt for surrounding decoratives.
     expression = "max(mefitis_starting_heavy_metal,\z
                       min(1 - mefitis_starting_circle,\z
-                          mefitis_place_metal_spots(355911, 15, 2,\z
+                          mefitis_place_metal_spots(789, 15, 2,\z
                                                      mefitis_heavy_metal_size * min(1.2, mefitis_ore_dist) * 25,\z
                                                      control:heavy_metal:frequency,\z
-                                                     mefitis_basalts_resource_favorability)))"
+                                                     mefitis_mountains_resource_favorability)))"
   },
   {
     type = "noise-expression",

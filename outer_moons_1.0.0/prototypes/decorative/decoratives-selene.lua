@@ -1629,18 +1629,18 @@ data:extend{
   },
   scaled_cliff_crater(
   {
-    mod_name = "__space-age__",
+    mod_name = "__outer_moons__",
     name = "selene-crater-cliff",
-    icon = "__space-age__/graphics/icons/crater-cliff.png",
+    icon = "__outer_moons__/graphics/icons/selene-crater-cliff.png",
     map_color = {r=144, g=119, b=87},
-    subfolder = "vulcanus",
-    prefix = "vulcanus-crater-section",
+    subfolder = "selene",
+    prefix = "selene-crater-section",
     scale = 1.0,
     collision_mask = {layers={item=true, object=true, player=true, water_tile=true}},
     has_lower_layer = true,
     sprite_size_multiplier = 2,
     flags = { "placeable-off-grid", "placeable-neutral" },
-    factoriopedia_simulation = simulations.factoriopedia_crater_cliff,
+    factoriopedia_simulation = simulations.factoriopedia_selene_crater_cliff,
 
     crater_radius = 7, --3.5,
     crater_edge_thickness = 5,
@@ -1648,7 +1648,7 @@ data:extend{
     --segment_probability = 1,
     autoplace =
     {
-      order = "a[landscape]-a[cliff]-b[crater]",
+      order = "a[landscape]-a[cliff]-b[crater]-b",
       probability_expression = "crater_cliff"
     }
   })

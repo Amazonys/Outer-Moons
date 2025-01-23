@@ -541,7 +541,9 @@ data.raw.item["spoilage"].order = "a[agriculture]-i[spoilage]"
 data.raw.item["copper-bacteria"].order = "c[bacteria]-b[copper-bacteria]"
 data.raw.item["iron-bacteria"].order = "c[bacteria]-a[iron-bacteria]"
 
-data.raw.item["carbon-fiber"].hidden_in_factoriopedia = true
+--data.raw.item["carbon-fiber"].hidden_in_factoriopedia = true
+--data.raw.item["iron-bacteria"].hidden_in_factoriopedia = true
+--data.raw.item["copper-bacteria"].hidden_in_factoriopedia = true
 data.raw.item["carbon-fiber"].subgroup = "gleba-general"
 data.raw.item["carbon-fiber"].order = "h[carbon-fiber]"
 

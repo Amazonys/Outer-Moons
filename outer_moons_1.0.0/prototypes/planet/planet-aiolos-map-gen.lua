@@ -123,7 +123,7 @@ data:extend{
     expression = "clamp(min(abs(multioctave_noise{x = x,\z
                                                   y = y,\z
                                                   seed0 = map_seed,\z
-                                                  seed1 = 2,\z
+                                                  seed1 = 11,\z
                                                   octaves = 5,\z
                                                   persistence = 0.6,\z
                                                   input_scale = 0.2,\z
@@ -209,8 +209,8 @@ data:extend{
     expression = "2 * starting_spot_at_angle{ angle = aiolos_peaks_angle,\z
                                               distance = 250 * aiolos_starting_area_radius,\z
                                               radius = 300 * aiolos_starting_area_radius,\z
-                                              x_distortion = 0.01 * aiolos_starting_area_radius * (aiolos_wobble_x + aiolos_wobble_large_x + aiolos_wobble_huge_x),\z
-                                              y_distortion = 0.01 * aiolos_starting_area_radius * (aiolos_wobble_y + aiolos_wobble_large_y + aiolos_wobble_huge_y)}"
+                                              x_distortion = 0.5 * aiolos_starting_area_radius * (aiolos_wobble_x + aiolos_wobble_large_x + aiolos_wobble_huge_x),\z
+                                              y_distortion = 0.5 * aiolos_starting_area_radius * (aiolos_wobble_y + aiolos_wobble_large_y + aiolos_wobble_huge_y)}"
   },
   {
     type = "noise-expression",
@@ -312,10 +312,10 @@ data:extend{
       starting_protector = "clamp(starting_spot_at_angle{ angle = aiolos_peaks_angle + 180 * aiolos_starting_direction,\z
                                                           distance = (600 * aiolos_starting_area_radius) / 2,\z
                                                           radius = 300 * aiolos_starting_area_radius,\z
-                                                          x_distortion = aiolos_wobble_x/4 + aiolos_wobble_large_x/24 + aiolos_wobble_huge_x/160,\z
-                                                          y_distortion = aiolos_wobble_y/4 + aiolos_wobble_large_y/24 + aiolos_wobble_huge_y/160}, 0, 1)",
-      raw_spots = "spot_noise{x = x + aiolos_wobble_x/4 + aiolos_wobble_large_x/24 + aiolos_wobble_huge_x/160,\z
-                              y = y + aiolos_wobble_y/4 + aiolos_wobble_large_y/24 + aiolos_wobble_huge_y/160,\z
+                                                          x_distortion = aiolos_wobble_x/2 + aiolos_wobble_large_x/6 + aiolos_wobble_huge_x/40,\z
+                                                          y_distortion = aiolos_wobble_y/2 + aiolos_wobble_large_y/12 + aiolos_wobble_huge_y/40}, 0, 1)",
+      raw_spots = "spot_noise{x = x + aiolos_wobble_x/2 + aiolos_wobble_large_x/6 + aiolos_wobble_huge_x/40,\z
+                              y = y + aiolos_wobble_y/2 + aiolos_wobble_large_y/6 + aiolos_wobble_huge_y/80,\z
                               seed0 = map_seed,\z
                               seed1 = 1,\z
                               candidate_spot_count = 1,\z
@@ -332,7 +332,7 @@ data:extend{
                               maximum_spot_basement_radius = peak_spot_radius}",
       peak_area = "lerp(aiolos_peaks_biome_full_pre_peak, 0, aiolos_starting_area)",
       peak_spot_radius = "380 * peaks",
-      peak_spot_spacing = "380000 * peaks",
+      peak_spot_spacing = "3800000 * peaks",
       peaks = "0.1 + 0.2 * slider_rescale(control:aiolos_peaks:size, 2) / slider_rescale(aiolos_scale_multiplier, 2)",
       peaks_sq = "peaks * peaks"
     }
@@ -341,10 +341,10 @@ data:extend{
     type = "noise-expression",
     name = "aiolos_starting_peak_spot",
     expression = "clamp(starting_spot_at_angle{ angle = aiolos_peaks_angle,\z
-                                                distance = 10 * aiolos_starting_area_radius,\z
+                                                distance = 20 * aiolos_starting_area_radius,\z
                                                 radius = 150,\z
-                                                x_distortion = aiolos_wobble_x/4 + aiolos_wobble_large_x/24 + aiolos_wobble_huge_x/160,\z
-                                                y_distortion = aiolos_wobble_y/4 + aiolos_wobble_large_y/24 + aiolos_wobble_huge_y/160}, 0, 1)"
+                                                x_distortion = aiolos_wobble_x/4 + aiolos_wobble_large_x/12 + aiolos_wobble_huge_x/80,\z
+                                                y_distortion = aiolos_wobble_y/4 + aiolos_wobble_large_y/12 + aiolos_wobble_huge_y/80}, 0, 1)"
   },
 
   {
@@ -510,7 +510,7 @@ data:extend{
     name = "aiolos_flood_paths",
     -- make paths through the lava cracks, get walkable areas above 0, the first value is the path height
     expression = "0.4\z
-                  - aiolos_plasma(1543, 1.5 * aiolos_cracks_scale, 3 * aiolos_cracks_scale, 0.5, 1)\z
+                  - aiolos_plasma(3591, 1.5 * aiolos_cracks_scale, 3 * aiolos_cracks_scale, 0.5, 1)\z
                   + min(0, aiolos_detail_noise(121, aiolos_cracks_scale * 4, 2, 0.5))",
   },
   {
@@ -563,11 +563,6 @@ data:extend{
   ---- RESOURCES
   {
     type = "noise-expression",
-    name ="beryllium_peaks_range",
-    expression = "400 * range_select_base(aiolos_peak_spots, 0.15, 10, 1, 0, 1)"
-  },
-  {
-    type = "noise-expression",
     name = "aiolos_resource_wobble_x",
     expression = "aiolos_wobble_x + 0.25 * aiolos_wobble_large_x"
   },
@@ -575,15 +570,6 @@ data:extend{
     type = "noise-expression",
     name = "aiolos_resource_wobble_y",
     expression = "aiolos_wobble_y + 0.25 * aiolos_wobble_large_y"
-  },
-  {
-    type = "noise-expression",
-    name = "aiolos_starting_beryllium", -- don't use the slider for radius
-    expression = "starting_spot_at_angle{ angle = aiolos_peaks_angle * aiolos_starting_direction,\z
-                                          distance = 150 * aiolos_starting_area_radius,\z
-                                          radius = 30 / 1.5,\z
-                                          x_distortion = 0.5 * aiolos_resource_wobble_x,\z
-                                          y_distortion = 0.5 * aiolos_resource_wobble_y}"
   },
   {
     type = "noise-function",
@@ -619,11 +605,11 @@ data:extend{
   {
     type = "noise-expression",
     name = "aiolos_peaks_resource_favorability",
-    expression = "clamp(main_region - (aiolos_peak_spots > 0.85), 0, 1)",
+    expression = "clamp(main_region - (aiolos_peak_spots > 0.95), 0, 1)",
     local_expressions =
     {
-      buffer = 0.25, -- push ores away from biome edges.
-      contrast = 2,
+      buffer = 0.5, -- push ores away from biome edges.
+      contrast = 1.5,
       main_region = "clamp(((aiolos_peaks_biome_full * (aiolos_starting_area < 0.01)) - buffer) * contrast, 0, 1)"
     }
   },
@@ -681,40 +667,53 @@ data:extend{
                                                                radius = size,\z
                                                                favorability = favor_biome > 0.9})"
   },
-
+  
+  
+   {
+    type = "noise-expression",
+    name = "aiolos_starting_beryllium", -- don't use the slider for radius becuase it can make beryllium in the safe area
+    expression = "starting_spot_at_angle{ angle = aiolos_peaks_angle - 10 * aiolos_starting_direction,\z
+                                          distance = 50 * aiolos_starting_area_radius,\z
+                                          radius = 30 / 1.5,\z
+                                          x_distortion = 0.5 * aiolos_resource_wobble_x,\z
+                                          y_distortion = 0.5 * aiolos_resource_wobble_y}"
+  },
+  
   {
     type = "noise-expression",
-    name = "aiolos_beryllium_size",
+    name = "aiolos_beryllium_ore_size",
     expression = "slider_rescale(control:beryllium_ore:size, 2)"
   },
   {
     type = "noise-expression",
-    name = "aiolos_beryllium_region",
+    name = "aiolos_beryllium_ore_region",
     -- -1 to 1: needs a positive region for resources & decoratives plus a subzero baseline and skirt for surrounding decoratives.
     expression = "max(aiolos_starting_beryllium,\z
                       min(1 - aiolos_starting_circle,\z
-                          aiolos_place_metal_spots(11953, 15, 1.5,\z
-                                                     aiolos_beryllium_size * min(1.3, aiolos_ore_dist) * 10,\z
+                          aiolos_place_metal_spots(789, 15, 2,\z
+                                                     aiolos_beryllium_ore_size * min(1.2, aiolos_ore_dist) * 25,\z
                                                      control:beryllium_ore:frequency,\z
                                                      aiolos_peaks_resource_favorability)))"
   },
   {
     type = "noise-expression",
-    name = "aiolos_beryllium_probability",
-    expression = "(control:beryllium_ore:size > 0) * (1000 * ((1 + aiolos_beryllium_region) * random_penalty_between(0.9, 1, 1) - 1))"
+    name = "aiolos_beryllium_ore_probability",
+    expression = "(control:beryllium_ore:size > 0) * (1000 * ((1 + aiolos_beryllium_ore_region) * random_penalty_between(0.9, 1, 1) - 1))"
   },
   {
     type = "noise-expression",
-    name = "aiolos_beryllium_richness",
-    expression = "aiolos_beryllium_region * random_penalty_between(0.9, 1, 1)\z
-                  * 3000 * aiolos_starting_area_multiplier\z
-                  * control:beryllium_ore:richness / aiolos_beryllium_size"
+    name = "aiolos_beryllium_ore_richness",
+    expression = "aiolos_beryllium_ore_region * random_penalty_between(0.9, 1, 1)\z
+                  * 10000 * aiolos_starting_area_multiplier\z
+                  * control:beryllium_ore:richness / aiolos_beryllium_ore_size"
   },
+  
   {
     type = "noise-expression",
     name = "aiolos_ore_dist",
-    expression = "max(1, distance / 2000)"
+    expression = "max(1, distance / 4000)"
   },
+  
   {
     type = "noise-expression",
     name = "aiolos_geyser_dist",

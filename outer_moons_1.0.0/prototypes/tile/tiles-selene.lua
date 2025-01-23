@@ -70,18 +70,6 @@ end
 --define ranges for all tilesets. Having these as thier own expressions helps with debugging and also modifying things like decorative placement
 data:extend
 {
-  {
-    type = "noise-expression",
-    name = "selene_titanium_tile",
-    expression = "max(0, selene_titanium_ore_probability)"
-  },
-  
-  {
-    type = "noise-expression",
-    name = "selene_ice_tile",
-    expression = "max(0, selene_ice_probability)"
-  },
-
   ---- lowlands
   -- aux controls rocky outcrop pounts.
   -- high-medium aux is cracks
@@ -96,8 +84,7 @@ data:extend
     type = "noise-expression",
     name ="crater_cracks_warm_range",
     expression = "selene_lowlands_biome * range_select_base(selene_elev, 8, 22, 1, 0, 5)\z
-                  + (aux - 0.05)\z
-                  + selene_titanium_tile * selene_ice_tile"
+                  + (aux - 0.05)"
   },
   {
     type = "noise-expression",
@@ -109,8 +96,7 @@ data:extend
     type = "noise-expression",
     name = "crater_smooth_stone_warm_range",
     expression = "selene_lowlands_biome * range_select_base(selene_elev, 8, 20, 1, 0, 5)\z
-                  - (aux - 0.05)\z
-                  + selene_titanium_tile * selene_ice_tile"
+                  - (aux - 0.05)"
   },
   {
     type = "noise-expression",

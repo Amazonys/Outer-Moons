@@ -230,12 +230,6 @@ local lava_to_out_of_map_transition =
 --define ranges for all tilesets. Having these as thier own expressions helps with debugging and also modifying things like decorative placement
 data:extend
 {
-  
-  {
-    type = "noise-expression",
-    name = "aiolos_beryllium_tile",
-    expression = "max(0, aiolos_beryllium_probability)"
-  },
 
   ---- lowlands
   -- aux controls rocky outcrop pounts.
@@ -251,8 +245,7 @@ data:extend
     type = "noise-expression",
     name ="peak_cracks_warm_range",
     expression = "aiolos_lowlands_biome * range_select_base(aiolos_elev, 8, 22, 1, 0, 5)\z
-                  + (aux - 0.05)\z
-                  + aiolos_beryllium_tile"
+                  + (aux - 0.05)"
   },
   {
     type = "noise-expression",
@@ -264,8 +257,7 @@ data:extend
     type = "noise-expression",
     name = "peak_smooth_stone_warm_range",
     expression = "aiolos_lowlands_biome * range_select_base(aiolos_elev, 8, 20, 1, 0, 5)\z
-                  - (aux - 0.05)\z
-                  + aiolos_beryllium_tile"
+                  - (aux - 0.05)"
   },
   {
     type = "noise-expression",
@@ -398,7 +390,7 @@ data:extend
 		  probability_expression = "peak_soil_light_range"
 		},
 		layer = 5,
-		map_color={80, 80, 80},
+		map_color={158, 124, 11},
 		vehicle_friction_modifier = 4,
 		
 		variants = tile_variations_template_with_transitions(
@@ -429,7 +421,7 @@ data:extend
 		  probability_expression = "peak_soil_dark_range"
 		},
 		layer = 7,
-		map_color={100, 100, 100},
+		map_color={116, 89, 56},
 		vehicle_friction_modifier = 4,
 		variants =
 		{
@@ -463,7 +455,7 @@ data:extend
 		  probability_expression = "peak_folds_range"
 		},
 		layer = 6,
-		map_color={110, 110, 110},
+		map_color={127, 93, 56},
 		vehicle_friction_modifier = 4,
 		variants = tile_variations_template_with_transitions(
 		  "__outer_moons__/graphics/terrain/mineral-tan-dirt.png",
@@ -493,7 +485,7 @@ data:extend
 		  probability_expression = "peak_folds_warm_range"
 		},
 		layer = 8,
-		map_color={100, 100, 100},
+		map_color={118, 86, 56},
 		vehicle_friction_modifier = 4,
 		variants =
 		{
@@ -523,16 +515,18 @@ data:extend
 		type = "tile",
 		order = "a[oil]-b[shallow]",
 		subgroup = "aiolos-tiles",
-		collision_mask = tile_collision_masks.oil_ocean_shallow(),
+		collision_mask = tile_collision_masks.water(),
 		autoplace = {probability_expression = "2 * peak_ash_cracks_range"}, -- target coast at cliff elevation
 		layer = 4,
 		layer_group = "water",
-		map_color = { 74, 42, 43},
+		map_color = { 45, 38, 25},
 		vehicle_friction_modifier = 4,
 		walking_speed_modifier = 0.8,
 		default_cover_tile = "foundation",
-		absorptions_per_second = tile_pollution.fulgora,
-		destroys_dropped_items = true,
+		absorptions_per_second = tile_pollution.water,
+		--destroys_dropped_items = true,
+		hidden_in_factoriopedia = true,
+		factoriopedia_alternative = "hydrocarbon-sea",
 		fluid = "aliphatic-solution",
 		effect = "cloud-effect",
 		effect_color = { 19, 19, 19, 255 },
@@ -567,16 +561,16 @@ data:extend
 		type = "tile",
 		order = "a[oil]-b[deep]",
 		subgroup = "aiolos-tiles",
-		collision_mask = tile_collision_masks.oil_ocean_deep(),
+		collision_mask = tile_collision_masks.water(),
 		autoplace = {probability_expression = "max(peak_cracks_hot_range, peak_smooth_stone_warm_range)"},
 		layer = 3,
 		layer_group = "water",
-		map_color = { 49*1.15, 31*1.15, 35*1.15},
+		map_color = { 45, 38, 25},
 		walking_speed_modifier = 0.5,
 		vehicle_friction_modifier = 10,
 		default_cover_tile = "foundation",
 		absorptions_per_second = tile_pollution.water,
-		destroys_dropped_items = true,
+		--destroys_dropped_items = true,
 		fluid = "aliphatic-solution",
 		effect = "cloud-effect",
 		effect_color = { 19, 19, 19, 255 },
