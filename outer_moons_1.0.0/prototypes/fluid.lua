@@ -337,6 +337,32 @@ data:extend(
     flow_color = {0.43, 0.26, 0.79},
     --auto_barrel = false
   },
+  {
+    type = "fluid",
+    name = "hydrazine",
+    subgroup = "nitrogen-fluid",
+    icon = "__outer_moons__/graphics/icons/fluid/hydrazine.png",
+    order = "e[nitrogen]-d[hydrazine]",
+    default_temperature = 25,
+    gas_temperature = 113,
+    heat_capacity = "0.1kJ",
+    base_color = {0, 0, 0.6},
+    flow_color = {0, 0, 0.7},
+    auto_barrel = false
+  },
+  {
+    type = "fluid",
+    name = "nitrogen-tetroxide",
+    subgroup = "nitrogen-fluid",
+    icon = "__outer_moons__/graphics/icons/fluid/nitrogen-tetroxide.png",
+    order = "e[nitrogen]-e[nitrogen-tetroxide]",
+    default_temperature = 25,
+    gas_temperature = 21,
+    heat_capacity = "0.1kJ",
+    base_color = {0, 0, 0.6},
+    flow_color = {0, 0, 0.7},
+    auto_barrel = false
+  },
   --- Chlorine
   {
     type = "fluid",
@@ -737,10 +763,23 @@ data:extend(
   },  
   {
     type = "fluid",
+    name = "perchlorate",
+    subgroup = "mefitis-fluid",
+    default_temperature = 25,
+	gas_temperature = 130,
+    heat_capacity = "0.1kJ",
+    base_color = {0.6, 0, 0.11},
+    flow_color = {0.65, 0, 0.16},
+    icon = "__outer_moons__/graphics/icons/fluid/perchlorate.png",
+    order = "l[mefitis]-b[perchlorate]",	
+    auto_barrel = false
+  },  
+  {
+    type = "fluid",
     name = "molten-iridium",
     icon = "__outer_moons__/graphics/icons/fluid/molten-iridium.png",
     subgroup = "mefitis-fluid",
-    order = "l[mefitis]-b[molten-iridium]",
+    order = "l[mefitis]-c[molten-iridium]",
     default_temperature = 2446,
     max_temperature = 4000,
     heat_capacity = "0.01kJ",
@@ -753,7 +792,7 @@ data:extend(
     name = "molten-osmium",
     icon = "__outer_moons__/graphics/icons/fluid/molten-osmium.png",
     subgroup = "mefitis-fluid",
-    order = "l[mefitis]-c[molten-osmium]",
+    order = "l[mefitis]-d[molten-osmium]",
     default_temperature = 3033,
     max_temperature = 4000,
     heat_capacity = "0.01kJ",

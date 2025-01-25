@@ -29,6 +29,43 @@ data:extend(
     icon_size = 128,
     order = "k"
   },
+  --- Environment
+  {
+    type = "item-subgroup",
+    name = "creatures",
+    group = "environment",
+    order = "a"
+  },
+  {
+    type = "item-subgroup",
+    name = "cliffs",
+    group = "environment",
+    order = "aa"
+  },
+  {
+    type = "item-subgroup",
+    name = "trees",
+    group = "environment",
+    order = "ab"
+  },
+  {
+    type = "item-subgroup",
+    name = "plants",
+    group = "environment",
+    order = "aa"
+  },
+  {
+    type = "item-subgroup",
+    name = "grass",
+    group = "environment",
+    order = "ba"
+  },
+  {
+    type = "item-subgroup",
+    name = "mineable-fluids",
+    group = "environment",
+    order = "bb"
+  },
   --- Agriculture
   {
     type = "item-subgroup",
@@ -36,7 +73,12 @@ data:extend(
     group = "agriculture",
     order = "a"
   },
-  
+  {
+    type = "item-subgroup",
+    name = "vulcanus-agriculture",
+    group = "agriculture",
+    order = "b"
+  },  
   {
     type = "item-subgroup",
     name = "agriculture-processes",
@@ -49,6 +91,24 @@ data:extend(
     group = "agriculture",
     order = "d"
   },
+  {
+    type = "item-subgroup",
+    name = "fulgora-agriculture",
+    group = "agriculture",
+    order = "e"
+  }, 
+  {
+    type = "item-subgroup",
+    name = "aiolos-agriculture",
+    group = "agriculture",
+    order = "f"
+  }, 
+  {
+    type = "item-subgroup",
+    name = "feronia-agriculture",
+    group = "agriculture",
+    order = "g"
+  }, 
   --- Logistics
   {
     type = "item-subgroup",

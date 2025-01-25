@@ -68,39 +68,21 @@ if data.raw.resource["fluorine-vent"] then
 end
 
 --- TECH
-data.raw["tool"]["space-science-pack"].icon = "__outer_moons__/graphics/icons/space-science-pack.png"
-data.raw["tool"]["space-science-pack"].subgroup = "science-pack-2"
-data.raw["tool"]["space-science-pack"].order = "b"
 data.raw["technology"]["space-science-pack"].icon = "__outer_moons__/graphics/technology/space-science-pack.png"
 data.raw["recipe"]["space-science-pack"].icon = "__outer_moons__/graphics/icons/space-science-pack.png"
 
-data.raw["tool"]["metallurgic-science-pack"].icon = "__outer_moons__/graphics/icons/metallurgic-science-pack.png"
-data.raw["tool"]["metallurgic-science-pack"].subgroup = "science-pack-2"
-data.raw["tool"]["metallurgic-science-pack"].order = "d"
 data.raw["technology"]["metallurgic-science-pack"].icon = "__outer_moons__/graphics/technology/metallurgic-science-pack.png"
 data.raw["recipe"]["metallurgic-science-pack"].icon = "__outer_moons__/graphics/icons/metallurgic-science-pack.png"
 
-data.raw["tool"]["agricultural-science-pack"].icon = "__outer_moons__/graphics/icons/agricultural-science-pack.png"
-data.raw["tool"]["agricultural-science-pack"].subgroup = "science-pack-2"
-data.raw["tool"]["agricultural-science-pack"].order = "e"
 data.raw["technology"]["agricultural-science-pack"].icon = "__outer_moons__/graphics/technology/agricultural-science-pack.png"
 data.raw["recipe"]["agricultural-science-pack"].icon = "__outer_moons__/graphics/icons/agricultural-science-pack.png"
 
-data.raw["tool"]["electromagnetic-science-pack"].icon = "__outer_moons__/graphics/icons/electromagnetic-science-pack.png"
-data.raw["tool"]["electromagnetic-science-pack"].subgroup = "science-pack-2"
-data.raw["tool"]["electromagnetic-science-pack"].order = "f"
 data.raw["technology"]["electromagnetic-science-pack"].icon = "__outer_moons__/graphics/technology/electromagnetic-science-pack.png"
 data.raw["recipe"]["electromagnetic-science-pack"].icon = "__outer_moons__/graphics/icons/electromagnetic-science-pack.png"
 
-data.raw["tool"]["cryogenic-science-pack"].icon = "__outer_moons__/graphics/icons/cryogenic-science-pack.png"
-data.raw["tool"]["cryogenic-science-pack"].subgroup = "science-pack-3"
-data.raw["tool"]["cryogenic-science-pack"].order = "b"
 data.raw["technology"]["cryogenic-science-pack"].icon = "__outer_moons__/graphics/technology/cryogenic-science-pack.png"
 data.raw["recipe"]["cryogenic-science-pack"].icon = "__outer_moons__/graphics/icons/cryogenic-science-pack.png"
 
-data.raw["tool"]["promethium-science-pack"].icon = "__outer_moons__/graphics/icons/deep-space-science-pack.png"
-data.raw["tool"]["promethium-science-pack"].subgroup = "science-pack-3"
-data.raw["tool"]["promethium-science-pack"].order = "f"
 data.raw["technology"]["promethium-science-pack"].icon = "__outer_moons__/graphics/technology/deep-space-science-pack.png"
 data.raw["recipe"]["promethium-science-pack"].icon = "__outer_moons__/graphics/icons/deep-space-science-pack.png"
 -- Rocket Silo
@@ -563,6 +545,16 @@ data.raw.item["beacon"].weight = 50 * kg
 
 data.raw.inserter["long-handed-inserter"].next_upgrade = "fast-long-handed-inserter"
 data.raw.inserter["stack-inserter"].default_import_location = "selene"
+
+data.raw.cliff["cliff-selene"].order = "c"
+data.raw.cliff["cliff-vulcanus"].order = "d"
+data.raw.cliff["cliff-gleba"].order = "e"
+data.raw.cliff["cliff-fulgora"].order = "f"
+data.raw.cliff["cliff-mefitis"].order = "g"
+data.raw.cliff["cliff-aiolos"].order = "h"
+data.raw.cliff["cliff-feronia"].order = "i"
+data.raw.cliff["selene-crater-cliff"].order = "j"
+data.raw.cliff["crater-cliff"].order = "k"
 
 --Flamethrower
 data.raw["fluid-turret"]["flamethrower-turret"].attack_parameters.fluids = { {type = "crude-oil"},  {type = "heavy-oil", damage_modifier = 1.05}, {type = "light-oil", damage_modifier = 1.1}, {type = "ethanol", damage_modifier = 1.1} }

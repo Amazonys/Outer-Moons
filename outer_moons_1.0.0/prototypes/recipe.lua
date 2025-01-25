@@ -544,6 +544,29 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "spoilage-gasification",
+		category = "oil-processing",
+		enabled = false,
+		energy_required = 5,
+		ingredients =
+		{
+		  {type = "fluid", name = "steam", amount = 50},
+		  {type = "item", name = "spoilage", amount = 40},
+		  {type = "item", name = "lanthanum-plate", amount = 1},
+		},
+		results =
+		{
+		  {type = "fluid", name = "carbon-dioxide", amount = 45},
+		  {type = "fluid", name = "sulfane", amount = 40},
+		  {type = "fluid", name = "ammonia", amount = 25}
+		},
+		allow_productivity = true,
+		icon = "__outer_moons__/graphics/icons/fluid/spoilage-gasification.png",
+		subgroup = "hydrocarbon-recipes",
+		order = "a[oil-processing]-d[spoilage-gasification]"
+	},
+	{
+		type = "recipe",
 		name = "methane-reforming",
 		category = "chemistry-or-cryogenics",
 		enabled = false,
@@ -958,12 +981,11 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "methane", amount = 10},
-		  {type = "fluid", name = "chlorine", amount = 30}
+		  {type = "fluid", name = "chlorine", amount = 15}
 		},
 		results =
 		{
 		  {type = "fluid", name = "chloroform", amount = 10},
-		  {type = "fluid", name = "hydrochloric-acid", amount = 30},
 		},
 		allow_productivity = true,
 		main_product = "chloroform",
@@ -4883,7 +4905,7 @@ data:extend({
         {type = "item", name = "plastic-bar", amount = 1}
       },
       subgroup = "fulgora-processes",
-      order = "a[chemistry-fulgora]-c[amalgamate-microplastic]",
+      order = "b[chemistry-fulgora]-a[amalgamate-microplastic]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -4934,18 +4956,115 @@ data:extend({
 	--Inserters	
 	{
 		type = "recipe",
+		name = "inserter",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "electronic-circuit", amount = 1},
+		  {type = "item", name = "iron-gear-wheel", amount = 1},
+		  {type = "item", name = "nickel-plate", amount = 1},
+		  {type = "item", name = "burner-inserter", amount = 1}
+		},
+		results = {{type="item", name="inserter", amount=1}}
+	},	
+	{
+		type = "recipe",
+		name = "long-handed-inserter",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "electronic-circuit", amount = 1},
+		  {type = "item", name = "iron-gear-wheel", amount = 2},
+		  {type = "item", name = "nickel-plate", amount = 2},
+		  {type = "item", name = "burner-inserter", amount = 1}
+		},
+		results = {{type="item", name="long-handed-inserter", amount=1}}
+	},
+	
+	{
+		type = "recipe",
+		name = "fast-inserter",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "integrated-circuit", amount = 2},
+		  {type = "item", name = "aluminum-plate", amount = 2},
+		  {type = "item", name = "iron-gear-wheel", amount = 2},
+		  {type = "item", name = "inserter", amount = 1}
+		},
+		results = {{type="item", name="fast-inserter", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "fast-long-handed-inserter",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "integrated-circuit", amount = 2},
+		  {type = "item", name = "duralumin-plate", amount = 4},
+		  {type = "item", name = "iron-gear-wheel", amount = 4},
+		  {type = "item", name = "long-handed-inserter", amount = 1}
+		},
+		results = {{type="item", name="fast-long-handed-inserter", amount=1}}
+	},
+	
+	
+	{
+		type = "recipe",
+		name = "bulk-inserter",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "steel-plate", amount = 4},
+		  {type = "item", name = "iron-gear-wheel", amount = 4},
+		  {type = "item", name = "fast-inserter", amount = 1}
+		},
+		results = {{type="item", name="bulk-inserter", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "bulk-long-handed-inserter",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "titanium-plate", amount = 8},
+		  {type = "item", name = "iron-gear-wheel", amount = 8},
+		  {type = "item", name = "fast-long-handed-inserter", amount = 1}
+		},
+		results = {{type="item", name="bulk-long-handed-inserter", amount=1}}
+	},
+	
+	{
+		type = "recipe",
 		name = "stack-inserter",
 		category = "robotics",
 		enabled = false,
-		energy_required = 0.5,
+		--energy_required = 0.5,
 		ingredients =
 		{
+		  {type = "item", name = "processing-unit", amount = 4},
+		  {type = "item", name = "magnesium-plate", amount = 8},
+		  {type = "item", name = "iron-gear-wheel", amount = 8},
 		  {type = "item", name = "bulk-inserter", amount = 1},
-		  {type = "item", name = "processing-unit", amount = 1},
-		  {type = "item", name = "aluminum-plate", amount = 4},
-		  {type = "item", name = "titanium-plate", amount = 8}
 		},
 		results = {{type="item", name="stack-inserter", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "stack-long-handed-inserter",
+		category = "robotics",
+		enabled = false,
+		--energy_required = 0.5,
+		ingredients =
+		{
+		  {type = "item", name = "processing-unit", amount = 4},
+		  {type = "item", name = "magnalium-plate", amount = 16},
+		  {type = "item", name = "iron-gear-wheel", amount = 16},
+		  {type = "item", name = "bulk-long-handed-inserter", amount = 1},
+		},
+		results = {{type="item", name="stack-long-handed-inserter", amount=1}}
 	},
 	-- Modules
 	{
@@ -5756,6 +5875,282 @@ data:extend({
 		  {type = "fluid", name = "carbon-dioxide", amount = 10},
 		},
 	},
+	-- Asteroids
+	{
+		type = "recipe",
+		name = "metallic-asteroid-crushing",
+		icon = "__space-age__/graphics/icons/metallic-asteroid-crushing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "b-a-a",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "metallic-asteroid-chunk", amount = 1},
+		},
+		energy_required = 2,
+		results =
+		{
+		  {type = "item", name = "iron-ore", amount = 20},
+		  {type = "item", name = "metallic-asteroid-chunk", amount = 1, probability = 0.2}
+		},
+		allow_productivity = true,
+		allow_decomposition = false
+	},
+	{
+		type = "recipe",
+		name = "carbonic-asteroid-crushing",
+		icon = "__space-age__/graphics/icons/carbonic-asteroid-crushing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "b-a-b",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "carbonic-asteroid-chunk", amount = 1},
+		},
+		energy_required = 2,
+		results =
+		{
+		  {type = "item", name = "carbon", amount = 10},
+		  {type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.2}
+		},
+		allow_productivity = true,
+		allow_decomposition = false
+	},
+	{
+		type = "recipe",
+		name = "silicaceous-asteroid-crushing",
+		icon = "__outer_moons__/graphics/icons/silicaceous-asteroid-crushing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "b-a-c",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "silicaceous-asteroid-chunk", amount = 1},
+		},
+		energy_required = 2,
+		results =
+		{
+		  {type = "item", name = "silicon-ore", amount = 10},
+		  {type = "item", name = "silicaceous-asteroid-chunk", amount = 1, probability = 0.2}
+		},
+		allow_productivity = true,
+		allow_decomposition = false
+	},
+	{
+		type = "recipe",
+		name = "oxide-asteroid-crushing",
+		icon = "__space-age__/graphics/icons/oxide-asteroid-crushing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "b-a-d",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "oxide-asteroid-chunk", amount = 1},
+		},
+		energy_required = 2,
+		results =
+		{
+		  {type = "item", name = "ice", amount = 5},
+		  {type = "item", name = "oxide-asteroid-chunk", amount = 1, probability = 0.2}
+		},
+		allow_productivity = true,
+		allow_decomposition = false
+	},
+	
+	
+	{
+		type = "recipe",
+		name = "advanced-metallic-asteroid-crushing",
+		localised_name = {"recipe-name.advanced-metallic-asteroid-crushing"},
+		icon = "__space-age__/graphics/icons/advanced-metallic-asteroid-crushing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "c-a-b",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "metallic-asteroid-chunk", amount = 1}
+		},
+		energy_required = 5,
+		results =
+		{
+		  {type = "item", name = "iron-ore", amount = 8},
+		  {type = "item", name = "nickel-ore", amount = 6},
+		  {type = "item", name = "copper-ore", amount = 4},
+		  {type = "item", name = "metallic-asteroid-chunk", amount = 1, probability = 0.05}
+		},
+		allow_productivity = true,
+		allow_decomposition = false
+	},
+	{
+		type = "recipe",
+		name = "advanced-carbonic-asteroid-crushing",
+		localised_name = {"recipe-name.advanced-carbonic-asteroid-crushing"},
+		icon = "__space-age__/graphics/icons/advanced-carbonic-asteroid-crushing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "e[advanced-carbonic-asteroid-crushing]",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "carbonic-asteroid-chunk", amount = 1}
+		},
+		energy_required = 5,
+		results =
+		{
+		  {type = "item", name = "carbon", amount = 8},
+		  {type = "item", name = "sulfur", amount = 6},
+		  {type = "item", name = "niter", amount = 4},
+		  {type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.05}
+		},
+		allow_productivity = true,
+		allow_decomposition = false
+	},
+	{
+		type = "recipe",
+		name = "advanced-silicaceous-asteroid-crushing",
+		localised_name = {"recipe-name.advanced-silicaceous-asteroid-crushing"},
+		icon = "__space-age__/graphics/icons/advanced-carbonic-asteroid-crushing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "f[advanced-silicaceous-asteroid-crushing]",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "silicaceous-asteroid-chunk", amount = 1}
+		},
+		energy_required = 5,
+		results =
+		{
+		  {type = "item", name = "silicon-ore", amount = 8},
+		  {type = "item", name = "magnesium-ore", amount = 6},
+		  {type = "item", name = "alumina", amount = 4},
+		  {type = "item", name = "silicaceous-asteroid-chunk", amount = 1, probability = 0.05}
+		},
+		allow_productivity = true,
+		allow_decomposition = false
+	},
+	{
+		type = "recipe",
+		name = "advanced-oxide-asteroid-crushing",
+		localised_name = {"recipe-name.advanced-oxide-asteroid-crushing"},
+		icon = "__space-age__/graphics/icons/advanced-oxide-asteroid-crushing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "g[advanced-oxide-asteroid-crushing]",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "oxide-asteroid-chunk", amount = 1}
+		},
+		energy_required = 5,
+		results =
+		{
+		  {type = "item", name = "ice", amount = 4},
+		  {type = "item", name = "dry-ice", amount = 3},
+		  {type = "item", name = "calcite", amount = 2},
+		  {type = "item", name = "oxide-asteroid-chunk", amount = 1, probability = 0.05}
+		},
+		allow_productivity = true,
+		allow_decomposition = false
+	},
+  
+	{
+		type = "recipe",
+		name = "metallic-asteroid-reprocessing",
+		icon = "__space-age__/graphics/icons/metallic-asteroid-reprocessing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "b-b-a",
+		auto_recycle = false,
+		enabled = false,
+		ingredients = {{type = "item", name = "metallic-asteroid-chunk", amount = 1}},
+		energy_required = 2,
+		results =
+		{
+		  {type = "item", name = "metallic-asteroid-chunk", amount = 1, probability = 0.4},
+		  {type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.15},
+		  {type = "item", name = "silicaceous-asteroid-chunk", amount = 1, probability = 0.15},
+		  {type = "item", name = "oxide-asteroid-chunk", amount = 1, probability = 0.15},
+		},
+		allow_productivity = false,
+		allow_decomposition = false
+	},
+	{
+		type = "recipe",
+		name = "carbonic-asteroid-reprocessing",
+		icon = "__space-age__/graphics/icons/carbonic-asteroid-reprocessing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "b-b-b",
+		auto_recycle = false,
+		enabled = false,
+		ingredients = {{type = "item", name = "carbonic-asteroid-chunk", amount = 1}},
+		energy_required = 2,
+		results =
+		{
+		  {type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.4},
+		  {type = "item", name = "metallic-asteroid-chunk", amount = 1, probability = 0.15},
+		  {type = "item", name = "silicaceous-asteroid-chunk", amount = 1, probability = 0.15},
+		  {type = "item", name = "oxide-asteroid-chunk", amount = 1, probability = 0.15},
+		},
+		allow_productivity = false,
+		allow_decomposition = false
+	},
+	{
+		type = "recipe",
+		name = "silicaceous-asteroid-reprocessing",
+		icon = "__outer_moons__/graphics/icons/silicaceous-asteroid-reprocessing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "b-b-c",
+		auto_recycle = false,
+		enabled = false,
+		ingredients = {{type = "item", name = "silicaceous-asteroid-chunk", amount = 1}},
+		energy_required = 2,
+		results =
+		{
+		  {type = "item", name = "silicaceous-asteroid-chunk", amount = 1, probability = 0.4},
+		  {type = "item", name = "metallic-asteroid-chunk", amount = 1, probability = 0.15},
+		  {type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.15},
+		  {type = "item", name = "oxide-asteroid-chunk", amount = 1, probability = 0.15},
+		},
+		allow_productivity = false,
+		allow_decomposition = false
+	},
+	{
+		type = "recipe",
+		name = "oxide-asteroid-reprocessing",
+		icon = "__space-age__/graphics/icons/oxide-asteroid-reprocessing.png",
+		category = "crushing",
+		subgroup="space-crushing",
+		order = "b-b-d",
+		auto_recycle = false,
+		enabled = false,
+		ingredients = {{type = "item", name = "oxide-asteroid-chunk", amount = 1}},
+		energy_required = 1,
+		results =
+		{
+		  {type = "item", name = "oxide-asteroid-chunk", amount = 1, probability = 0.4},
+		  {type = "item", name = "metallic-asteroid-chunk", amount = 1, probability = 0.15},
+		  {type = "item", name = "carbonic-asteroid-chunk", amount = 1, probability = 0.15},
+		  {type = "item", name = "silicaceous-asteroid-chunk", amount = 1, probability = 0.15},
+		},
+		allow_productivity = false,
+		allow_decomposition = false
+	},
 	--Flaring
 	{
 		type = "recipe",
@@ -5894,6 +6289,36 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "nitrogen-tetroxide-flaring",
+		icon = "__outer_moons__/graphics/icons/fluid/nitrogen-tetroxide.png",
+		energy_required = 1,
+		enabled = true,
+		hidden_in_factoriopedia = true,
+		category = "flaring",
+		subgroup = "fluid-recipes",
+		order = "a",
+		ingredients =
+		{
+		  {type = "fluid", name = "nitrogen-tetroxide", amount = 10}
+		},
+	},
+	{
+		type = "recipe",
+		name = "perchlorate-flaring",
+		icon = "__outer_moons__/graphics/icons/fluid/perchlorate.png",
+		energy_required = 1,
+		enabled = true,
+		hidden_in_factoriopedia = true,
+		category = "flaring",
+		subgroup = "fluid-recipes",
+		order = "a",
+		ingredients =
+		{
+		  {type = "fluid", name = "perchlorate", amount = 10}
+		},
+	},
+	{
+		type = "recipe",
 		name = "ethanol-flaring",
 		icon = "__outer_moons__/graphics/icons/fluid/ethanol.png",
 		energy_required = 1,
@@ -5980,6 +6405,36 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "cytosine", amount = 10}
+		},
+	},
+	{
+		type = "recipe",
+		name = "chloroform-flaring",
+		icon = "__outer_moons__/graphics/icons/fluid/chloroform.png",
+		energy_required = 1,
+		enabled = true,
+		hidden_in_factoriopedia = true,
+		category = "flaring",
+		subgroup = "fluid-recipes",
+		order = "a",
+		ingredients =
+		{
+		  {type = "fluid", name = "chloroform", amount = 10}
+		},
+	},
+	{
+		type = "recipe",
+		name = "fluoroform-flaring",
+		icon = "__outer_moons__/graphics/icons/fluid/fluoroform.png",
+		energy_required = 1,
+		enabled = true,
+		hidden_in_factoriopedia = true,
+		category = "flaring",
+		subgroup = "fluid-recipes",
+		order = "a",
+		ingredients =
+		{
+		  {type = "fluid", name = "fluoroform", amount = 10}
 		},
 	},
 	--Venting
@@ -6265,6 +6720,26 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "hydrazine-venting",
+		icon = "__outer_moons__/graphics/icons/fluid/hydrazine.png",
+		energy_required = 1,
+		enabled = true,
+		hidden_in_factoriopedia = true,
+		category = "venting",
+		subgroup = "fluid-recipes",
+		order = "a",
+		ingredients =
+		{
+		  {type = "fluid", name = "hydrazine", amount = 10}
+		},
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.695, g = 0.901, b = 0.971, a = 1.000},
+		  secondary = {r = 0.078, g = 0.552, b = 0.092, a = 1.000},
+		}
+	},
+	{
+		type = "recipe",
 		name = "chlorine-venting",
 		icon = "__outer_moons__/graphics/icons/fluid/chlorine.png",
 		energy_required = 1,
@@ -6440,6 +6915,46 @@ data:extend({
 		crafting_machine_tint =
 		{
 		  primary = {r = 0.484, g = 0.241, b = 0.731, a = 1.000},
+		  secondary = {r = 0.078, g = 0.552, b = 0.092, a = 1.000},
+		}
+	},
+	{
+		type = "recipe",
+		name = "hydrofluoric-acid-venting",
+		icon = "__outer_moons__/graphics/icons/fluid/hydrofluoric-acid.png",
+		energy_required = 1,
+		enabled = true,
+		hidden_in_factoriopedia = true,
+		category = "venting",
+		subgroup = "fluid-recipes",
+		order = "a",
+		ingredients =
+		{
+		  {type = "fluid", name = "hydrofluoric-acid", amount = 10}
+		},
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.471, g = 0.629, b = 0.585, a = 1.000},
+		  secondary = {r = 0.078, g = 0.552, b = 0.092, a = 1.000},
+		}
+	},
+	{
+		type = "recipe",
+		name = "tetrafluoroethylene-venting",
+		icon = "__outer_moons__/graphics/icons/fluid/tetrafluoroethylene.png",
+		energy_required = 1,
+		enabled = true,
+		hidden_in_factoriopedia = true,
+		category = "venting",
+		subgroup = "fluid-recipes",
+		order = "a",
+		ingredients =
+		{
+		  {type = "fluid", name = "tetrafluoroethylene", amount = 10}
+		},
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.471, g = 0.629, b = 0.585, a = 1.000},
 		  secondary = {r = 0.078, g = 0.552, b = 0.092, a = 1.000},
 		}
 	},

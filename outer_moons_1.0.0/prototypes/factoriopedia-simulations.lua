@@ -87,7 +87,7 @@ simulations.factoriopedia_cliff_mefitis =
       end
     end
     for x = -8, 8, 4 do
-      game.surfaces[1].create_entity{name = "cliff-selene", position = {x, 0}, cliff_orientation = "west-to-east"}
+      game.surfaces[1].create_entity{name = "cliff-mefitis", position = {x, 0}, cliff_orientation = "west-to-east"}
     end
   ]]
 }
@@ -105,7 +105,7 @@ simulations.factoriopedia_cliff_aiolos =
       end
     end
     for x = -8, 8, 4 do
-      game.surfaces[1].create_entity{name = "cliff-selene", position = {x, 0}, cliff_orientation = "west-to-east"}
+      game.surfaces[1].create_entity{name = "cliff-aiolos", position = {x, 0}, cliff_orientation = "west-to-east"}
     end
   ]]
 }
@@ -123,7 +123,7 @@ simulations.factoriopedia_cliff_feronia =
       end
     end
     for x = -8, 8, 4 do
-      game.surfaces[1].create_entity{name = "cliff-selene", position = {x, 0}, cliff_orientation = "west-to-east"}
+      game.surfaces[1].create_entity{name = "cliff-feronia", position = {x, 0}, cliff_orientation = "west-to-east"}
     end
   ]]
 }
