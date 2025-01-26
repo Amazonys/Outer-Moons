@@ -42,10 +42,6 @@ data:extend(
   },  
   {
     type = "recipe-category",
-    name = "robotics-or-scrubbing"
-  }, 
-  {
-    type = "recipe-category",
     name = "advanced-smelting"
   },
   {
@@ -68,6 +64,16 @@ data:extend(
     type = "recipe-category",
     name = "quantum"
   },
+  
+  {
+    type = "recipe-category",
+    name = "electronics-quantum"
+  },
+  {
+    type = "recipe-category",
+    name = "assembly-electronics-quantum"
+  },
+  
   {
     type = "recipe-category",
     name = "synthesis"

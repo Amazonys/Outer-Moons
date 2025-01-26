@@ -452,7 +452,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "trees",
-    order = "a[tree]-c[gleba]-b[normal]-a[slipstack]",
+    order = "c[gleba]-b[normal]-a[slipstack]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_slipstack,
     autoplace =
@@ -557,7 +557,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "trees",
-    order = "a[tree]-c[gleba]-b[normal]-e[lickmaw]",
+    order = "c[gleba]-b[normal]-e[lickmaw]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_lickmaw,
     autoplace =
@@ -657,7 +657,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "trees",
-    order = "a[tree]-c[gleba]-b[normal]-i[cuttlepop]",
+    order = "c[gleba]-b[normal]-i[cuttlepop]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_cuttlepop,
     autoplace =
@@ -812,19 +812,17 @@ data:extend(
       mining_time = 0.5,
       results =
       {
-        {type = "item", name = "carbon", amount = 4}
+        {type = "item", name = "ashwood", amount = 4}
       }
     },
     mining_sound = sound_variations("__space-age__/sound/mining/axe-mining-ashland-lichen-tree", 5, 0.4),
     mined_sound = sound_variations("__space-age__/sound/mining/mined-ashland-lichen-tree", 5, 0.4),
-    corpse = "ashland-lichen-tree-stump",
-    remains_when_mined = "ashland-lichen-tree-stump",
 	growth_ticks = 5 * minutes,
     max_health = 50,
     collision_box = {{-0.5, -0.6}, {0.5, 0.4}},
     selection_box = {{-0.9, -2.4}, {0.9, 0.3}},
     subgroup = "plants",
-    order = "a[tree]-b[vulcanus]-a[ashland-lichen-plant]",
+    order = "b[vulcanus]-a[ashland-lichen-plant]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_ashland_lichen_tree,
     autoplace =
@@ -832,7 +830,7 @@ data:extend(
       order = "b[tree]-b[normal]",
       --control = "trees", -- makes it appear on Nauvis
       probability_expression = "0",
-	 --tile_restriction = { "", "", }
+	  tile_restriction = { "volcanic-soil-dark", "volcanic-soil-light", "volcanic-ash-soil", "volcanic-ash-flats", "volcanic-ash-light", "volcanic-ash-dark"}
     },
     map_color = {255, 255, 255},
     pictures = ashland_lichen_tree_pictures,
@@ -843,14 +841,14 @@ data:extend(
     flags = {"placeable-neutral", "placeable-off-grid", "breaths-air"},
     icon = "__space-age__/graphics/icons/fulgurite.png",
     subgroup = "plants",
-    order = "a[tree]-d[fulgora]-a[fulgurite]",
+    order = "d[fulgora]-a[fulgurite]",
     collision_box = {{-1.0, -0.9}, {1.0, 0.9}},
     selection_box = {{-1.2, -1.1}, {1.2, 1.1}},
     drawing_box_vertical_extension = 1,
     minable =
     {
       mining_particle = "stone-particle",
-      mining_time = 3,
+      mining_time = 0.5,
       results =
       {
         {type = "item", name = "holmium-ore", amount = 8}
@@ -870,6 +868,7 @@ data:extend(
     autoplace =
     {
       probability_expression = "0",
+	  tile_restriction = { "fulgoran-rock", "fulgoran-dust", "fulgoran-sand", "fulgoran-dunes", "fulgoran-walls", "fulgoran-paving", "fulgoran-conduit", "fulgoran-machinery" },
     },
     pictures = util.spritesheets_to_pictures({{path = "__space-age__/graphics/decorative/fulgurite/fulgurite", frame_count = 6}})
   },
@@ -911,7 +910,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-c[gleba]-d[funneltrunk]",
+    order = "c[gleba]-d[funneltrunk]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_funneltrunk,
     autoplace =
@@ -999,7 +998,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-c[gleba]-a[slipstack]",
+    order = "c[gleba]-a[slipstack]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_slipstack,
     autoplace =
@@ -1112,7 +1111,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-c[gleba]-f[yumako-tree]",
+    order = "c[gleba]-f[yumako-tree]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_yumako_tree,
     autoplace =
@@ -1188,7 +1187,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-c[gleba]-e[lickmaw]",
+    order = "c[gleba]-e[lickmaw]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_lickmaw,
     autoplace =
@@ -1295,7 +1294,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-c[gleba]-c[cuttlepop]",
+    order = "c[gleba]-c[cuttlepop]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_cuttlepop,
 	autoplace =
@@ -1392,7 +1391,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-c[gleba]-h[stingfrond]",
+    order = "c[gleba]-h[stingfrond]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_stingfrond,
     autoplace =
@@ -1519,7 +1518,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-c[gleba]-g[boompuff]",
+    order = "c[gleba]-g[boompuff]",
     impact_category = "tree",
     --dying_explosion = { name = "boompuff-explosion" },
     --remains_when_mined = "boompuff-explosion",
@@ -1649,7 +1648,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-c[gleba]-b[teflilly]",
+    order = "c[gleba]-b[teflilly]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_teflilly,
     autoplace =
@@ -1760,7 +1759,7 @@ data:extend(
     collision_mask = {layers={ground_tile=true, train=true, is_object=true, is_lower_object=true}}, -- not player
     drawing_box_vertical_extension = 0.8,
     subgroup = "trees",
-    order = "a[tree]-c[gleba]-i[water-cane]",
+    order = "c[gleba]-i[water-cane]",
     impact_category = "tree",
     autoplace =
     {
@@ -1828,7 +1827,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-e[aiolos]-a[sunnycomb]",
+    order = "e[aiolos]-a[sunnycomb]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_sunnycomb,
 	autoplace =
@@ -1932,7 +1931,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-f[feronia]-b[hairyclubnub]",
+    order = "f[feronia]-b[hairyclubnub]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_hairyclubnub,
     autoplace =
@@ -2002,7 +2001,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-f[feronia]-c[jellystem]",
+    order = "f[feronia]-c[jellystem]",
     impact_category = "tree",
     factoriopedia_simulation = simulations.factoriopedia_jellystem,
     autoplace =
@@ -2110,7 +2109,7 @@ data:extend(
     selection_box = {{-1, -1}, {1, 1}},
     drawing_box_vertical_extension = 0.8,
     subgroup = "plants",
-    order = "a[tree]-f[feronia]-a[razorgrass]",
+    order = "f[feronia]-a[razorgrass]",
     impact_category = "tree",
     factoriopedia_simulation = {
       planet = "feronia",

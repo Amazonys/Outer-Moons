@@ -2,6 +2,362 @@ data:extend(
 {
   {
     type = "technology",
+    name = "logistics",
+    icon = "__base__/graphics/technology/logistics-1.png",
+    icon_size = 256,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "transport-belt"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "underground-belt"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "splitter"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "burner-inserter"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "iron-chest"
+      },
+    },
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "iron-plate",
+      count = 30
+    }
+  },
+  {
+    type = "technology",
+    name = "inserter",
+    icon = "__outer_moons__/graphics/technology/inserter.png",
+    icon_size = 256,
+	prerequisites = {"electronics", "logistics"},
+	effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "inserter"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "long-handed-inserter"
+      },
+    },
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "nickel-plate",
+      count = 10
+    }
+  },  
+  {
+    type = "technology",
+    name = "multicylinder-engine",
+    icon = "__outer_moons__/graphics/technology/multicylinder-engine.png",
+    icon_size = 256,
+    prerequisites = {"engine", "logistic-science-pack"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1}
+      },
+      time = 15
+    },
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "multicylinder-engine-unit"
+      }
+    }
+  },
+  {
+    type = "technology",
+    name = "electrolysis",
+    icon = "__outer_moons__/graphics/technology/electrolysis.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {	  
+	  {
+        type = "unlock-recipe",
+        recipe = "electrolytic-plant"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "water-evaporation"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "water-electrolysis"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "carbon-dioxide-electrolysis"
+      },
+    },
+    prerequisites = {"oil-processing"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1}
+      },
+      time = 15
+    }
+  },
+  {
+    type = "technology",
+    name = "silicon-processing",
+    icon = "__outer_moons__/graphics/technology/silicon-processing.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {	  
+	  {
+        type = "unlock-recipe",
+        recipe = "silicon-wafer"
+      },
+    },
+    prerequisites = {"sulfur-processing", "electrolysis"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "silicon-ore"
+    }
+  },
+  
+  {
+    type = "technology",
+    name = "chloralkali-processing",
+    icon = "__outer_moons__/graphics/technology/chloralkali-process.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {	  
+	  {
+        type = "unlock-recipe",
+        recipe = "brine"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "chloralkali-process"
+      },
+    },
+    prerequisites = {"electrolysis"},
+    unit =
+    {
+      count = 150,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1}
+      },
+      time = 15
+    }
+  },
+  {
+    type = "technology",
+    name = "alumina-processing",
+    icon = "__outer_moons__/graphics/technology/alumina-processing.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "aluminate"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "red-mud-reprocessing"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "alumina"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "aluminum-plate"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "aluminum-cable"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "duralumin-plate"
+      },
+    },
+    prerequisites = {"chloralkali-processing"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "aluminum-ore"
+    }
+  },
+  {
+    type = "technology",
+    name = "advanced-circuit",
+    icon = "__base__/graphics/technology/advanced-circuit.png",
+    icon_size = 256,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "transistor"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "integrated-circuit"
+      }
+    },
+    prerequisites = {"silicon-processing"},
+    unit =
+    {
+      count = 200,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1}
+      },
+      time = 15
+    }
+  },
+  {
+    type = "technology",
+    name = "plastics",
+    icon = "__outer_moons__/graphics/technology/polyethylene-plastic.png",
+    icon_size = 256,
+    prerequisites = {"advanced-oil-processing"},
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "hydrogen-peroxide"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "polyethlyene-plastic"
+      },
+    },
+    unit =
+    {
+      count = 100,
+      ingredients = {{"automation-science-pack", 1}, {"logistic-science-pack", 1}, {"chemical-science-pack", 1}},
+      time = 30
+    }
+  },
+  {
+    type = "technology",
+    name = "polystyrene-plastics",
+    icon = "__outer_moons__/graphics/technology/polystyrene-plastic.png",
+    icon_size = 256,
+    prerequisites = {"plastics"},
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "olefins-reforming"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "polystyrene-plastic"
+      },
+    },
+    unit =
+    {
+      count = 200,
+      ingredients = {{"automation-science-pack", 1}, {"logistic-science-pack", 1}, {"chemical-science-pack", 1}},
+      time = 30
+    }
+  },
+  {
+    type = "technology",
+    name = "processing-unit",
+    icon = "__base__/graphics/technology/processing-unit.png",
+    icon_size = 256,
+    prerequisites = {"convector", "battery"},
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "capacitor"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "peripheral-interface"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "advanced-circuit"
+      }
+    },
+    unit =
+    {
+      count = 300,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    }
+  },
+  {
+    type = "technology",
+    name = "processing-unit-new",
+    icon = "__outer_moons__/graphics/technology/processing-unit.png",
+    icon_size = 256,
+    prerequisites = {"processing-unit",},
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "microprocessor"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "memory-stick"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "storage-drive"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "processing-unit"
+      }
+    },
+    unit =
+    {
+      count = 500,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    }
+  },
+  {
+    type = "technology",
     name = "planet-discovery-selene",
     icons = util.technology_icon_constant_planet("__outer_moons__/graphics/technology/selene.png"),
     icon_size = 256,
@@ -26,59 +382,6 @@ data:extend(
         {"space-science-pack", 1}
       },
       time = 60
-    }
-  },
-  
-  {
-    type = "technology",
-    name = "chloralkali-processing",
-    icon = "__outer_moons__/graphics/technology/chloralkali-process.png",
-    icon_size = 256,
-    essential = true,
-    effects =
-    {
-	  {
-        type = "unlock-recipe",
-        recipe = "chloralkali-process"
-      },
-	  {
-        type = "unlock-recipe",
-        recipe = "water-electrolysis"
-      },
-    },
-    prerequisites = {"planet-discovery-selene"},
-    research_trigger =
-    {
-      type = "mine-entity",
-      entity = "saline-geyser"
-    }
-  },
-  {
-    type = "technology",
-    name = "bauxite-processing",
-    icon = "__outer_moons__/graphics/technology/alumina-production.png",
-    icon_size = 256,
-    essential = true,
-    effects =
-    {
-	  {
-        type = "unlock-recipe",
-        recipe = "aluminate"
-      },
-      {
-        type = "unlock-recipe",
-        recipe = "alumina"
-      },
-	  {
-        type = "unlock-recipe",
-        recipe = "red-mud-reprocessing"
-      },
-    },
-    prerequisites = {"chloralkali-processing"},
-    research_trigger =
-    {
-      type = "mine-entity",
-      entity = "aluminum-ore"
     }
   },
   {
@@ -115,18 +418,24 @@ data:extend(
       },
 	  {
         type = "unlock-recipe",
-        recipe = "amalgamate-regolith"
+        recipe = "glass-lens"
       },
 	  {
         type = "unlock-recipe",
-        recipe = "aluminum-plate"
+        recipe = "fiber-optic"
       },
     },
-    prerequisites = {"bauxite-processing"},
-    research_trigger =
+    prerequisites = {"silicon-processing", "advanced-circuit"},
+    unit =
     {
-      type = "craft-item",
-      item = "alumina"
+      count = 200,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+      },
+      time = 60
     }
   },
   {

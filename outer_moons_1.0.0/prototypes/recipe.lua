@@ -64,6 +64,45 @@ data:extend({
 		},
 		results = {{type="item", name="flare-stack", amount=1}}
 	},
+	{
+		type = "recipe",
+		name = "small-storage-tank",
+		energy_required = 3,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "pipe", amount = 2},
+		  {type = "item", name = "lead-plate", amount = 8},
+		  {type = "item", name = "steel-plate", amount = 4}
+		},
+		results = {{type="item", name="small-storage-tank", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "storage-tank",
+		energy_required = 3,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "lead-plate", amount = 16},
+		  {type = "item", name = "pipe", amount = 4},
+		  {type = "item", name = "steel-plate", amount = 8}
+		},
+		results = {{type="item", name="storage-tank", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "large-storage-tank",
+		energy_required = 3,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "lead-plate", amount = 24},
+		  {type = "item", name = "pipe", amount = 8},
+		  {type = "item", name = "steel-plate", amount = 12}
+		},
+		results = {{type="item", name="large-storage-tank", amount=1}}
+	},
 	-- Power
 	{
 		type = "recipe",
@@ -285,7 +324,7 @@ data:extend({
 		  {type = "item", name = "steel-plate", amount = 5},
 		  {type = "item", name = "iron-gear-wheel", amount = 10},
 		  {type = "item", name = "electronic-circuit", amount = 5},
-		  {type = "item", name = "pipe", amount = 10}
+		  {type = "item", name = "pump", amount = 1}
 		},
 		results = {{type="item", name="pumpjack", amount=1}},
 		enabled = false
@@ -781,7 +820,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "sulfane", amount = 20},
-		  {type = "item", name = "aluminum-plate", amount = 1}
+		  {type = "item", name = "iron-plate", amount = 1}
 		},
 		results =
 		{
@@ -1142,6 +1181,32 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "coal-carbon-capture",
+		icon = "__outer_moons__/graphics/icons/fluid/coal-carbon-capture.png",
+		category = "chemistry",
+		subgroup = "phase-recipes",
+		order = "a[coal-carbon-capture]",
+		energy_required = 1,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "coal", amount = 10 },
+		},
+		results =
+		{
+		  {type = "fluid", name = "carbon-dioxide", amount = 20}
+		},
+		allow_productivity = true,
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.768, g = 0.631, b = 0.768, a = 1.000}, -- #c3a0c3ff
+		  secondary = {r = 0.659, g = 0.592, b = 0.678, a = 1.000}, -- #a896acff
+		  tertiary = {r = 0.774, g = 0.631, b = 0.766, a = 1.000}, -- #c5a0c3ff
+		  quaternary = {r = 0.564, g = 0.364, b = 0.564, a = 1.000}, -- #8f5c8fff
+		}
+	},
+	{
+		type = "recipe",
 		name = "solid-fuel",
 		category = "chemistry-or-cryogenics",
 		energy_required = 1,
@@ -1365,6 +1430,7 @@ data:extend({
 		type = "recipe",
 		name = "invar-plate",
 		category = "alloying",
+		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
 		ingredients = {
@@ -1378,6 +1444,7 @@ data:extend({
 		type = "recipe",
 		name = "steel-plate",
 		category = "alloying",
+		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
 		ingredients = {
@@ -1394,6 +1461,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/steel-titanium-plate.png",
 		category = "alloying",
 		subgroup = "selene-resources",
+		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
 		ingredients = {
@@ -1407,6 +1475,7 @@ data:extend({
 		type = "recipe",
 		name = "duralumin-plate",
 		category = "alloying",
+		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
 		ingredients = {
@@ -1420,6 +1489,7 @@ data:extend({
 		type = "recipe",
 		name = "caelium-plate",
 		category = "alloying",
+		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
 		ingredients = {
@@ -1433,6 +1503,7 @@ data:extend({
 		type = "recipe",
 		name = "magnalium-plate",
 		category = "alloying",
+		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
 		ingredients = {
@@ -1546,6 +1617,15 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "cobalt-cable",
+		category = "electronics-or-assembling",
+		enabled = false,
+		ingredients = {{type = "item", name = "cobalt-plate", amount = 1}},
+		results = {{type="item", name="cobalt-cable", amount=2}},
+		allow_productivity = true
+	},
+	{
+		type = "recipe",
 		name = "glass-lens",
 		category = "convecting",
 		enabled = false,
@@ -1565,7 +1645,7 @@ data:extend({
 		ingredients = {
 			{type = "item", name = "copper-cable", amount = 1},
 			{type = "item", name = "silicon-ore", amount = 1},
-			{type = "item", name = "aluminum-plate", amount = 1},
+			{type = "item", name = "nickel-plate", amount = 1},
 		},
 		results = {{type="item", name="spark-plug", amount=1}},
 		allow_productivity = true
@@ -1577,7 +1657,7 @@ data:extend({
 		category = "assembly-or-robotics",
 		ingredients =
 		{
-		  {type = "item", name = "nickel-plate", amount = 1},
+		  {type = "item", name = "invar-plate", amount = 1},
 		  {type = "item", name = "iron-gear-wheel", amount = 1},
 		  {type = "item", name = "pipe", amount = 2},
 		  {type = "item", name = "spark-plug", amount = 1},
@@ -1876,19 +1956,62 @@ data:extend({
 		energy_required = 30,
 		ingredients =
 		{
-		 -- {type = "item", name = "indium-wafer", amount = 2},
-		  {type = "item", name = "lithium-plate", amount = 1},
-		  {type = "item", name = "osmium-superconductor", amount = 4},
-		  {type = "item", name = "graphene", amount = 8},
+		  {type = "item", name = "indium-wafer", amount = 4},
+		  {type = "item", name = "osmium-superconductor", amount = 8},
+		  {type = "item", name = "graphene", amount = 12},
+		  {type = "fluid", name = "hydroiodic-acid", amount = 10, ignored_by_stats = 5},
+		  {type = "fluid", name = "fluoroketone-cold", amount = 20, ignored_by_stats = 5},
+		},
+		results = {
+		  {type = "item", name = "quantum-processor", amount = 1},
+		  {type = "fluid", name = "fluoroketone-hot", amount = 10, temperature = 180, ignored_by_stats = 5, ignored_by_productivity = 5}
+		},
+		allow_productivity = true,
+		main_product = "quantum-processor",
+		enabled = false,
+	},
+	{
+		type = "recipe",
+		name = "quantum-tube",
+		category = "quantum",
+		subgroup = "outer-processes",
+		order = "d[quantum-tube]",
+		energy_required = 20,
+		ingredients =
+		{
+		  {type = "item", name = "lithium-plate", amount = 2},
+		  {type = "item", name = "cobalt-cable", amount = 4},
+		  {type = "item", name = "nanotube", amount = 20},
 		  {type = "fluid", name = "hydroiodic-acid", amount = 10, ignored_by_stats = 5},
 		  {type = "fluid", name = "fluoroketone-cold", amount = 10, ignored_by_stats = 5},
 		},
 		results = {
-		  {type = "item", name = "quantum-processor", amount = 1},
+		  {type = "item", name = "quantum-tube", amount = 1},
 		  {type = "fluid", name = "fluoroketone-hot", amount = 5, temperature = 180, ignored_by_stats = 5, ignored_by_productivity = 5}
 		},
 		allow_productivity = true,
-		main_product = "quantum-processor",
+		main_product = "quantum-tube",
+		enabled = false,
+	},
+	{
+		type = "recipe",
+		name = "altermagnet",
+		category = "quantum",
+		subgroup = "outer-processes",
+		order = "e[altermagnet]",
+		energy_required = 15,
+		ingredients =
+		{
+		  {type = "item", name = "neodymium-plate", amount = 4},
+		  {type = "item", name = "cobalt-cable", amount = 8},
+		  {type = "fluid", name = "fluoroketone-cold", amount = 10, ignored_by_stats = 5},
+		},
+		results = {
+		  {type = "item", name = "altermagnet", amount = 1},
+		  {type = "fluid", name = "fluoroketone-hot", amount = 5, temperature = 180, ignored_by_stats = 5, ignored_by_productivity = 5}
+		},
+		allow_productivity = true,
+		main_product = "altermagnet",
 		enabled = false,
 	},
 	--Circuits
@@ -1900,7 +2023,7 @@ data:extend({
 		{
 		  {type = "item", name = "iron-plate", amount = 2},
 		  {type = "item", name = "copper-cable", amount = 3},
-		  {type = "item", name = "lead-plate", amount = 1},
+		  --{type = "item", name = "lead-plate", amount = 1},
 		},
 		results = {{type="item", name="electronic-circuit", amount=1}},
 		enabled = false,
@@ -1963,9 +2086,9 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "processing-unit", amount = 8},
-		  {type = "item", name = "motherboard", amount = 4},
+		  {type = "item", name = "motherboard", amount = 3},
 		  {type = "item", name = "cooling-system", amount = 8},
-		  {type = "item", name = "supercapacitor", amount = 3},
+		  {type = "item", name = "supercapacitor", amount = 4},
 		},
 		results = {{type="item", name="computing-core", amount=1}},
 		allow_productivity = true
@@ -1979,7 +2102,9 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "computing-core", amount = 12},
-		  {type = "item", name = "quantum-processor", amount = 20},
+		  {type = "item", name = "quantum-processor", amount = 10},
+		  {type = "item", name = "quantum-tube", amount = 20},
+		  {type = "item", name = "altermagnet", amount = 12},
 		},
 		results = {{type="item", name="quantum-supercomputer", amount=1}},
 		allow_productivity = true
@@ -3101,7 +3226,9 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "speed-module", amount = 4},
+		  {type = "item", name = "steel-plate", amount = 8},
+		  {type = "item", name = "advanced-circuit", amount = 4},
+		  {type = "item", name = "engine-unit", amount = 4},
 		  {type = "item", name = "assembling-machine-2", amount = 2}
 		},
 		results = {{type="item", name="assembling-machine-3", amount=1}}
@@ -3286,7 +3413,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "scrubber",
-		category = "robotics-or-scrubbing",
+		category = "robotics",
 		surface_conditions =
 		{
 		  {
@@ -3304,6 +3431,29 @@ data:extend({
 		  {type = "item", name = "pipe", amount = 10}
 		},
 		results = {{type="item", name="scrubber", amount=1}},
+		enabled = false
+	},
+	{
+		type = "recipe",
+		name = "wind-turbine",
+		category = "robotics",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 5000,
+			max = 5000
+		  }
+		},
+		energy_required = 10,
+		ingredients =
+		{
+		  {type = "item", name = "electric-engine-unit", amount = 4},
+		  {type = "item", name = "beryllium-plate", amount = 10},
+		  {type = "item", name = "graphene", amount = 10},
+		  {type = "item", name = "computing-core", amount = 1},
+		},
+		results = {{type="item", name="wind-turbine", amount=1}},
 		enabled = false
 	},
 	{
@@ -3387,7 +3537,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "engine-unit", amount = 2},
-		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "integrated-circuit", amount = 3},
 		  {type = "item", name = "sulfur", amount = 5},
 		  {type = "fluid", name = "petroleum-gas", amount = 10}
 		},
@@ -3463,6 +3613,98 @@ data:extend({
 		energy_required = 10,
 		results = {{type="item", name="nuclear-science-pack", amount=1}},
 		allow_productivity = true
+	},
+	{
+		type = "recipe",
+		name = "genetic-science-pack",
+		category = "genetics",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 1200,
+			max = 1200
+		  }
+		},
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "cobalt-plate", amount = 2},
+		  {type = "fluid", name = "adenine", amount = 10},
+		  {type = "fluid", name = "thymine", amount = 10},
+		  {type = "fluid", name = "guanine", amount = 10},
+		  {type = "fluid", name = "cytosine", amount = 10},
+		},
+		energy_required = 10,
+		results = {{type="item", name="genetic-science-pack", amount=1}},
+		allow_productivity = true
+	},
+	
+	
+	{
+		type = "recipe",
+		name = "cryogenic-science-pack",
+		category = "cryogenics",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 300,
+			max = 300
+		  }
+		},
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "ice", amount = 3},
+		  {type = "item", name = "lithium-plate", amount = 1},
+		  {type = "fluid", name = "fluoroketone-cold", amount = 6, ignored_by_stats = 3}
+		},
+		energy_required = 15,
+		results =
+		{
+		  {type = "item", name = "cryogenic-science-pack", amount = 1},
+		  {type = "fluid", name = "fluoroketone-hot", amount = 3, ignored_by_stats = 3, ignored_by_productivity = 3}
+		},
+		main_product = "cryogenic-science-pack",
+		allow_productivity = true,
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.040, g = 0.186, b = 1.000, a = 1.000}, -- #0a2fffff
+		  secondary = {r = 0.200, g = 0.400, b = 1.000, a = 1.000}, -- #3366ffff
+		  tertiary = {r = 0.600, g = 0.651, b = 1.000, a = 1.000}, -- #99a6ffff
+		  quaternary = {r = 0.100, g = 0.300, b = 0.500, a = 1.000}, -- #194c7fff
+		}
+	},
+	{
+		type = "recipe",
+		name = "promethium-science-pack",
+		energy_required = 15,
+		surface_conditions =
+		{
+		  {
+			property = "gravity",
+			min = 0,
+			max = 0
+		  }
+		},
+		enabled = false,
+		allow_productivity = true,
+		category = "synthesis",
+		ingredients =
+		{
+		  {type = "item", name = "mischmetal-plate", amount = 10},
+		 -- {type = "item", name = "thorium-232", amount = 1},
+		  {type = "fluid", name = "fusion-plasma", amount = 10}
+		},
+		results = {{type="item", name="promethium-science-pack", amount=10}},
+		crafting_machine_tint =
+		{
+		  primary = {r = 0, g = 0, b = 0.1, a = 1},
+		  secondary = {r = 0, g = 0, b = 0.4, a = 1},
+		  tertiary = {r = 0.1, g = 0.1, b = 0.4, a = 1},
+		  quaternary = {r = 0, g = 0, b = 0.1, a = 1},
+		}
 	},
 	-- Military
 	
@@ -3542,6 +3784,22 @@ data:extend({
 		results = {{type="item", name="slowdown-capsule", amount=1}}
 	},
 	
+	
+	{
+		type = "recipe",
+		name = "gun-turret",
+		enabled = false,
+		energy_required = 8,
+		ingredients =
+		{
+		  {type = "item", name = "iron-gear-wheel", amount = 8},
+		  {type = "item", name = "copper-plate", amount = 5},
+		  {type = "item", name = "submachine-gun", amount = 1},
+		  {type = "item", name = "iron-plate", amount = 10}
+		},
+		results = {{type="item", name="gun-turret", amount=1}}
+	},
+	
 	{
 		type = "recipe",
 		name = "railgun",
@@ -3553,6 +3811,7 @@ data:extend({
 		  {type = "item", name = "iridium-plate", amount = 10},
 		  {type = "item", name = "osmium-superconductor", amount = 10},
 		  {type = "item", name = "quantum-supercomputer", amount = 20},
+		  {type = "item", name = "nanotube", amount = 30},
 		},
 		results = {{type="item", name="railgun", amount=1}},
 		crafting_machine_tint =
@@ -3572,9 +3831,9 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "quantum-supercomputer", amount = 50},
-		  {type = "item", name = "iridium-plate", amount = 30},
-		  {type = "item", name = "osmium-superconductor", amount = 50},
-		  {type = "item", name = "graphene", amount = 20},
+		  {type = "item", name = "iridium-plate", amount = 20},
+		  {type = "item", name = "osmium-superconductor", amount = 40},
+		  {type = "item", name = "railgun", amount = 1},
 		},
 		results = {{type="item", name="railgun-turret", amount=1}},
 		crafting_machine_tint =
@@ -4066,22 +4325,22 @@ data:extend({
     },
     {
       type = "recipe",
-      name = "sunnycomb-processing",
+      name = "teflilly-processing",
       category = "organic-or-hand-crafting",
-      icon = "__outer_moons__/graphics/icons/sunnycomb-processing.png",
+      icon = "__outer_moons__/graphics/icons/teflilly-processing.png",
       enabled = false,
       energy_required = 5,
       ingredients =
       {
-        {type = "item", name = "sunnycomb", amount = 1},
+        {type = "item", name = "teflilly", amount = 5},
       },
       results =
       {
-		{type = "item", name = "sunnycomb-seed", amount = 1, probability = 0.02},
-        {type = "item", name = "sunnylattice", amount = 1},
+		{type = "item", name = "teflilly-seed", amount = 1, probability = 0.02},
+        {type = "fluid", name = "tetrafluoroethylene", amount = 10},
       },
       subgroup = "agriculture-processes",
-      order = "b[agriculture]-b[sunnycomb-processing]",
+      order = "b[agriculture]-b[teflilly-processing]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -4592,11 +4851,12 @@ data:extend({
 		},
 		results = {{type="item", name="stone", amount=1}}
 	},
+	
 	{
 		type = "recipe",
 		name = "artificial-cuticle-soil",
 		icon = "__outer_moons__/graphics/icons/artificial-cuticle-soil.png",
-		category = "crafting",
+		category = "organic",
 		surface_conditions =
 		{
 		  {
@@ -5070,6 +5330,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "speed-module",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5082,6 +5343,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "speed-module-2",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5095,6 +5357,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "speed-module-3",
+		category = "electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5108,6 +5371,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "productivity-module",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5120,6 +5384,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "productivity-module-2",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5133,7 +5398,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "productivity-module-3",
-		category = "electronics",
+		category = "electronics-quantum",
 		enabled = false,
 		energy_required = 60,
 		ingredients =
@@ -5147,6 +5412,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "efficiency-module",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5159,6 +5425,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "efficiency-module-2",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5172,6 +5439,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "efficiency-module-3",
+		category = "electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5185,6 +5453,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "quality-module",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5197,6 +5466,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "quality-module-2",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5210,6 +5480,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "quality-module-3",
+		category = "electronics-quantum",
 		enabled = false,
 		ingredients =
 		{
@@ -5263,6 +5534,7 @@ data:extend({
 		type = "recipe",
 		name = "transport-belt",
 		energy_required = 1,
+		enabled = false,
 		ingredients =
 		{
 		  {type = "item", name = "iron-plate", amount = 1},
@@ -5608,13 +5880,54 @@ data:extend({
 	--Scrubbing
 	{
 		type = "recipe",
+		name = "filter",
+		icon = "__outer_moons__/graphics/icons/filter.png",
+		energy_required = 10,
+		enabled = false,
+		--hidden_in_factoriopedia = true,
+		category = "robotics",
+		subgroup = "aiolos-processes",
+		order = "a",
+		ingredients = {
+			{type = "item", name = "sunnylattice", amount = 1},
+			{type = "item", name = "plastic-bar", amount = 8},
+			{type = "item", name = "beryllium-plate", amount = 1},
+		},
+		results =
+		{
+		  {type = "item", name = "filter", amount = 1},
+		},
+	},
+	{
+		type = "recipe",
+		name = "filter-cleaning",
+		icon = "__outer_moons__/graphics/icons/filter-cleaning.png",
+		energy_required = 10,
+		enabled = false,
+		--hidden_in_factoriopedia = true,
+		category = "scrubbing",
+		subgroup = "aiolos-processes",
+		order = "a",
+		ingredients = {
+			{type = "item", name = "used-filter", amount = 1},
+			{type = "item", name = "lye", amount = 2},
+		},
+		results =
+		{
+		  {type = "item", name = "filter", amount = 1},
+		},
+	},
+	{
+		type = "recipe",
 		name = "nauvis-scrubbing",
 		icon = "__outer_moons__/graphics/icons/fluid/nauvis-scrubbing.png",
 		energy_required = 10,
-		enabled = true,
+		enabled = false,
 		--hidden_in_factoriopedia = true,
 		category = "scrubbing",
 		subgroup = "scrubber-recipes",
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		order = "a",
 		surface_conditions =
 		{
@@ -5641,7 +5954,9 @@ data:extend({
 		name = "selene-scrubbing",
 		icon = "__outer_moons__/graphics/icons/fluid/selene-scrubbing.png",
 		energy_required = 10,
-		enabled = true,
+		enabled = false,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		--hidden_in_factoriopedia = true,
 		category = "scrubbing",
 		subgroup = "scrubber-recipes",
@@ -5671,7 +5986,9 @@ data:extend({
 		name = "vulcanus-scrubbing",
 		icon = "__outer_moons__/graphics/icons/fluid/vulcanus-scrubbing.png",
 		energy_required = 10,
-		enabled = true,
+		enabled = false,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		--hidden_in_factoriopedia = true,
 		category = "scrubbing",
 		subgroup = "scrubber-recipes",
@@ -5701,7 +6018,9 @@ data:extend({
 		name = "gleba-scrubbing",
 		icon = "__outer_moons__/graphics/icons/fluid/gleba-scrubbing.png",
 		energy_required = 10,
-		enabled = true,
+		enabled = false,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		--hidden_in_factoriopedia = true,
 		category = "scrubbing",
 		subgroup = "scrubber-recipes",
@@ -5731,7 +6050,9 @@ data:extend({
 		name = "fulgora-scrubbing",
 		icon = "__outer_moons__/graphics/icons/fluid/fulgora-scrubbing.png",
 		energy_required = 10,
-		enabled = true,
+		enabled = false,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		--hidden_in_factoriopedia = true,
 		category = "scrubbing",
 		subgroup = "scrubber-recipes",
@@ -5761,7 +6082,9 @@ data:extend({
 		name = "mefitis-scrubbing",
 		icon = "__outer_moons__/graphics/icons/fluid/mefitis-scrubbing.png",
 		energy_required = 10,
-		enabled = true,
+		enabled = false,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		--hidden_in_factoriopedia = true,
 		category = "scrubbing",
 		subgroup = "scrubber-recipes",
@@ -5791,7 +6114,9 @@ data:extend({
 		name = "aquilo-scrubbing",
 		icon = "__outer_moons__/graphics/icons/fluid/aquilo-scrubbing.png",
 		energy_required = 10,
-		enabled = true,
+		enabled = false,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		--hidden_in_factoriopedia = true,
 		category = "scrubbing",
 		subgroup = "scrubber-recipes",
@@ -5820,7 +6145,9 @@ data:extend({
 		name = "aiolos-scrubbing",
 		icon = "__outer_moons__/graphics/icons/fluid/aiolos-scrubbing.png",
 		energy_required = 10,
-		enabled = true,
+		enabled = false,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		--hidden_in_factoriopedia = true,
 		category = "scrubbing",
 		subgroup = "scrubber-recipes",
@@ -5850,7 +6177,9 @@ data:extend({
 		name = "feronia-scrubbing",
 		icon = "__outer_moons__/graphics/icons/fluid/feronia-scrubbing.png",
 		energy_required = 10,
-		enabled = true,
+		enabled = false,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		--hidden_in_factoriopedia = true,
 		category = "scrubbing",
 		subgroup = "scrubber-recipes",
@@ -5875,6 +6204,35 @@ data:extend({
 		  {type = "fluid", name = "carbon-dioxide", amount = 10},
 		},
 	},
+	-- Aiolos Ag
+    {
+      type = "recipe",
+      name = "sunnycomb-processing",
+      category = "organic-or-hand-crafting",
+      icon = "__outer_moons__/graphics/icons/sunnycomb-processing.png",
+      enabled = false,
+      energy_required = 5,
+      ingredients =
+      {
+        {type = "item", name = "sunnycomb", amount = 1},
+      },
+      results =
+      {
+		{type = "item", name = "sunnycomb-seed", amount = 1, probability = 0.02},
+        {type = "item", name = "sunnylattice", amount = 1},
+      },
+      subgroup = "aiolos-agriculture",
+      order = "b[agriculture]-b[sunnycomb-processing]",
+      allow_productivity = true,
+      auto_recycle = false,
+      crafting_machine_tint =
+      {
+        primary = {r = 0.65, g = 0.66, b = 0.42, a = 1.000},
+        secondary = {r = 0.75, g = 0.76, b = 0.52, a = 1.000}
+      }
+    },  
+	--Feronia
+	
 	-- Asteroids
 	{
 		type = "recipe",
@@ -6159,6 +6517,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6174,6 +6534,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6189,6 +6551,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6204,6 +6568,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6219,6 +6585,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6234,6 +6602,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6249,6 +6619,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6264,6 +6636,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6279,6 +6653,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6294,6 +6670,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6309,6 +6687,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6324,6 +6704,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6339,6 +6721,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6354,6 +6738,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6369,6 +6755,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6384,6 +6772,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6399,6 +6789,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6414,6 +6806,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6429,6 +6823,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "flaring",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6445,6 +6841,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6465,6 +6863,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6485,6 +6885,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6505,6 +6907,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6525,6 +6929,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6545,6 +6951,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6565,6 +6973,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6585,6 +6995,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6605,6 +7017,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6625,6 +7039,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6645,6 +7061,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6665,6 +7083,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6685,6 +7105,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6705,6 +7127,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6725,6 +7149,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6745,6 +7171,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6765,6 +7193,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6785,6 +7215,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6805,6 +7237,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6825,6 +7259,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6845,6 +7281,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6865,6 +7303,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6885,6 +7325,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6905,6 +7347,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6925,6 +7369,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",
@@ -6945,6 +7391,8 @@ data:extend({
 		energy_required = 1,
 		enabled = true,
 		hidden_in_factoriopedia = true,
+		hide_from_player_crafting = true,
+		hide_from_stats = true,
 		category = "venting",
 		subgroup = "fluid-recipes",
 		order = "a",

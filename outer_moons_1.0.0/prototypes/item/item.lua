@@ -202,6 +202,27 @@ data:extend({
         stack_size = 50,
         weight = 2 * kg
     },
+	{
+        type = "item",
+        name = "indium-ore",
+        group = "intermediate-products",
+        icon = "__outer_moons__/graphics/icons/indium-ore.png",
+		pictures =
+		{
+		  { size = 64, filename = "__outer_moons__/graphics/icons/indium-ore.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/indium-ore-2.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/indium-ore-3.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/indium-ore-4.png", scale = 0.5, mipmap_count = 4 },
+		},
+        subgroup = "feronia-processes",
+		default_import_location = "feronia",
+        order = "c[indium-ore]",
+        inventory_move_sound = item_sounds.resource_inventory_move,
+        pick_sound = item_sounds.resource_inventory_pickup,
+        drop_sound = item_sounds.resource_inventory_move,
+        stack_size = 50,
+        weight = 2 * kg
+    },
 	-- Plates
 	{
 		type = "item",
@@ -389,11 +410,24 @@ data:extend({
 	
 	{
 		type = "item",
+		name = "indium-wafer",		
+        group = "intermediate-products",
+		icon = "__outer_moons__/graphics/icons/indium-wafer.png",
+		subgroup = "outer-processes",
+		order = "a[indium-wafer]",
+		inventory_move_sound = item_sounds.metal_small_inventory_move,
+		pick_sound = item_sounds.metal_small_inventory_pickup,
+		drop_sound = item_sounds.metal_small_inventory_move,
+		stack_size = 100,
+		weight = 2 * kg,
+	},
+	{
+		type = "item",
 		name = "cerium-plate",		
         group = "intermediate-products",
 		icon = "__outer_moons__/graphics/icons/cerium-plate.png",
 		subgroup = "outer-processes",
-		order = "a[cerium-plate]",
+		order = "b[cerium-plate]",
 		inventory_move_sound = item_sounds.metal_small_inventory_move,
 		pick_sound = item_sounds.metal_small_inventory_pickup,
 		drop_sound = item_sounds.metal_small_inventory_move,
@@ -406,7 +440,7 @@ data:extend({
         group = "intermediate-products",
 		icon = "__outer_moons__/graphics/icons/lanthanum-plate.png",
 		subgroup = "outer-processes",
-		order = "b[lanthanum-plate]",
+		order = "c[lanthanum-plate]",
 		inventory_move_sound = item_sounds.metal_small_inventory_move,
 		pick_sound = item_sounds.metal_small_inventory_pickup,
 		drop_sound = item_sounds.metal_small_inventory_move,
@@ -419,7 +453,7 @@ data:extend({
         group = "intermediate-products",
 		icon = "__outer_moons__/graphics/icons/neodymium-plate.png",
 		subgroup = "outer-processes",
-		order = "c[neodymium-plate]",
+		order = "d[neodymium-plate]",
 		inventory_move_sound = item_sounds.metal_small_inventory_move,
 		pick_sound = item_sounds.metal_small_inventory_pickup,
 		drop_sound = item_sounds.metal_small_inventory_move,
@@ -653,7 +687,7 @@ data:extend({
 		pick_sound = item_sounds.wire_inventory_pickup,
 		drop_sound = item_sounds.wire_inventory_move,
 		stack_size = 200,
-		weight = 0.25 * kg,
+		weight = 0.5 * kg,
 		ingredient_to_weight_coefficient = 0.25
 	},
 	{
@@ -666,7 +700,7 @@ data:extend({
 		pick_sound = item_sounds.wire_inventory_pickup,
 		drop_sound = item_sounds.wire_inventory_move,
 		stack_size = 200,
-		weight = 0.25 * kg,
+		weight = 1 * kg,
 		ingredient_to_weight_coefficient = 0.25
 	},
 	{
@@ -674,12 +708,12 @@ data:extend({
 		name = "cobalt-cable",
 		icon = "__outer_moons__/graphics/icons/cobalt-cable.png",
 		subgroup = "circuit-parts",
-		order = "a[basic-intermediates]-d[fiber-optic]",
+		order = "a[basic-intermediates]-e[cobalt-cable]",
 		inventory_move_sound = item_sounds.wire_inventory_move,
 		pick_sound = item_sounds.wire_inventory_pickup,
 		drop_sound = item_sounds.wire_inventory_move,
 		stack_size = 200,
-		weight = 0.25 * kg,
+		weight = 2 * kg,
 		ingredient_to_weight_coefficient = 0.25
 	},
 	{
@@ -841,6 +875,30 @@ data:extend({
 		drop_sound = item_sounds.electric_small_inventory_move,
 		stack_size = 100,
 		weight = 2 * kg
+	},
+	{
+		type = "item",
+		name = "quantum-tube",
+		icon = "__outer_moons__/graphics/icons/quantum-tube.png",
+		subgroup = "circuit-parts",
+		order = "i[quantum-tube]",
+		inventory_move_sound = item_sounds.electric_small_inventory_move,
+		pick_sound = item_sounds.electric_small_inventory_pickup,
+		drop_sound = item_sounds.electric_small_inventory_move,
+		stack_size = 100,
+		weight = 5 * kg
+	},
+	{
+		type = "item",
+		name = "altermagnet",
+		icon = "__outer_moons__/graphics/icons/altermagnet.png",
+		subgroup = "circuit-parts",
+		order = "j[altermagnet]",
+		inventory_move_sound = item_sounds.electric_small_inventory_move,
+		pick_sound = item_sounds.electric_small_inventory_pickup,
+		drop_sound = item_sounds.electric_small_inventory_move,
+		stack_size = 100,
+		weight = 5 * kg
 	},
 	{
 		type = "item",
@@ -1426,6 +1484,26 @@ data:extend({
 		spoil_result = "spoilage",
 		capsule_action = item_effects.yumako_regen
 	},
+	
+	{
+		type = "item",
+		name = "ashwood",
+		icon = "__outer_moons__/graphics/icons/ashwood.png",
+		subgroup = "vulcanus-agriculture",
+		order = "a[agriculture]-a[ashwood]",
+		inventory_move_sound = item_sounds.wood_inventory_move,
+		pick_sound = item_sounds.wood_inventory_pickup,
+		drop_sound = item_sounds.wood_inventory_move,
+		fuel_category = "chemical",
+		fuel_value = "5MJ",
+		stack_size = 50,
+		default_import_location = "vulcanus",
+		weight = 1 * kg,
+		spoil_ticks = 3 * minute,
+		spoil_result = "carbon",
+		plant_result = "ashland-lichen-plant",
+		place_result = "ashland-lichen-plant",
+	},
 	--Aiolos
 	{
 		type = "capsule",
@@ -1547,7 +1625,7 @@ data:extend({
 		type = "capsule",
 		name = "sunnylattice",
 		icon = "__outer_moons__/graphics/icons/sunnylattice.png",
-		subgroup = "agriculture-products",
+		subgroup = "aiolos-agriculture",
 		order = "a[organic-processing]-a[sunnylattice]",
 		inventory_move_sound = space_age_item_sounds.agriculture_inventory_move,
 		pick_sound = space_age_item_sounds.agriculture_inventory_pickup,
@@ -2316,7 +2394,7 @@ data:extend({
 		drop_sound = item_sounds.mechanical_inventory_move,
 		place_result = "adv-beacon",
 		stack_size = 20,
-		weight = 5 * kg,
+		weight = 100 * kg,
 	},
 	{
 		type = "item",
@@ -2408,8 +2486,8 @@ data:extend({
 		pick_sound = item_sounds.metal_large_inventory_pickup,
 		drop_sound = item_sounds.metal_large_inventory_move,
 		place_result = "thermal-plant",
-		stack_size = 20,
-		weight = 50 * kg,
+		stack_size = 10,
+		weight = 200 * kg,
 	},	
 	{
 		type = "item",

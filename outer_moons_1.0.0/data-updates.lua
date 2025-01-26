@@ -68,23 +68,226 @@ if data.raw.resource["fluorine-vent"] then
 end
 
 --- TECH
-data.raw["technology"]["space-science-pack"].icon = "__outer_moons__/graphics/technology/space-science-pack.png"
-data.raw["recipe"]["space-science-pack"].icon = "__outer_moons__/graphics/icons/space-science-pack.png"
+data.raw.technology["electronics"].icon = "__outer_moons__/graphics/technology/electronic-circuit.png"
+data.raw.technology["electronics"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "copper-cable"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "electronic-circuit"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "lab"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "small-electric-pole"
+  }
+}
+data.raw.technology["steam-power"].research_trigger = { type = "craft-item", item = "lead-plate", count = 20 }
+data.raw.technology["automation"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "assembling-machine-1"
+  }
+}
+data.raw.technology["steel-processing"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "invar-plate"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "steel-plate"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "steel-chest"
+  }
+}
+data.raw.technology["fast-inserter"].icon = "__outer_moons__/graphics/technology/fast-inserter.png"
+data.raw.technology["fast-inserter"].prerequisites = {"automation-science-pack", "inserter"}
+data.raw.technology["fast-inserter"].effects = 
+{
+  {
+	type = "unlock-recipe",
+	recipe = "fast-inserter"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "fast-long-handed-inserter"
+  }
+}
+data.raw.technology["bulk-inserter"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "bulk-inserter"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "bulk-long-handed-inserter"
+  },
+  {
+	type = "bulk-inserter-capacity-bonus",
+	modifier = 1
+  }
+}
+data.raw.technology["military"].unit =
+{
+  count = 10,
+  ingredients = {{"automation-science-pack", 1}},
+  time = 10
+}
+data.raw.technology["gun-turret"].prerequisites = { "military" }
+data.raw.technology["gun-turret"].unit =
+{
+  count = 15,
+  ingredients = {{"automation-science-pack", 1}},
+  time = 10
+}
+data.raw.technology["advanced-material-processing"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "steel-furnace-new"
+  }
+}
+data.raw.technology["engine"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "spark-plug"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "engine-unit"
+  }
+}
+data.raw.technology["engine"].unit =
+{
+  count = 50,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1}
+  },
+  time = 15
+}
+data.raw.technology["fluid-handling"].prerequisites = {"automation", "engine"}
+data.raw.technology["fluid-handling"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "small-storage-tank"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "storage-tank"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "large-storage-tank"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "pump"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "gas-vent"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "flare-stack"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "barrel"
+  }
+}
+data.raw.technology["logistics-2"].prerequisites = {"logistics", "logistic-science-pack", "steel-processing"}
+data.raw.technology["automation-2"].prerequisites = {"automation", "steel-processing", "advanced-circuit", "engine"}
+data.raw.technology["automobilism"].prerequisites = {"logistics-2", "multicylinder-engine"}
+data.raw.technology["railway"].prerequisites = {"logistics-2", "multicylinder-engine"}
+data.raw.technology["concrete"].prerequisites = {"advanced-material-processing", "silicon-processing", "convector"}
+data.raw.technology["laser"].prerequisites = {"battery", "convector", "chemical-science-pack"}
+data.raw.technology["defender"].prerequisites = {"military-science-pack", "robotics"}
+data.raw.technology["battery"].icon = "__outer_moons__/graphics/technology/battery.png"
+data.raw.technology["advanced-oil-processing"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "advanced-oil-processing"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "petroleum-gas-processing"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "heavy-oil-cracking"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "light-oil-cracking"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "solid-fuel"
+  }
+}
+data.raw.technology["low-density-structure"].prerequisites = {"alumina-processing", "chemical-science-pack"}
+data.raw.technology["sulfur-processing"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "sulfur-dioxide"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "sulfur"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "sulfuric-acid"
+  }
+}
+data.raw.technology["lubricant"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "lubricant"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "NaK-lubricant"
+  }
+}
 
-data.raw["technology"]["metallurgic-science-pack"].icon = "__outer_moons__/graphics/technology/metallurgic-science-pack.png"
-data.raw["recipe"]["metallurgic-science-pack"].icon = "__outer_moons__/graphics/icons/metallurgic-science-pack.png"
+data.raw.technology["space-science-pack"].icon = "__outer_moons__/graphics/technology/space-science-pack.png"
+data.raw.recipe["space-science-pack"].icon = "__outer_moons__/graphics/icons/space-science-pack.png"
 
-data.raw["technology"]["agricultural-science-pack"].icon = "__outer_moons__/graphics/technology/agricultural-science-pack.png"
-data.raw["recipe"]["agricultural-science-pack"].icon = "__outer_moons__/graphics/icons/agricultural-science-pack.png"
+data.raw.technology["metallurgic-science-pack"].icon = "__outer_moons__/graphics/technology/metallurgic-science-pack.png"
+data.raw.recipe["metallurgic-science-pack"].icon = "__outer_moons__/graphics/icons/metallurgic-science-pack.png"
 
-data.raw["technology"]["electromagnetic-science-pack"].icon = "__outer_moons__/graphics/technology/electromagnetic-science-pack.png"
-data.raw["recipe"]["electromagnetic-science-pack"].icon = "__outer_moons__/graphics/icons/electromagnetic-science-pack.png"
+data.raw.technology["agricultural-science-pack"].icon = "__outer_moons__/graphics/technology/agricultural-science-pack.png"
+data.raw.recipe["agricultural-science-pack"].icon = "__outer_moons__/graphics/icons/agricultural-science-pack.png"
 
-data.raw["technology"]["cryogenic-science-pack"].icon = "__outer_moons__/graphics/technology/cryogenic-science-pack.png"
-data.raw["recipe"]["cryogenic-science-pack"].icon = "__outer_moons__/graphics/icons/cryogenic-science-pack.png"
+data.raw.technology["electromagnetic-science-pack"].icon = "__outer_moons__/graphics/technology/electromagnetic-science-pack.png"
+data.raw.recipe["electromagnetic-science-pack"].icon = "__outer_moons__/graphics/icons/electromagnetic-science-pack.png"
 
-data.raw["technology"]["promethium-science-pack"].icon = "__outer_moons__/graphics/technology/deep-space-science-pack.png"
-data.raw["recipe"]["promethium-science-pack"].icon = "__outer_moons__/graphics/icons/deep-space-science-pack.png"
+data.raw.technology["cryogenic-science-pack"].icon = "__outer_moons__/graphics/technology/cryogenic-science-pack.png"
+data.raw.recipe["cryogenic-science-pack"].icon = "__outer_moons__/graphics/icons/cryogenic-science-pack.png"
+
+data.raw.technology["promethium-science-pack"].icon = "__outer_moons__/graphics/technology/deep-space-science-pack.png"
+data.raw.recipe["promethium-science-pack"].icon = "__outer_moons__/graphics/icons/deep-space-science-pack.png"
 -- Rocket Silo
 data.raw.technology["rocket-silo"].effects =
 {
@@ -346,6 +549,9 @@ data.raw.recipe["steam-condensation"].subgroup = "phase-recipes"
 data.raw.recipe["ice-melting"].subgroup = "phase-recipes"
 data.raw.recipe["acid-neutralisation"].subgroup = "phase-recipes"
 
+data.raw.recipe["burner-inserter"].enabled = false
+data.raw.recipe["iron-chest"].enabled = false
+
 data.raw["cargo-wagon"]["cargo-wagon"].quality_affects_inventory_size = true
 data.raw["fluid-wagon"]["fluid-wagon"].quality_affects_capacity = true
 
@@ -385,12 +591,12 @@ data.raw.item["centrifuge"].icon = "__outer_moons__/graphics/icons/centrifuge.pn
 data.raw.item["tungsten-plate"].icon = "__outer_moons__/graphics/icons/tungsten-plate.png"
 data.raw.item["tungsten-carbide"].icon = "__outer_moons__/graphics/icons/tungsten-carbide.png"
 
-data.raw["assembling-machine"]["electromagnetic-plant"].crafting_categories = {"electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling", "electronics-or-convecting"}
+data.raw["assembling-machine"]["electromagnetic-plant"].crafting_categories = {"electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling", "electronics-or-convecting", "electronics-quantum",}
 data.raw["assembling-machine"]["foundry"].crafting_categories = {"metallurgy", "pressing", "crafting-with-fluid-or-metallurgy", "metallurgy-or-assembling", "metallurgy-or-adv-metallurgy"}
 
-data.raw["assembling-machine"]["assembling-machine-1"].crafting_categories = {"crafting", "basic-crafting", "advanced-crafting", "assembly-or-robotics"}
-data.raw["assembling-machine"]["assembling-machine-2"].crafting_categories = {"basic-crafting", "crafting", "advanced-crafting", "crafting-with-fluid", "assembly-or-robotics", "fluid-assembly-or-robotics"}
-data.raw["assembling-machine"]["assembling-machine-3"].crafting_categories = {"basic-crafting", "crafting", "advanced-crafting", "crafting-with-fluid", "assembly-or-robotics", "fluid-assembly-or-robotics"}
+data.raw["assembling-machine"]["assembling-machine-1"].crafting_categories = {"crafting", "basic-crafting", "advanced-crafting", "crafting-with-fluid", "assembly-or-robotics", "assembly-electronics-quantum",}
+data.raw["assembling-machine"]["assembling-machine-2"].crafting_categories = {"basic-crafting", "crafting", "advanced-crafting", "crafting-with-fluid", "assembly-or-robotics", "fluid-assembly-or-robotics", "assembly-electronics-quantum",}
+data.raw["assembling-machine"]["assembling-machine-3"].crafting_categories = {"basic-crafting", "crafting", "advanced-crafting", "crafting-with-fluid", "assembly-or-robotics", "fluid-assembly-or-robotics", "assembly-electronics-quantum",}
 
 data.raw.item["lab"].subgroup = "labs"
 data.raw.item["biolab"].subgroup = "labs"
@@ -537,6 +743,10 @@ data.raw.recipe["iron-bacteria-cultivation"].order = "c[bacteria]-b[cultivation]
 
 data.raw.item["foundry"].order = "f[recycler]"
 data.raw.item["recycler"].order = "h[recycler]"
+
+
+data.raw.item["quantum-processor"].subgroup = "circuit-parts"
+data.raw.item["quantum-processor"].order = "h[quantum-processor]"
 
 data.raw.item["superconductor"].icon = "__outer_moons__/graphics/icons/superconductor.png"
 data.raw.item["supercapacitor"].icon = "__outer_moons__/graphics/icons/supercapacitor.png"

@@ -30,6 +30,47 @@ standard_status_colors = function()
   }
 end
 
+function assembler1pipepictures()
+  return
+  {
+    north =
+    {
+      filename = "__outer_moons__/graphics/entity/assembling-machine-1/assembling-machine-1-pipe-N.png",
+      priority = "extra-high",
+      width = 71,
+      height = 38,
+      shift = util.by_pixel(2.25, 13.5),
+      scale = 0.5
+    },
+    east =
+    {
+      filename = "__outer_moons__/graphics/entity/assembling-machine-1/assembling-machine-1-pipe-E.png",
+      priority = "extra-high",
+      width = 42,
+      height = 76,
+      shift = util.by_pixel(-24.5, 1),
+      scale = 0.5
+    },
+    south =
+    {
+      filename = "__outer_moons__/graphics/entity/assembling-machine-1/assembling-machine-1-pipe-S.png",
+      priority = "extra-high",
+      width = 88,
+      height = 61,
+      shift = util.by_pixel(0, -31.25),
+      scale = 0.5
+    },
+    west =
+    {
+      filename = "__outer_moons__/graphics/entity/assembling-machine-1/assembling-machine-1-pipe-W.png",
+      priority = "extra-high",
+      width = 39,
+      height = 73,
+      shift = util.by_pixel(25.75, 1.25),
+      scale = 0.5
+    }
+  }
+end
 
 shadowlesspipecoverspictures = function()
   return
@@ -256,7 +297,103 @@ data:extend({
     },
 	
   },
-  
+  {
+    type = "assembling-machine",
+    name = "assembling-machine-1",
+    icon = "__base__/graphics/icons/assembling-machine-1.png",
+    flags = {"placeable-neutral", "placeable-player", "player-creation"},
+    minable = {mining_time = 0.2, result = "assembling-machine-1"},
+    max_health = 300,
+    corpse = "assembling-machine-1-remnants",
+    dying_explosion = "assembling-machine-1-explosion",
+    icon_draw_specification = {shift = {0, -0.3}},
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 70
+      }
+    },
+    collision_box = {{-1.2, -1.2}, {1.2, 1.2}},
+    selection_box = {{-1.5, -1.5}, {1.5, 1.5}},
+    damaged_trigger_effect = hit_effects.entity(),
+    fast_replaceable_group = "assembling-machine",
+    next_upgrade = "assembling-machine-2",
+    circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
+    circuit_connector = circuit_connector_definitions["assembling-machine"],
+    alert_icon_shift = util.by_pixel(0, -12),
+    fluid_boxes =
+    {
+      {
+        production_type = "input",
+        pipe_picture = assembler1pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 1000,
+        pipe_connections = {{ flow_direction="input", direction = defines.direction.north, position = {0, -1} }},
+        secondary_draw_orders = { north = -1 }
+      },
+      {
+        production_type = "output",
+        pipe_picture = assembler1pipepictures(),
+        pipe_covers = pipecoverspictures(),
+        volume = 1000,
+        pipe_connections = {{ flow_direction="output", direction = defines.direction.south, position = {0, 1} }},
+        secondary_draw_orders = { north = -1 }
+      }
+    },
+    fluid_boxes_off_when_no_fluid_recipe = true,
+    graphics_set =
+    {
+      animation =
+      {
+        layers =
+        {
+          {
+            filename = "__base__/graphics/entity/assembling-machine-1/assembling-machine-1.png",
+            priority="high",
+            width = 214,
+            height = 226,
+            frame_count = 32,
+            line_length = 8,
+            shift = util.by_pixel(0, 2),
+            scale = 0.5
+          },
+          {
+            filename = "__base__/graphics/entity/assembling-machine-1/assembling-machine-1-shadow.png",
+            priority="high",
+            width = 190,
+            height = 165,
+            line_length = 1,
+            repeat_count = 32,
+            draw_as_shadow = true,
+            shift = util.by_pixel(8.5, 5),
+            scale = 0.5
+          }
+        }
+      }
+    },
+    crafting_categories = {"crafting", "basic-crafting", "advanced-crafting"},
+    crafting_speed = 0.5,
+    energy_source =
+    {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = { pollution = 4 }
+    },
+    energy_usage = "75kW",
+    open_sound = sounds.machine_open,
+    close_sound = sounds.machine_close,
+    allowed_effects = {"speed", "consumption", "pollution"},
+    effect_receiver = {uses_module_effects = false, uses_beacon_effects = false, uses_surface_effects = true},
+    impact_category = "metal",
+    working_sound =
+    {
+      sound = { filename = "__base__/sound/assembling-machine-t1-1.ogg", volume = 0.5 },
+      audible_distance_modifier = 0.5,
+      fade_in_ticks = 4,
+      fade_out_ticks = 20
+    }
+  },
   {
     type = "assembling-machine",
     name = "convector",
@@ -628,9 +765,9 @@ data:extend({
       idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
       apparent_volume = 1.5,
     },
-    crafting_categories = {"robotics", "assembly-or-robotics", "fluid-assembly-or-robotics", "robotics-or-scrubbing", },
+    crafting_categories = {"robotics", "assembly-or-robotics", "fluid-assembly-or-robotics", },
 
-    crafting_speed = 1.5,
+    crafting_speed = 2,
     energy_source =
     {
       type = "electric",
@@ -661,7 +798,7 @@ data:extend({
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 1.5,
     effect_receiver = { base_effect = { productivity = 0.5 }},
-    module_slots = 8,
+    module_slots = 5,
     icon_draw_specification = {scale = 2, shift = {0, -0.3}},
     icons_positioning =
     {
@@ -955,7 +1092,7 @@ data:extend({
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 1.5,
     effect_receiver = { base_effect = { productivity = 0.5 }},
-    module_slots = 4,
+    module_slots = 5,
     icon_draw_specification = {scale = 2, shift = {0, -0.3}},
     icons_positioning =
     {
@@ -963,7 +1100,7 @@ data:extend({
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     crafting_categories = {"electrolysis", "adv-electrolysis"},
-    crafting_speed = 4,
+    crafting_speed = 2,
     energy_source =
     {
       type = "electric",
@@ -1373,10 +1510,10 @@ data:extend({
     {
       type = "burner",
       fuel_categories = {"chemical"},
-      effectivity = 2,
+      effectivity = 3,
       fuel_inventory_size = 1,
       burnt_inventory_size = 0,
-      emissions_per_minute = { pollution = 8 },
+      emissions_per_minute = { pollution = 200 },
 	  smoke =
 	  {
 		  {
@@ -2733,7 +2870,7 @@ data:extend({
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     crafting_categories = {"smelting", "alloying"},
     result_inventory_size = 1,
-    crafting_speed = 2,
+    crafting_speed = 3,
     energy_usage = "180kW",
     source_inventory_size = 1,
     energy_source =
@@ -4121,7 +4258,7 @@ data:extend({
         damaged_trigger_effect = hit_effects.entity(),
         module_slots = 0,
         allowed_effects = { "consumption", "speed" },
-        crafting_categories = { "scrubbing", "robotics-or-scrubbing" },
+        crafting_categories = { "scrubbing", },
         crafting_speed = 1.5,
         source_inventory_size = 1,
         result_inventory_size = 1,
@@ -4325,10 +4462,10 @@ data:extend({
         selection_box = { { -3.5, -3.5 }, { 3.5, 3.5 } },
 		effect_receiver = { base_effect = { productivity = 0.5 }},
         damaged_trigger_effect = hit_effects.entity(),
-        module_slots = 8,
+        module_slots = 5,
 		allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
         crafting_categories = { "genetics" },
-        crafting_speed = 1,
+        crafting_speed = 4,
 		heating_energy = "500kW",
         --show_recipe_icon = false,
         --show_recipe_icon_on_map = false,
@@ -4634,10 +4771,10 @@ data:extend({
         selection_box = { { -3, -3 }, { 3, 3 } },
 		effect_receiver = { base_effect = { productivity = 0.5 }},
         damaged_trigger_effect = hit_effects.entity(),
-        module_slots = 8,
+        module_slots = 5,
 		allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-        crafting_categories = { "quantum", "electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling" },
-        crafting_speed = 1,
+        crafting_categories = { "quantum", "electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling", "assembly-electronics-quantum", "electronics-quantum" },
+        crafting_speed = 4,
 		heating_energy = "500kW",
         --show_recipe_icon = false,
         --show_recipe_icon_on_map = false,
@@ -4885,10 +5022,10 @@ data:extend({
         selection_box = { { -1.5, -1.5 }, { 1.5, 1.5 } },
 		effect_receiver = { base_effect = { productivity = 0.5 }},
         damaged_trigger_effect = hit_effects.entity(),
-        module_slots = 8,
+        module_slots = 3,
 		allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
         crafting_categories = { "synthesis" },
-        crafting_speed = 1,
+        crafting_speed = 4,
 		heating_energy = "500kW",
         --show_recipe_icon = false,
         --show_recipe_icon_on_map = false,
@@ -5304,18 +5441,20 @@ data:extend({
 		flags = {"placeable-player", "player-creation"},
 		minable = {mining_time = 0.2, result = "skylab"},
 		fast_replaceable_group = "skylab",
-		max_health = 150,
+		max_health = 500,
 		corpse = "lab-remnants",
 		dying_explosion = "lab-explosion",
 		collision_box = {{-3.2, -3.2}, {3.2, 3.2}}, -- 7 wide
         selection_box = {{-3.5, -3.5}, {3.5, 3.5}}, -- 7 wide
         display_box = {{-3.5, -4.8}, {3.5, 3.5}}, -- 7 wide
 		damaged_trigger_effect = hit_effects.entity(),
+		researching_speed = 3,
+        science_pack_drain_rate_percent = 33,
 		resistances =
 		{
 		  {
 			type = "fire",
-			percent = 70
+			percent = 90
 		  }
 		},
 		surface_conditions =
