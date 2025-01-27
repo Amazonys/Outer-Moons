@@ -366,7 +366,7 @@ data:extend(
     {
 	  {
         type = "unlock-recipe",
-        recipe = "natural-gas-processing"
+        recipe = "natural-gas-cracking"
       },
 	  {
         type = "unlock-recipe",
