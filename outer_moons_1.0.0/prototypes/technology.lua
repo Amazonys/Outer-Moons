@@ -324,7 +324,7 @@ data:extend(
     name = "processing-unit-new",
     icon = "__outer_moons__/graphics/technology/processing-unit.png",
     icon_size = 256,
-    prerequisites = {"processing-unit",},
+    prerequisites = {"processing-unit", "electric-engine"},
     effects =
     {
 	  {
@@ -347,6 +347,58 @@ data:extend(
     unit =
     {
       count = 500,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    }
+  },
+  {
+    type = "technology",
+    name = "fracking",
+    icon = "__outer_moons__/graphics/technology/fracking.png",
+    icon_size = 256,
+    prerequisites = {"advanced-oil-processing"},
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "natural-gas-processing"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "methane-reforming"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "methanol-processing"
+      }
+    },
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "natural-gas"
+    }
+  },
+  {
+    type = "technology",
+    name = "wood-gasification",
+    icon = "__outer_moons__/graphics/technology/wood-gasification.png",
+    icon_size = 256,
+    prerequisites = {"advanced-oil-processing"},
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "wood-gasification"
+      }
+    },
+    unit =
+    {
+      count = 100,
       ingredients =
       {
         {"automation-science-pack", 1},
