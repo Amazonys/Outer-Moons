@@ -71,6 +71,10 @@ data:extend(
   },
   {
     type = "recipe-category",
+    name = "hand-assembly-electronics-quantum"
+  },
+  {
+    type = "recipe-category",
     name = "assembly-electronics-quantum"
   },
   

@@ -112,7 +112,7 @@ data.raw.technology["steel-processing"].effects =
   }
 }
 data.raw.technology["fast-inserter"].icon = "__outer_moons__/graphics/technology/fast-inserter.png"
-data.raw.technology["fast-inserter"].prerequisites = {"automation-science-pack", "inserter"}
+data.raw.technology["fast-inserter"].prerequisites = {"logistic-science-pack", "inserter", "alumina-processing"}
 data.raw.technology["fast-inserter"].effects = 
 {
   {
@@ -124,6 +124,18 @@ data.raw.technology["fast-inserter"].effects =
 	recipe = "fast-long-handed-inserter"
   }
 }
+data.raw.technology["fast-inserter"].unit =
+{
+  count = 100,
+  ingredients = {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+  },
+  time = 10
+}
+data.raw.technology["logistics-2"].prerequisites = {"logistics", "logistic-science-pack", "advanced-circuit"}
+data.raw.technology["electric-energy-distribution-1"].prerequisites = {"steel-processing", "alumina-processing"}
+data.raw.technology["bulk-inserter"].prerequisites = {"processing-unit", "fast-inserter", "alumina-processing"}
 data.raw.technology["bulk-inserter"].effects =
 {
   {
@@ -594,10 +606,6 @@ data.raw.item["tungsten-carbide"].icon = "__outer_moons__/graphics/icons/tungste
 data.raw["assembling-machine"]["electromagnetic-plant"].crafting_categories = {"electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling", "electronics-or-convecting", "electronics-quantum",}
 data.raw["assembling-machine"]["foundry"].crafting_categories = {"metallurgy", "pressing", "crafting-with-fluid-or-metallurgy", "metallurgy-or-assembling", "metallurgy-or-adv-metallurgy"}
 
-data.raw["assembling-machine"]["assembling-machine-1"].crafting_categories = {"crafting", "basic-crafting", "advanced-crafting", "crafting-with-fluid", "assembly-or-robotics", "assembly-electronics-quantum",}
-data.raw["assembling-machine"]["assembling-machine-2"].crafting_categories = {"basic-crafting", "crafting", "advanced-crafting", "crafting-with-fluid", "assembly-or-robotics", "fluid-assembly-or-robotics", "assembly-electronics-quantum",}
-data.raw["assembling-machine"]["assembling-machine-3"].crafting_categories = {"basic-crafting", "crafting", "advanced-crafting", "crafting-with-fluid", "assembly-or-robotics", "fluid-assembly-or-robotics", "assembly-electronics-quantum",}
-
 data.raw.item["lab"].subgroup = "labs"
 data.raw.item["biolab"].subgroup = "labs"
 
@@ -667,6 +675,11 @@ data.raw.item["heat-exchanger"].order = "c[heat-exchanger]"
 data.raw.item["heat-pipe"].order = "d[heat-pipe]"
 
 data.raw.recipe["plastic-bar"].hidden = true
+
+data.raw.item["metallic-asteroid-chunk"].stack_size = 5
+data.raw.item["carbonic-asteroid-chunk"].stack_size = 5
+data.raw.item["oxide-asteroid-chunk"].stack_size = 5
+data.raw.item["promethium-asteroid-chunk"].stack_size = 5
 
 data.raw.item["uranium-ore"].subgroup = "uranium-processing"
 data.raw.item["uranium-ore"].order = "a[uranium-processing]-a[uranium-ore]"

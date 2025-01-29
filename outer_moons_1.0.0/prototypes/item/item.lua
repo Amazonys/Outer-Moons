@@ -2252,7 +2252,7 @@ data:extend({
 		inventory_move_sound = space_age_item_sounds.rock_inventory_move,
 		pick_sound = space_age_item_sounds.rock_inventory_pickup,
 		drop_sound = space_age_item_sounds.rock_inventory_move,
-		stack_size = 1,
+		stack_size = 5,
 		weight = 100 * kg
 	},
 	{

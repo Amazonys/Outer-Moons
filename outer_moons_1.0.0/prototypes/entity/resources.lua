@@ -171,7 +171,9 @@ data:extend({
 		  base_density = 2,
 		  regular_rq_factor_multiplier = 1.0,
 		  starting_rq_factor_multiplier = 1.1,
-		  base_spots_per_km = 1.5
+		  base_spots_per_km = 1.5,
+		  candidate_spot_count = 14,
+		  has_starting_area_placement = true
 		}
 	),
 	resource(
@@ -193,10 +195,12 @@ data:extend({
 		  factoriopedia_simulation = simulations.factoriopedia_silicon_ore,
 		},
 		{
-		  base_density = 1,
+		  base_density = 1.5,
 		  regular_rq_factor_multiplier = 2.0,
 		  starting_rq_factor_multiplier = 2.2,
-		  base_spots_per_km = 1.25
+		  base_spots_per_km = 1.25,
+		  candidate_spot_count = 12,
+		  has_starting_area_placement = true
 		}
 	),
 	--Selene

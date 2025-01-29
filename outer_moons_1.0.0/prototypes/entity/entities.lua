@@ -6107,7 +6107,7 @@ data:extend({
 		  orientation_to_variation = false,
 		  pictures = {
 			filename = "__base__/graphics/entity/beacon/beacon-reflection.png",
-			height = 28,
+			height = 29,
 			priority = "extra-high",
 			scale = 5,
 			shift = {
@@ -6115,7 +6115,7 @@ data:extend({
 			  1.71875
 			},
 			variation_count = 1,
-			width = 24
+			width = 18
 		  },
 		  rotate = false
 		},

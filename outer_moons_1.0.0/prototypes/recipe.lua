@@ -1644,7 +1644,7 @@ data:extend({
 		enabled = false,
 		ingredients = {
 			{type = "item", name = "copper-cable", amount = 1},
-			{type = "item", name = "silicon-ore", amount = 1},
+			--{type = "item", name = "silicon-ore", amount = 1},
 			{type = "item", name = "nickel-plate", amount = 1},
 		},
 		results = {{type="item", name="spark-plug", amount=1}},
@@ -2018,7 +2018,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "electronic-circuit",
-		category = "electronics-or-assembling",
+		category = "hand-assembly-electronics-quantum",
 		ingredients =
 		{
 		  {type = "item", name = "iron-plate", amount = 2},
@@ -2032,7 +2032,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "integrated-circuit",
-		category = "electronics-or-assembling",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		energy_required = 6,
 		ingredients =
@@ -2048,7 +2048,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "advanced-circuit",
-		category = "electronics-or-assembling",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		energy_required = 10,
 		ingredients =
@@ -2064,7 +2064,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "processing-unit",
-		category = "electronics-or-assembling",
+		category = "assembly-electronics-quantum",
 		enabled = false,
 		energy_required = 20,
 		ingredients =
@@ -2080,7 +2080,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "computing-core",
-		category = "electromagnetics",
+		category = "electronics-quantum",
 		enabled = false,
 		energy_required = 35,
 		ingredients =
@@ -2096,7 +2096,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "quantum-supercomputer",
-		category = "electromagnetics",
+		category = "quantum",
 		enabled = false,
 		energy_required = 50,
 		ingredients =
@@ -5214,6 +5214,16 @@ data:extend({
 		enabled = false
 	},
 	--Inserters	
+	{
+		type = "recipe",
+		name = "burner-inserter",
+		ingredients =
+		{
+		  {type = "item", name = "lead-plate", amount = 1},
+		  {type = "item", name = "iron-gear-wheel", amount = 1}
+		},
+		results = {{type="item", name="burner-inserter", amount=1}}
+	},
 	{
 		type = "recipe",
 		name = "inserter",
