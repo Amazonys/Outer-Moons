@@ -677,6 +677,19 @@ data:extend({
 		weight = 2 * kg,
 	},
 	--
+	--{
+	--	type = "item",
+	--	name = "solder",
+	--	icon = "__outer_moons__/graphics/icons/solder.png",
+	--	subgroup = "circuit-parts",
+	--	order = "a[basic-intermediates]-a[solder]",
+	--	inventory_move_sound = item_sounds.wire_inventory_move,
+	--	pick_sound = item_sounds.wire_inventory_pickup,
+	--	drop_sound = item_sounds.wire_inventory_move,
+	--	stack_size = 200,
+	--	weight = 0.5 * kg,
+	--	ingredient_to_weight_coefficient = 0.25
+	--},
 	{
 		type = "item",
 		name = "aluminum-cable",
@@ -708,6 +721,7 @@ data:extend({
 		name = "cobalt-cable",
 		icon = "__outer_moons__/graphics/icons/cobalt-cable.png",
 		subgroup = "circuit-parts",
+		--order = "f[cobalt-cable]",
 		order = "a[basic-intermediates]-e[cobalt-cable]",
 		inventory_move_sound = item_sounds.wire_inventory_move,
 		pick_sound = item_sounds.wire_inventory_pickup,

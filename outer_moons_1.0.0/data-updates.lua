@@ -226,7 +226,7 @@ data.raw.technology["fluid-handling"].effects =
 }
 data.raw.technology["logistics-2"].prerequisites = {"logistics", "logistic-science-pack", "steel-processing"}
 data.raw.technology["automation-2"].prerequisites = {"automation", "steel-processing", "advanced-circuit", "engine"}
-data.raw.technology["automobilism"].prerequisites = {"logistics-2", "multicylinder-engine"}
+data.raw.technology["automobilism"].prerequisites = {"logistics-2", "multicylinder-engine", "alumina-processing"}
 data.raw.technology["railway"].prerequisites = {"logistics-2", "multicylinder-engine"}
 data.raw.technology["concrete"].prerequisites = {"advanced-material-processing", "silicon-processing", "convector"}
 data.raw.technology["laser"].prerequisites = {"battery", "convector", "chemical-science-pack"}
@@ -255,7 +255,10 @@ data.raw.technology["advanced-oil-processing"].effects =
 	recipe = "solid-fuel"
   }
 }
-data.raw.technology["low-density-structure"].prerequisites = {"alumina-processing", "chemical-science-pack"}
+data.raw.technology["low-density-structure"].prerequisites = {"alumina-processing", "chemical-science-pack", "plastics"}
+data.raw.technology["circuit-network"].prerequisites = {"advanced-circuit"}
+data.raw.technology["solar-energy"].prerequisites = {"steel-processing", "silicon-processing", "logistic-science-pack"}
+data.raw.technology["laser-turret"].prerequisites = {"laser", "processing-unit", "military-science-pack"}
 data.raw.technology["sulfur-processing"].effects =
 {
   {
@@ -337,11 +340,19 @@ data.raw.technology["foundry"].effects =
   },
   {
 	type = "unlock-recipe",
-	recipe = "concrete-from-molten-iron"
+	recipe = "molten-lead-from-lava"
   },
   {
 	type = "unlock-recipe",
-	recipe = "casting-low-density-structure"
+	recipe = "molten-nickel-from-lava"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "molten-aluminum-from-lava"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "molten-silicon-from-lava"
   },
   {
 	type = "unlock-recipe",
@@ -353,6 +364,34 @@ data.raw.technology["foundry"].effects =
   },
   {
 	type = "unlock-recipe",
+	recipe = "molten-lead"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "molten-nickel"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "molten-aluminum"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "molten-silicon"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "molten-titanium"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "molten-magnesium"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "molten-tungsten"
+  },
+  {
+	type = "unlock-recipe",
 	recipe = "casting-iron"
   },
   {
@@ -361,7 +400,51 @@ data.raw.technology["foundry"].effects =
   },
   {
 	type = "unlock-recipe",
+	recipe = "casting-lead"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-nickel"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-aluminum"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-silicon"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-titanium"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-magnesium"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-tungsten"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-invar"
+  },
+  {
+	type = "unlock-recipe",
 	recipe = "casting-steel"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-duralumin"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-magnalium"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-caelium"
   },
   {
 	type = "unlock-recipe",
@@ -373,15 +456,34 @@ data.raw.technology["foundry"].effects =
   },
   {
 	type = "unlock-recipe",
+	recipe = "casting-copper-cable"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-aluminum-cable"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "casting-fiber-optic"
+  },
+  {
+	type = "unlock-recipe",
 	recipe = "casting-pipe"
   },
   {
 	type = "unlock-recipe",
 	recipe = "casting-pipe-to-ground"
+  },  
+  {
+	type = "unlock-recipe",
+	recipe = "concrete-from-molten-iron"
+  },{
+	type = "unlock-recipe",
+	recipe = "refined-concrete-from-molten-iron"
   },
   {
 	type = "unlock-recipe",
-	recipe = "casting-copper-cable"
+	recipe = "casting-low-density-structure"
   },
 }
 -- Planet discoveries

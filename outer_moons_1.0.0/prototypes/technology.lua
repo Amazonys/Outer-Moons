@@ -19,6 +19,10 @@ data:extend(
         type = "unlock-recipe",
         recipe = "splitter"
       },
+	  --{
+      --  type = "unlock-recipe",
+      --  recipe = "solder"
+      --},
 	  {
         type = "unlock-recipe",
         recipe = "burner-inserter"
@@ -555,6 +559,198 @@ data:extend(
       item = "adv-assembling-machine"
     }
   },
+  {
+    type = "technology",
+    name = "slipstack",
+    icon = "__outer_moons__/graphics/technology/slipstack.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "slipstack-polyp-processing"
+      },
+    },
+    prerequisites = {"agriculture"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "slipstack"
+    }
+  },
+  {
+    type = "technology",
+    name = "teflilly",
+    icon = "__outer_moons__/graphics/technology/teflilly.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "teflilly-processing"
+      },
+    },
+    prerequisites = {"agriculture"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "teflilly-plant"
+    }
+  },
+  {
+    type = "technology",
+    name = "cuttlepop",
+    icon = "__outer_moons__/graphics/technology/cuttlepop.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "jellynut-processing"
+      },
+    },
+    prerequisites = {"agriculture"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "cuttlepop"
+    }
+  },
+  {
+    type = "technology",
+    name = "funneltrunk",
+    icon = "__outer_moons__/graphics/technology/funneltrunk.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "funnelwood-processing"
+      },
+    },
+    prerequisites = {"agriculture"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "funneltrunk-plant"
+    }
+  },
+  {
+    type = "technology",
+    name = "lickmaw",
+    icon = "__outer_moons__/graphics/technology/lickmaw.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "mawpouch-processing"
+      },
+    },
+    prerequisites = {"agriculture"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "lickmaw"
+    }
+  },
+  {
+    type = "technology",
+    name = "yumako",
+    icon = "__outer_moons__/graphics/technology/yumako.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "yumako-processing"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "copper-bacteria"
+      }
+    },
+    prerequisites = {"agriculture"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "yumako-tree"
+    }
+  },
+  {
+    type = "technology",
+    name = "boompuff",
+    icon = "__outer_moons__/graphics/technology/boompuff.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "boompuff-bulb-processing"
+      },
+    },
+    prerequisites = {"agriculture"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "boompuff-plant"
+    }
+  },
+  {
+    type = "technology",
+    name = "stingfrond",
+    icon = "__outer_moons__/graphics/technology/stingfrond.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "frondstalk-processing"
+      },
+    },
+    prerequisites = {"agriculture"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "stingfrond-plant"
+    }
+  },
+  {
+    type = "technology",
+    name = "artificial-soil",
+    icon = "__space-age__/graphics/technology/artificial-soil.png",
+    icon_size = 256,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "artificial-cuticle-soil"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "artificial-yumako-soil"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "artificial-jellynut-soil"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "artificial-ochre-soil"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "artificial-cerulean-soil"
+      },
+    },
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "nutrients",
+      count = 500
+    },
+    prerequisites = { "slipstack", "teflilly", "cuttlepop", "funneltrunk", "lickmaw", "yumako", "boompuff", "stingfrond"}
+  },
   
   {
     type = "technology",
@@ -703,6 +899,30 @@ data:extend(
         {"electromagnetic-science-pack", 1}
       },
       time = 60
+    }
+  },
+  
+  {
+    type = "technology",
+    name = "jellynut",
+    icon = "__space-age__/graphics/technology/jellynut.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "jellynut-processing"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "iron-bacteria"
+      }
+    },
+    prerequisites = {"planet-discovery-feronia"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "jellystem"
     }
   },
 }

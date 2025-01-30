@@ -390,8 +390,8 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "fluid", name = "petroleum-gas", amount = 45, fluidbox_index = 3},
-		  {type = "fluid", name = "sulfane", amount = 70, fluidbox_index = 4}
+		  {type = "fluid", name = "petroleum-gas", amount = 45},
+		  {type = "fluid", name = "sulfane", amount = 70}
 		},
 		allow_productivity = true,
 		icon = "__base__/graphics/icons/fluid/basic-oil-processing.png",
@@ -1594,6 +1594,18 @@ data:extend({
 		show_amount_in_title = false
 	},
 	-- Products
+	--{
+	--	type = "recipe",
+	--	name = "solder",
+	--	category = "electronics-or-assembling",
+	--	enabled = false,
+	--	ingredients = {
+	--		{type = "item", name = "lead-plate", amount = 1},
+	--		{type = "item", name = "copper-plate", amount = 1},		
+	--	},
+	--	results = {{type="item", name="solder", amount=1}},
+	--	allow_productivity = true
+	--},
 	{
 		type = "recipe",
 		name = "aluminum-cable",
@@ -2023,6 +2035,7 @@ data:extend({
 		{
 		  {type = "item", name = "iron-plate", amount = 2},
 		  {type = "item", name = "copper-cable", amount = 3},
+		  --{type = "item", name = "solder", amount = 1},
 		  --{type = "item", name = "lead-plate", amount = 1},
 		},
 		results = {{type="item", name="electronic-circuit", amount=1}},
@@ -4378,7 +4391,7 @@ data:extend({
     },	
     {
       type = "recipe",
-      name = "bioflux",
+      name = "bioslurry",
       category = "organic-or-chemistry",
       icon = "__space-age__/graphics/icons/bioflux.png",
       enabled = false,
@@ -4394,8 +4407,31 @@ data:extend({
       {
         {type = "item", name = "bioflux", amount = 4},
       },
-      subgroup = "agriculture-products",
-      order = "a[organic-products]-h[bioflux]",
+      allow_productivity = true,
+      auto_recycle = false,
+      crafting_machine_tint =
+      {
+        primary = {r = 0.3, g = 0.9, b = 0.8, a = 1.000},
+        secondary = {r = 0.8, g = 0.5, b = 0.3, a = 1.000}
+      }
+    },
+    {
+      type = "recipe",
+      name = "bioflux",
+      category = "organic-or-chemistry",
+      icon = "__space-age__/graphics/icons/bioflux.png",
+      enabled = false,
+      energy_required = 8,
+      ingredients =
+	  {
+        {type = "item", name = "fertilizer", amount = 10},
+        {type = "fluid", name = "water", amount = 10, fluidbox_multiplier = 10},
+        {type = "fluid", name = "bioslurry", amount = 15, fluidbox_multiplier = 10},
+	  },
+      results =
+      {
+        {type = "item", name = "bioflux", amount = 4},
+      },
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -5220,6 +5256,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "lead-plate", amount = 1},
+		  --{type = "item", name = "solder", amount = 1},
 		  {type = "item", name = "iron-gear-wheel", amount = 1}
 		},
 		results = {{type="item", name="burner-inserter", amount=1}}
