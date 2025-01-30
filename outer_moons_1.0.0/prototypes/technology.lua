@@ -751,6 +751,79 @@ data:extend(
     },
     prerequisites = { "slipstack", "teflilly", "cuttlepop", "funneltrunk", "lickmaw", "yumako", "boompuff", "stingfrond"}
   },
+  {
+    type = "technology",
+    name = "overgrowth-soil",
+    icon = "__space-age__/graphics/technology/overgrowth-soil.png",
+    icon_size = 256,
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "overgrowth-cuticle-soil"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "overgrowth-yumako-soil"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "overgrowth-jellynut-soil"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "overgrowth-ochre-soil"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "overgrowth-cerulean-soil"
+      },
+    },
+    prerequisites = { "production-science-pack", "utility-science-pack"},
+    unit =
+    {
+      count = 2000,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"utility-science-pack", 1},
+        {"space-science-pack", 1},
+        {"agricultural-science-pack", 1}
+      },
+      time = 60
+    }
+  },
+  
+  {
+    type = "technology",
+    name = "carbon-fiber",
+    icon = "__space-age__/graphics/technology/carbon-fiber.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "carbon-fiber",
+      },
+    },
+    prerequisites = {"agricultural-science-pack"},
+    unit =
+    {
+      count = 500,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"space-science-pack", 1},
+        {"agricultural-science-pack", 1}
+      },
+      time = 60
+    }
+  },
   
   {
     type = "technology",

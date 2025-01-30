@@ -424,7 +424,7 @@ data.raw.technology["foundry"].effects =
   },
   {
 	type = "unlock-recipe",
-	recipe = "casting-tungsten"
+	recipe = "tungsten-plate"
   },
   {
 	type = "unlock-recipe",
@@ -486,6 +486,7 @@ data.raw.technology["foundry"].effects =
 	recipe = "casting-low-density-structure"
   },
 }
+data.raw.technology["biochamber"].prerequisites = {"yumako", }
 -- Planet discoveries
 data.raw.technology["planet-discovery-vulcanus"].prerequisites =
 {
