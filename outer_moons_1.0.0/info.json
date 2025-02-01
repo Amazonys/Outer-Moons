@@ -2,7 +2,7 @@
 	"name": "outer_moons",
 	"version": "1.0.0",
 	"title": "Outer Moons",
-	"author": "Amyzonis & Pieter",
+	"author": "Amyzonis & PetrusPB",
 	"dependencies": [
 		"base >= 2.0.0",
 		"space-age >= 2.0.0"

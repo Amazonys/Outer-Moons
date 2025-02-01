@@ -9,7 +9,7 @@ simulations.factoriopedia_metallic_regolith = { init = make_resource("metallic-r
 simulations.factoriopedia_ice = { init = make_resource("ice-ore") }
 simulations.factoriopedia_dry_ice = { init = make_resource("dry-ice-ore") }
 simulations.factoriopedia_titanium_ore = { init = make_resource("titanium-ore") }
-simulations.factoriopedia_phosphate_ore = { init = make_resource("phosphate-ore") }
+simulations.factoriopedia_phosphate_ore = { init = make_resource("phosphate") }
 simulations.factoriopedia_beryllium_ore = { init = make_resource("beryllium-ore") }
 simulations.factoriopedia_heavy_metal = { init = make_resource("heavy-metal") }
 simulations.factoriopedia_cobalt_ore = { init = make_resource("cobalt-ore") }

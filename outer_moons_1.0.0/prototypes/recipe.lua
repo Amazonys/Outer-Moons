@@ -6,7 +6,7 @@ data:extend({
 		name = "pipe",
 		ingredients = {
 			{type = "item", name = "lead-plate", amount = 2},
-			{type = "item", name = "iron-plate", amount = 1},
+			--{type = "item", name = "iron-plate", amount = 1},
 		},
 		results = {{type="item", name="pipe", amount=2}},
 		enabled = false
@@ -19,7 +19,7 @@ data:extend({
 		{
 		  {type = "item", name = "pipe", amount = 10},
 		  {type = "item", name = "lead-plate", amount = 4},
-		  {type = "item", name = "iron-plate", amount = 1}
+		  --{type = "item", name = "iron-plate", amount = 1}
 		},
 		results = {{type="item", name="pipe-to-ground", amount=2}}
 	},
@@ -337,7 +337,7 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "multicylinder-engine-unit", amount = 10},
+		  {type = "item", name = "multicylinder-engine-unit", amount = 8},
 		  {type = "item", name = "electronic-circuit", amount = 10},
 		  {type = "item", name = "steel-plate", amount = 30},
 		  {type = "item", name = "iron-gear-wheel", amount = 20}
@@ -382,6 +382,7 @@ data:extend({
 		name = "basic-oil-processing",
 		category = "oil-processing",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 5,
 		ingredients =
 		{
@@ -405,6 +406,7 @@ data:extend({
 		name = "advanced-oil-processing",
 		category = "oil-processing",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 5,
 		ingredients =
 		{
@@ -431,6 +433,7 @@ data:extend({
 		order = "b[fluid-chemistry]-a[petroleum-gas-processing]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "heavy-oil", amount = 30},
@@ -454,6 +457,7 @@ data:extend({
 		name = "heavy-oil-cracking",
 		category = "chemistry-or-cryogenics",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 2,
 		ingredients =
 		{
@@ -482,6 +486,7 @@ data:extend({
 		name = "light-oil-cracking",
 		category = "chemistry-or-cryogenics",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 2,
 		ingredients =
 		{
@@ -514,6 +519,7 @@ data:extend({
 		order = "b[fluid-chemistry]-d[olefins-reforming]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "steam", amount = 50 },
@@ -563,6 +569,7 @@ data:extend({
 		name = "wood-gasification",
 		category = "oil-processing",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 5,
 		ingredients =
 		{
@@ -586,6 +593,7 @@ data:extend({
 		name = "spoilage-gasification",
 		category = "oil-processing",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 5,
 		ingredients =
 		{
@@ -609,6 +617,7 @@ data:extend({
 		name = "methane-reforming",
 		category = "chemistry-or-cryogenics",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 2,
 		ingredients =
 		{
@@ -639,6 +648,7 @@ data:extend({
 		name = "methanol",
 		category = "chemistry-or-cryogenics",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 2,
 		ingredients =
 		{
@@ -668,6 +678,7 @@ data:extend({
 		name = "methanol-processing",
 		category = "oil-processing",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 2,
 		ingredients =
 		{
@@ -700,6 +711,7 @@ data:extend({
 		name = "hydrogen-peroxide",
 		category = "chemistry-or-cryogenics",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 2,
 		ingredients =
 		{
@@ -729,6 +741,7 @@ data:extend({
 		name = "formaldehyde",
 		category = "chemistry-or-cryogenics",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 2,
 		ingredients =
 		{
@@ -758,6 +771,7 @@ data:extend({
 		name = "phenol",
 		category = "chemistry-or-cryogenics",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 2,
 		ingredients =
 		{
@@ -787,6 +801,7 @@ data:extend({
 		name = "coal-liquefaction",
 		category = "oil-processing",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 5,
 		ingredients =
 		{
@@ -819,7 +834,7 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "fluid", name = "sulfane", amount = 20},
+		  {type = "fluid", name = "sulfane", amount = 40},
 		  {type = "item", name = "iron-plate", amount = 1}
 		},
 		results =
@@ -845,9 +860,10 @@ data:extend({
 		order = "c[sulfur]-a[sulfur-dioxide]",
 		energy_required = 1,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
-		  {type = "item", name = "sulfur", amount = 50},
+		  {type = "item", name = "sulfur", amount = 5},
 		  {type = "fluid", name = "oxygen", amount = 50}
 		},
 		results =
@@ -871,11 +887,12 @@ data:extend({
 		order = "c[sulfur]-b[sulfuric-acid]",
 		energy_required = 1,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "sulfur-dioxide", amount = 50},
 		  {type = "fluid", name = "water", amount = 50},
-		  {type = "item", name = "iron-plate", amount = 1},
+		  --{type = "item", name = "iron-plate", amount = 1},
 		},
 		results =
 		{
@@ -900,6 +917,7 @@ data:extend({
 		order = "d[nitrogen]-a[ammonia]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "nitrogen", amount = 10 },
@@ -928,6 +946,7 @@ data:extend({
 		order = "d[nitrogen]-b[nitric-acid]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "ammonia", amount = 15 },
@@ -959,6 +978,7 @@ data:extend({
 		order = "e[chlorine]-a[hydrochloric-acid]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "chlorine", amount = 10 },
@@ -988,6 +1008,7 @@ data:extend({
 		order = "e[chlorine]-b[vinyl-chloride]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "olefins", amount = 20 },
@@ -1017,6 +1038,7 @@ data:extend({
 		order = "e[chlorine]-c[chloroform]",
 		energy_required = 4,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "methane", amount = 10},
@@ -1046,6 +1068,7 @@ data:extend({
 		order = "f[fluorine]-a[hydrofluoric-acid]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "fluorine", amount = 10 },
@@ -1076,6 +1099,7 @@ data:extend({
 		order = "a[polyethlyene-plastic]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "olefins", amount = 20 },
@@ -1104,6 +1128,7 @@ data:extend({
 		order = "b[polystyrene-plastic]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "olefins", amount = 10 },
@@ -1132,6 +1157,7 @@ data:extend({
 		order = "c[polyvinyl-chloride-plastic]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "vinyl-chloride", amount = 15 },
@@ -1160,6 +1186,7 @@ data:extend({
 		order = "d[phenolic-plastic]",
 		energy_required = 2,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "phenol", amount = 25 },
@@ -1188,6 +1215,7 @@ data:extend({
 		order = "a[coal-carbon-capture]",
 		energy_required = 1,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients =
 		{
 		  {type = "item", name = "coal", amount = 10 },
@@ -1298,29 +1326,6 @@ data:extend({
 		},
 		allow_productivity = true
 	},
-	{
-		type = "recipe",
-		name = "adv-battery",
-		category = "chemistry-or-cryogenics",
-		energy_required = 8,
-		enabled = false,
-		ingredients =
-		{
-		  {type = "item", name = "nickel-plate", amount = 1},
-		  {type = "item", name = "titanium-plate", amount = 1},
-		  {type = "item", name = "aluminum-cable", amount = 1},
-		  {type = "item", name = "lye", amount = 1},
-		},
-		results = {{type="item", name="adv-battery", amount=1}},
-		crafting_machine_tint =
-		{
-		  primary = {r = 0.965, g = 0.482, b = 0.338, a = 1.000}, -- #f67a56ff
-		  secondary = {r = 0.831, g = 0.560, b = 0.222, a = 1.000}, -- #d38e38ff
-		  tertiary = {r = 0.728, g = 0.818, b = 0.443, a = 1.000}, -- #b9d070ff
-		  quaternary = {r = 0.939, g = 0.763, b = 0.191, a = 1.000}, -- #efc230ff
-		},
-		allow_productivity = true
-	},
 	-- Smelting
 	{
 		type = "recipe",
@@ -1361,7 +1366,7 @@ data:extend({
 		},
 		results = {
 			{type="item", name="silicon-wafer", amount=1},
-			{type="fluid", name="carbon-monoxide", amount=4},
+			{type="fluid", name="carbon-dioxide", amount=4},
 		},
 		allow_productivity = true,
 		main_product = "silicon-wafer"
@@ -1375,12 +1380,12 @@ data:extend({
 		enabled = false,
 		energy_required = 5,
 		ingredients = {
-			{type = "item", name = "alumina", amount = 4},
-			{type = "item", name = "carbon", amount = 4},
+			{type = "item", name = "alumina", amount = 12},
+			{type = "item", name = "carbon", amount = 6},
 		},
 		results = {
 			{type="item", name="aluminum-plate", amount=2},
-			{type="fluid", name="carbon-monoxide", amount=4},
+			{type="fluid", name="carbon-dioxide", amount=6},
 		},
 		allow_productivity = true,
 		main_product = "aluminum-plate"
@@ -1395,7 +1400,7 @@ data:extend({
 		energy_required = 5,
 		ingredients = {
 			{type = "item", name = "titanium-ore", amount = 4},
-			{type = "fluid", name = "carbon-monoxide", amount = 4},
+			{type = "item", name = "carbon", amount = 4},
 		},
 		results = {
 			{type="item", name="titanium-plate", amount=2},
@@ -1525,13 +1530,13 @@ data:extend({
 		energy_required = 5,
 		ingredients =
 		{
-		  {type = "item", name = "aluminum-ore", amount = 1 },
+		  {type = "item", name = "aluminum-ore", amount = 2 },
 		  {type = "item", name = "lye", amount = 2 },
 		},
 		results =
 		{
-		  {type = "item", name = "aluminate", amount = 1},
-		  {type = "fluid", name = "red-mud", amount = 8},
+		  {type = "item", name = "aluminate", amount = 3},
+		  {type = "fluid", name = "red-mud", amount = 4},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -1548,12 +1553,12 @@ data:extend({
 		energy_required = 2,
 		ingredients =
 		{
-		  {type = "item", name = "aluminate", amount = 1},
+		  {type = "item", name = "aluminate", amount = 2},
 		  {type = "fluid", name = "water", amount = 10},
 		},
 		results =
 		{
-		  {type = "item", name = "alumina", amount = 3},
+		  {type = "item", name = "alumina", amount = 1},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -1608,8 +1613,8 @@ data:extend({
 	--},
 	{
 		type = "recipe",
-		name = "aluminum-cable",
-		category = "electronics-or-assembling",
+		name = "aluminum-cable",		
+		category = "hand-assembly-electronics-quantum",
 		enabled = false,
 		ingredients = {{type = "item", name = "aluminum-plate", amount = 1}},
 		results = {{type="item", name="aluminum-cable", amount=2}},
@@ -1622,7 +1627,7 @@ data:extend({
 		enabled = false,
 		ingredients = {
 			{type = "item", name = "silicon-ore", amount = 1},
-			{type = "item", name = "sulfur", amount = 1},
+			--{type = "item", name = "sulfur", amount = 1},
 		},
 		results = {{type="item", name="fiber-optic", amount=2}},
 		allow_productivity = true
@@ -1682,12 +1687,12 @@ data:extend({
 		type = "recipe",
 		name = "multicylinder-engine-unit",
 		energy_required = 10,
-		category = "fluid-assembly-or-robotics",
+		category = "assembly-or-robotics",
 		ingredients =
 		{
 		  {type = "item", name = "engine-unit", amount = 8},
 		  {type = "item", name = "iron-gear-wheel", amount = 4},
-		  {type = "fluid", name = "lubricant", amount = 10},
+		  --{type = "fluid", name = "lubricant", amount = 10},
 		  {type = "item", name = "electronic-circuit", amount = 2},
 		  {type = "item", name = "spark-plug", amount = 2},
 		},
@@ -1832,7 +1837,7 @@ data:extend({
 		{
 		  {type = "item", name = "silicon-wafer", amount = 1},
 		  --{type = "item", name = "plastic-bar", amount = 1},
-		  {type = "item", name = "copper-cable", amount = 2},
+		  {type = "item", name = "copper-cable", amount = 3},
 		},
 		results = {{type="item", name="transistor", amount=2}},
 		enabled = false,
@@ -2901,6 +2906,7 @@ data:extend({
 		subgroup = "electrolytic-recipes",
 		order = "a[electrolysis]-a[water-evaporation]",
 		auto_recycle = false,
+		hide_from_player_crafting = true,
 		energy_required = 10,
 		surface_conditions = {
 			{
@@ -2933,6 +2939,7 @@ data:extend({
 		subgroup = "electrolytic-recipes",
 		order = "a[electrolysis]-b[water-electrolysis]",
 		auto_recycle = false,
+		hide_from_player_crafting = true,
 		energy_required = 50,
 		ingredients =
 		{
@@ -2958,6 +2965,7 @@ data:extend({
 		subgroup = "electrolytic-recipes",
 		order = "a[electrolysis]-e[brine]",
 		auto_recycle = false,
+		hide_from_player_crafting = true,
 		energy_required = 25,
 		surface_conditions = {
 			{
@@ -2969,7 +2977,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "water", amount = 40},
-		  {type = "item", name = "salt", amount = 10},
+		 -- {type = "item", name = "salt", amount = 10},
 		},
 		results =
 		{
@@ -2990,6 +2998,7 @@ data:extend({
 		subgroup = "electrolytic-recipes",
 		order = "a[electrolysis]-f[chloralkali-process]",
 		auto_recycle = false,
+		hide_from_player_crafting = true,
 		energy_required = 40,
 		ingredients =
 		{
@@ -3015,6 +3024,8 @@ data:extend({
 		subgroup = "electrolytic-recipes",
 		order = "a[electrolysis]-d[red-mud-reprocessing]",
 		auto_recycle = false,
+		hide_from_player_crafting = true,
+		hide_from_player_crafting = true,
 		energy_required = 30,
 		ingredients =
 		{
@@ -3023,10 +3034,11 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "item", name = "iron-ore", amount = 1, probability = 0.6, show_details_in_recipe_tooltip = false},
-		  {type = "item", name = "silicon-ore", amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
-		  {type = "item", name = "alumina", amount = 1, probability = 0.3, show_details_in_recipe_tooltip = false},
-		  {type = "item", name = "titanium-ore", amount = 1, probability = 0.2, show_details_in_recipe_tooltip = false},
+		  --{type = "item", name = "iron-ore", amount = 1, probability = 0.6, show_details_in_recipe_tooltip = false},
+		  --{type = "item", name = "silicon-ore", amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
+		  --{type = "item", name = "alumina", amount = 1, probability = 0.33, show_details_in_recipe_tooltip = false},
+		  --{type = "item", name = "titanium-ore", amount = 1},
+		  {type = "item", name = "titanium-ore", amount = 1, probability = 0.25},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -3042,6 +3054,7 @@ data:extend({
 		subgroup = "electrolytic-recipes",
 		order = "a[electrolysis]-g[brine-extraction]",
 		auto_recycle = false,
+		hide_from_player_crafting = true,
 		energy_required = 10,
 		--surface_conditions = {
 		--	{
@@ -3075,6 +3088,7 @@ data:extend({
 		subgroup = "electrolytic-recipes",
 		order = "a[electrolysis]-c[carbon-dioxide-electrolysis]",
 		auto_recycle = false,
+		hide_from_player_crafting = true,
 		energy_required = 50,
 		ingredients =
 		{
@@ -3099,6 +3113,7 @@ data:extend({
 		subgroup = "electrolytic-recipes",
 		order = "a[electrolysis]-cd[carbon-dioxide-electrolysis]",
 		auto_recycle = false,
+		hide_from_player_crafting = true,
 		energy_required = 50,
 		ingredients =
 		{
@@ -3125,6 +3140,7 @@ data:extend({
 		subgroup = "electrolytic-recipes",
 		order = "a[electrolysis]-h[NaK]",
 		auto_recycle = false,
+		hide_from_player_crafting = true,
 		energy_required = 50,
 		ingredients =
 		{
@@ -3551,7 +3567,7 @@ data:extend({
 		{
 		  {type = "item", name = "engine-unit", amount = 2},
 		  {type = "item", name = "integrated-circuit", amount = 3},
-		  {type = "item", name = "sulfur", amount = 5},
+		 -- {type = "item", name = "sulfur", amount = 5},
 		  {type = "fluid", name = "petroleum-gas", amount = 10}
 		},
 		results = {{type="item", name="chemical-science-pack", amount=2}},
@@ -3761,7 +3777,7 @@ data:extend({
 		  {type = "item", name = "rocket-turret", amount = 1},
 		  {type = "item", name = "computing-core", amount = 10},
 		  {type = "item", name = "radar", amount = 2},
-		  {type = "item", name = "multicylinder-engine-unit", amount = 16},
+		  {type = "item", name = "electric-engine-unit", amount = 16},
 		 -- {type = "item", name = "raw-fish", amount = 1}
 		},
 		results = {{type="item", name="spidertron", amount=1}}
@@ -5242,7 +5258,7 @@ data:extend({
 		  {type = "item", name = "holmium-plate", amount = 2},
 		  {type = "item", name = "superconductor", amount = 2},
 		  {type = "item", name = "integrated-circuit", amount = 4},
-		  {type = "item", name = "adv-battery", amount = 1},
+		  {type = "item", name = "solid-state-battery", amount = 1},
 		  {type = "fluid", name = "electrolyte", amount = 10},
 		},
 		results = {{type="item", name="supercapacitor", amount=1}},
@@ -5295,7 +5311,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "integrated-circuit", amount = 2},
-		  {type = "item", name = "aluminum-plate", amount = 2},
+		  {type = "item", name = "steel-plate", amount = 2},
 		  {type = "item", name = "iron-gear-wheel", amount = 2},
 		  {type = "item", name = "inserter", amount = 1}
 		},
@@ -5308,7 +5324,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "integrated-circuit", amount = 2},
-		  {type = "item", name = "duralumin-plate", amount = 4},
+		  {type = "item", name = "steel-plate", amount = 4},
 		  {type = "item", name = "iron-gear-wheel", amount = 4},
 		  {type = "item", name = "long-handed-inserter", amount = 1}
 		},
@@ -5323,7 +5339,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "advanced-circuit", amount = 3},
-		  {type = "item", name = "steel-plate", amount = 4},
+		  {type = "item", name = "aluminum-plate", amount = 4},
 		  {type = "item", name = "iron-gear-wheel", amount = 4},
 		  {type = "item", name = "fast-inserter", amount = 1}
 		},
@@ -5336,7 +5352,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "advanced-circuit", amount = 3},
-		  {type = "item", name = "titanium-plate", amount = 8},
+		  {type = "item", name = "aluminum-plate", amount = 8},
 		  {type = "item", name = "iron-gear-wheel", amount = 8},
 		  {type = "item", name = "fast-long-handed-inserter", amount = 1}
 		},
@@ -5352,7 +5368,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "processing-unit", amount = 4},
-		  {type = "item", name = "magnesium-plate", amount = 8},
+		  {type = "item", name = "magnalium-plate", amount = 8},
 		  {type = "item", name = "iron-gear-wheel", amount = 8},
 		  {type = "item", name = "bulk-inserter", amount = 1},
 		},

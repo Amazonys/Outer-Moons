@@ -783,10 +783,10 @@ data:extend({
 	},
 	{
 		type = "item",
-		name = "adv-battery",
-		icon = "__outer_moons__/graphics/icons/adv-battery.png",
+		name = "solid-state-battery",
+		icon = "__outer_moons__/graphics/icons/solid-state-battery.png",
 		subgroup = "chemical-product",
-		order = "e[adv-battery]",
+		order = "e[solid-state-battery]",
 		inventory_move_sound = item_sounds.electric_small_inventory_move,
 		pick_sound = item_sounds.electric_small_inventory_pickup,
 		drop_sound = item_sounds.electric_small_inventory_move,

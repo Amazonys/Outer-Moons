@@ -1100,7 +1100,7 @@ data:extend({
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     crafting_categories = {"electrolysis", "adv-electrolysis"},
-    crafting_speed = 2,
+    crafting_speed = 4,
     energy_source =
     {
       type = "electric",
@@ -1649,7 +1649,7 @@ data:extend({
     collision_box = {{-1.29, -0.79}, {1.29, 0.79}},
     selection_box = {{-1.5, -1}, {1.5, 1}},
     damaged_trigger_effect = hit_effects.entity(),
-    target_temperature = 165,
+    target_temperature = 1000,
 	heating_energy = "100kW",
     fluid_box =
     {
@@ -2420,7 +2420,7 @@ data:extend({
       max_sounds_per_type = 3,
       audible_distance_modifier = 0.5
     },
-    crafting_speed = 1,
+    crafting_speed = 2,
     energy_source =
     {
       type = "electric",

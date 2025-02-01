@@ -186,7 +186,7 @@ data:extend({
 			  mining_particle = "stone-particle",
 			  mining_time = 3,
 			  result = "silicon-ore",
-			  fluid_amount = 10,
+			  fluid_amount = 5,
 			  required_fluid = "sulfuric-acid"
 		  },
 		  walking_sound = sounds.ore,

@@ -110,12 +110,41 @@ data:extend(
 	  {
         type = "unlock-recipe",
         recipe = "carbon-dioxide-electrolysis"
-      },
+      },	  
+	  {
+		type = "unlock-recipe",
+		recipe = "coal-carbon-capture"
+	  },
     },
     prerequisites = {"oil-processing"},
     unit =
     {
       count = 100,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1}
+      },
+      time = 15
+    }
+  },
+  {
+    type = "technology",
+    name = "electric-boiler",
+    icon = "__outer_moons__/graphics/technology/electric-boiler.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {	  
+	  {
+        type = "unlock-recipe",
+        recipe = "electric-boiler"
+      },
+    },
+    prerequisites = {"electrolysis"},
+    unit =
+    {
+      count = 50,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -135,6 +164,10 @@ data:extend(
 	  {
         type = "unlock-recipe",
         recipe = "silicon-wafer"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "hydrochloric-acid"
       },
     },
     prerequisites = {"sulfur-processing", "electrolysis"},
@@ -165,7 +198,7 @@ data:extend(
     prerequisites = {"electrolysis"},
     unit =
     {
-      count = 150,
+      count = 100,
       ingredients =
       {
         {"automation-science-pack", 1},
@@ -186,10 +219,10 @@ data:extend(
         type = "unlock-recipe",
         recipe = "aluminate"
       },
-	  {
-        type = "unlock-recipe",
-        recipe = "red-mud-reprocessing"
-      },
+	  --{
+      --  type = "unlock-recipe",
+      --  recipe = "red-mud-reprocessing"
+      --},
       {
         type = "unlock-recipe",
         recipe = "alumina"
@@ -412,6 +445,32 @@ data:extend(
       time = 30
     }
   },
+  
+  {
+    type = "technology",
+    name = "uranium-mining",
+    icon = "__base__/graphics/technology/uranium-mining.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "mining-with-fluid",
+        modifier = true
+      }
+    },
+    prerequisites = {"chemical-science-pack", "concrete"},
+    unit =
+    {
+      count = 100,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1}
+      },
+      time = 30
+    }
+  },
   {
     type = "technology",
     name = "planet-discovery-selene",
@@ -450,14 +509,23 @@ data:extend(
     {
 	  {
         type = "unlock-recipe",
+        recipe = "red-mud-reprocessing"
+      },
+	  {
+        type = "unlock-recipe",
         recipe = "titanium-plate"
       },
     },
     prerequisites = {"chloralkali-processing",},
-    research_trigger =
+    unit =
     {
-      type = "mine-entity",
-      entity = "titanium-ore"
+      count = 50,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1}
+      },
+      time = 15
     }
   },
   {
@@ -507,11 +575,11 @@ data:extend(
         recipe = "adv-assembling-machine"
       },
     },
-    prerequisites = {"titanium-plate"},
+    prerequisites = {"planet-discovery-selene"},
     research_trigger =
     {
       type = "craft-item",
-      item = "titanium-plate"
+      item = "magnalium-plate"
     }
   },
   {

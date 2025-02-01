@@ -231,7 +231,6 @@ data.raw.technology["railway"].prerequisites = {"logistics-2", "multicylinder-en
 data.raw.technology["concrete"].prerequisites = {"advanced-material-processing", "silicon-processing", "convector"}
 data.raw.technology["laser"].prerequisites = {"battery", "convector", "chemical-science-pack"}
 data.raw.technology["defender"].prerequisites = {"military-science-pack", "robotics"}
-data.raw.technology["battery"].icon = "__outer_moons__/graphics/technology/battery.png"
 data.raw.technology["advanced-oil-processing"].effects =
 {
   {
@@ -249,11 +248,11 @@ data.raw.technology["advanced-oil-processing"].effects =
   {
 	type = "unlock-recipe",
 	recipe = "light-oil-cracking"
-  },
+  }, 
   {
 	type = "unlock-recipe",
 	recipe = "solid-fuel"
-  }
+  }, 
 }
 data.raw.technology["low-density-structure"].prerequisites = {"alumina-processing", "chemical-science-pack", "plastics"}
 data.raw.technology["circuit-network"].prerequisites = {"advanced-circuit"}
@@ -272,6 +271,10 @@ data.raw.technology["sulfur-processing"].effects =
   {
 	type = "unlock-recipe",
 	recipe = "sulfuric-acid"
+  },
+  {
+	type = "mining-with-fluid",
+	modifier = true
   }
 }
 data.raw.technology["lubricant"].effects =
@@ -486,7 +489,13 @@ data.raw.technology["foundry"].effects =
 	recipe = "casting-low-density-structure"
   },
 }
-data.raw.technology["biochamber"].prerequisites = {"yumako", }
+data.raw.technology["biochamber"].prerequisites = {"agriculture" }
+data.raw.technology["biochamber"].research_trigger =
+{
+  type = "craft-item",
+  item = "nutrients",
+  count = 50
+}
 -- Planet discoveries
 data.raw.technology["planet-discovery-vulcanus"].prerequisites =
 {
