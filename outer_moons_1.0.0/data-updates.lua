@@ -231,6 +231,40 @@ data.raw.technology["railway"].prerequisites = {"logistics-2", "multicylinder-en
 data.raw.technology["concrete"].prerequisites = {"advanced-material-processing", "silicon-processing", "convector"}
 data.raw.technology["laser"].prerequisites = {"battery", "convector", "chemical-science-pack"}
 data.raw.technology["defender"].prerequisites = {"military-science-pack", "robotics"}
+data.raw.technology["explosives"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "ammonia"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "nitric-acid"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "explosives"
+  }
+}
+data.raw.technology["oil-processing"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "oil-refinery"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "chemical-plant"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "basic-oil-processing"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "solid-fuel"
+  }
+}
 data.raw.technology["advanced-oil-processing"].effects =
 {
   {
@@ -248,10 +282,6 @@ data.raw.technology["advanced-oil-processing"].effects =
   {
 	type = "unlock-recipe",
 	recipe = "light-oil-cracking"
-  }, 
-  {
-	type = "unlock-recipe",
-	recipe = "solid-fuel"
   }, 
 }
 data.raw.technology["low-density-structure"].prerequisites = {"alumina-processing", "chemical-science-pack", "plastics"}
@@ -893,6 +923,8 @@ data.raw.cliff["crater-cliff"].order = "k"
 
 --Flamethrower
 data.raw["fluid-turret"]["flamethrower-turret"].attack_parameters.fluids = { {type = "crude-oil"},  {type = "heavy-oil", damage_modifier = 1.05}, {type = "light-oil", damage_modifier = 1.1}, {type = "ethanol", damage_modifier = 1.1} }
+data.raw.item["flamethrower-turret"].order = "b[turret]-b[flamethrower-turret]"
+data.raw.item["laser-turret"].order = "b[turret]-c[laser-turret]"
 
 --Pressure fix
 data.raw.recipe["metallurgic-science-pack"].surface_conditions = { { property = "pressure", min = 2000, max = 2000 } }

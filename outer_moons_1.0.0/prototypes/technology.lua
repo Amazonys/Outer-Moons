@@ -169,6 +169,10 @@ data:extend(
         type = "unlock-recipe",
         recipe = "hydrochloric-acid"
       },
+	  {
+        type = "unlock-recipe",
+        recipe = "silica-extraction"
+      },
     },
     prerequisites = {"sulfur-processing", "electrolysis"},
     research_trigger =
@@ -328,7 +332,7 @@ data:extend(
     name = "processing-unit",
     icon = "__base__/graphics/technology/processing-unit.png",
     icon_size = 256,
-    prerequisites = {"convector", "battery"},
+    prerequisites = {"convector", "battery", "plastics"},
     effects =
     {
 	  {
@@ -599,7 +603,7 @@ data:extend(
         recipe = "oxygen-rocket-fuel"
       },	  
     },
-    prerequisites = {"convector"},
+    prerequisites = {"planet-discovery-selene"},
     research_trigger =
     {
       type = "craft-fluid",

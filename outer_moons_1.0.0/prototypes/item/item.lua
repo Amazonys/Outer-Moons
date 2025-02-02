@@ -772,7 +772,7 @@ data:extend({
 	{
 		type = "item",
 		name = "battery",
-		icon = "__outer_moons__/graphics/icons/battery.png",
+		icon = "__base__/graphics/icons/battery.png",
 		subgroup = "chemical-product",
 		order = "d[battery]",
 		inventory_move_sound = item_sounds.electric_small_inventory_move,

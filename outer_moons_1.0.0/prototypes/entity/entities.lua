@@ -1649,8 +1649,8 @@ data:extend({
     collision_box = {{-1.29, -0.79}, {1.29, 0.79}},
     selection_box = {{-1.5, -1}, {1.5, 1}},
     damaged_trigger_effect = hit_effects.entity(),
-    target_temperature = 1000,
-	heating_energy = "100kW",
+    target_temperature = 165,
+	heating_energy = "1kW",
     fluid_box =
     {
       volume = 200,
@@ -1675,11 +1675,11 @@ data:extend({
       filter = "steam"
     },
 	energy_source = {
-      emissions_per_minute = { pollution = 1.5 },
+      --emissions_per_minute = { pollution = 1.5 },
       type = "electric",
       usage_priority = "secondary-input",
     },
-    energy_consumption = "200kW",
+    energy_consumption = "1.8MW",
     working_sound =
     {
       sound = { filename = "__base__/sound/boiler.ogg", volume = 0.7 },
