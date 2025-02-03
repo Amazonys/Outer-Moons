@@ -298,7 +298,7 @@ data:extend({
 		{
 		  {type = "item", name = "steel-plate", amount = 45},
 		  {type = "item", name = "iron-gear-wheel", amount = 45},
-		  {type = "item", name = "processing-unit", amount = 25}
+		  {type = "item", name = "advanced-circuit", amount = 25}
 		},
 		results = {{type="item", name="roboport", amount=1}}
 	},
@@ -1131,7 +1131,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "olefins", amount = 10 },
-		  {type = "fluid", name = "aromatics", amount = 20 },
+		  {type = "fluid", name = "aromatics", amount = 10 },
 		  {type = "item", name = "iron-plate", amount = 1 }
 		},
 		results =
@@ -1535,7 +1535,7 @@ data:extend({
 		results =
 		{
 		  {type = "item", name = "aluminate", amount = 2},
-		  {type = "fluid", name = "red-mud", amount = 4},
+		  {type = "fluid", name = "red-mud", amount = 2},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -1850,10 +1850,10 @@ data:extend({
 		{	  
 		  {type = "item", name = "plastic-bar", amount = 1},
 		  {type = "item", name = "aluminum-cable", amount = 1},
-		  {type = "item", name = "electronic-circuit", amount = 1},
-		  {type = "item", name = "battery", amount = 1},
+		  {type = "item", name = "electronic-circuit", amount = 2},
+		  {type = "item", name = "battery", amount = 2},
 		},
-		results = {{type="item", name="capacitor", amount=1}},
+		results = {{type="item", name="capacitor", amount=2}},
 		enabled = false,
 		allow_productivity = true
 	},
@@ -1867,7 +1867,7 @@ data:extend({
 		  {type = "item", name = "aluminum-cable", amount = 2},
 		  {type = "item", name = "electronic-circuit", amount = 4},
 		},
-		results = {{type="item", name="peripheral-interface", amount=1}},
+		results = {{type="item", name="peripheral-interface", amount=2}},
 		enabled = false,
 		allow_productivity = true
 	},
@@ -3028,7 +3028,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "water", amount = 20},
-		  {type = "fluid", name = "red-mud", amount = 15},
+		  {type = "fluid", name = "red-mud", amount = 25},
 		},
 		results =
 		{
@@ -3036,7 +3036,7 @@ data:extend({
 		  --{type = "item", name = "silicon-ore", amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
 		  --{type = "item", name = "alumina", amount = 1, probability = 0.33, show_details_in_recipe_tooltip = false},
 		  --{type = "item", name = "titanium-ore", amount = 1},
-		  {type = "item", name = "titanium-ore", amount = 1, probability = 0.25},
+		  {type = "item", name = "titanium-ore", amount = 1, probability = 0.1},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -3179,7 +3179,7 @@ data:extend({
 			{type = "fluid", name = "sulfuric-acid", amount = 5},
 		},
 		results = {
-			{type="item", name="silicon-ore", probability=0.5, amount_min = 1, amount_max = 5 }
+			{type="item", name="silicon-ore", amount_min = 2, amount_max = 10 }
 		},
 		allow_productivity = false,
 		enabled = false
@@ -3270,7 +3270,7 @@ data:extend({
 		{
 		  {type = "item", name = "steel-plate", amount = 2},
 		  {type = "item", name = "integrated-circuit", amount = 3},
-		  {type = "item", name = "engine-unit", amount = 2},
+		  {type = "item", name = "iron-gear-wheel", amount = 5},
 		  {type = "item", name = "assembling-machine-1", amount = 1}
 		},
 		results = {{type="item", name="assembling-machine-2", amount=1}}
@@ -3281,10 +3281,10 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "steel-plate", amount = 8},
+		  {type = "item", name = "aluminum-plate", amount = 4},
 		  {type = "item", name = "advanced-circuit", amount = 4},
-		  {type = "item", name = "engine-unit", amount = 4},
-		  {type = "item", name = "assembling-machine-2", amount = 2}
+		  {type = "item", name = "iron-gear-wheel", amount = 10},
+		  {type = "item", name = "assembling-machine-2", amount = 1}
 		},
 		results = {{type="item", name="assembling-machine-3", amount=1}}
 	},
@@ -3413,7 +3413,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "electronic-circuit", amount = 5},
-		  {type = "item", name = "steel-plate", amount = 5},
+		  {type = "item", name = "invar-plate", amount = 5},
 		  {type = "item", name = "copper-cable", amount = 5},
 		  {type = "item", name = "pipe", amount = 5}
 		},
@@ -4205,7 +4205,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "solar-panel", amount = 1},
-		  {type = "item", name = "advanced-circuit", amount = 2},
+		  {type = "item", name = "integrated-circuit", amount = 2},
 		  {type = "item", name = "steel-plate", amount = 5}
 		},
 		results = {{type="item", name="solar-panel-equipment", amount=1}}
@@ -4291,7 +4291,7 @@ data:extend({
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "advanced-circuit", amount = 5},
+		  {type = "item", name = "electronic-circuit", amount = 5},
 		  {type = "item", name = "steel-plate", amount = 10}
 		},
 		results = {{type="item", name="night-vision-equipment", amount=1}}
@@ -4303,7 +4303,7 @@ data:extend({
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "advanced-circuit", amount = 5},
+		  {type = "item", name = "integrated-circuit", amount = 5},
 		  {type = "item", name = "steel-plate", amount = 10}
 		},
 		results = {{type="item", name="belt-immunity-equipment", amount=1}}
@@ -4315,7 +4315,7 @@ data:extend({
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 10},
+		  {type = "item", name = "advanced-circuit", amount = 10},
 		  {type = "item", name = "electric-engine-unit", amount = 30},
 		  {type = "item", name = "steel-plate", amount = 20}
 		},

@@ -118,8 +118,8 @@ data:extend({
 		},
 		{
 		  base_density = 3,
-		  regular_rq_factor_multiplier = 1.10,
-		  starting_rq_factor_multiplier = 1.2,
+		  regular_rq_factor_multiplier = 2.2,
+		  starting_rq_factor_multiplier = 2.4,
 		  candidate_spot_count = 16, -- To match 0.17.50 placement
 		  has_starting_area_placement = true
 		}
@@ -143,9 +143,9 @@ data:extend({
 		  factoriopedia_simulation = simulations.factoriopedia_nickel_ore,
 		},
 		{
-		  base_density = 2.5,
-		  regular_rq_factor_multiplier = 1.10,
-		  starting_rq_factor_multiplier = 1.2,
+		  base_density = 3,
+		  regular_rq_factor_multiplier = 2.2,
+		  starting_rq_factor_multiplier = 2.4,
 		  candidate_spot_count = 15, -- To match 0.17.50 placement
 		  has_starting_area_placement = true
 		}
@@ -169,8 +169,8 @@ data:extend({
 		},
 		{
 		  base_density = 3,
-		  regular_rq_factor_multiplier = 1.0,
-		  starting_rq_factor_multiplier = 1.1,
+		  regular_rq_factor_multiplier = 2.0,
+		  starting_rq_factor_multiplier = 2.2,
 		  base_spots_per_km = 1.5,
 		  candidate_spot_count = 14,
 		  has_starting_area_placement = true
