@@ -736,7 +736,6 @@ data.raw.item["fast-loader"].subgroup = "loader"
 data.raw.item["express-loader"].subgroup = "loader"
 
 data.raw.item["engine-unit"].order = "c[advanced-intermediates]-b[engine-unit]"
-data.raw.item["electric-engine-unit"].order = "c[advanced-intermediates]-d[electric-engine-unit]"
 data.raw.item["flying-robot-frame"].order = "c[advanced-intermediates]-e[flying-robot-frame]"
 data.raw.item["copper-cable"].subgroup = "circuit-parts"
 data.raw.item["centrifuge"].icon = "__outer_moons__/graphics/icons/centrifuge.png"

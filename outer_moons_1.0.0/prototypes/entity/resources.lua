@@ -117,10 +117,10 @@ data:extend({
 		  factoriopedia_simulation = simulations.factoriopedia_lead_ore,
 		},
 		{
-		  base_density = 3,
-		  regular_rq_factor_multiplier = 2.2,
-		  starting_rq_factor_multiplier = 2.4,
-		  candidate_spot_count = 16, -- To match 0.17.50 placement
+		  base_density = 4,
+		  regular_rq_factor_multiplier = 2.0,
+		  starting_rq_factor_multiplier = 2.2,
+		  candidate_spot_count = 18, -- To match 0.17.50 placement
 		  has_starting_area_placement = true
 		}
 	),
@@ -128,7 +128,7 @@ data:extend({
 		{
 		  name = "nickel-ore",
 		  order = "b",
-		  map_color = {r = 86/256, g = 91/256, b = 69/256, a = 1.000},
+		  map_color = {r = 86/256, g = 130/256, b = 60/256, a = 1.000},
 		  minable =
 		  {
 			  mining_particle = "stone-particle",
@@ -139,14 +139,14 @@ data:extend({
 		  },
 		  walking_sound = sounds.ore,
 		  driving_sound = stone_driving_sound,
-		  mining_visualisation_tint = {r = 86/256, g = 91/256, b = 69/256, a = 1.000},
+		  mining_visualisation_tint = {r = 86/256, g = 130/256, b = 60/256, a = 1.000},
 		  factoriopedia_simulation = simulations.factoriopedia_nickel_ore,
 		},
 		{
-		  base_density = 3,
-		  regular_rq_factor_multiplier = 2.2,
-		  starting_rq_factor_multiplier = 2.4,
-		  candidate_spot_count = 15, -- To match 0.17.50 placement
+		  base_density = 4,
+		  regular_rq_factor_multiplier = 2.0,
+		  starting_rq_factor_multiplier = 2.2,
+		  candidate_spot_count = 17, -- To match 0.17.50 placement
 		  has_starting_area_placement = true
 		}
 	),    
@@ -154,7 +154,7 @@ data:extend({
 		{
 		  name = "aluminum-ore",
 		  order = "b",
-		  map_color = {r = 152/256, g = 95/256, b = 91/256, a = 1.000},
+		  map_color = {r = 171/256, g = 84/256, b = 78/256, a = 1.000},
 		  minable =
 		  {
 			  mining_particle = "stone-particle",
@@ -164,15 +164,15 @@ data:extend({
 			 -- required_fluid = "sulfuric-acid"
 		  },
 		  walking_sound = sounds.ore,
-		  mining_visualisation_tint = {r = 152/256, g = 95/256, b = 91/256, a = 1.000},
+		  mining_visualisation_tint = {r = 171/256, g = 84/256, b = 78/256, a = 1.000},
 		  factoriopedia_simulation = simulations.factoriopedia_aluminum_ore,
 		},
 		{
 		  base_density = 3,
-		  regular_rq_factor_multiplier = 2.0,
-		  starting_rq_factor_multiplier = 2.2,
+		  regular_rq_factor_multiplier = 1.5,
+		  starting_rq_factor_multiplier = 1.75,
 		  base_spots_per_km = 1.5,
-		  candidate_spot_count = 14,
+		  candidate_spot_count = 16,
 		  has_starting_area_placement = true
 		}
 	),
@@ -196,10 +196,10 @@ data:extend({
 		},
 		{
 		  base_density = 3,
-		  regular_rq_factor_multiplier = 2.0,
-		  starting_rq_factor_multiplier = 2.2,
+		  regular_rq_factor_multiplier = 1.5,
+		  starting_rq_factor_multiplier = 1.75,
 		  base_spots_per_km = 1.25,
-		  candidate_spot_count = 12,
+		  candidate_spot_count = 15,
 		  has_starting_area_placement = true
 		}
 	),

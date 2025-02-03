@@ -767,6 +767,18 @@ data:extend({
 		pick_sound = item_sounds.metal_large_inventory_pickup,
 		drop_sound = item_sounds.metal_large_inventory_move,
 		stack_size = 50,
+		weight = 4 * kg
+	},
+	{
+		type = "item",
+		name = "electric-engine-unit",
+		icon = "__outer_moons__/graphics/icons/electric-engine-unit.png",
+		subgroup = "intermediate-product",
+		order = "c[advanced-intermediates]-d[electric-engine-unit]",
+		inventory_move_sound = item_sounds.metal_large_inventory_move,
+		pick_sound = item_sounds.electric_large_inventory_pickup,
+		drop_sound = item_sounds.metal_large_inventory_move,
+		stack_size = 50,
 		weight = 2.5 * kg
 	},
 	-- Circuit parts
