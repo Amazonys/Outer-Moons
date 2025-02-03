@@ -228,11 +228,15 @@ data.raw.technology["logistics-2"].prerequisites = {"logistics", "logistic-scien
 data.raw.technology["automation-2"].prerequisites = {"automation", "steel-processing", "advanced-circuit", "engine"}
 data.raw.technology["automobilism"].prerequisites = {"logistics-2", "multicylinder-engine", "alumina-processing"}
 data.raw.technology["railway"].prerequisites = {"logistics-2", "multicylinder-engine"}
-data.raw.technology["concrete"].prerequisites = {"advanced-material-processing", "silicon-processing", "convector"}
-data.raw.technology["laser"].prerequisites = {"battery", "convector", "chemical-science-pack"}
+data.raw.technology["concrete"].prerequisites = {"advanced-material-processing", "silicon-processing"}
+data.raw.technology["laser"].prerequisites = {"battery", "chemical-science-pack"}
 data.raw.technology["defender"].prerequisites = {"military-science-pack", "robotics"}
 data.raw.technology["explosives"].effects =
 {
+  {
+	type = "unlock-recipe",
+	recipe = "potassium-salt"
+  },
   {
 	type = "unlock-recipe",
 	recipe = "ammonia"
@@ -608,12 +612,6 @@ data.raw.technology["stack-inserter"].unit.ingredients =
   {"space-science-pack",        1},
   {"lunar-science-pack", 		1}
 }
-data.raw.recipe["stack-inserter"].ingredients = {
-	{type = "item", name = "bulk-inserter", amount = 1},
-	{type = "item", name = "processing-unit", amount = 1},
-	{type = "item", name = "aluminum-plate", amount = 4},
-	{type = "item", name = "titanium-plate", amount = 8}
-}
 data.raw.technology["transport-belt-capacity-1"].unit.ingredients =
 {
    {"automation-science-pack",      1},
@@ -745,7 +743,7 @@ data.raw.item["centrifuge"].icon = "__outer_moons__/graphics/icons/centrifuge.pn
 data.raw.item["tungsten-plate"].icon = "__outer_moons__/graphics/icons/tungsten-plate.png"
 data.raw.item["tungsten-carbide"].icon = "__outer_moons__/graphics/icons/tungsten-carbide.png"
 
-data.raw["assembling-machine"]["electromagnetic-plant"].crafting_categories = {"electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling", "electronics-or-convecting", "electronics-quantum",}
+data.raw["assembling-machine"]["electromagnetic-plant"].crafting_categories = {"electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling", "electronics-quantum",}
 data.raw["assembling-machine"]["foundry"].crafting_categories = {"metallurgy", "pressing", "crafting-with-fluid-or-metallurgy", "metallurgy-or-assembling", "metallurgy-or-adv-metallurgy"}
 
 data.raw.item["lab"].subgroup = "labs"
@@ -900,7 +898,7 @@ data.raw.item["foundry"].order = "f[recycler]"
 data.raw.item["recycler"].order = "h[recycler]"
 
 
-data.raw.item["quantum-processor"].subgroup = "circuit-parts"
+data.raw.item["quantum-processor"].subgroup = "circuit-parts-2"
 data.raw.item["quantum-processor"].order = "h[quantum-processor]"
 
 data.raw.item["superconductor"].icon = "__outer_moons__/graphics/icons/superconductor.png"
@@ -942,6 +940,8 @@ data.raw.recipe["agricultural-science-pack"].surface_conditions = { { property =
 data.raw["night-vision-equipment"]["night-vision-equipment"].shape = { width = 1, height = 1, type = "full"  }
 
 --disable
+data.raw.recipe["lubricant"].hide_from_player_crafting = true
+
 data.raw.item["stone-furnace"].hidden = true
 data.raw.item["stone-furnace"].subgroup = "other"
 data.raw.recipe["stone-furnace"].hidden = true
@@ -968,6 +968,7 @@ data.raw.furnace["electric-furnace"].hidden = true
 data.raw.furnace["electric-furnace"].subgroup = "other"
 data.raw.furnace["electric-furnace"].order = "z[electric-furnace]"
 
+data.raw.recipe["carbon"].hidden = true
 data.raw.recipe["solid-fuel-from-petroleum-gas"].hidden = true
 
 data.raw.recipe["nutrients-from-yumako-mash"].hidden = true

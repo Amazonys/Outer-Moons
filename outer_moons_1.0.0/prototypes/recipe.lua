@@ -1622,10 +1622,10 @@ data:extend({
 	{
 		type = "recipe",
 		name = "fiber-optic",
-		category = "electronics-or-convecting",
+		category = "electronics-or-assembling",
 		enabled = false,
 		ingredients = {
-			{type = "item", name = "silicon-ore", amount = 1},
+			{type = "item", name = "plastic-bar", amount = 1},
 			--{type = "item", name = "sulfur", amount = 1},
 		},
 		results = {{type="item", name="fiber-optic", amount=2}},
@@ -1638,19 +1638,6 @@ data:extend({
 		enabled = false,
 		ingredients = {{type = "item", name = "cobalt-plate", amount = 1}},
 		results = {{type="item", name="cobalt-cable", amount=2}},
-		allow_productivity = true
-	},
-	{
-		type = "recipe",
-		name = "glass-lens",
-		category = "convecting",
-		enabled = false,
-		ingredients = {
-			{type = "item", name = "silicon-ore", amount = 3},
-			{type = "item", name = "salt", amount = 2},
-			{type = "item", name = "plastic-bar", amount = 1},
-		},
-		results = {{type="item", name="glass-lens", amount=1}},
 		allow_productivity = true
 	},
 	{
@@ -1725,7 +1712,8 @@ data:extend({
 		{
 		  {type = "item", name = "electric-engine-unit", amount = 1},
 		  {type = "item", name = "battery", amount = 2},
-		  {type = "item", name = "duralumin-plate", amount = 1},
+		  --{type = "item", name = "duralumin-plate", amount = 1},
+		  {type = "item", name = "titanium-plate", amount = 1},
 		  {type = "item", name = "integrated-circuit", amount = 2}
 		},
 		results = {{type="item", name="flying-robot-frame", amount=1}},
@@ -2895,32 +2883,24 @@ data:extend({
 		allow_productivity = true
 	},
 	
-	-- Fluid Electrolysis		
+	-- Fluid Electrolysis	
 	{
 		type = "recipe",
-		name = "water-evaporation",
-		icon = "__outer_moons__/graphics/icons/fluid/water-evaporation.png",
+		name = "salt",
+		icon = "__outer_moons__/graphics/icons/salt.png",
 		category = "electrolysis",
-		subgroup = "electrolytic-recipes",
-		order = "a[electrolysis]-a[water-evaporation]",
+		--subgroup = "electrolytic-recipes",
+		order = "a[electrolysis]-a[salt]",
 		auto_recycle = false,
 		hide_from_player_crafting = true,
-		energy_required = 10,
-		surface_conditions = {
-			{
-				property = "pressure",
-				min = 500,
-				max = 5000
-			}
-		},
+		energy_required = 5,
 		ingredients =
 		{
-		  {type = "fluid", name = "water", amount = 50},
+		  {type = "fluid", name = "water", amount = 100},
 		},
 		results =
 		{
-		  {type = "item", name = "salt", amount = 5},
-		  {type = "item", name = "potassium-salt", amount = 3},
+		  {type = "item", name = "salt", amount = 4},
 		},
 		allow_productivity = false,
 		enabled = false,
@@ -2931,6 +2911,31 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "potassium-salt",
+		icon = "__outer_moons__/graphics/icons/potassium-salt.png",
+		category = "electrolysis",
+		--subgroup = "electrolytic-recipes",
+		order = "a[electrolysis]-ab[potassium-salt]",
+		auto_recycle = false,
+		hide_from_player_crafting = true,
+		energy_required = 5,
+		ingredients =
+		{
+		  {type = "fluid", name = "water", amount = 100},
+		},
+		results =
+		{
+		  {type = "item", name = "potassium-salt", amount = 1},
+		},
+		allow_productivity = false,
+		enabled = false,
+		always_show_made_in = true,
+		show_amount_in_title = false,
+		always_show_products = true,
+		allow_decomposition = false,
+	},	
+	{
+		type = "recipe",
 		name = "water-electrolysis",
 		icon = "__outer_moons__/graphics/icons/fluid/water-electrolysis.png",
 		category = "electrolysis",
@@ -2938,7 +2943,7 @@ data:extend({
 		order = "a[electrolysis]-b[water-electrolysis]",
 		auto_recycle = false,
 		hide_from_player_crafting = true,
-		energy_required = 50,
+		energy_required = 30,
 		ingredients =
 		{
 		  {type = "fluid", name = "water", amount = 20},
@@ -2957,39 +2962,6 @@ data:extend({
 	},
 	{
 		type = "recipe",
-		name = "brine",
-		icon = "__outer_moons__/graphics/icons/fluid/brine.png",
-		category = "electrolysis",
-		subgroup = "electrolytic-recipes",
-		order = "a[electrolysis]-e[brine]",
-		auto_recycle = false,
-		hide_from_player_crafting = true,
-		energy_required = 25,
-		surface_conditions = {
-			{
-				property = "pressure",
-				min = 500,
-				max = 5000
-			}
-		},
-		ingredients =
-		{
-		  {type = "fluid", name = "water", amount = 40},
-		 -- {type = "item", name = "salt", amount = 10},
-		},
-		results =
-		{
-		  {type = "fluid", name = "brine", amount = 20},
-		},
-		allow_productivity = false,
-		enabled = false,
-		always_show_made_in = true,
-		show_amount_in_title = false,
-		always_show_products = true,
-		allow_decomposition = false,
-	},
-	{
-		type = "recipe",
 		name = "chloralkali-process",
 		icon = "__outer_moons__/graphics/icons/fluid/chloralkali-process.png",
 		category = "electrolysis",
@@ -2997,16 +2969,17 @@ data:extend({
 		order = "a[electrolysis]-f[chloralkali-process]",
 		auto_recycle = false,
 		hide_from_player_crafting = true,
-		energy_required = 40,
+		energy_required = 30,
 		ingredients =
 		{
-		  {type = "fluid", name = "brine", amount = 30},
+		  {type = "fluid", name = "water", amount = 20},
+		  {type = "item", name = "salt", amount = 10},
 		},
 		results =
 		{
-		  {type = "item", name = "lye", amount = 4},
-		  {type = "fluid", name = "hydrogen", amount = 20},
-		  {type = "fluid", name = "chlorine", amount = 20},
+		  {type = "item", name = "lye", amount = 2},
+		  {type = "fluid", name = "hydrogen", amount = 10},
+		  {type = "fluid", name = "chlorine", amount = 10},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -3024,11 +2997,11 @@ data:extend({
 		auto_recycle = false,
 		hide_from_player_crafting = true,
 		hide_from_player_crafting = true,
-		energy_required = 30,
+		energy_required = 20,
 		ingredients =
 		{
 		  {type = "fluid", name = "water", amount = 20},
-		  {type = "fluid", name = "red-mud", amount = 25},
+		  {type = "fluid", name = "red-mud", amount = 15},
 		},
 		results =
 		{
@@ -3053,7 +3026,7 @@ data:extend({
 		order = "a[electrolysis]-g[brine-extraction]",
 		auto_recycle = false,
 		hide_from_player_crafting = true,
-		energy_required = 10,
+		energy_required = 30,
 		--surface_conditions = {
 		--	{
 		--		property = "pressure",
@@ -3068,7 +3041,7 @@ data:extend({
 		results =
 		{
 		  {type = "item", name = "magnesium-ore", amount = 5},
-		  {type = "item", name = "calcite", amount = 5},
+		  {type = "item", name = "calcite", amount = 2},
 		  {type = "fluid", name = "water", amount = 35},
 		},
 		allow_productivity = false,
@@ -3087,7 +3060,7 @@ data:extend({
 		order = "a[electrolysis]-c[carbon-dioxide-electrolysis]",
 		auto_recycle = false,
 		hide_from_player_crafting = true,
-		energy_required = 50,
+		energy_required = 30,
 		ingredients =
 		{
 		  {type = "fluid", name = "carbon-dioxide", amount = 20},
@@ -3112,7 +3085,7 @@ data:extend({
 		order = "a[electrolysis]-cd[carbon-dioxide-electrolysis]",
 		auto_recycle = false,
 		hide_from_player_crafting = true,
-		energy_required = 50,
+		energy_required = 30,
 		ingredients =
 		{
 		  {type = "item", name = "tungsten-carbide", amount = 1},
@@ -3139,7 +3112,7 @@ data:extend({
 		order = "a[electrolysis]-h[NaK]",
 		auto_recycle = false,
 		hide_from_player_crafting = true,
-		energy_required = 50,
+		energy_required = 30,
 		ingredients =
 		{
 		  {type = "item", name = "salt", amount = 10},
@@ -3189,7 +3162,7 @@ data:extend({
 		type = "recipe",
 		name = "amalgamate-regolith",
 		icon = "__outer_moons__/graphics/icons/amalgamate-regolith.png",
-		category = "convecting",
+		category = "advanced-crafting",
 		subgroup = "selene-processes",
 		order = "a[selene]-a[amalgamate-regolith]",
 		auto_recycle = false,
@@ -3391,20 +3364,6 @@ data:extend({
 		},
 		results = {{type="item", name="nuclear-reactor", amount=1}},
 		requester_paste_multiplier = 1
-	},
-	{
-		type = "recipe",
-		name = "convector",
-		enabled = false,
-		ingredients =
-		{
-		  {type = "item", name = "integrated-circuit", amount = 5},
-		  {type = "item", name = "iron-gear-wheel", amount = 5},
-		  {type = "item", name = "copper-cable", amount = 10},
-		  {type = "item", name = "invar-plate", amount = 20}
-		 -- {type = "item", name = "concrete", amount = 5}
-		},
-		results = {{type="item", name="convector", amount=1}}
 	},
 	{
 		type = "recipe",
@@ -3938,7 +3897,7 @@ data:extend({
 		  {type = "item", name = "steel-plate", amount = 20},
 		  {type = "item", name = "advanced-circuit", amount = 5},
 		  {type = "item", name = "battery", amount = 12},
-		  {type = "item", name = "glass-lens", amount = 6}
+		  {type = "item", name = "aluminum-plate", amount = 6}
 		},
 		results = {{type="item", name="laser-turret", amount=1}}
 	},
@@ -3979,7 +3938,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "integrated-circuit", amount = 3},
-		  {type = "item", name = "glass-lens", amount = 4},
+		  {type = "item", name = "aluminum-plate", amount = 4},
 		  {type = "item", name = "duralumin-plate", amount = 1},
 		  {type = "item", name = "flying-robot-frame", amount = 1},
 		},
@@ -4704,32 +4663,6 @@ data:extend({
     },
 	{
       type = "recipe",
-      name = "potassium-salt",
-      category = "organic-or-chemistry",
-      icon = "__outer_moons__/graphics/icons/potassium-salt.png",
-      enabled = false,
-      energy_required = 12,
-      ingredients =
-      {
-        {type = "fluid", name = "mawslush", amount = 8, fluidbox_multiplier = 10},
-        {type = "fluid", name = "water", amount = 5, fluidbox_multiplier = 10},
-      },
-      results =
-      {
-        {type = "item", name = "potassium-salt", amount = 2},
-      },
-      subgroup = "agriculture-products",
-      order = "a[organic-products]-d[potassium-salt]",
-      allow_productivity = true,
-      auto_recycle = false,
-      crafting_machine_tint =
-      {
-        primary = {r = 0.3, g = 0.9, b = 0.8, a = 1.000},
-        secondary = {r = 0.8, g = 0.5, b = 0.3, a = 1.000}
-      }
-    },
-	{
-      type = "recipe",
       name = "nitrocalcite",
       category = "organic-or-chemistry",
       icon = "__outer_moons__/graphics/icons/nitrocalcite.png",
@@ -5128,7 +5061,7 @@ data:extend({
 		type = "recipe",
 		name = "stone-synthesis",
 		icon = "__outer_moons__/graphics/icons/stone-synthesis.png",
-		category = "convecting",
+		category = "smelting",
 		subgroup = "gleba-general",
 		order = "f[stone-synthesis]",
 		surface_conditions =
@@ -5450,7 +5383,7 @@ data:extend({
 	{
       type = "recipe",
       name = "amalgamate-microplastic",
-      category = "convecting",
+      category = "smelting",
       icon = "__outer_moons__/graphics/icons/amalgamate-microplastic.png",
       enabled = false,
       energy_required = 5,

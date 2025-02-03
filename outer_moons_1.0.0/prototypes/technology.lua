@@ -101,10 +101,6 @@ data:extend(
       },
 	  {
         type = "unlock-recipe",
-        recipe = "water-evaporation"
-      },
-	  {
-        type = "unlock-recipe",
         recipe = "water-electrolysis"
       },
 	  {
@@ -189,10 +185,10 @@ data:extend(
     icon_size = 256,
     essential = true,
     effects =
-    {	  
+    {		  
 	  {
         type = "unlock-recipe",
-        recipe = "brine"
+        recipe = "salt"
       },
 	  {
         type = "unlock-recipe",
@@ -332,9 +328,13 @@ data:extend(
     name = "processing-unit",
     icon = "__base__/graphics/technology/processing-unit.png",
     icon_size = 256,
-    prerequisites = {"convector", "battery", "plastics"},
+    prerequisites = { "battery", "plastics"},
     effects =
-    {
+    {	  
+	  {
+        type = "unlock-recipe",
+        recipe = "fiber-optic"
+      },
 	  {
         type = "unlock-recipe",
         recipe = "capacitor"
@@ -534,40 +534,6 @@ data:extend(
   },
   {
     type = "technology",
-    name = "convector",
-    icon = "__outer_moons__/graphics/technology/convector.png",
-    icon_size = 256,
-    essential = true,
-    effects =
-    {
-      {
-        type = "unlock-recipe",
-        recipe = "convector"
-      },
-	  {
-        type = "unlock-recipe",
-        recipe = "glass-lens"
-      },
-	  {
-        type = "unlock-recipe",
-        recipe = "fiber-optic"
-      },
-    },
-    prerequisites = {"silicon-processing", "advanced-circuit"},
-    unit =
-    {
-      count = 200,
-      ingredients =
-      {
-        {"automation-science-pack", 1},
-        {"logistic-science-pack", 1},
-        {"chemical-science-pack", 1},
-      },
-      time = 60
-    }
-  },
-  {
-    type = "technology",
     name = "adv-assembler",
     icon = "__outer_moons__/graphics/technology/adv-assembler.png",
     icon_size = 256,
@@ -606,8 +572,8 @@ data:extend(
     prerequisites = {"planet-discovery-selene"},
     research_trigger =
     {
-      type = "craft-fluid",
-      fluid = "olefins"
+      type = "craft-item",
+      item = "magnesium-plate"
     }
   },
   

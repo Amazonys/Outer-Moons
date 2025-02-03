@@ -29,19 +29,6 @@ data:extend(
   }, 
   {
     type = "fluid",
-    name = "brine",
-    icon = "__outer_moons__/graphics/icons/fluid/brine.png",
-    subgroup = "fluid",
-    order = "a[fluid]-c[brine]",
-    default_temperature = 25,
-	gas_temperature = 100,
-    heat_capacity = "0.1kJ",
-    base_color = {0.52, 0.58, 0.69},
-    flow_color = {0.62, 0.68, 0.79},
-    auto_barrel = false
-  },
-  {
-    type = "fluid",
     name = "red-mud",
     icon = "__outer_moons__/graphics/icons/fluid/red-mud.png",
     subgroup = "fluid",
@@ -470,12 +457,25 @@ data:extend(
     auto_barrel = false
   },    
   --- Selene
-   {
+  {
+    type = "fluid",
+    name = "brine",
+    icon = "__outer_moons__/graphics/icons/fluid/brine.png",
+    subgroup = "selene-fluid",
+    order = "h[selene]-a[brine]",
+    default_temperature = 25,
+	gas_temperature = 100,
+    heat_capacity = "0.1kJ",
+    base_color = {0.52, 0.58, 0.69},
+    flow_color = {0.62, 0.68, 0.79},
+    auto_barrel = false
+  },
+  {
     type = "fluid",
     name = "helium",
     icon = "__outer_moons__/graphics/icons/fluid/helium.png",
     subgroup = "selene-fluid",
-    order = "h[selene]-a[helium]",
+    order = "h[selene]-b[helium]",
     default_temperature = 25,
 	gas_temperature = -268,
     heat_capacity = "0.1kJ",

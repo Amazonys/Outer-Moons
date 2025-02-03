@@ -451,15 +451,21 @@ data:extend(
   },
   {
     type = "item-subgroup",
-    name = "circuits",
+    name = "circuit-parts-2",
     group = "intermediate-products",
     order = "g-c"
   },
   {
     type = "item-subgroup",
-    name = "space-parts",
+    name = "circuits",
     group = "intermediate-products",
     order = "g-d"
+  },
+  {
+    type = "item-subgroup",
+    name = "space-parts",
+    group = "intermediate-products",
+    order = "g-e"
   },
   {
     type = "item-subgroup",
