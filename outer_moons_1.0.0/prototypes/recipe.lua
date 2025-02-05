@@ -33,7 +33,8 @@ data:extend({
 		  {type = "item", name = "engine-unit", amount = 1},
 		  {type = "item", name = "nickel-plate", amount = 2},
 		  {type = "item", name = "pipe", amount = 1},
-		  {type = "item", name = "spark-plug", amount = 1},
+		  {type = "item", name = "electronic-circuit", amount = 1},
+		 -- {type = "item", name = "spark-plug", amount = 1},
 		},
 		results = {{type="item", name="pump", amount=1}}
 	},
@@ -60,6 +61,7 @@ data:extend({
 		{
 		  {type = "item", name = "spark-plug", amount = 1},
 		  {type = "item", name = "pump", amount = 1},
+		  {type = "item", name = "invar-plate", amount = 4},
 		  {type = "item", name = "pipe", amount = 4}
 		},
 		results = {{type="item", name="flare-stack", amount=1}}
@@ -332,6 +334,41 @@ data:extend({
 	-- Trains
 	{
 		type = "recipe",
+		name = "train-stop",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "electronic-circuit", amount = 5},
+		  {type = "item", name = "nickel-plate", amount = 6},
+		  {type = "item", name = "iron-stick", amount = 6},
+		 -- {type = "item", name = "steel-plate", amount = 3}
+		},
+		results = {{type="item", name="train-stop", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "rail-signal",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "electronic-circuit", amount = 1},
+		  {type = "item", name = "nickel-plate", amount = 5}
+		},
+		results = {{type="item", name="rail-signal", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "rail-chain-signal",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "electronic-circuit", amount = 1},
+		  {type = "item", name = "nickel-plate", amount = 5}
+		},
+		results = {{type="item", name="rail-chain-signal", amount=1}}
+	},
+	{
+		type = "recipe",
 		name = "locomotive",
 		energy_required = 4,
 		enabled = false,
@@ -358,6 +395,19 @@ data:extend({
 		  {type = "item", name = "processing-unit", amount = 10}
 		},
 		results = {{type="item", name="artillery-wagon", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "cargo-wagon",
+		energy_required = 1,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "iron-gear-wheel", amount = 10},
+		  --{type = "item", name = "iron-plate", amount = 20},
+		  {type = "item", name = "steel-plate", amount = 24}
+		},
+		results = {{type="item", name="cargo-wagon", amount=1}}
 	},
 	
 	--Concrete
@@ -1534,7 +1584,7 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "item", name = "aluminate", amount = 2},
+		  {type = "item", name = "aluminate", amount = 1},
 		  {type = "fluid", name = "red-mud", amount = 2},
 		},
 		allow_productivity = true,
@@ -1677,7 +1727,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "engine-unit", amount = 8},
-		  {type = "item", name = "iron-gear-wheel", amount = 4},
+		  {type = "item", name = "invar-plate", amount = 4},
 		  --{type = "fluid", name = "lubricant", amount = 10},
 		  {type = "item", name = "electronic-circuit", amount = 2},
 		  {type = "item", name = "spark-plug", amount = 2},
@@ -1699,7 +1749,7 @@ data:extend({
 		  {type = "item", name = "integrated-circuit", amount = 1},
 		  {type = "item", name = "nickel-plate", amount = 1}
 		},
-		results = {{type="item", name="electric-engine-unit", amount=2}},
+		results = {{type="item", name="electric-engine-unit", amount=1}},
 		enabled = false,
 		allow_productivity = true
 	},
@@ -2144,6 +2194,22 @@ data:extend({
 		allow_productivity = true
 	},
 	-- Space
+	{
+		type = "recipe",
+		name = "rocket-silo",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "invar-plate", amount = 1000},
+		  {type = "item", name = "concrete", amount = 1000},
+		  {type = "item", name = "pipe", amount = 100},
+		  {type = "item", name = "processing-unit", amount = 200},
+		  {type = "item", name = "electric-engine-unit", amount = 200}
+		},
+		energy_required = 30,
+		results = {{type="item", name="rocket-silo", amount=1}},
+		requester_paste_multiplier = 1
+	},
 	{
 		type = "recipe",
 		name = "space-platform-foundation",
@@ -2973,7 +3039,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "water", amount = 20},
-		  {type = "item", name = "salt", amount = 10},
+		  {type = "item", name = "salt", amount = 20},
 		},
 		results =
 		{
@@ -3009,7 +3075,7 @@ data:extend({
 		  --{type = "item", name = "silicon-ore", amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
 		  --{type = "item", name = "alumina", amount = 1, probability = 0.33, show_details_in_recipe_tooltip = false},
 		  --{type = "item", name = "titanium-ore", amount = 1},
-		  {type = "item", name = "titanium-ore", amount = 1, probability = 0.1},
+		  {type = "item", name = "titanium-ore", amount = 1},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -3317,8 +3383,8 @@ data:extend({
 		energy_required = 15,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 20},
-		  {type = "item", name = "advanced-circuit", amount = 20},
+		  --{type = "item", name = "processing-unit", amount = 20},
+		  {type = "item", name = "advanced-circuit", amount = 30},
 		  {type = "item", name = "aluminum-plate", amount = 10},
 		  {type = "item", name = "fiber-optic", amount = 10}
 		},
@@ -3895,7 +3961,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "steel-plate", amount = 20},
-		  {type = "item", name = "advanced-circuit", amount = 5},
+		  {type = "item", name = "integrated-circuit", amount = 5},
 		  {type = "item", name = "battery", amount = 12},
 		  {type = "item", name = "aluminum-plate", amount = 6}
 		},
@@ -3908,10 +3974,10 @@ data:extend({
 		energy_required = 20,
 		ingredients =
 		{
-		  {type = "item", name = "steel-plate", amount = 20},
+		  {type = "item", name = "invar-plate", amount = 20},
 		  {type = "item", name = "spark-plug", amount = 2},
 		  {type = "item", name = "pump", amount = 1},
-		  {type = "item", name = "integrated-circuit", amount = 5}
+		  {type = "item", name = "electronic-circuit", amount = 5}
 		},
 		results = {{type="item", name="flamethrower-turret", amount=1}}
 	},

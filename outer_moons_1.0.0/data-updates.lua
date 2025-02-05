@@ -231,6 +231,7 @@ data.raw.technology["railway"].prerequisites = {"logistics-2", "multicylinder-en
 data.raw.technology["concrete"].prerequisites = {"advanced-material-processing", "silicon-processing"}
 data.raw.technology["laser"].prerequisites = {"battery", "chemical-science-pack"}
 data.raw.technology["defender"].prerequisites = {"military-science-pack", "robotics"}
+data.raw.technology["explosives"].prerequisites = {"sulfur-processing", "fracking"}
 data.raw.technology["explosives"].effects =
 {
   {

@@ -120,7 +120,7 @@ data:extend({
 		  base_density = 4,
 		  regular_rq_factor_multiplier = 2.0,
 		  starting_rq_factor_multiplier = 2.2,
-		  candidate_spot_count = 18, -- To match 0.17.50 placement
+		  candidate_spot_count = 8, -- To match 0.17.50 placement
 		  has_starting_area_placement = true
 		}
 	),
@@ -146,7 +146,7 @@ data:extend({
 		  base_density = 4,
 		  regular_rq_factor_multiplier = 2.0,
 		  starting_rq_factor_multiplier = 2.2,
-		  candidate_spot_count = 17, -- To match 0.17.50 placement
+		  candidate_spot_count = 8, -- To match 0.17.50 placement
 		  has_starting_area_placement = true
 		}
 	),    
@@ -172,7 +172,7 @@ data:extend({
 		  regular_rq_factor_multiplier = 1.5,
 		  starting_rq_factor_multiplier = 1.75,
 		  base_spots_per_km = 1.5,
-		  candidate_spot_count = 16,
+		  candidate_spot_count = 11,
 		  has_starting_area_placement = true
 		}
 	),
@@ -199,7 +199,7 @@ data:extend({
 		  regular_rq_factor_multiplier = 1.5,
 		  starting_rq_factor_multiplier = 1.75,
 		  base_spots_per_km = 1.25,
-		  candidate_spot_count = 15,
+		  candidate_spot_count = 11,
 		  has_starting_area_placement = true
 		}
 	),
