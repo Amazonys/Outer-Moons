@@ -118,9 +118,10 @@ data:extend({
 		},
 		{
 		  base_density = 4,
-		  regular_rq_factor_multiplier = 2.0,
-		  starting_rq_factor_multiplier = 2.2,
-		  candidate_spot_count = 8, -- To match 0.17.50 placement
+		  regular_rq_factor_multiplier = 1.6,
+		  starting_rq_factor_multiplier = 1.9,
+		  candidate_spot_count = 2,
+		  base_spots_per_km = 1.5, -- To match 0.17.50 placement
 		  has_starting_area_placement = true
 		}
 	),
@@ -144,9 +145,10 @@ data:extend({
 		},
 		{
 		  base_density = 4,
-		  regular_rq_factor_multiplier = 2.0,
-		  starting_rq_factor_multiplier = 2.2,
-		  candidate_spot_count = 8, -- To match 0.17.50 placement
+		  regular_rq_factor_multiplier = 1.6,
+		  starting_rq_factor_multiplier = 1.9,
+		  candidate_spot_count = 3,
+		  base_spots_per_km = 2, -- To match 0.17.50 placement
 		  has_starting_area_placement = true
 		}
 	),    
@@ -168,10 +170,10 @@ data:extend({
 		  factoriopedia_simulation = simulations.factoriopedia_aluminum_ore,
 		},
 		{
-		  base_density = 3,
+		  base_density = 4,
 		  regular_rq_factor_multiplier = 1.5,
 		  starting_rq_factor_multiplier = 1.75,
-		  base_spots_per_km = 1.5,
+		  base_spots_per_km = 4,
 		  candidate_spot_count = 11,
 		  has_starting_area_placement = true
 		}
@@ -184,7 +186,7 @@ data:extend({
 		  minable =
 		  {
 			  mining_particle = "stone-particle",
-			  mining_time = 3,
+			  mining_time = 4,
 			  result = "silicon-ore",
 			  fluid_amount = 5,
 			  required_fluid = "sulfuric-acid"
@@ -198,7 +200,7 @@ data:extend({
 		  base_density = 3,
 		  regular_rq_factor_multiplier = 1.5,
 		  starting_rq_factor_multiplier = 1.75,
-		  base_spots_per_km = 1.25,
+		  base_spots_per_km = 3,
 		  candidate_spot_count = 11,
 		  has_starting_area_placement = true
 		}

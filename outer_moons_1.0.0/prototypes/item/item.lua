@@ -413,13 +413,47 @@ data:extend({
 		name = "indium-wafer",		
         group = "intermediate-products",
 		icon = "__outer_moons__/graphics/icons/indium-wafer.png",
-		subgroup = "outer-processes",
-		order = "a[indium-wafer]",
+		subgroup = "feronia-processes",
+		order = "d[indium-wafer]",
 		inventory_move_sound = item_sounds.metal_small_inventory_move,
 		pick_sound = item_sounds.metal_small_inventory_pickup,
 		drop_sound = item_sounds.metal_small_inventory_move,
 		stack_size = 100,
 		weight = 2 * kg,
+	},
+	{
+		type = "item",
+		name = "thorium-232",		
+        group = "intermediate-products",
+		icon = "__outer_moons__/graphics/icons/thorium-232.png",
+		pictures =
+		{
+		  layers =
+		  {
+			{
+			  size = 64,
+			  filename = "__outer_moons__/graphics/icons/thorium-232.png",
+			  scale = 0.5,
+			  mipmap_count = 4
+			},
+			{
+			  draw_as_light = true,
+			  blend_mode = "additive",
+			  size = 64,
+			  filename = "__outer_moons__/graphics/icons/thorium-232.png",
+			  scale = 0.5,
+			  tint = {0.3, 0.3, 0.3, 0.3}
+			}
+		  }
+		},
+		subgroup = "outer-processes",
+		color_hint = { text = "+" },
+		order = "a[thorium-232]",
+		inventory_move_sound = item_sounds.nuclear_inventory_move,
+		pick_sound = item_sounds.nuclear_inventory_pickup,
+		drop_sound = item_sounds.nuclear_inventory_move,
+		stack_size = 100,
+		weight = 50*kg
 	},
 	{
 		type = "item",
@@ -466,7 +500,7 @@ data:extend({
         group = "intermediate-products",
 		icon = "__outer_moons__/graphics/icons/mischmetal-plate.png",
 		subgroup = "outer-processes",
-		order = "d[mischmetal-plate]",
+		order = "e[mischmetal-plate]",
 		inventory_move_sound = item_sounds.metal_small_inventory_move,
 		pick_sound = item_sounds.metal_small_inventory_pickup,
 		drop_sound = item_sounds.metal_small_inventory_move,
@@ -991,7 +1025,7 @@ data:extend({
 		pick_sound = item_sounds.electric_small_inventory_pickup,
 		drop_sound = item_sounds.electric_small_inventory_move,
 		stack_size = 200,
-		ingredient_to_weight_coefficient = 0.28
+		weight = 1 * kg
 	},
 	{
 		type = "item",
@@ -1004,7 +1038,7 @@ data:extend({
 		pick_sound = item_sounds.electric_small_inventory_pickup,
 		drop_sound = item_sounds.electric_small_inventory_move,
 		stack_size = 200,
-		ingredient_to_weight_coefficient = 0.28
+		weight = 2 * kg
 	},
 	{
 		type = "item",
@@ -1017,7 +1051,7 @@ data:extend({
 		pick_sound = item_sounds.electric_small_inventory_pickup,
 		drop_sound = item_sounds.electric_small_inventory_move,
 		stack_size = 200,
-		ingredient_to_weight_coefficient = 0.28,
+		weight = 5 * kg
 	},
 	{
 		type = "item",
@@ -1030,7 +1064,7 @@ data:extend({
 		pick_sound = item_sounds.electric_small_inventory_pickup,
 		drop_sound = item_sounds.electric_small_inventory_move,
 		stack_size = 100,
-		ingredient_to_weight_coefficient = 0.25
+		weight = 10 * kg
 	},
 	{
 		type = "item",
@@ -1043,7 +1077,7 @@ data:extend({
 		pick_sound = item_sounds.electric_small_inventory_pickup,
 		drop_sound = item_sounds.electric_small_inventory_move,
 		stack_size = 100,
-		ingredient_to_weight_coefficient = 0.25
+		weight = 20 * kg
 	},
 	{
 		type = "item",
@@ -1056,7 +1090,7 @@ data:extend({
 		pick_sound = item_sounds.electric_small_inventory_pickup,
 		drop_sound = item_sounds.electric_small_inventory_move,
 		stack_size = 100,
-		ingredient_to_weight_coefficient = 0.25
+		weight = 40 * kg
 	},
 	---Gleba	
 	-- seeds

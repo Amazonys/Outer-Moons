@@ -86,7 +86,7 @@ data:extend(
     subgroup = "oil-fluid",
     default_temperature = 25,
     base_color = {0, 0, 0},
-    flow_color = {0.5, 0.5, 0.5},
+    flow_color = {0, 0, 0},
     icon = "__base__/graphics/icons/fluid/crude-oil.png",
     order = "b[oil]-a[crude-oil]"
   },  
@@ -97,7 +97,7 @@ data:extend(
     default_temperature = 25,
     gas_temperature = -42,
     base_color = {0.3, 0.1, 0.3},
-    flow_color = {0.8, 0.8, 0.8},
+    flow_color = {0.3, 0.1, 0.3},
     icon = "__base__/graphics/icons/fluid/petroleum-gas.png",
     order = "b[oil]-b[petroleum-gas]"
   },
@@ -107,7 +107,7 @@ data:extend(
     subgroup = "oil-fluid",
     default_temperature = 25,
     base_color = {0.57, 0.33, 0},
-    flow_color = {1, 0.73, 0.07},
+    flow_color = {0.57, 0.33, 0.},
     icon = "__base__/graphics/icons/fluid/light-oil.png",
     order = "b[oil]-d[light-oil]"
   },
@@ -117,7 +117,7 @@ data:extend(
     subgroup = "oil-fluid",
     default_temperature = 25,
     base_color = {0.5, 0.13, 0},
-    flow_color = {0.85, 0.6, 0.3},
+    flow_color = {0.5, 0.13, 0},
     icon = "__base__/graphics/icons/fluid/heavy-oil.png",
     order = "b[oil]-c[heavy-oil]"
   },
@@ -127,7 +127,7 @@ data:extend(
     subgroup = "oil-fluid",
     default_temperature = 25,
     base_color = {0.15, 0.32, 0.03},
-    flow_color = {0.43, 0.75, 0.31},
+    flow_color = {0.15, 0.32, 0.03},
     icon = "__base__/graphics/icons/fluid/lubricant.png",
     order = "b[oil]-e[lubricant]"
   },  
@@ -141,7 +141,7 @@ data:extend(
     heat_capacity = "0.1kJ",
 	gas_temperature = -104,
     base_color = {0.83, 0.80, 0.94},
-    flow_color = {0.78, 0.75, 0.89},
+    flow_color = {0.83, 0.80, 0.94},
   },
   {
     type = "fluid",
@@ -153,7 +153,7 @@ data:extend(
     heat_capacity = "0.1kJ",
 	gas_temperature = 80,
     base_color = {0.44, 0.41, 0.53},
-    flow_color = {0.49, 0.46, 0.58},
+    flow_color = {0.44, 0.41, 0.53},
   },
   --- Natl Gas
   {
@@ -164,7 +164,7 @@ data:extend(
 	gas_temperature = 15,
     heat_capacity = "0.1kJ",
     base_color = {0.38, 0.32, 0.26},
-    flow_color = {0.43, 0.37, 0.31},
+    flow_color = {0.38, 0.32, 0.26},
     icon = "__outer_moons__/graphics/icons/fluid/natural-gas.png",
     order = "c[natl-gas]-a[natural-gas]"
   },

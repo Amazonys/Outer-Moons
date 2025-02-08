@@ -429,7 +429,7 @@ data:extend(
     name = "wood-gasification",
     icon = "__outer_moons__/graphics/technology/wood-gasification.png",
     icon_size = 256,
-    prerequisites = {"advanced-oil-processing"},
+    prerequisites = {"fracking"},
     effects =
     {
 	  {
@@ -817,7 +817,7 @@ data:extend(
         recipe = "overgrowth-cerulean-soil"
       },
     },
-    prerequisites = { "production-science-pack", "utility-science-pack"},
+    prerequisites = { "artificial-soil", "production-science-pack", "utility-science-pack"},
     unit =
     {
       count = 2000,

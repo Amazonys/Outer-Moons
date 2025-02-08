@@ -136,6 +136,27 @@ data.raw.technology["fast-inserter"].unit =
 data.raw.technology["logistics-2"].prerequisites = {"logistics", "logistic-science-pack", "advanced-circuit"}
 data.raw.technology["electric-energy-distribution-1"].prerequisites = {"steel-processing", "alumina-processing"}
 data.raw.technology["bulk-inserter"].prerequisites = {"processing-unit", "fast-inserter", "alumina-processing"}
+data.raw.technology["personal-laser-defense-equipment"]. prerequisites = {"laser-turret", "military-3", "power-armor", "solar-panel-equipment"}
+data.raw.technology["uranium-mining"].hidden = true
+data.raw.technology["uranium-processing"].prerequisites = {"chemical-science-pack", "concrete"}
+data.raw.technology["advanced-material-processing-2"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "electric-furnace-new"
+  }
+}
+data.raw.technology["bulk-inserter"].unit =
+{
+  count = 150,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1}
+  },
+  time = 30
+}
 data.raw.technology["bulk-inserter"].effects =
 {
   {
@@ -150,6 +171,39 @@ data.raw.technology["bulk-inserter"].effects =
 	type = "bulk-inserter-capacity-bonus",
 	modifier = 1
   }
+}
+data.raw.technology["inserter-capacity-bonus-1"].unit =
+{
+  count = 150,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+  },
+  time = 30
+}
+data.raw.technology["inserter-capacity-bonus-2"].unit =
+{
+  count = 200,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+  },
+  time = 30
+}
+data.raw.technology["inserter-capacity-bonus-3"].unit =
+{
+  count = 250,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+  },
+  time = 30
 }
 data.raw.technology["military"].unit =
 {
@@ -230,8 +284,79 @@ data.raw.technology["automobilism"].prerequisites = {"logistics-2", "multicylind
 data.raw.technology["railway"].prerequisites = {"logistics-2", "multicylinder-engine"}
 data.raw.technology["concrete"].prerequisites = {"advanced-material-processing", "silicon-processing"}
 data.raw.technology["laser"].prerequisites = {"battery", "chemical-science-pack"}
+data.raw.technology["rocketry"].unit =
+{
+  count = 120,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"military-science-pack", 1},
+	{"chemical-science-pack", 1},
+  },
+  time = 15
+}
+data.raw.technology["follower-robot-count-1"].unit =
+{
+  count = 100,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"military-science-pack", 1},
+	{"chemical-science-pack", 1},
+  },
+  time = 30
+}
+data.raw.technology["follower-robot-count-2"].unit =
+{
+  count = 200,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"military-science-pack", 1},
+	{"chemical-science-pack", 1},
+  },
+  time = 30
+}
+data.raw.technology["land-mine"].unit =
+{
+  count = 100,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"military-science-pack", 1},
+	{"chemical-science-pack", 1},
+  },
+  time = 30
+}
 data.raw.technology["defender"].prerequisites = {"military-science-pack", "robotics"}
+data.raw.technology["defender"].unit =
+{
+  count = 100,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"military-science-pack", 1},
+	{"chemical-science-pack", 1}
+  },
+  time = 30
+}
 data.raw.technology["explosives"].prerequisites = {"sulfur-processing", "fracking"}
+data.raw.technology["explosives"].unit =
+{
+  count = 100,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+  },
+  time = 15
+}
 data.raw.technology["explosives"].effects =
 {
   {
@@ -292,7 +417,7 @@ data.raw.technology["advanced-oil-processing"].effects =
 data.raw.technology["low-density-structure"].prerequisites = {"alumina-processing", "chemical-science-pack", "plastics"}
 data.raw.technology["circuit-network"].prerequisites = {"advanced-circuit"}
 data.raw.technology["solar-energy"].prerequisites = {"steel-processing", "silicon-processing", "logistic-science-pack"}
-data.raw.technology["laser-turret"].prerequisites = {"laser", "processing-unit", "military-science-pack"}
+data.raw.technology["laser-turret"].prerequisites = {"laser", "advanced-circuit", "military-science-pack"}
 data.raw.technology["sulfur-processing"].effects =
 {
   {
@@ -342,6 +467,15 @@ data.raw.recipe["cryogenic-science-pack"].icon = "__outer_moons__/graphics/icons
 data.raw.technology["promethium-science-pack"].icon = "__outer_moons__/graphics/technology/deep-space-science-pack.png"
 data.raw.recipe["promethium-science-pack"].icon = "__outer_moons__/graphics/icons/deep-space-science-pack.png"
 -- Rocket Silo
+data.raw.technology["rocket-silo"].prerequisites =
+{
+  "concrete",
+  "rocket-fuel",
+  "processing-unit-new",
+  "low-density-structure",
+  "advanced-material-processing-2",
+  "logistic-robotics",
+}
 data.raw.technology["rocket-silo"].effects =
 {
   {

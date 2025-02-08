@@ -213,8 +213,9 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "flying-robot-frame", amount = 1},
-		  {type = "item", name = "processing-unit", amount = 2},
-		  {type = "item", name = "duralumin-plate", amount = 1}
+		  {type = "item", name = "advanced-circuit", amount = 2},
+		  --{type = "item", name = "duralumin-plate", amount = 1}
+		  {type = "item", name = "titanium-plate", amount = 1}
 		},
 		results = {{type="item", name="logistic-robot", amount=1}}
 	},
@@ -227,7 +228,8 @@ data:extend({
 		{
 		  {type = "item", name = "flying-robot-frame", amount = 1},
 		  {type = "item", name = "advanced-circuit", amount = 2},
-		  {type = "item", name = "duralumin-plate", amount = 1},
+		  --{type = "item", name = "duralumin-plate", amount = 1},
+		  {type = "item", name = "titanium-plate", amount = 1},
 		},
 		results = {{type="item", name="construction-robot", amount=1}}
 	},
@@ -441,7 +443,7 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "fluid", name = "petroleum-gas", amount = 45},
+		  {type = "fluid", name = "petroleum-gas", amount = 90},
 		  {type = "fluid", name = "sulfane", amount = 70}
 		},
 		allow_productivity = true,
@@ -465,8 +467,8 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "fluid", name = "heavy-oil", amount = 25},
-		  {type = "fluid", name = "light-oil", amount = 45},
+		  {type = "fluid", name = "heavy-oil", amount = 35},
+		  {type = "fluid", name = "light-oil", amount = 55},
 		  {type = "fluid", name = "sulfane", amount = 65}
 		},
 		allow_productivity = true,
@@ -486,8 +488,8 @@ data:extend({
 		hide_from_player_crafting = true,
 		ingredients =
 		{
-		  {type = "fluid", name = "heavy-oil", amount = 30},
-		  {type = "fluid", name = "light-oil", amount = 40}
+		  {type = "fluid", name = "heavy-oil", amount = 20},
+		  {type = "fluid", name = "light-oil", amount = 30}
 		},
 		results =
 		{
@@ -516,7 +518,7 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "fluid", name = "light-oil", amount = 30}
+		  {type = "fluid", name = "light-oil", amount = 35}
 		},
 		allow_productivity = true,
 		main_product = "",
@@ -545,7 +547,7 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "fluid", name = "olefins", amount = 15 },
+		  {type = "fluid", name = "olefins", amount = 25 },
 		},
 		allow_productivity = true,
 		main_product = "",
@@ -595,6 +597,7 @@ data:extend({
 		name = "natural-gas-cracking",
 		category = "oil-processing",
 		enabled = false,
+		hide_from_player_crafting = true,
 		energy_required = 5,
 		ingredients =
 		{
@@ -1157,7 +1160,7 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "item", name = "plastic-bar", amount = 1}
+		  {type = "item", name = "plastic-bar", amount = 2}
 		},
 		allow_productivity = true,
 		crafting_machine_tint =
@@ -1186,7 +1189,7 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "item", name = "plastic-bar", amount = 2}
+		  {type = "item", name = "plastic-bar", amount = 3}
 		},
 		allow_productivity = true,
 		crafting_machine_tint =
@@ -1215,7 +1218,7 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "item", name = "plastic-bar", amount = 3}
+		  {type = "item", name = "plastic-bar", amount = 4}
 		},
 		allow_productivity = true,
 		crafting_machine_tint =
@@ -1244,7 +1247,7 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "item", name = "plastic-bar", amount = 4}
+		  {type = "item", name = "plastic-bar", amount = 5}
 		},
 		allow_productivity = true,
 		crafting_machine_tint =
@@ -1567,6 +1570,21 @@ data:extend({
 		results = {{type="item", name="magnalium-plate", amount=4}},
 		allow_productivity = true
 	},
+	{
+		type = "recipe",
+		name = "mischmetal-plate",
+		category = "alloying",
+		enabled = false,
+		auto_recycle = false,
+		energy_required = 4,
+		ingredients = {
+			{type = "item", name = "cerium-plate", amount = 5},
+			{type = "item", name = "lanthanum-plate", amount = 3},
+			{type = "item", name = "neodymium-plate", amount = 2},
+		},
+		results = {{type="item", name="mischmetal-plate", amount=4}},
+		allow_productivity = true
+	},
 	--Metal Chemistry
 	{
 		type = "recipe",
@@ -1584,8 +1602,8 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "item", name = "aluminate", amount = 1},
-		  {type = "fluid", name = "red-mud", amount = 2},
+		  {type = "item", name = "aluminate", amount = 2},
+		  {type = "fluid", name = "red-mud", amount = 3},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -1602,7 +1620,7 @@ data:extend({
 		energy_required = 2,
 		ingredients =
 		{
-		  {type = "item", name = "aluminate", amount = 2},
+		  {type = "item", name = "aluminate", amount = 1},
 		  {type = "fluid", name = "water", amount = 10},
 		},
 		results =
@@ -1762,8 +1780,8 @@ data:extend({
 		{
 		  {type = "item", name = "electric-engine-unit", amount = 1},
 		  {type = "item", name = "battery", amount = 2},
-		  --{type = "item", name = "duralumin-plate", amount = 1},
-		  {type = "item", name = "titanium-plate", amount = 1},
+		  {type = "item", name = "duralumin-plate", amount = 1},
+		  --{type = "item", name = "titanium-plate", amount = 1},
 		  {type = "item", name = "integrated-circuit", amount = 2}
 		},
 		results = {{type="item", name="flying-robot-frame", amount=1}},
@@ -1944,7 +1962,7 @@ data:extend({
 		category = "electronics-or-assembling",
 		ingredients =
 		{	  
-		  {type = "item", name = "iron-plate", amount = 2},
+		  {type = "item", name = "duralumin-plate", amount = 2},
 		  --{type = "item", name = "copper-cable", amount = 2},
 		  {type = "item", name = "electric-engine-unit", amount = 1},
 		  {type = "item", name = "plastic-bar", amount = 1},
@@ -1992,7 +2010,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "osmium-plate", amount = 1},
-		  {type = "item", name = "copper-plate", amount = 1},
+		  {type = "item", name = "aluminum-plate", amount = 1},
 		  {type = "item", name = "plastic-bar", amount = 1},
 		  {type = "item", name = "arsenene", amount = 5},
 		},
@@ -2056,12 +2074,12 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "neodymium-plate", amount = 4},
+		  {type = "item", name = "aluminum-plate", amount = 2},
+		  {type = "item", name = "nickel-plate", amount = 2},
 		  {type = "item", name = "cobalt-cable", amount = 8},
-		  {type = "fluid", name = "fluoroketone-cold", amount = 10, ignored_by_stats = 5},
 		},
 		results = {
 		  {type = "item", name = "altermagnet", amount = 1},
-		  {type = "fluid", name = "fluoroketone-hot", amount = 5, temperature = 180, ignored_by_stats = 5, ignored_by_productivity = 5}
 		},
 		allow_productivity = true,
 		main_product = "altermagnet",
@@ -3012,11 +3030,11 @@ data:extend({
 		energy_required = 30,
 		ingredients =
 		{
-		  {type = "fluid", name = "water", amount = 20},
+		  {type = "fluid", name = "water", amount = 40},
 		},
 		results =
 		{
-		  {type = "fluid", name = "hydrogen", amount = 20},
+		  {type = "fluid", name = "hydrogen", amount = 40},
 		  {type = "fluid", name = "oxygen", amount = 20},
 		},
 		allow_productivity = false,
@@ -3039,11 +3057,11 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "water", amount = 20},
-		  {type = "item", name = "salt", amount = 20},
+		  {type = "item", name = "salt", amount = 10},
 		},
 		results =
 		{
-		  {type = "item", name = "lye", amount = 2},
+		  {type = "item", name = "lye", amount = 3},
 		  {type = "fluid", name = "hydrogen", amount = 10},
 		  {type = "fluid", name = "chlorine", amount = 10},
 		},
@@ -3067,7 +3085,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "water", amount = 20},
-		  {type = "fluid", name = "red-mud", amount = 15},
+		  {type = "fluid", name = "red-mud", amount = 20},
 		},
 		results =
 		{
@@ -3075,7 +3093,7 @@ data:extend({
 		  --{type = "item", name = "silicon-ore", amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
 		  --{type = "item", name = "alumina", amount = 1, probability = 0.33, show_details_in_recipe_tooltip = false},
 		  --{type = "item", name = "titanium-ore", amount = 1},
-		  {type = "item", name = "titanium-ore", amount = 1},
+		  {type = "item", name = "titanium-ore", amount = 1, probability = 0.5},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -3405,6 +3423,31 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "solar-array",
+		energy_required = 20,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "osmiridium-plate", amount = 4},
+		  {type = "item", name = "integrated-circuit", amount = 10},
+		  {type = "item", name = "indium-wafer", amount = 8}
+		},
+		results = {{type="item", name="solar-array", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "superaccumulator",
+		energy_required = 20,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "osmiridium-plate", amount = 2},
+		  {type = "item", name = "solid-state-battery", amount = 5}
+		},
+		results = {{type="item", name="superaccumulator", amount=1}}
+	},
+	{
+		type = "recipe",
 		name = "electric-boiler",
 		energy_required = 3,
 		enabled = false,
@@ -3645,6 +3688,25 @@ data:extend({
 		{
 		  primary = {r = 0.8, g = 0.0, b = 1.0, a = 1.000},
 		  secondary = {r = 0.8, g = 0.0, b = 1.0, a = 1.000},
+		},
+		allow_productivity = true
+	},
+	{
+		type = "recipe",
+		name = "utility-science-pack",
+		enabled = false,
+		energy_required = 21,
+		ingredients =
+		{
+		  {type = "item", name = "low-density-structure", amount = 3},
+		  {type = "item", name = "advanced-circuit", amount = 1},
+		  {type = "item", name = "flying-robot-frame", amount = 1}
+		},
+		results = {{type="item", name="utility-science-pack", amount=3}},
+		crafting_machine_tint =
+		{
+		  primary = {r = 1.0, g = 0.8, b = 0.0, a = 1.000},
+		  secondary = {r = 1.0, g = 0.8, b = 0.0, a = 1.000},
 		},
 		allow_productivity = true
 	},
@@ -4231,7 +4293,7 @@ data:extend({
 		{
 		  {type = "item", name = "solar-panel", amount = 1},
 		  {type = "item", name = "integrated-circuit", amount = 2},
-		  {type = "item", name = "steel-plate", amount = 5}
+		  {type = "item", name = "titanium-plate", amount = 5}
 		},
 		results = {{type="item", name="solar-panel-equipment", amount=1}}
 	},
@@ -4243,8 +4305,8 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "processing-unit", amount = 200},
-		  {type = "item", name = "low-density-structure", amount = 50},
-		  {type = "item", name = "uranium-fuel-cell", amount = 4}
+		  {type = "item", name = "titanium-plate", amount = 50},
+		  {type = "item", name = "uranium-fuel-cell", amount = 5}
 		},
 		results = {{type="item", name="fission-reactor-equipment", amount=1}}
 	},
@@ -4255,12 +4317,12 @@ data:extend({
 		energy_required = 30,
 		ingredients =
 		{
-		  {type = "item", name = "fission-reactor-equipment", amount = 1},
+		  --{type = "item", name = "fission-reactor-equipment", amount = 1},
 		  {type = "item", name = "fusion-power-cell", amount = 10},
-		  {type = "item", name = "tungsten-plate", amount = 250},
-		  {type = "item", name = "carbon-fiber", amount = 100},
-		  {type = "item", name = "supercapacitor", amount = 25},
-		  {type = "item", name = "quantum-processor", amount = 250}
+		  {type = "item", name = "graphene", amount = 200},
+		  {type = "item", name = "altermagnet", amount = 100},
+		  {type = "item", name = "nanotube", amount = 150},
+		  {type = "item", name = "quantum-supercomputer", amount = 50}
 		},
 		results = {{type="item", name="fusion-reactor-equipment", amount=1}},
 		crafting_machine_tint =
@@ -4279,7 +4341,8 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "battery", amount = 5},
-		  {type = "item", name = "steel-plate", amount = 10}
+		  {type = "item", name = "electronic-circuit", amount = 5},
+		  {type = "item", name = "titanium-plate", amount = 10}
 		},
 		results = {{type="item", name="battery-equipment", amount=1}}
 	},
@@ -4290,9 +4353,10 @@ data:extend({
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "battery-equipment", amount = 10},
-		  {type = "item", name = "processing-unit", amount = 15},
-		  {type = "item", name = "low-density-structure", amount = 5}
+		  {type = "item", name = "battery-equipment", amount = 5},
+		  {type = "item", name = "integrated-circuit", amount = 10},
+		  {type = "item", name = "low-density-structure", amount = 20},
+		  {type = "item", name = "solid-state-battery", amount = 10},
 		},
 		results = {{type="item", name="battery-mk2-equipment", amount=1}}
 	},
@@ -4304,7 +4368,9 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "battery-mk2-equipment", amount = 5},
-		  {type = "item", name = "supercapacitor", amount = 10}
+		  {type = "item", name = "advanced-circuit", amount = 15},
+		  {type = "item", name = "graphene", amount = 30},
+		  {type = "item", name = "quantum-tube", amount = 20},
 		},
 		results = {{type="item", name="battery-mk3-equipment", amount=1}}
 	},
@@ -4317,7 +4383,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "electronic-circuit", amount = 5},
-		  {type = "item", name = "steel-plate", amount = 10}
+		  {type = "item", name = "titanium-plate", amount = 10}
 		},
 		results = {{type="item", name="night-vision-equipment", amount=1}}
 	},
@@ -4329,7 +4395,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "integrated-circuit", amount = 5},
-		  {type = "item", name = "steel-plate", amount = 10}
+		  {type = "item", name = "titanium-plate", amount = 10}
 		},
 		results = {{type="item", name="belt-immunity-equipment", amount=1}}
 	},
@@ -4342,7 +4408,7 @@ data:extend({
 		{
 		  {type = "item", name = "advanced-circuit", amount = 10},
 		  {type = "item", name = "electric-engine-unit", amount = 30},
-		  {type = "item", name = "steel-plate", amount = 20}
+		  {type = "item", name = "titanium-plate", amount = 20}
 		},
 		results = {{type="item", name="exoskeleton-equipment", amount=1}}
 	},
@@ -4355,7 +4421,7 @@ data:extend({
 		{
 		  {type = "item", name = "advanced-circuit", amount = 10},
 		  {type = "item", name = "iron-gear-wheel", amount = 40},
-		  {type = "item", name = "steel-plate", amount = 20},
+		  {type = "item", name = "titanium-plate", amount = 20},
 		  {type = "item", name = "battery", amount = 45}
 		},
 		results = {{type="item", name="personal-roboport-equipment", amount=1}}
@@ -4369,7 +4435,8 @@ data:extend({
 		{
 		  {type = "item", name = "personal-roboport-equipment", amount = 5},
 		  {type = "item", name = "processing-unit", amount = 100},
-		  {type = "item", name = "low-density-structure", amount = 20}
+		  {type = "item", name = "low-density-structure", amount = 20},
+		  {type = "item", name = "solid-state-battery", amount = 60}
 		},
 		results = {{type="item", name="personal-roboport-mk2-equipment", amount=1}}
 	},
@@ -4394,8 +4461,8 @@ data:extend({
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "advanced-circuit", amount = 5},
-		  {type = "item", name = "steel-plate", amount = 10}
+		  {type = "item", name = "processing-unit", amount = 5},
+		  {type = "item", name = "titanium-plate", amount = 10}
 		},
 		results = {{type="item", name="energy-shield-equipment", amount=1}}
 	},
@@ -4407,8 +4474,8 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "energy-shield-equipment", amount = 10},
-		  {type = "item", name = "processing-unit", amount = 5},
-		  {type = "item", name = "low-density-structure", amount = 5}
+		  {type = "item", name = "computing-core", amount = 5},
+		  {type = "item", name = "graphene", amount = 5}
 		},
 		results = {{type="item", name="energy-shield-mk2-equipment", amount=1}}
 	},
@@ -4419,8 +4486,8 @@ data:extend({
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 20},
-		  {type = "item", name = "low-density-structure", amount = 5},
+		  {type = "item", name = "advanced-circuit", amount = 20},
+		  {type = "item", name = "titanium-plate", amount = 5},
 		  {type = "item", name = "laser-turret", amount = 5}
 		},
 		results = {{type="item", name="personal-laser-defense-equipment", amount=1}}
@@ -4432,8 +4499,8 @@ data:extend({
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 5},
-		  {type = "item", name = "steel-plate", amount = 20},
+		  {type = "item", name = "advanced-circuit", amount = 5},
+		  {type = "item", name = "titanium-plate", amount = 20},
 		  {type = "item", name = "laser-turret", amount = 10}
 		},
 		results = {{type="item", name="discharge-defense-equipment", amount=1}}
@@ -6170,7 +6237,7 @@ data:extend({
 		  {type = "item", name = "hyper-splitter", amount = 1},
 		  {type = "item", name = "mischmetal-plate", amount = 12},
 		  {type = "item", name = "iron-gear-wheel", amount = 24},
-		  {type = "item", name = "quantum-supercomputer", amount = 6},
+		  {type = "item", name = "quantum-supercomputer", amount = 5},
 		  {type = "fluid", name = "lubricant", amount = 125}
 		},
 		results = {{type="item", name="vacuum-splitter", amount=1}}
@@ -6902,7 +6969,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "crude-oil", amount = 10}
+		  {type = "fluid", name = "crude-oil", amount = 100}
 		},
 	},
 	{
@@ -6919,7 +6986,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "heavy-oil", amount = 10}
+		  {type = "fluid", name = "heavy-oil", amount = 100}
 		},
 	},
 	{
@@ -6936,7 +7003,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "light-oil", amount = 10}
+		  {type = "fluid", name = "light-oil", amount = 100}
 		},
 	},
 	{
@@ -6953,7 +7020,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "lubricant", amount = 10}
+		  {type = "fluid", name = "lubricant", amount = 100}
 		},
 	},
 	{
@@ -6970,7 +7037,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "aromatics", amount = 10}
+		  {type = "fluid", name = "aromatics", amount = 100}
 		},
 	},
 	{
@@ -6987,7 +7054,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "methanol", amount = 10}
+		  {type = "fluid", name = "methanol", amount = 100}
 		},
 	},
 	{
@@ -7004,7 +7071,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "phenol", amount = 10}
+		  {type = "fluid", name = "phenol", amount = 100}
 		},
 	},
 	{
@@ -7021,7 +7088,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "sulfuric-acid", amount = 10}
+		  {type = "fluid", name = "sulfuric-acid", amount = 100}
 		},
 	},
 	{
@@ -7038,7 +7105,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "nitric-acid", amount = 10}
+		  {type = "fluid", name = "nitric-acid", amount = 100}
 		},
 	},
 	{
@@ -7055,7 +7122,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "nitrogen-tetroxide", amount = 10}
+		  {type = "fluid", name = "nitrogen-tetroxide", amount = 100}
 		},
 	},
 	{
@@ -7072,7 +7139,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "perchlorate", amount = 10}
+		  {type = "fluid", name = "perchlorate", amount = 100}
 		},
 	},
 	{
@@ -7089,7 +7156,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "ethanol", amount = 10}
+		  {type = "fluid", name = "ethanol", amount = 100}
 		},
 	},
 	{
@@ -7106,7 +7173,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "phosphoric-acid", amount = 10}
+		  {type = "fluid", name = "phosphoric-acid", amount = 100}
 		},
 	},
 	{
@@ -7123,7 +7190,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "adenine", amount = 10}
+		  {type = "fluid", name = "adenine", amount = 100}
 		},
 	},
 	{
@@ -7140,7 +7207,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "guanine", amount = 10}
+		  {type = "fluid", name = "guanine", amount = 100}
 		},
 	},
 	{
@@ -7157,7 +7224,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "thymine", amount = 10}
+		  {type = "fluid", name = "thymine", amount = 100}
 		},
 	},
 	{
@@ -7174,7 +7241,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "cytosine", amount = 10}
+		  {type = "fluid", name = "cytosine", amount = 100}
 		},
 	},
 	{
@@ -7191,7 +7258,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "chloroform", amount = 10}
+		  {type = "fluid", name = "chloroform", amount = 100}
 		},
 	},
 	{
@@ -7208,7 +7275,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "fluoroform", amount = 10}
+		  {type = "fluid", name = "fluoroform", amount = 100}
 		},
 	},
 	--Venting
@@ -7226,7 +7293,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "steam", amount = 10}
+		  {type = "fluid", name = "steam", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7248,7 +7315,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "hydrogen", amount = 10}
+		  {type = "fluid", name = "hydrogen", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7270,7 +7337,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "oxygen", amount = 10}
+		  {type = "fluid", name = "oxygen", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7292,7 +7359,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "petroleum-gas", amount = 10}
+		  {type = "fluid", name = "petroleum-gas", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7314,7 +7381,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "olefins", amount = 10}
+		  {type = "fluid", name = "olefins", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7336,7 +7403,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "natural-gas", amount = 10}
+		  {type = "fluid", name = "natural-gas", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7358,7 +7425,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "methane", amount = 10}
+		  {type = "fluid", name = "methane", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7380,7 +7447,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "carbon-monoxide", amount = 10}
+		  {type = "fluid", name = "carbon-monoxide", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7402,7 +7469,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "carbon-dioxide", amount = 10}
+		  {type = "fluid", name = "carbon-dioxide", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7424,7 +7491,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "formaldehyde", amount = 10}
+		  {type = "fluid", name = "formaldehyde", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7446,7 +7513,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "sulfane", amount = 10}
+		  {type = "fluid", name = "sulfane", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7468,7 +7535,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "sulfur-dioxide", amount = 10}
+		  {type = "fluid", name = "sulfur-dioxide", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7490,7 +7557,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "nitrogen", amount = 10}
+		  {type = "fluid", name = "nitrogen", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7512,7 +7579,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "ammonia", amount = 10}
+		  {type = "fluid", name = "ammonia", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7534,7 +7601,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "hydrazine", amount = 10}
+		  {type = "fluid", name = "hydrazine", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7556,7 +7623,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "chlorine", amount = 10}
+		  {type = "fluid", name = "chlorine", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7578,7 +7645,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "hydrochloric-acid", amount = 10}
+		  {type = "fluid", name = "hydrochloric-acid", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7600,7 +7667,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "vinyl-chloride", amount = 10}
+		  {type = "fluid", name = "vinyl-chloride", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7622,7 +7689,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "helium", amount = 10}
+		  {type = "fluid", name = "helium", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7644,7 +7711,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "volcanic-gas", amount = 10}
+		  {type = "fluid", name = "volcanic-gas", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7666,7 +7733,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "fluorine", amount = 10}
+		  {type = "fluid", name = "fluorine", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7688,7 +7755,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "phosphine", amount = 10}
+		  {type = "fluid", name = "phosphine", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7710,7 +7777,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "iodine", amount = 10}
+		  {type = "fluid", name = "iodine", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7732,7 +7799,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "hydroiodic-acid", amount = 10}
+		  {type = "fluid", name = "hydroiodic-acid", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7754,7 +7821,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "hydrofluoric-acid", amount = 10}
+		  {type = "fluid", name = "hydrofluoric-acid", amount = 100}
 		},
 		crafting_machine_tint =
 		{
@@ -7776,7 +7843,7 @@ data:extend({
 		order = "a",
 		ingredients =
 		{
-		  {type = "fluid", name = "tetrafluoroethylene", amount = 10}
+		  {type = "fluid", name = "tetrafluoroethylene", amount = 100}
 		},
 		crafting_machine_tint =
 		{
