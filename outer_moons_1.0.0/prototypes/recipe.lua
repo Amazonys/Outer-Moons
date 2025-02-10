@@ -544,6 +544,7 @@ data:extend({
 		{
 		  {type = "fluid", name = "steam", amount = 50},
 		  {type = "fluid", name = "light-oil", amount = 30 },
+		 -- {type = "item", name = "nickel-plate", amount = 1 },
 		},
 		results =
 		{
@@ -607,7 +608,7 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "fluid", name = "carbon-dioxide", amount = 30},
+		  {type = "fluid", name = "sulfane", amount = 40},
 		  {type = "fluid", name = "methane", amount = 60},
 		  {type = "fluid", name = "nitrogen", amount = 25}
 		},
@@ -1765,7 +1766,7 @@ data:extend({
 		  {type = "item", name = "aluminum-cable", amount = 2},
 		  {type = "fluid", name = "lubricant", amount = 20},
 		  {type = "item", name = "integrated-circuit", amount = 1},
-		  {type = "item", name = "nickel-plate", amount = 1}
+		  {type = "item", name = "nickel-plate", amount = 2}
 		},
 		results = {{type="item", name="electric-engine-unit", amount=1}},
 		enabled = false,
@@ -1894,7 +1895,7 @@ data:extend({
 		  --{type = "item", name = "plastic-bar", amount = 1},
 		  {type = "item", name = "copper-cable", amount = 3},
 		},
-		results = {{type="item", name="transistor", amount=3}},
+		results = {{type="item", name="transistor", amount=4}},
 		enabled = false,
 		allow_productivity = true
 	},
@@ -1919,11 +1920,11 @@ data:extend({
 		category = "electronics-or-assembling",
 		ingredients =
 		{	  
-		  {type = "item", name = "plastic-bar", amount = 1},
+		  {type = "item", name = "plastic-bar", amount = 2},
 		  {type = "item", name = "aluminum-cable", amount = 2},
 		  {type = "item", name = "electronic-circuit", amount = 4},
 		},
-		results = {{type="item", name="peripheral-interface", amount=2}},
+		results = {{type="item", name="peripheral-interface", amount=4}},
 		enabled = false,
 		allow_productivity = true
 	},
@@ -1935,7 +1936,7 @@ data:extend({
 		{	  
 		  {type = "item", name = "plastic-bar", amount = 2},
 		  {type = "item", name = "aluminum-plate", amount = 1},
-		  {type = "item", name = "integrated-circuit", amount = 4},
+		  {type = "item", name = "integrated-circuit", amount = 2},
 		},
 		results = {{type="item", name="microprocessor", amount=1}},
 		enabled = false,
@@ -1952,7 +1953,7 @@ data:extend({
 		  {type = "item", name = "integrated-circuit", amount = 1},
 		  {type = "item", name = "plastic-bar", amount = 1},
 		},
-		results = {{type="item", name="memory-stick", amount=1}},
+		results = {{type="item", name="memory-stick", amount=2}},
 		enabled = false,
 		allow_productivity = true
 	},
@@ -2092,7 +2093,7 @@ data:extend({
 		category = "hand-assembly-electronics-quantum",
 		ingredients =
 		{
-		  {type = "item", name = "iron-plate", amount = 2},
+		  {type = "item", name = "iron-plate", amount = 1},
 		  {type = "item", name = "copper-cable", amount = 3},
 		  --{type = "item", name = "solder", amount = 1},
 		  --{type = "item", name = "lead-plate", amount = 1},
@@ -2109,7 +2110,7 @@ data:extend({
 		energy_required = 6,
 		ingredients =
 		{
-		  {type = "item", name = "electronic-circuit", amount = 2},
+		  {type = "item", name = "electronic-circuit", amount = 1},
 		  {type = "item", name = "silicon-wafer", amount = 1},
 		  {type = "item", name = "aluminum-cable", amount = 3},
 		  {type = "item", name = "transistor", amount = 8},
@@ -2125,10 +2126,10 @@ data:extend({
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "integrated-circuit", amount = 3},
+		  {type = "item", name = "integrated-circuit", amount = 2},
 		  {type = "item", name = "fiber-optic", amount = 4},
-		  {type = "item", name = "peripheral-interface", amount = 8},
-		  {type = "item", name = "capacitor", amount = 4}
+		  {type = "item", name = "peripheral-interface", amount = 4},
+		  {type = "item", name = "capacitor", amount = 2}
 		},
 		results = {{type="item", name="advanced-circuit", amount=1}},
 		allow_productivity = true
@@ -2141,10 +2142,10 @@ data:extend({
 		energy_required = 20,
 		ingredients =
 		{
-		  {type = "item", name = "advanced-circuit", amount = 4},
-		  {type = "item", name = "microprocessor", amount = 4},
-		  {type = "item", name = "memory-stick", amount = 5},
-		  {type = "item", name = "storage-drive", amount = 5},
+		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "microprocessor", amount = 1},
+		  {type = "item", name = "memory-stick", amount = 4},
+		  {type = "item", name = "storage-drive", amount = 1},
 		},
 		results = {{type="item", name="processing-unit", amount=1}},
 		allow_productivity = true
@@ -2157,7 +2158,7 @@ data:extend({
 		energy_required = 35,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 8},
+		  {type = "item", name = "processing-unit", amount = 4},
 		  {type = "item", name = "motherboard", amount = 3},
 		  {type = "item", name = "cooling-system", amount = 8},
 		  {type = "item", name = "supercapacitor", amount = 4},
@@ -2173,7 +2174,7 @@ data:extend({
 		energy_required = 50,
 		ingredients =
 		{
-		  {type = "item", name = "computing-core", amount = 12},
+		  {type = "item", name = "computing-core", amount = 5},
 		  {type = "item", name = "quantum-processor", amount = 10},
 		  {type = "item", name = "quantum-tube", amount = 20},
 		  {type = "item", name = "altermagnet", amount = 12},
@@ -2230,6 +2231,19 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "cargo-landing-pad",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "concrete", amount = 200},
+		  {type = "item", name = "invar-plate", amount = 25},
+		  {type = "item", name = "processing-unit", amount = 10}
+		},
+		energy_required = 30,
+		results = {{type="item", name="cargo-landing-pad", amount=1}}
+	},
+	{
+		type = "recipe",
 		name = "space-platform-foundation",
 		energy_required = 10,
 		enabled = false,
@@ -2237,7 +2251,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "caelium-plate", amount = 20},
-		  {type = "item", name = "aluminum-cable", amount = 20},
+		  {type = "item", name = "lead-plate", amount = 10},
 		  {type = "item", name = "fiber-optic", amount = 20},
 		},
 		results = {{type="item", name="space-platform-foundation", amount=1}}
@@ -3030,12 +3044,12 @@ data:extend({
 		energy_required = 30,
 		ingredients =
 		{
-		  {type = "fluid", name = "water", amount = 40},
+		  {type = "fluid", name = "water", amount = 100},
 		},
 		results =
 		{
-		  {type = "fluid", name = "hydrogen", amount = 40},
-		  {type = "fluid", name = "oxygen", amount = 20},
+		  {type = "fluid", name = "hydrogen", amount = 100},
+		  {type = "fluid", name = "oxygen", amount = 50},
 		},
 		allow_productivity = false,
 		enabled = false,
@@ -3084,8 +3098,8 @@ data:extend({
 		energy_required = 20,
 		ingredients =
 		{
-		  {type = "fluid", name = "water", amount = 20},
-		  {type = "fluid", name = "red-mud", amount = 20},
+		  {type = "fluid", name = "water", amount = 30},
+		  {type = "fluid", name = "red-mud", amount = 30},
 		},
 		results =
 		{
@@ -3093,7 +3107,7 @@ data:extend({
 		  --{type = "item", name = "silicon-ore", amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
 		  --{type = "item", name = "alumina", amount = 1, probability = 0.33, show_details_in_recipe_tooltip = false},
 		  --{type = "item", name = "titanium-ore", amount = 1},
-		  {type = "item", name = "titanium-ore", amount = 1, probability = 0.5},
+		  {type = "item", name = "titanium-ore", amount = 1, probability = 0.25},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -3402,7 +3416,7 @@ data:extend({
 		ingredients =
 		{
 		  --{type = "item", name = "processing-unit", amount = 20},
-		  {type = "item", name = "advanced-circuit", amount = 30},
+		  {type = "item", name = "advanced-circuit", amount = 15},
 		  {type = "item", name = "aluminum-plate", amount = 10},
 		  {type = "item", name = "fiber-optic", amount = 10}
 		},
@@ -5622,7 +5636,7 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "integrated-circuit", amount = 2},
+		  {type = "item", name = "integrated-circuit", amount = 1},
 		  {type = "item", name = "steel-plate", amount = 2},
 		  {type = "item", name = "iron-gear-wheel", amount = 2},
 		  {type = "item", name = "inserter", amount = 1}
@@ -5635,7 +5649,7 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "integrated-circuit", amount = 2},
+		  {type = "item", name = "integrated-circuit", amount = 1},
 		  {type = "item", name = "steel-plate", amount = 4},
 		  {type = "item", name = "iron-gear-wheel", amount = 2},
 		  {type = "item", name = "long-handed-inserter", amount = 1}
@@ -5650,7 +5664,7 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "advanced-circuit", amount = 1},
 		  {type = "item", name = "aluminum-plate", amount = 3},
 		  {type = "item", name = "iron-gear-wheel", amount = 4},
 		  {type = "item", name = "fast-inserter", amount = 1}
@@ -5663,7 +5677,7 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "advanced-circuit", amount = 1},
 		  {type = "item", name = "aluminum-plate", amount = 6},
 		  {type = "item", name = "iron-gear-wheel", amount = 4},
 		  {type = "item", name = "fast-long-handed-inserter", amount = 1}
@@ -5679,7 +5693,7 @@ data:extend({
 		--energy_required = 0.5,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 4},
+		  {type = "item", name = "processing-unit", amount = 1},
 		  {type = "item", name = "magnalium-plate", amount = 4},
 		  {type = "item", name = "iron-gear-wheel", amount = 8},
 		  {type = "item", name = "bulk-inserter", amount = 1},
@@ -5694,7 +5708,7 @@ data:extend({
 		--energy_required = 0.5,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 4},
+		  {type = "item", name = "processing-unit", amount = 1},
 		  {type = "item", name = "magnalium-plate", amount = 8},
 		  {type = "item", name = "iron-gear-wheel", amount = 8},
 		  {type = "item", name = "bulk-long-handed-inserter", amount = 1},

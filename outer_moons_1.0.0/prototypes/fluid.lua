@@ -21,8 +21,8 @@ data:extend(
     max_temperature = 5000,
     heat_capacity = "0.2kJ",
     icon = "__base__/graphics/icons/fluid/steam.png",
-    base_color = {0.5, 0.5, 0.5},
-    flow_color = {1.0, 1.0, 1.0},
+    base_color = {0.9, 0.9, 0.9},
+    flow_color = {0.9, 0.9, 0.9},
     order = "a[fluid]-b[steam]",
     gas_temperature = 15,
     auto_barrel = false
@@ -47,8 +47,8 @@ data:extend(
     default_temperature = 25,
     heat_capacity = "0.01kJ",
     icon = "__outer_moons__/graphics/icons/fluid/hydrogen.png",
-    base_color = {0.95, 0.95, 0.95},
-    flow_color = {0.9, 0.9, 0.9},
+    base_color = {1, 1, 1},
+    flow_color = {1, 1, 1},
     order = "a[fluid]-e[hydrogen]",
     gas_temperature = -252,
     auto_barrel = false
@@ -63,7 +63,7 @@ data:extend(
 	gas_temperature = -180,
     heat_capacity = "0.01kJ",
     base_color = {0.62, 0.11, 0.08},
-    flow_color = {0.67, 0.16, 0.13},
+    flow_color = {0.62, 0.11, 0.08},
     auto_barrel = false
   },  
   {
@@ -85,8 +85,8 @@ data:extend(
     name = "crude-oil",
     subgroup = "oil-fluid",
     default_temperature = 25,
-    base_color = {0, 0, 0},
-    flow_color = {0, 0, 0},
+    base_color = {0.01, 0.01, 0.01},
+    flow_color = {0.01, 0.01, 0.01},
     icon = "__base__/graphics/icons/fluid/crude-oil.png",
     order = "b[oil]-a[crude-oil]"
   },  
@@ -188,8 +188,8 @@ data:extend(
     default_temperature = 25,
 	gas_temperature = -191,
     heat_capacity = "0.1kJ",
-    base_color = {0.46, 0, 0},
-    flow_color = {0.51, 0, 0},
+    base_color = {0.22, 0.11, 0.11},
+    flow_color = {0.22, 0.11, 0.11},
     icon = "__outer_moons__/graphics/icons/fluid/carbon-monoxide.png",
     order = "c[natl-gas]-c[carbon-monoxide]",	
     auto_barrel = false
@@ -201,8 +201,8 @@ data:extend(
     default_temperature = 25,
 	gas_temperature = -79,
     heat_capacity = "0.1kJ",
-    base_color = {0.31, 0.04, 0.04},
-    flow_color = {0.36, 0.09, 0.09},
+    base_color = {0.42, 0.19, 0.19},
+    flow_color = {0.42, 0.19, 0.19},
     icon = "__outer_moons__/graphics/icons/fluid/carbon-dioxide.png",
     order = "c[natl-gas]-d[carbon-dioxide]",	
     auto_barrel = false
@@ -214,8 +214,8 @@ data:extend(
     default_temperature = 25,
 	gas_temperature = 65,
     heat_capacity = "0.1kJ",
-    base_color = {0.94, 0.01, 0.01},
-    flow_color = {0.99, 0.06, 0.06},
+    base_color = {0.84, 0.32, 0.66},
+    flow_color = {0.84, 0.32, 0.66},
     icon = "__outer_moons__/graphics/icons/fluid/methanol.png",
     order = "c[natl-gas]-e[methanol]"
   },
@@ -226,8 +226,8 @@ data:extend(
     default_temperature = 25,
 	gas_temperature = -21,
     heat_capacity = "0.1kJ",
-    base_color = {0.74, 0.38, 0.38},
-    flow_color = {0.79, 0.43, 0.43},
+    base_color = {0.74, 0.42, 0.38},
+    flow_color = {0.74, 0.42, 0.38},
     icon = "__outer_moons__/graphics/icons/fluid/formaldehyde.png",
     order = "c[natl-gas]-f[formaldehyde]",	
     auto_barrel = false

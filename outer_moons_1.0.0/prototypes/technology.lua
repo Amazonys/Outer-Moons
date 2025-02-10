@@ -415,6 +415,10 @@ data:extend(
       },
 	  {
         type = "unlock-recipe",
+        recipe = "methanol"
+      },
+	  {
+        type = "unlock-recipe",
         recipe = "methanol-processing"
       }
     },
@@ -1035,6 +1039,127 @@ data:extend(
       type = "mine-entity",
       entity = "jellystem"
     }
+  },
+  -- Infinites
+  {
+    type = "technology",
+    name = "electronic-circuit-productivity",
+    icons = util.technology_icon_constant_recipe_productivity("__outer_moons__/graphics/technology/electronic-circuit-productivity.png"),
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "change-recipe-productivity",
+        recipe = "electronic-circuit",
+        change = 0.1
+      }
+    },
+    prerequisites = {"electromagnetic-science-pack", "production-science-pack"},
+    unit =
+    {
+      count_formula = "1.5^L*1000",
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"electromagnetic-science-pack", 1},
+      },
+      time = 60
+    },
+    max_level = "infinite",
+    upgrade = true
+  },
+  {
+    type = "technology",
+    name = "integrated-circuit-productivity",
+    icons = util.technology_icon_constant_recipe_productivity("__outer_moons__/graphics/technology/integrated-circuit-productivity.png"),
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "change-recipe-productivity",
+        recipe = "integrated-circuit",
+        change = 0.1
+      }
+    },
+    prerequisites = {"electromagnetic-science-pack", "production-science-pack"},
+    unit =
+    {
+      count_formula = "1.5^L*1000",
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"electromagnetic-science-pack", 1},
+      },
+      time = 60
+    },
+    max_level = "infinite",
+    upgrade = true
+  },
+  {
+    type = "technology",
+    name = "advanced-circuit-productivity",
+    icons = util.technology_icon_constant_recipe_productivity("__space-age__/graphics/technology/processing-unit-productivity.png"),
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "change-recipe-productivity",
+        recipe = "advanced-circuit",
+        change = 0.1
+      }
+    },
+    prerequisites = {"electromagnetic-science-pack", "production-science-pack"},
+    unit =
+    {
+      count_formula = "1.5^L*1000",
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"electromagnetic-science-pack", 1},
+      },
+      time = 60
+    },
+    max_level = "infinite",
+    upgrade = true
+  },
+  {
+    type = "technology",
+    name = "processing-unit-productivity",
+    icons = util.technology_icon_constant_recipe_productivity("__outer_moons__/graphics/technology/processing-unit-productivity.png"),
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "change-recipe-productivity",
+        recipe = "processing-unit",
+        change = 0.1
+      }
+    },
+    prerequisites = {"electromagnetic-science-pack", "production-science-pack"},
+    unit =
+    {
+      count_formula = "1.5^L*1000",
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"electromagnetic-science-pack", 1},
+      },
+      time = 60
+    },
+    max_level = "infinite",
+    upgrade = true
   },
 }
 )

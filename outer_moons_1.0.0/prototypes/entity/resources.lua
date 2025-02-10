@@ -117,11 +117,12 @@ data:extend({
 		  factoriopedia_simulation = simulations.factoriopedia_lead_ore,
 		},
 		{
-		  base_density = 4,
+		  order = "d",
+		  base_density = 3,
 		  regular_rq_factor_multiplier = 1.6,
 		  starting_rq_factor_multiplier = 1.9,
-		  candidate_spot_count = 2,
-		  base_spots_per_km = 1.5, -- To match 0.17.50 placement
+		  candidate_spot_count = 1,
+		  base_spots_per_km = 1, -- To match 0.17.50 placement
 		  has_starting_area_placement = true
 		}
 	),
@@ -144,11 +145,12 @@ data:extend({
 		  factoriopedia_simulation = simulations.factoriopedia_nickel_ore,
 		},
 		{
-		  base_density = 4,
+		  order = "c",
+		  base_density = 3,
 		  regular_rq_factor_multiplier = 1.6,
 		  starting_rq_factor_multiplier = 1.9,
-		  candidate_spot_count = 3,
-		  base_spots_per_km = 2, -- To match 0.17.50 placement
+		  candidate_spot_count = 1.5,
+		  base_spots_per_km = 1.5, -- To match 0.17.50 placement
 		  has_starting_area_placement = true
 		}
 	),    
@@ -173,7 +175,7 @@ data:extend({
 		  base_density = 4,
 		  regular_rq_factor_multiplier = 1.5,
 		  starting_rq_factor_multiplier = 1.75,
-		  base_spots_per_km = 4,
+		  base_spots_per_km = 3,
 		  candidate_spot_count = 11,
 		  has_starting_area_placement = true
 		}
@@ -200,7 +202,7 @@ data:extend({
 		  base_density = 3,
 		  regular_rq_factor_multiplier = 1.5,
 		  starting_rq_factor_multiplier = 1.75,
-		  base_spots_per_km = 3,
+		  base_spots_per_km = 4,
 		  candidate_spot_count = 11,
 		  has_starting_area_placement = true
 		}

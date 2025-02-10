@@ -373,6 +373,10 @@ data.raw.technology["explosives"].effects =
   },
   {
 	type = "unlock-recipe",
+	recipe = "niter"
+  },
+  {
+	type = "unlock-recipe",
 	recipe = "explosives"
   }
 }
@@ -446,6 +450,29 @@ data.raw.technology["lubricant"].effects =
   {
 	type = "unlock-recipe",
 	recipe = "NaK-lubricant"
+  }
+}
+data.raw.technology["steel-plate-productivity"].effects =
+{
+  {
+	type = "change-recipe-productivity",
+	recipe = "invar-plate",
+	change = 0.1
+  },
+  {
+	type = "change-recipe-productivity",
+	recipe = "steel-plate",
+	change = 0.1
+  },
+  {
+	type = "change-recipe-productivity",
+	recipe = "casting-invar",
+	change = 0.1
+  },
+  {
+	type = "change-recipe-productivity",
+	recipe = "casting-steel",
+	change = 0.1
   }
 }
 
