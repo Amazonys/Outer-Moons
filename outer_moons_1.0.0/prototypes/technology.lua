@@ -651,6 +651,26 @@ data:extend(
     prerequisites = {"adv-assembler"},
     research_trigger =
     {
+      type = "mine-entity",
+      item = "metallic-regolith"
+    }
+  },
+  {
+    type = "technology",
+    name = "lunar-science-pack",
+    icon = "__outer_moons__/graphics/technology/lunar-science-pack.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "lunar-science-pack"
+      },
+    },
+    prerequisites = {"adv-assembler"},
+    research_trigger =
+    {
       type = "craft-item",
       item = "adv-assembling-machine"
     }

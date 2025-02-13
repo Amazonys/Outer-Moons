@@ -11,7 +11,15 @@ local planet_map_gen_new = require("__outer_moons__/prototypes/planet/planet-map
 
 local effects = require("__core__.lualib.surface-render-parameter-effects")
 local asteroid_util = require("__outer_moons__.prototypes.planet.asteroid-spawn-definitions")
---local planet_catalogue_vulcanus = require("__space-age__.prototypes.planet.procession-catalogue-vulcanus")
+local planet_catalogue_nauvis = require("__outer_moons__.prototypes.planet.procession-catalogue-nauvis")
+local planet_catalogue_selene = require("__outer_moons__.prototypes.planet.procession-catalogue-selene")
+local planet_catalogue_vulcanus = require("__space-age__.prototypes.planet.procession-catalogue-vulcanus")
+local planet_catalogue_gleba = require("__space-age__.prototypes.planet.procession-catalogue-gleba")
+local planet_catalogue_fulgora = require("__space-age__.prototypes.planet.procession-catalogue-fulgora")
+local planet_catalogue_mefitis = require("__outer_moons__.prototypes.planet.procession-catalogue-mefitis")
+local planet_catalogue_aquilo = require("__space-age__.prototypes.planet.procession-catalogue-aquilo")
+local planet_catalogue_aiolos = require("__outer_moons__.prototypes.planet.procession-catalogue-aiolos")
+local planet_catalogue_feronia = require("__outer_moons__.prototypes.planet.procession-catalogue-feronia")
 
 data:extend(
 {
@@ -31,10 +39,15 @@ data:extend(
     map_gen_settings = planet_map_gen_new.nauvis(),
     pollutant_type = "pollution",
     solar_power_in_space = 300,
+    platform_procession_set =
+    {
+      arrival = {"planet-to-platform-b"},
+      departure = {"platform-to-planet-a"}
+    },
     planet_procession_set =
     {
-      arrival = {"default-b"},
-      departure = {"default-rocket-a"}
+      arrival = {"platform-to-planet-b"},
+      departure = {"planet-to-platform-a"}
     },
     surface_properties =
     {
@@ -813,7 +826,7 @@ data:extend(
       arrival = {"platform-to-planet-b"},
       departure = {"planet-to-platform-a"}
     },
-    procession_graphic_catalogue = planet_catalogue_vulcanus,
+    procession_graphic_catalogue = planet_catalogue_mefitis,
     surface_properties =
     {
       ["day-night-cycle"] = 30 * minute,
@@ -922,7 +935,7 @@ data:extend(
       arrival = {"platform-to-planet-b"},
       departure = {"planet-to-platform-a"}
     },
-    procession_graphic_catalogue = planet_catalogue_aquilo,
+    procession_graphic_catalogue = planet_catalogue_aiolos,
     surface_properties =
     {
       ["day-night-cycle"] = 30 * minute,
@@ -1055,7 +1068,7 @@ data:extend(
       arrival = {"platform-to-planet-b"},
       departure = {"planet-to-platform-a"}
     },
-    procession_graphic_catalogue = planet_catalogue_aquilo,
+    procession_graphic_catalogue = planet_catalogue_feronia,
     surface_properties =
     {
       ["day-night-cycle"] = 30 * minute,
