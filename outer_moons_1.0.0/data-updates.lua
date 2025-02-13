@@ -422,15 +422,105 @@ data.raw.technology["low-density-structure"].prerequisites = {"alumina-processin
 data.raw.technology["circuit-network"].prerequisites = {"advanced-circuit"}
 data.raw.technology["solar-energy"].prerequisites = {"steel-processing", "silicon-processing", "logistic-science-pack"}
 data.raw.technology["laser-turret"].prerequisites = {"laser", "advanced-circuit", "military-science-pack"}
-data.raw.technology["sulfur-processing"].effects =
+data.raw.technology["power-armor-mk2"].prerequisites = {"power-armor", "military-4", "space-science-pack"}
+data.raw.technology["power-armor-mk2"].unit =
 {
+  count = 400,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"military-science-pack", 1},
+	{"utility-science-pack", 1},
+	{"space-science-pack", 1},
+  },
+  time = 30
+}
+data.raw.technology["kovarex-enrichment-process"].prerequisites = {"space-science-pack", "nuclear-science-pack"}
+data.raw.technology["kovarex-enrichment-process"].unit =
+{
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"space-science-pack", 1},
+	{"nuclear-science-pack", 1},
+  },
+  time = 30,
+  count = 1000
+}
+data.raw.technology["atomic-bomb"].unit =
+{
+  count = 5000,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"military-science-pack", 1},
+	{"utility-science-pack", 1},
+	{"space-science-pack", 1},
+	{"nuclear-science-pack", 1},
+  },
+  time = 45
+}
+data.raw.technology["fission-reactor-equipment"].unit =
+{
+  count = 500,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"military-science-pack", 1},
+	{"utility-science-pack", 1},
+	{"nuclear-science-pack", 1},
+  },
+  time = 30
+}
+data.raw.technology["uranium-ammo"].prerequisites = {"nuclear-science-pack", "military-4"}
+data.raw.technology["uranium-ammo"].unit =
+{
+  count = 1000,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"military-science-pack", 1},
+	{"utility-science-pack", 1},
+	{"nuclear-science-pack", 1},
+  },
+  time = 45
+}
+data.raw.technology["nuclear-fuel-reprocessing"].prerequisites = {"nuclear-power"}
+data.raw.technology["nuclear-fuel-reprocessing"].unit =
+{
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"nuclear-science-pack", 1}
+  },
+  time = 30,
+  count = 50
+}
+data.raw.technology["sulfur-processing"].effects =
+{  
+  {
+	type = "unlock-recipe",
+	recipe = "sulfur"
+  },
   {
 	type = "unlock-recipe",
 	recipe = "sulfur-dioxide"
   },
   {
 	type = "unlock-recipe",
-	recipe = "sulfur"
+	recipe = "sulfane-oxygenation"
   },
   {
 	type = "unlock-recipe",
@@ -450,6 +540,52 @@ data.raw.technology["lubricant"].effects =
   {
 	type = "unlock-recipe",
 	recipe = "NaK-lubricant"
+  }
+}
+data.raw.technology["space-science-pack"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "space-science-pack"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "silicon-carbide"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "space-ammo"
+  },
+ }
+data.raw.technology["space-platform"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "asteroid-collector"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "crusher"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "metallic-asteroid-crushing"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "carbonic-asteroid-crushing"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "silicaceous-asteroid-crushing"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "oxide-asteroid-crushing"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "cargo-bay"
   }
 }
 data.raw.technology["steel-plate-productivity"].effects =
@@ -520,7 +656,24 @@ data.raw.technology["rocket-silo"].effects =
   {
 	type = "unlock-recipe",
 	recipe = "cargo-landing-pad"
-  }
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "caelium-plate"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "space-platform-foundation"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "space-platform-starter-pack"
+  },
+  {
+    type = "unlock-space-platforms",
+    modifier = true,
+    hidden = true
+  },
 }
 -- Foundry
 data.raw.technology["foundry"].effects =
@@ -1021,6 +1174,9 @@ data.raw.item["biter-egg"].order = "b[nauvis-agriculture]-d[nutrients-from-biter
 data.raw.item["ice-platform"].order = "c[landfill]-i[ice-platform]"
 data.raw.item["foundation"].order = "c[landfill]-j[foundation]"
 
+data.raw.item["rocket-silo"].weight = 1 * tons
+data.raw.recipe["uranium-fuel-cell"].category = "centrifuging"
+
 data.raw.recipe["molten-iron"].subgroup = "vulcanus-fluid"
 data.raw.recipe["molten-copper"].subgroup = "vulcanus-fluid"
 data.raw.recipe["casting-iron"].subgroup = "vulcanus-casting"
@@ -1080,6 +1236,8 @@ data.raw.cliff["cliff-feronia"].order = "i"
 data.raw.cliff["selene-crater-cliff"].order = "j"
 data.raw.cliff["crater-cliff"].order = "k"
 
+data.raw["space-platform-starter-pack"]["space-platform-starter-pack"].subgroup = "space-related"
+
 --Flamethrower
 data.raw["fluid-turret"]["flamethrower-turret"].attack_parameters.fluids = { {type = "crude-oil"},  {type = "heavy-oil", damage_modifier = 1.05}, {type = "light-oil", damage_modifier = 1.1}, {type = "ethanol", damage_modifier = 1.1} }
 data.raw.item["flamethrower-turret"].order = "b[turret]-b[flamethrower-turret]"
@@ -1102,6 +1260,7 @@ data.raw["night-vision-equipment"]["night-vision-equipment"].shape = { width = 1
 
 --disable
 data.raw.recipe["lubricant"].hide_from_player_crafting = true
+data.raw.recipe["ice-melting"].hide_from_player_crafting = true
 
 data.raw.item["stone-furnace"].hidden = true
 data.raw.item["stone-furnace"].subgroup = "other"

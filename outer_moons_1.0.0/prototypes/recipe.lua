@@ -742,9 +742,9 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "fluid", name = "heavy-oil", amount = 80},
-		  {type = "fluid", name = "petroleum-gas", amount = 35},
-		  {type = "fluid", name = "light-oil", amount = 20},
+		  {type = "fluid", name = "heavy-oil", amount = 60},
+		  {type = "fluid", name = "petroleum-gas", amount = 20},
+		  {type = "fluid", name = "light-oil", amount = 35},
 		},
 		allow_productivity = true,
 		icon = "__outer_moons__/graphics/icons/fluid/methanol-processing.png",
@@ -921,7 +921,37 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "fluid", name = "sulfur-dioxide", amount = 50}
+		  {type = "fluid", name = "sulfur-dioxide", amount = 50},
+		},
+		main_product = "sulfur-dioxide",
+		allow_productivity = true,
+		crafting_machine_tint =
+		{
+		  primary = {r = 1.000, g = 0.908, b = 0.000, a = 1.000}, -- #fff400ff
+		  secondary = {r = 1.000, g = 0.802, b = 0.122, a = 1.000}, -- #ffd92bff
+		  tertiary = {r = 0.816, g = 0.809, b = 0.547, a = 1.000}, -- #dfdd98ff
+		  quaternary = {r = 0.969, g = 1.000, b = 0.019, a = 1.000}, -- #f7ff04ff
+		}
+	},	
+	{
+		type = "recipe",
+		name = "sulfane-oxygenation",
+		category = "chemistry-or-cryogenics",
+		subgroup = "phase-recipes",
+		icon = "__outer_moons__/graphics/icons/fluid/sulfane-oxygenation.png",
+		order = "c[sulfur]-a[sulfur-dioxide]",
+		energy_required = 1,
+		enabled = false,
+		hide_from_player_crafting = true,
+		ingredients =
+		{
+		  {type = "fluid", name = "sulfane", amount = 50},
+		  {type = "fluid", name = "oxygen", amount = 50}
+		},
+		results =
+		{
+		  {type = "fluid", name = "sulfur-dioxide", amount = 50},
+		  {type = "fluid", name = "hydrogen", amount = 50 },
 		},
 		allow_productivity = true,
 		crafting_machine_tint =
@@ -1293,7 +1323,7 @@ data:extend({
 		energy_required = 1,
 		ingredients =
 		{
-		  {type = "fluid", name = "petroleum-gas", amount = 20}
+		  {type = "fluid", name = "petroleum-gas", amount = 10}
 		},
 		results =
 		{
@@ -1579,11 +1609,57 @@ data:extend({
 		auto_recycle = false,
 		energy_required = 4,
 		ingredients = {
-			{type = "item", name = "cerium-plate", amount = 5},
+			{type = "item", name = "cerium-plate", amount = 6},
 			{type = "item", name = "lanthanum-plate", amount = 3},
-			{type = "item", name = "neodymium-plate", amount = 2},
+			{type = "item", name = "neodymium-plate", amount = 1},
 		},
 		results = {{type="item", name="mischmetal-plate", amount=4}},
+		allow_productivity = true
+	},
+	--Space
+	{
+		type = "recipe",
+		name = "silicon-carbide",
+		icon = "__outer_moons__/graphics/icons/silicon-carbide.png",
+		category = "advanced-crafting",
+		enabled = false,
+		auto_recycle = false,
+		energy_required = 1,
+		surface_conditions = {
+			{
+				property = "pressure",
+				min = 0,
+				max = 0
+			}
+		},
+		ingredients = {
+			{type = "item", name = "silicon-ore", amount = 1},
+			{type = "item", name = "carbon", amount = 1},
+		},
+		results = {{type="item", name="silicon-carbide", amount=1}},
+		allow_productivity = true
+	},
+	{
+		type = "recipe",
+		name = "space-ammo",
+		icon = "__outer_moons__/graphics/icons/PDC-ammo.png",
+		category = "advanced-crafting",
+		subgroup = "space-rocket",
+		enabled = false,
+		auto_recycle = false,
+		energy_required = 1,
+		surface_conditions = {
+			{
+				property = "pressure",
+				min = 0,
+				max = 0
+			}
+		},
+		ingredients = {
+			{type = "item", name = "silicon-carbide", amount = 1},
+			{type = "item", name = "iron-plate", amount = 1},
+		},
+		results = {{type="item", name="firearm-magazine", amount=1}},
 		allow_productivity = true
 	},
 	--Metal Chemistry
@@ -1598,13 +1674,13 @@ data:extend({
 		energy_required = 5,
 		ingredients =
 		{
-		  {type = "item", name = "aluminum-ore", amount = 2 },
-		  {type = "item", name = "lye", amount = 1 },
+		  {type = "item", name = "aluminum-ore", amount = 4 },
+		  {type = "item", name = "lye", amount = 2 },
 		},
 		results =
 		{
-		  {type = "item", name = "aluminate", amount = 2},
-		  {type = "fluid", name = "red-mud", amount = 3},
+		  {type = "item", name = "aluminate", amount = 3},
+		  {type = "fluid", name = "red-mud", amount = 5},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -1878,6 +1954,25 @@ data:extend({
 		main_product = "",
 		results = {{type="item", name="uranium-238", amount=3}},
 		allow_decomposition = false,
+		allow_productivity = true,
+		crafting_machine_tint =
+		{
+			primary = {r = 0, g = 1, b = 0, a = 1.000},
+		}
+	},
+	{
+		type = "recipe",
+		name = "uranium-fuel-cell",
+		energy_required = 10,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "lead-plate", amount = 10},
+		  {type = "item", name = "uranium-235", amount = 1},
+		  {type = "item", name = "uranium-238", amount = 9}
+		},
+		results = {{type="item", name="uranium-fuel-cell", amount=10}},
+		subgroup = "uranium-processing",
 		allow_productivity = true,
 		crafting_machine_tint =
 		{
@@ -2191,8 +2286,8 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "aluminum-plate", amount = 5},
-		  {type = "item", name = "plastic-bar", amount = 15}
+		  {type = "item", name = "aluminum-plate", amount = 10},
+		  {type = "item", name = "plastic-bar", amount = 10}
 		},
 		results = {{type="item", name="low-density-structure", amount=1}},
 		allow_productivity = true
@@ -2205,11 +2300,11 @@ data:extend({
 		category = "crafting",
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 10},
-		  {type = "item", name = "low-density-structure", amount = 10},
-		  {type = "item", name = "rocket-fuel", amount = 10}
+		  {type = "item", name = "processing-unit", amount = 1},
+		  {type = "item", name = "low-density-structure", amount = 2},
+		  {type = "item", name = "rocket-fuel", amount = 3}
 		},
-		results = {{type="item", name="rocket-part-new", amount=1}},
+		results = {{type="item", name="rocket-part-new", amount=3}},
 		allow_productivity = true
 	},
 	-- Space
@@ -2222,7 +2317,7 @@ data:extend({
 		  {type = "item", name = "invar-plate", amount = 1000},
 		  {type = "item", name = "concrete", amount = 1000},
 		  {type = "item", name = "pipe", amount = 100},
-		  {type = "item", name = "processing-unit", amount = 200},
+		  {type = "item", name = "processing-unit", amount = 50},
 		  {type = "item", name = "electric-engine-unit", amount = 200}
 		},
 		energy_required = 30,
@@ -2254,7 +2349,7 @@ data:extend({
 		  {type = "item", name = "lead-plate", amount = 10},
 		  {type = "item", name = "fiber-optic", amount = 20},
 		},
-		results = {{type="item", name="space-platform-foundation", amount=1}}
+		results = {{type="item", name="space-platform-foundation", amount=2}}
 	},
 	{
 		type = "recipe",
@@ -2320,6 +2415,74 @@ data:extend({
 		},
 		energy_required = 10,
 		results = {{type="item", name="thruster", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "thruster-fuel",
+		category = "chemistry",
+		subgroup="space-processing",
+		order = "a[thruster-fuel]",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  --{type = "item", name = "carbon", amount = 2},
+		  {type = "fluid", name = "hydrogen", amount = 20}
+		},
+		surface_conditions =
+		{
+		  {
+			property = "gravity",
+			min = 0,
+			max = 0
+		  }
+		},
+		energy_required = 2,
+		results = {{type = "fluid", name = "thruster-fuel", amount = 75}},
+		allow_productivity = true,
+		show_amount_in_title = false,
+		always_show_products = true,
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.881, g = 0.100, b = 0.000, a = 0.502}, -- #e0190080
+		  secondary = {r = 0.930, g = 0.767, b = 0.605, a = 0.502}, -- #edc39a80
+		  tertiary = {r = 0.873, g = 0.649, b = 0.542, a = 0.502}, -- #dea58a80
+		  quaternary = {r = 0.629, g = 0.174, b = 0.000, a = 0.502}, -- #a02c0080
+		}
+	},
+	{
+		type = "recipe",
+		name = "thruster-oxidizer",
+		category = "chemistry",
+		subgroup="space-processing",
+		order = "c[thruster-oxidizer]",
+		auto_recycle = false,
+		enabled = false,
+		ingredients =
+		{
+		  --{type = "item", name = "iron-ore", amount = 2},
+		  {type = "fluid", name = "oxygen", amount = 10}
+		},
+		surface_conditions =
+		{
+		  {
+			property = "gravity",
+			min = 0,
+			max = 0
+		  }
+		},
+		energy_required = 2,
+		results = {{type = "fluid", name = "thruster-oxidizer", amount = 75}},
+		allow_productivity = true,
+		show_amount_in_title = false,
+		always_show_products = true,
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.082, g = 0.396, b = 0.792, a = 0.502}, -- #1565ca80
+		  secondary = {r = 0.161, g = 0.553, b = 0.796, a = 0.502}, -- #298dcb80
+		  tertiary = {r = 0.059, g = 0.376, b = 0.545, a = 0.502}, -- #0f5f8a80
+		  quaternary = {r = 0.683, g = 0.915, b = 1.000, a = 0.502}, -- #aee9ff80
+		}
 	},
 	--Vulcanus fluids
 	{
@@ -2899,8 +3062,8 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "fluid", name = "molten-aluminum", amount = 50},
-		  {type = "item", name = "plastic-bar", amount = 15},
+		  {type = "fluid", name = "molten-aluminum", amount = 100},
+		  {type = "item", name = "plastic-bar", amount = 10},
 		},
 		energy_required = 15,
 		allow_decomposition = false,
@@ -3070,14 +3233,14 @@ data:extend({
 		energy_required = 30,
 		ingredients =
 		{
-		  {type = "fluid", name = "water", amount = 20},
+		  {type = "fluid", name = "water", amount = 40},
 		  {type = "item", name = "salt", amount = 10},
 		},
 		results =
 		{
-		  {type = "item", name = "lye", amount = 3},
-		  {type = "fluid", name = "hydrogen", amount = 10},
-		  {type = "fluid", name = "chlorine", amount = 10},
+		  {type = "item", name = "lye", amount = 4},
+		  {type = "fluid", name = "hydrogen", amount = 20},
+		  {type = "fluid", name = "chlorine", amount = 20},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -3099,7 +3262,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "water", amount = 30},
-		  {type = "fluid", name = "red-mud", amount = 30},
+		  {type = "fluid", name = "red-mud", amount = 10},
 		},
 		results =
 		{
@@ -3107,7 +3270,7 @@ data:extend({
 		  --{type = "item", name = "silicon-ore", amount = 1, probability = 0.5, show_details_in_recipe_tooltip = false},
 		  --{type = "item", name = "alumina", amount = 1, probability = 0.33, show_details_in_recipe_tooltip = false},
 		  --{type = "item", name = "titanium-ore", amount = 1},
-		  {type = "item", name = "titanium-ore", amount = 1, probability = 0.25},
+		  {type = "item", name = "titanium-ore", amount = 1},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -3437,6 +3600,21 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "centrifuge",
+		energy_required = 4,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "concrete", amount = 100},
+		  {type = "item", name = "steel-plate", amount = 50},
+		  {type = "item", name = "advanced-circuit", amount = 5},
+		  {type = "item", name = "iron-gear-wheel", amount = 100}
+		},
+		results = {{type="item", name="centrifuge", amount=1}},
+		requester_paste_multiplier = 10
+	},
+	{
+		type = "recipe",
 		name = "solar-array",
 		energy_required = 20,
 		enabled = false,
@@ -3481,12 +3659,36 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "concrete", amount = 500},
-		  {type = "item", name = "steel-plate", amount = 500},
-		  {type = "item", name = "advanced-circuit", amount = 500},
+		  {type = "item", name = "invar-plate", amount = 500},
+		  {type = "item", name = "processing-unit", amount = 20},
 		  {type = "item", name = "lead-plate", amount = 500}
 		},
 		results = {{type="item", name="nuclear-reactor", amount=1}},
 		requester_paste_multiplier = 1
+	},
+	{
+		type = "recipe",
+		name = "heat-exchanger",
+		energy_required = 3,
+		enabled = false,
+		ingredients = {{type = "item", name = "invar-plate", amount = 10}, {type = "item", name = "copper-plate", amount = 100}, {type = "item", name = "pipe", amount = 10}},
+		results = {{type="item", name="heat-exchanger", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "heat-pipe",
+		energy_required = 1,
+		enabled = false,
+		ingredients = {{type = "item", name = "invar-plate", amount = 10}, {type = "item", name = "copper-plate", amount = 20}},
+		results = {{type="item", name="heat-pipe", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "steam-turbine",
+		enabled = false,
+		energy_required = 3,
+		ingredients = {{type = "item", name = "iron-gear-wheel", amount = 30}, {type = "item", name = "nickel-plate", amount = 50}, {type = "item", name = "pipe", amount = 20}, {type = "item", name = "electric-engine-unit", amount = 10}},
+		results = {{type="item", name="steam-turbine", amount=1}}
 	},
 	{
 		type = "recipe",
@@ -3726,6 +3928,33 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "space-science-pack",
+		icon = "__base__/graphics/icons/space-science-pack.png",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "iron-plate", amount = 2},
+		  {type = "item", name = "silicon-carbide", amount = 1},
+		  {type = "item", name = "ice", amount = 1}
+		},
+		surface_conditions =
+		{
+		  {
+			property = "gravity",
+			min = 0,
+			max = 0
+		  }
+		},
+		energy_required = 15,
+		results =
+		{
+		  {type = "item", name = "space-science-pack", amount = 5}
+		},
+		allow_productivity = true,
+		main_product = "space-science-pack"
+	},
+	{
+		type = "recipe",
 		name = "lunar-science-pack",
 		category = "robotics",
 		surface_conditions =
@@ -3751,24 +3980,29 @@ data:extend({
 	{
 		type = "recipe",
 		name = "nuclear-science-pack",
-		category = "plutonium-processing",
-		surface_conditions =
-		{
-		  {
-			property = "pressure",
-			min = 1000,
-			max = 1000
-		  }
-		},
+		category = "centrifuging",
+		--surface_conditions =
+		--{
+		--  {
+		--	property = "pressure",
+		--	min = 1000,
+		--	max = 1000
+		--  }
+		--},
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "uranium-238", amount = 19},
-		  {type = "item", name = "plutonium-239", amount = 1},
+		  {type = "item", name = "uranium-238", amount = 2},
+		  --{type = "item", name = "uranium-235", amount = 1},
+		  {type = "item", name = "lead-plate", amount = 2},
 		},
 		energy_required = 10,
 		results = {{type="item", name="nuclear-science-pack", amount=1}},
-		allow_productivity = true
+		allow_productivity = true,
+		crafting_machine_tint =
+		{
+		  primary = {r = 0, g = 1, b = 0, a = 1.000}, 
+		}
 	},
 	{
 		type = "recipe",
@@ -4271,10 +4505,8 @@ data:extend({
 		energy_required = 25,
 		ingredients =
 		{
-		  {type = "item", name = "efficiency-module-2", amount = 100},
-		  {type = "item", name = "speed-module-2", amount = 100},
 		  {type = "item", name = "processing-unit", amount = 60},
-		  {type = "item", name = "electric-engine-unit", amount = 40},
+		  {type = "item", name = "silicon-carbide", amount = 40},
 		  {type = "item", name = "low-density-structure", amount = 30},
 		  {type = "item", name = "power-armor", amount = 1},
 		},
@@ -4318,7 +4550,7 @@ data:extend({
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 200},
+		  {type = "item", name = "processing-unit", amount = 50},
 		  {type = "item", name = "titanium-plate", amount = 50},
 		  {type = "item", name = "uranium-fuel-cell", amount = 5}
 		},

@@ -580,7 +580,61 @@ data:extend(
       item = "magnesium-plate"
     }
   },
-  
+  {
+    type = "technology",
+    name = "nuclear-power",
+    icon = "__base__/graphics/technology/nuclear-power.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "nuclear-reactor"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "heat-exchanger"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "heat-pipe"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "steam-turbine"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "uranium-fuel-cell"
+      }
+    },
+    prerequisites = {"nuclear-science-pack"},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "uranium-235"
+    }
+  },
+  {
+    type = "technology",
+    name = "nuclear-science-pack",
+    icon = "__outer_moons__/graphics/technology/nuclear-science-pack.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "nuclear-science-pack"
+      },
+    },
+    prerequisites = {"uranium-processing"},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "centrifuge"
+    }
+  },
   {
     type = "technology",
     name = "lunar-science-pack",

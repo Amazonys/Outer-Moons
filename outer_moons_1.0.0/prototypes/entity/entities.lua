@@ -3627,7 +3627,7 @@ data:extend({
                 width = 40,
 				height = 81,
                 scale = 0.5,
-                shift = {0, -4.3},
+                shift = {0, -4.1},
                 draw_as_glow = true,
                 run_mode = "backward"
               },

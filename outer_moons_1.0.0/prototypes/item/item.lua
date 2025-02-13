@@ -461,7 +461,7 @@ data:extend({
         group = "intermediate-products",
 		icon = "__outer_moons__/graphics/icons/cerium-plate.png",
 		subgroup = "outer-processes",
-		order = "b[cerium-plate]",
+		order = "e[cerium-plate]",
 		inventory_move_sound = item_sounds.metal_small_inventory_move,
 		pick_sound = item_sounds.metal_small_inventory_pickup,
 		drop_sound = item_sounds.metal_small_inventory_move,
@@ -474,7 +474,7 @@ data:extend({
         group = "intermediate-products",
 		icon = "__outer_moons__/graphics/icons/lanthanum-plate.png",
 		subgroup = "outer-processes",
-		order = "c[lanthanum-plate]",
+		order = "f[lanthanum-plate]",
 		inventory_move_sound = item_sounds.metal_small_inventory_move,
 		pick_sound = item_sounds.metal_small_inventory_pickup,
 		drop_sound = item_sounds.metal_small_inventory_move,
@@ -487,7 +487,7 @@ data:extend({
         group = "intermediate-products",
 		icon = "__outer_moons__/graphics/icons/neodymium-plate.png",
 		subgroup = "outer-processes",
-		order = "d[neodymium-plate]",
+		order = "g[neodymium-plate]",
 		inventory_move_sound = item_sounds.metal_small_inventory_move,
 		pick_sound = item_sounds.metal_small_inventory_pickup,
 		drop_sound = item_sounds.metal_small_inventory_move,
@@ -500,7 +500,7 @@ data:extend({
         group = "intermediate-products",
 		icon = "__outer_moons__/graphics/icons/mischmetal-plate.png",
 		subgroup = "outer-processes",
-		order = "e[mischmetal-plate]",
+		order = "h[mischmetal-plate]",
 		inventory_move_sound = item_sounds.metal_small_inventory_move,
 		pick_sound = item_sounds.metal_small_inventory_pickup,
 		drop_sound = item_sounds.metal_small_inventory_move,
@@ -611,6 +611,46 @@ data:extend({
         stack_size = 50,
         weight = 2 * kg
 	},
+	{
+		type = "item",
+		name = "ceria",		
+        group = "intermediate-products",
+		icon = "__outer_moons__/graphics/icons/ceria.png",
+        pictures =
+		{
+		  { size = 64, filename = "__outer_moons__/graphics/icons/ceria.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/ceria-2.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/ceria-3.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/ceria-4.png", scale = 0.5, mipmap_count = 4 },
+		},
+		subgroup = "chemical",
+		order = "b[ceria]",
+        inventory_move_sound = item_sounds.resource_inventory_move,
+        pick_sound = item_sounds.resource_inventory_pickup,
+        drop_sound = item_sounds.resource_inventory_move,
+        stack_size = 50,
+        weight = 2 * kg
+	},
+	{
+		type = "item",
+		name = "lanthana",		
+        group = "intermediate-products",
+		icon = "__outer_moons__/graphics/icons/lanthana.png",
+        pictures =
+		{
+		  { size = 64, filename = "__outer_moons__/graphics/icons/lanthana.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/lanthana-2.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/lanthana-3.png", scale = 0.5, mipmap_count = 4 },
+		  { size = 64, filename = "__outer_moons__/graphics/icons/lanthana-4.png", scale = 0.5, mipmap_count = 4 },
+		},
+		subgroup = "chemical",
+		order = "c[lanthana]",
+        inventory_move_sound = item_sounds.resource_inventory_move,
+        pick_sound = item_sounds.resource_inventory_pickup,
+        drop_sound = item_sounds.resource_inventory_move,
+        stack_size = 50,
+        weight = 2 * kg
+	},
 	
 	--Rocket parts
 	{
@@ -625,6 +665,20 @@ data:extend({
 		stack_size = 20,
 		weight = 20*kg,
 	},
+	-- Space
+	{
+		type = "item",
+		name = "silicon-carbide",
+		icon = "__outer_moons__/graphics/icons/silicon-carbide.png",
+		subgroup = "space-rocket",
+		order = "a[silicon-carbide]",
+		inventory_move_sound = item_sounds.brick_inventory_move,
+		pick_sound = item_sounds.brick_inventory_pickup,
+		drop_sound = item_sounds.brick_inventory_move,
+		stack_size = 50,
+		weight = 2*kg,
+	},
+	
 	-- Selene
 	{
         type = "item",
@@ -2469,7 +2523,7 @@ data:extend({
 		drop_sound = item_sounds.metal_large_inventory_move,
 		place_result = "small-storage-tank",
 		stack_size = 100,
-		weight = 5 * kg,
+		weight = 10 * kg,
 	},
 	{
 		type = "item",
@@ -2509,7 +2563,7 @@ data:extend({
 		drop_sound = item_sounds.metal_small_inventory_move,
 		place_result = "gas-vent",
 		stack_size = 50,
-		weight = 5 * kg,
+		weight = 20 * kg,
 	},
 	{
 		type = "item",
@@ -2522,7 +2576,7 @@ data:extend({
 		drop_sound = item_sounds.metal_small_inventory_move,
 		place_result = "flare-stack",
 		stack_size = 50,
-		weight = 10 * kg,
+		weight = 20 * kg,
 	},
 	{
 		type = "item",
