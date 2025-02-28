@@ -441,7 +441,6 @@ data:extend({
     fluid_boxes_off_when_no_fluid_recipe = true,
 	collision_box = {{-2.2, -2.2}, {2.2, 2.2}},
 	selection_box = {{-2.5, -2.5}, {2.5, 2.5}},
-    drawing_box = {{-2.5, -2.8}, {2.5, 2.5}},
     damaged_trigger_effect = hit_effects.entity(),
     fast_replaceable_group = "adv-assembling-machine",
     graphics_set = {
@@ -625,7 +624,7 @@ data:extend({
       idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
       apparent_volume = 1.5,
     },
-    crafting_categories = {"robotics", "assembly-or-robotics", "fluid-assembly-or-robotics", },
+    crafting_categories = {"robotics", "crafting-or-robotics", "assembly-or-robotics", "fluid-assembly-or-robotics", },
 
     crafting_speed = 2,
     energy_source =
@@ -946,9 +945,9 @@ data:extend({
     circuit_wire_max_distance = assembling_machine_circuit_wire_max_distance,
     circuit_connector = circuit_connector_definitions["foundry"],
     fluid_boxes_off_when_no_fluid_recipe = true,
-    collision_box = { { -2.5, -2.5 }, { 2.5, 2.5 } },
+    collision_box = { { -2.4, -2.4 }, { 2.4, 2.4 } },
     selection_box = { { -2.5, -2.5 }, { 2.5, 2.5 } },
-    heating_energy = "500kW",
+    heating_energy = "300kW",
     damaged_trigger_effect = hit_effects.entity(),
     drawing_box_vertical_extension = 1.5,
     effect_receiver = { base_effect = { productivity = 0.5 }},
@@ -967,7 +966,7 @@ data:extend({
       usage_priority = "secondary-input",
       emissions_per_minute = { pollution = 6 }
     },
-    energy_usage = "5000kW",
+    energy_usage = "2500kW",
     graphics_set = {
         animation = {
             layers = {
@@ -987,7 +986,7 @@ data:extend({
                 {
                     priority = "high",
                     width = 590,
-                    height = 630,
+                    height = 640,
                     frame_count = 80,
                     shift = util.by_pixel_hr(0, -24),
                     animation_speed = 0.5,
@@ -1098,7 +1097,7 @@ data:extend({
                 secondary_draw_order = 1,
                 animation = {
                     priority = "high",
-                    size = { 590, 630 },
+                    size = { 590, 640 },
                     shift = util.by_pixel_hr(0, -24),
                     frame_count = 80,
                     draw_as_glow = true,
@@ -2728,7 +2727,7 @@ data:extend({
       {inventory_index = defines.inventory.furnace_modules, shift = {0, 0.8}}
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-    crafting_categories = {"smelting", "alloying"},
+    crafting_categories = {"smelting", "alloying", "advanced-smelting"},
     result_inventory_size = 1,
     crafting_speed = 3,
     energy_usage = "180kW",
@@ -3082,7 +3081,7 @@ data:extend({
       },
     },
     crafting_categories = {
-      "smelting", "alloying"
+      "smelting", "alloying", "advanced-smelting"
     },
     crafting_speed = 4,
     damaged_trigger_effect = {

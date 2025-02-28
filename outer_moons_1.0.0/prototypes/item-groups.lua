@@ -321,88 +321,87 @@ data:extend(
     type = "item-subgroup",
     name = "fluid-recipes",
     group = "fluids",
-    order = "z-a"
+    order = "y-a"
   },  
   {
     type = "item-subgroup",
     name = "hydrocarbon-recipes",
     group = "fluids",
-    order = "z-b"
+    order = "y-b"
   },
   {
     type = "item-subgroup",
     name = "electrolytic-recipes",
     group = "fluids",
-    order = "z-c"
+    order = "y-c"
   },
   {
     type = "item-subgroup",
     name = "phase-recipes",
     group = "fluids",
-    order = "z-d"
+    order = "y-d"
   },
   {
     type = "item-subgroup",
     name = "separation-recipes",
     group = "fluids",
-    order = "z-e"
+    order = "y-e"
   },
   {
     type = "item-subgroup",
     name = "plastic-recipes",
     group = "fluids",
-    order = "z-f"
+    order = "y-f"
   },
   {
     type = "item-subgroup",
     name = "sulfur-recipes",
     group = "fluids",
-    order = "z-g"
+    order = "y-g"
   },
   {
     type = "item-subgroup",
     name = "nitrogen-recipes",
     group = "fluids",
-    order = "z-h"
+    order = "y-h"
   },
   {
     type = "item-subgroup",
     name = "chlorine-recipes",
     group = "fluids",
-    order = "z-i"
+    order = "y-i"
   },
   
   {
     type = "item-subgroup",
     name = "fluorine-recipes",
     group = "fluids",
-    order = "z-j"
+    order = "y-j"
   },
   {
     type = "item-subgroup",
     name = "scrubber-recipes",
     group = "fluids",
-    order = "z-z"
+    order = "y-z"
   },
-  
   
   {
     type = "item-subgroup",
     name = "barrel",
-    group = "intermediate-products",
-    order = "z-f"
+    group = "fluids",
+    order = "z-a"
   },
   {
     type = "item-subgroup",
     name = "fill-barrel",
-    group = "intermediate-products",
-    order = "z-g"
+    group = "fluids",
+    order = "z-b"
   },
   {
     type = "item-subgroup",
     name = "empty-barrel",
-    group = "intermediate-products",
-    order = "z-h"
+    group = "fluids",
+    order = "z-c"
   },
   --- Intermediates
   

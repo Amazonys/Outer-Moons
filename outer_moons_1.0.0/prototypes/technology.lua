@@ -491,7 +491,11 @@ data:extend(
         type = "unlock-space-location",
         space_location = "selene",
         use_icon_overlay_constant = true
-      }
+      },	   
+	  {
+        type = "unlock-recipe",
+        recipe = "steel-titanium-plate"
+      },
     },
     prerequisites = {"space-platform-thruster"},
     unit =
@@ -548,36 +552,20 @@ data:extend(
         type = "unlock-recipe",
         recipe = "adv-assembling-machine"
       },
+	  {
+        type = "unlock-recipe",
+        recipe = "solid-fuel-from-magnesium"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "hydrogen-rocket-fuel"
+      },
     },
-    prerequisites = {"planet-discovery-selene"},
+    prerequisites = {"magnesium-processing"},
     research_trigger =
     {
       type = "craft-item",
       item = "magnalium-plate"
-    }
-  },
-  {
-    type = "technology",
-    name = "liquid-oxygen-fuel",
-    icon = "__outer_moons__/graphics/technology/liquid-ox-fuel.png",
-    icon_size = 256,
-    essential = true,
-    effects =
-    {
-	  {
-        type = "unlock-recipe",
-        recipe = "solid-fuel-from-aluminum"
-      },
-	  {
-        type = "unlock-recipe",
-        recipe = "oxygen-rocket-fuel"
-      },	  
-    },
-    prerequisites = {"planet-discovery-selene"},
-    research_trigger =
-    {
-      type = "craft-item",
-      item = "magnesium-plate"
     }
   },
   {
@@ -637,22 +625,149 @@ data:extend(
   },
   {
     type = "technology",
-    name = "lunar-science-pack",
-    icon = "__outer_moons__/graphics/technology/lunar-science-pack.png",
+    name = "regolith-amalgamation",
+    icon = "__outer_moons__/graphics/technology/regolith-amalgamation.png",
     icon_size = 256,
     essential = true,
     effects =
     {
       {
         type = "unlock-recipe",
-        recipe = "lunar-science-pack"
+        recipe = "amalgamate-regolith"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "regolith-stone"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "regolith-uranium"
       },
     },
-    prerequisites = {"adv-assembler"},
+    prerequisites = {"planet-discovery-selene"},
     research_trigger =
     {
       type = "mine-entity",
-      item = "metallic-regolith"
+      entity = "metallic-regolith"
+    }
+  },
+  {
+    type = "technology",
+    name = "dry-ice-processing",
+    icon = "__outer_moons__/graphics/technology/dry-ice-sublimation.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "dry-ice-sublimation"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "carbon-gasification"
+      },
+    },
+    prerequisites = {"planet-discovery-selene"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "dry-ice"
+    }
+  },
+  {
+    type = "technology",
+    name = "magnesium-processing",
+    icon = "__outer_moons__/graphics/technology/electrorefinery.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {	  
+	  {
+        type = "unlock-recipe",
+        recipe = "magnesium-ore"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "magnesium-plate"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "magnalium-plate"
+      },	  
+	  {
+        type = "unlock-recipe",
+        recipe = "selene-caelium-plate"
+      },  
+	  {
+        type = "unlock-recipe",
+        recipe = "thermite-explosives"
+      },	  
+	  {
+        type = "unlock-recipe",
+        recipe = "electrorefinery"
+      },
+    },
+    prerequisites = {"planet-discovery-selene"},
+    research_trigger =
+    {
+      type = "mine-entity",
+      entity = "saline-geyser"
+    }
+  },
+  {
+    type = "technology",
+    name = "polyvinyl-chloride-plastics",
+    icon = "__outer_moons__/graphics/technology/polyvinyl-chloride-plastic.png",
+    icon_size = 256,
+    prerequisites = {"dry-ice-processing", "polystyrene-plastics", "magnesium-processing"},
+    effects =
+    {
+	  {
+        type = "unlock-recipe",
+        recipe = "vinyl-chloride"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "polyvinyl-chloride-plastic"
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "magnalium-low-density-structure"
+      },
+    },
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "magnesium-plate"
+    }
+  },
+  {
+    type = "technology",
+    name = "advanced-material-processing-3",
+    icon = "__outer_moons__/graphics/technology/industrial-furnace.png",
+    icon_size = 256,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "industrial-furnace"
+      }
+    },
+    prerequisites = {"advanced-material-processing-2", "production-science-pack", "lunar-science-pack"},
+    unit =
+    {
+      count = 500,
+      ingredients =
+      {
+        {"automation-science-pack", 1},
+        {"logistic-science-pack", 1},
+        {"chemical-science-pack", 1},
+        {"production-science-pack", 1},
+        {"space-science-pack", 1},
+        {"lunar-science-pack", 1},
+      },
+      time = 30
     }
   },
   {

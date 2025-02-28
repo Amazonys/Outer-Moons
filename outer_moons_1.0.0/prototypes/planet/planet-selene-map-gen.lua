@@ -803,7 +803,7 @@ data:extend{
     type = "noise-expression",
     name = "selene_ice_richness",
     expression = "selene_ice_region * random_penalty_between(0.9, 1, 1)\z
-                  * 4000 * selene_starting_area_multiplier\z
+                  * 10000 * selene_starting_area_multiplier\z
                   * control:ice:richness / selene_ice_size"
   },
   {
@@ -826,7 +826,7 @@ data:extend{
     type = "noise-expression",
     name = "selene_dry_ice_richness",
     expression = "selene_dry_ice_region * random_penalty_between(0.9, 1, 1)\z
-                  * 3000 * selene_starting_area_multiplier\z
+                  * 8000 * selene_starting_area_multiplier\z
                   * control:dry_ice:richness / selene_dry_ice_size"
   },
   {
@@ -854,7 +854,7 @@ data:extend{
     type = "noise-expression",
     name = "selene_titanium_ore_richness",
     expression = "selene_titanium_ore_region * random_penalty_between(0.9, 1, 1)\z
-                  * 6000 * selene_starting_area_multiplier\z
+                  * 7500 * selene_starting_area_multiplier\z
                   * control:titanium_ore:richness / selene_titanium_ore_size"
   },
 
@@ -888,13 +888,13 @@ data:extend{
   {
     type = "noise-expression",
     name = "selene_saline_geyser_probability",
-    expression = "(control:saline_geyser:size > 0) * (0.025 * ((selene_saline_region_patchy > 0) + 2 * selene_saline_region_patchy))"
+    expression = "(control:saline_geyser:size > 0) * (0.005 * ((selene_saline_region_patchy > 0) + selene_saline_region_patchy))"
   },
   {
     type = "noise-expression",
     name = "selene_saline_geyser_richness",
     expression = "(selene_saline_region > 0) * random_penalty_between(0.5, 1, 1)\z
-                  * 10000 * 20 * selene_richness_multiplier * selene_starting_area_multiplier\z
+                  * 5000 * 20 * selene_richness_multiplier * selene_starting_area_multiplier\z
                   * control:saline_geyser:richness / selene_saline_geyser_size"
   },
   {

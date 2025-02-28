@@ -19,7 +19,11 @@ data:extend(
 {
     type = "recipe-category",
     name = "adv-electrolysis"
-  },  
+  },    
+  {
+    type = "recipe-category",
+    name = "crafting-or-robotics"
+  },
   {
     type = "recipe-category",
     name = "assembly-or-robotics"

@@ -623,7 +623,7 @@ data:extend({
 		  { size = 64, filename = "__outer_moons__/graphics/icons/ceria-3.png", scale = 0.5, mipmap_count = 4 },
 		  { size = 64, filename = "__outer_moons__/graphics/icons/ceria-4.png", scale = 0.5, mipmap_count = 4 },
 		},
-		subgroup = "chemical",
+		subgroup = "outer-processes",
 		order = "b[ceria]",
         inventory_move_sound = item_sounds.resource_inventory_move,
         pick_sound = item_sounds.resource_inventory_pickup,
@@ -643,7 +643,7 @@ data:extend({
 		  { size = 64, filename = "__outer_moons__/graphics/icons/lanthana-3.png", scale = 0.5, mipmap_count = 4 },
 		  { size = 64, filename = "__outer_moons__/graphics/icons/lanthana-4.png", scale = 0.5, mipmap_count = 4 },
 		},
-		subgroup = "chemical",
+		subgroup = "outer-processes",
 		order = "c[lanthana]",
         inventory_move_sound = item_sounds.resource_inventory_move,
         pick_sound = item_sounds.resource_inventory_pickup,
@@ -735,20 +735,6 @@ data:extend({
         drop_sound = item_sounds.resource_inventory_move,
         stack_size = 50,
         weight = 2 * kg
-    },
-	{
-        type = "item",
-        name = "magnesium-salt",
-        group = "intermediate-products",
-        icon = "__outer_moons__/graphics/icons/magnesium-salt.png",
-        subgroup = "selene-resources",
-		default_import_location = "selene",
-        order = "de[magnesium-salt]",
-        inventory_move_sound = item_sounds.sulfur_inventory_move,
-		pick_sound = item_sounds.resource_inventory_pickup,
-		drop_sound = item_sounds.sulfur_inventory_move,
-        stack_size = 200,
-        weight = 1 * kg
     },
 	{
 		type = "item",
@@ -2449,7 +2435,7 @@ data:extend({
 		burnt_result = "depleted-uranium-fuel-cell",
 		fuel_value = "8GJ",
 		stack_size = 50,
-		weight = 100 * kg
+		weight = 20 * kg
 	},
 	{
 		type = "item",
@@ -2703,13 +2689,14 @@ data:extend({
 		name = "electrorefinery",
 		icon = "__outer_moons__/graphics/icons/electrorefinery.png",
 		subgroup = "fluid-machine",
+		default_import_location = "selene",
 		order = "e[electrorefinery]",
 		inventory_move_sound = item_sounds.mechanical_inventory_move,
 		pick_sound = item_sounds.mechanical_inventory_pickup,
 		drop_sound = item_sounds.mechanical_inventory_move,
 		place_result = "electrorefinery",
-		stack_size = 10,
-		weight = 200 * kg,	
+		stack_size = 20,
+		weight = 50 * kg,	
 	},
 	{
 		type = "item",
@@ -2742,6 +2729,7 @@ data:extend({
 		name = "adv-assembling-machine",
 		icon = "__outer_moons__/graphics/icons/adv-assembler.png",
 		subgroup = "production-machine",
+		default_import_location = "selene",
 		order = "g[adv-assembling-machine]",
 		inventory_move_sound = item_sounds.mechanical_inventory_move,
 		pick_sound = item_sounds.mechanical_inventory_pickup,
@@ -2820,13 +2808,14 @@ data:extend({
 		name = "industrial-furnace",
 		icon = "__outer_moons__/graphics/icons/industrial-furnace.png",
 		subgroup = "smelting-machine",
+		default_import_location = "selene",
 		order = "d[industrial-furnace]",
 		inventory_move_sound = item_sounds.mechanical_inventory_move,
 		pick_sound = item_sounds.mechanical_inventory_pickup,
 		drop_sound = item_sounds.mechanical_inventory_move,
 		place_result = "industrial-furnace",
 		stack_size = 20,
-		weight = 100 * kg,
+		weight = 50 * kg,
 		--random_tint_color = item_tints.iron_rust		
 	},
 	

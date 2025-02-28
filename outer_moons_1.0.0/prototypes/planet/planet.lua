@@ -101,7 +101,7 @@ data:extend(
     procession_graphic_catalogue = planet_catalogue_vulcanus,
     surface_properties =
     {
-      ["day-night-cycle"] = 1.5 * minute,
+      ["day-night-cycle"] = 3 * minute,
       ["magnetic-field"] = 75,
       ["solar-power"] = 400,
       pressure = 2000,
@@ -202,7 +202,7 @@ data:extend(
     procession_graphic_catalogue = planet_catalogue_gleba,
     surface_properties =
     {
-      ["day-night-cycle"] = 10 * minute,
+      ["day-night-cycle"] = 11 * minute,
       ["magnetic-field"] = 60,
       ["solar-power"] = 60,
       pressure = 2500,
@@ -367,7 +367,7 @@ data:extend(
     procession_graphic_catalogue = planet_catalogue_fulgora,
     surface_properties =
     {
-      ["day-night-cycle"] = 3 * minute,
+      ["day-night-cycle"] = 4 * minute,
       ["magnetic-field"] = 99,
       ["solar-power"] = 20,
       pressure = 800,
@@ -778,7 +778,7 @@ data:extend(
     procession_graphic_catalogue = planet_catalogue_aquilo,
     surface_properties =
     {
-      ["day-night-cycle"] = 60 * minute,
+      ["day-night-cycle"] = 1.5 * minute,
       ["magnetic-field"] = 5,
       pressure = 150,
       ["solar-power"] = 300,
@@ -1167,6 +1167,7 @@ data:extend(
     gravity_pull = -10,
     distance = 35,
     orientation = 0.5,
+	label_orientation = -0.25,
     magnitude = 1.5,
     draw_orbit = false,
     asteroid_spawn_influence = 1,
@@ -1198,7 +1199,7 @@ data:extend(
     from = "nauvis",
     to = "selene",
     order = "a",
-    length = 2500,
+    length = 5000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_selene)
   },
   {

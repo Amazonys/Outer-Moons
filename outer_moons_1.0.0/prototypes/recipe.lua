@@ -628,7 +628,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "steam", amount = 50},
-		  {type = "item", name = "wood", amount = 15},
+		  {type = "item", name = "wood", amount = 10},
 		  {type = "item", name = "nickel-plate", amount = 1},
 		},
 		results =
@@ -641,6 +641,28 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/fluid/wood-gasification.png",
 		subgroup = "hydrocarbon-recipes",
 		order = "a[oil-processing]-b[wood-gasification]"
+	},
+	{
+		type = "recipe",
+		name = "carbon-gasification",
+		category = "oil-processing",
+		enabled = false,
+		hide_from_player_crafting = true,
+		energy_required = 5,
+		ingredients =
+		{
+		  {type = "fluid", name = "steam", amount = 50},
+		  {type = "item", name = "carbon", amount = 50},
+		},
+		results =
+		{
+		  {type = "fluid", name = "hydrogen", amount = 50},
+		  {type = "fluid", name = "carbon-monoxide", amount = 50},
+		},
+		allow_productivity = true,
+		icon = "__outer_moons__/graphics/icons/fluid/carbon-gasification.png",
+		subgroup = "hydrocarbon-recipes",
+		order = "a[oil-processing]-c[carbon-gasification]"
 	},
 	{
 		type = "recipe",
@@ -742,9 +764,9 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "fluid", name = "heavy-oil", amount = 60},
-		  {type = "fluid", name = "petroleum-gas", amount = 20},
-		  {type = "fluid", name = "light-oil", amount = 35},
+		  {type = "fluid", name = "heavy-oil", amount = 40},
+		  {type = "fluid", name = "light-oil", amount = 30},
+		  {type = "fluid", name = "olefins", amount = 25},
 		},
 		allow_productivity = true,
 		icon = "__outer_moons__/graphics/icons/fluid/methanol-processing.png",
@@ -851,6 +873,30 @@ data:extend({
 	-- Liquefaction
 	{
 		type = "recipe",
+		name = "simple-coal-liquefaction",
+		category = "oil-processing",
+		enabled = false,
+		hide_from_player_crafting = true,
+		energy_required = 5,
+		ingredients =
+		{
+		  {type = "item", name = "coal", amount = 10},
+		  {type = "item", name = "calcite", amount = 2},
+		  {type = "fluid", name = "sulfuric-acid", amount = 25},
+		},
+		results=
+		{
+		  {type="fluid", name="heavy-oil", amount=50}
+		},
+		allow_productivity = true,
+		icon = "__space-age__/graphics/icons/fluid/simple-coal-liquefaction.png",
+		subgroup = "hydrocarbon-recipes",
+		order = "a[oil-processing]-c[coal-liquefaction]",
+		allow_decomposition = false,
+		show_amount_in_title = false
+	},
+	{
+		type = "recipe",
 		name = "coal-liquefaction",
 		category = "oil-processing",
 		enabled = false,
@@ -871,7 +917,7 @@ data:extend({
 		allow_productivity = true,
 		icon = "__outer_moons__/graphics/icons/fluid/coal-liquefaction.png",
 		subgroup = "hydrocarbon-recipes",
-		order = "a[oil-processing]-c[coal-liquefaction]",
+		order = "a[oil-processing]-cd[coal-liquefaction]",
 		allow_decomposition = false
 	},
 	
@@ -881,7 +927,7 @@ data:extend({
 		name = "sulfur",
 		category = "chemistry-or-cryogenics",
         subgroup = "chemical",
-		order = "b[sulfur]",
+		order = "a[sulfur]",
 		icon = "__base__/graphics/icons/sulfur.png",
 		energy_required = 1,
 		enabled = false,
@@ -1066,7 +1112,7 @@ data:extend({
 		{
 		  {type = "fluid", name = "chlorine", amount = 10 },
 		  {type = "fluid", name = "hydrogen", amount = 10 },
-		  {type = "item", name = "copper-plate", amount = 1 },
+		  --{type = "item", name = "copper-plate", amount = 1 },
 		},
 		results =
 		{
@@ -1096,7 +1142,7 @@ data:extend({
 		{
 		  {type = "fluid", name = "olefins", amount = 20 },
 		  {type = "fluid", name = "hydrochloric-acid", amount = 10 },
-		  {type = "item", name = "titanium-plate", amount = 1 },
+		  {type = "item", name = "copper-plate", amount = 1 },
 		},
 		results =
 		{
@@ -1156,7 +1202,7 @@ data:extend({
 		{
 		  {type = "fluid", name = "fluorine", amount = 10 },
 		  {type = "fluid", name = "hydrogen", amount = 10 },
-		  {type = "item", name = "copper-plate", amount = 1 },
+		  --{type = "item", name = "copper-plate", amount = 1 },
 		},
 		results =
 		{
@@ -1320,6 +1366,8 @@ data:extend({
 		type = "recipe",
 		name = "solid-fuel",
 		category = "chemistry-or-cryogenics",
+		subgroup = "chemical-product",
+		order = "a",
 		energy_required = 1,
 		ingredients =
 		{
@@ -1331,8 +1379,6 @@ data:extend({
 		},
 		allow_productivity = true,
 		icon = "__base__/graphics/icons/solid-fuel-from-petroleum-gas.png",
-		subgroup = "raw-material",
-		order = "b[chemistry]-a[solid-fuel]",
 		enabled = false,
 		crafting_machine_tint =
 		{
@@ -1347,7 +1393,7 @@ data:extend({
 		name = "niter",
 		category = "chemistry-or-cryogenics",
         subgroup = "chemical",
-		order = "g[niter]",
+		order = "b[niter]",
 		crafting_machine_tint =
 		{
 		  primary = {r = 0.968, g = 0.381, b = 0.259, a = 1.000}, -- #f66142ff
@@ -1391,7 +1437,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "battery",
-		category = "chemistry-or-cryogenics",
+		category = "electronics-with-fluid",
 		energy_required = 4,
 		enabled = false,
 		ingredients =
@@ -1445,11 +1491,11 @@ data:extend({
 		ingredients = {
 			{type = "item", name = "silicon-ore", amount = 4},
 			{type = "item", name = "carbon", amount = 4},
-			{type = "fluid", name = "hydrochloric-acid", amount = 5},
+			{type = "fluid", name = "hydrochloric-acid", amount = 4},
 		},
 		results = {
 			{type="item", name="silicon-wafer", amount=3},
-			{type="fluid", name="carbon-dioxide", amount=4},
+			{type="fluid", name="carbon-dioxide", amount=4, ignored_by_productivity = 4 },
 		},
 		allow_productivity = true,
 		main_product = "silicon-wafer"
@@ -1468,7 +1514,7 @@ data:extend({
 		},
 		results = {
 			{type="item", name="aluminum-plate", amount=4},
-			{type="fluid", name="carbon-dioxide", amount=3},
+			{type="fluid", name="carbon-dioxide", amount=3, ignored_by_productivity = 3 },
 		},
 		allow_productivity = true,
 		main_product = "aluminum-plate"
@@ -1487,7 +1533,7 @@ data:extend({
 		},
 		results = {
 			{type="item", name="titanium-plate", amount=4},
-			{type="fluid", name="carbon-dioxide", amount=4},
+			{type="fluid", name="carbon-dioxide", amount=4, ignored_by_productivity = 4 },
 		},
 		allow_productivity = true,
 		main_product = "titanium-plate"
@@ -1503,11 +1549,11 @@ data:extend({
 		energy_required = 5,
 		ingredients = {
 			{type = "item", name = "magnesium-ore", amount = 4},
-			{type = "item", name = "carbon", amount = 4},
+			{type = "item", name = "carbon", amount = 2},
 		},
 		results = {
 			{type="item", name="magnesium-plate", amount=4},
-			{type="fluid", name="carbon-monoxide", amount=4},
+			{type="fluid", name="carbon-dioxide", amount=2, ignored_by_productivity = 2 },
 			--{type="fluid", name="chlorine", amount=4},
 		},
 		allow_productivity = true,
@@ -1525,7 +1571,7 @@ data:extend({
 			{type = "item", name = "iron-plate", amount = 6},
 			{type = "item", name = "nickel-plate", amount = 4},
 		},
-		results = {{type="item", name="invar-plate", amount=4}},
+		results = {{type="item", name="invar-plate", amount=5}},
 		allow_productivity = true
 	},
 	{
@@ -1540,7 +1586,7 @@ data:extend({
 			{type = "item", name = "nickel-plate", amount = 4},
 			{type = "item", name = "copper-plate", amount = 1},
 		},
-		results = {{type="item", name="steel-plate", amount=4}},
+		results = {{type="item", name="steel-plate", amount=5}},
 		allow_productivity = true
 	},
 	{
@@ -1570,13 +1616,13 @@ data:extend({
 			{type = "item", name = "aluminum-plate", amount = 7},
 			{type = "item", name = "copper-plate", amount = 3},
 		},
-		results = {{type="item", name="duralumin-plate", amount=4}},
+		results = {{type="item", name="duralumin-plate", amount=5}},
 		allow_productivity = true
 	},
 	{
 		type = "recipe",
 		name = "caelium-plate",
-		category = "alloying",
+		category = "advanced-smelting",
 		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
@@ -1584,27 +1630,43 @@ data:extend({
 			{type = "item", name = "aluminum-plate", amount = 6},
 			{type = "item", name = "titanium-plate", amount = 4},
 		},
-		results = {{type="item", name="caelium-plate", amount=4}},
+		results = {{type="item", name="caelium-plate", amount=5}},
 		allow_productivity = true
-	},
+	},	
 	{
 		type = "recipe",
 		name = "magnalium-plate",
-		category = "alloying",
+		category = "advanced-smelting",
 		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
 		ingredients = {
 			{type = "item", name = "magnesium-plate", amount = 5},
-			{type = "item", name = "titanium-plate", amount = 5},
+			{type = "item", name = "aluminum-plate", amount = 5},
 		},
-		results = {{type="item", name="magnalium-plate", amount=4}},
+		results = {{type="item", name="magnalium-plate", amount=5}},
+		allow_productivity = true
+	},
+	{
+		type = "recipe",
+		name = "selene-caelium-plate",
+		icon = "__outer_moons__/graphics/icons/selene-caelium-plate.png",
+		category = "advanced-smelting",
+		subgroup = "selene-resources",
+		enabled = false,
+		auto_recycle = false,
+		energy_required = 4,
+		ingredients = {
+			{type = "item", name = "magnesium-plate", amount = 6},
+			{type = "item", name = "titanium-plate", amount = 4},
+		},
+		results = {{type="item", name="caelium-plate", amount=5}},
 		allow_productivity = true
 	},
 	{
 		type = "recipe",
 		name = "mischmetal-plate",
-		category = "alloying",
+		category = "advanced-smelting",
 		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
@@ -1613,15 +1675,70 @@ data:extend({
 			{type = "item", name = "lanthanum-plate", amount = 3},
 			{type = "item", name = "neodymium-plate", amount = 1},
 		},
-		results = {{type="item", name="mischmetal-plate", amount=4}},
+		results = {{type="item", name="mischmetal-plate", amount=5}},
 		allow_productivity = true
+	},
+	{
+		type = "recipe",
+		name = "magnesium-ore",
+		icon = "__outer_moons__/graphics/icons/magnesium-ore.png",
+		category = "electrolysis",
+		subgroup = "selene-resources",
+		order = "d[magnesium-ore]",
+		auto_recycle = false,
+		energy_required = 20,
+		main_product = "magnesium-ore",
+		ingredients =
+		{
+		  {type = "fluid", name = "brine", amount = 20},
+		},
+		results = {
+			{type = "item", name = "magnesium-ore", amount = 5},
+			{type = "fluid", name = "hydrogen", amount = 5},
+			{type = "fluid", name = "chlorine", amount = 10},
+		},
+		allow_productivity = true,
+		enabled = false,
+	},
+	{
+		type = "recipe",
+		name = "lithium",
+		category = "electrolysis",
+		subgroup = "aquilo-processes",
+		order = "c[lithium]-a[lithium]",
+		auto_recycle = false,
+		energy_required = 20,
+		ingredients =
+		{
+		  {type = "fluid", name = "lithium-brine", amount = 50},
+		  {type = "fluid", name = "ammonia", amount = 50}
+		},
+		results = {
+			{type = "item", name = "lithium", amount = 5}
+		},
+		allow_productivity = true,
+		enabled = false,
+	},
+	{
+		type = "recipe",
+		name = "lithium-plate",
+		category = "smelting",
+		subgroup = "aquilo-processes",
+		order = "c[lithium]-b[lithium-plate]",
+		auto_recycle = false,
+		energy_required = 6.4,
+		ingredients = {{type = "item", name = "lithium", amount = 1}},
+		results = {{type="item", name="lithium-plate", amount=1}},
+		allow_productivity = true,
+		enabled = false
 	},
 	--Space
 	{
 		type = "recipe",
 		name = "silicon-carbide",
 		icon = "__outer_moons__/graphics/icons/silicon-carbide.png",
-		category = "advanced-crafting",
+		category = "advanced-smelting",
+		order = "a",
 		enabled = false,
 		auto_recycle = false,
 		energy_required = 1,
@@ -1645,6 +1762,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/PDC-ammo.png",
 		category = "advanced-crafting",
 		subgroup = "space-rocket",
+		order = "b",
 		enabled = false,
 		auto_recycle = false,
 		energy_required = 1,
@@ -1669,7 +1787,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/aluminate.png",
 		category = "chemistry-or-cryogenics",
 		subgroup = "chemical",
-		order = "b[aluminate]",
+		order = "c[aluminate]",
 		auto_recycle = false,
 		energy_required = 5,
 		ingredients =
@@ -1680,7 +1798,7 @@ data:extend({
 		results =
 		{
 		  {type = "item", name = "aluminate", amount = 3},
-		  {type = "fluid", name = "red-mud", amount = 5},
+		  {type = "fluid", name = "red-mud", amount = 2},
 		},
 		allow_productivity = true,
 		enabled = false,
@@ -1692,7 +1810,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/alumina.png",
 		category = "chemistry-or-cryogenics",
 		subgroup = "chemical",
-		order = "c[alumina]",
+		order = "d[alumina]",
 		auto_recycle = false,
 		energy_required = 2,
 		ingredients =
@@ -1728,6 +1846,7 @@ data:extend({
 		order = "d[other-chemistry]-d[dry-ice-sublimation]",
 		auto_recycle = false,
 		enabled = false,
+		hide_from_player_crafting = true,
 		ingredients = {{type = "item", name = "dry-ice", amount = 1}},
 		energy_required = 1,
 		results = {{type = "fluid", name = "carbon-dioxide", amount = 20}},
@@ -2205,7 +2324,7 @@ data:extend({
 		energy_required = 6,
 		ingredients =
 		{
-		  {type = "item", name = "electronic-circuit", amount = 1},
+		  {type = "item", name = "electronic-circuit", amount = 2},
 		  {type = "item", name = "silicon-wafer", amount = 1},
 		  {type = "item", name = "aluminum-cable", amount = 3},
 		  {type = "item", name = "transistor", amount = 8},
@@ -2237,7 +2356,7 @@ data:extend({
 		energy_required = 20,
 		ingredients =
 		{
-		  {type = "item", name = "advanced-circuit", amount = 3},
+		  {type = "item", name = "advanced-circuit", amount = 2},
 		  {type = "item", name = "microprocessor", amount = 1},
 		  {type = "item", name = "memory-stick", amount = 4},
 		  {type = "item", name = "storage-drive", amount = 1},
@@ -2253,7 +2372,7 @@ data:extend({
 		energy_required = 35,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 4},
+		  {type = "item", name = "processing-unit", amount = 2},
 		  {type = "item", name = "motherboard", amount = 3},
 		  {type = "item", name = "cooling-system", amount = 8},
 		  {type = "item", name = "supercapacitor", amount = 4},
@@ -2269,7 +2388,7 @@ data:extend({
 		energy_required = 50,
 		ingredients =
 		{
-		  {type = "item", name = "computing-core", amount = 5},
+		  {type = "item", name = "computing-core", amount = 2},
 		  {type = "item", name = "quantum-processor", amount = 10},
 		  {type = "item", name = "quantum-tube", amount = 20},
 		  {type = "item", name = "altermagnet", amount = 12},
@@ -2281,12 +2400,30 @@ data:extend({
 	{
 		type = "recipe",
 		name = "low-density-structure",
-		category = "crafting",
+		category = "assembly-or-robotics",
+        icon = "__outer_moons__/graphics/icons/duralumin-low-density-structure.png",
 		energy_required = 15,
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "aluminum-plate", amount = 10},
+		  {type = "item", name = "duralumin-plate", amount = 5},
+		  {type = "item", name = "plastic-bar", amount = 10}
+		},
+		results = {{type="item", name="low-density-structure", amount=1}},
+		allow_productivity = true
+	},
+	{
+		type = "recipe",
+		name = "magnalium-low-density-structure",
+		category = "assembly-or-robotics",
+        icon = "__outer_moons__/graphics/icons/magnalium-low-density-structure.png",
+		subgroup = "selene-resources",
+		order = "j",
+		energy_required = 15,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "magnalium-plate", amount = 5},
 		  {type = "item", name = "plastic-bar", amount = 10}
 		},
 		results = {{type="item", name="low-density-structure", amount=1}},
@@ -2297,7 +2434,7 @@ data:extend({
 		name = "rocket-part-new",
 		energy_required = 3,
 		enabled = false,
-		category = "crafting",
+		category = "assembly-or-robotics",
 		ingredients =
 		{
 		  {type = "item", name = "processing-unit", amount = 1},
@@ -2317,7 +2454,7 @@ data:extend({
 		  {type = "item", name = "invar-plate", amount = 1000},
 		  {type = "item", name = "concrete", amount = 1000},
 		  {type = "item", name = "pipe", amount = 100},
-		  {type = "item", name = "processing-unit", amount = 50},
+		  {type = "item", name = "processing-unit", amount = 20},
 		  {type = "item", name = "electric-engine-unit", amount = 200}
 		},
 		energy_required = 30,
@@ -2484,6 +2621,22 @@ data:extend({
 		  quaternary = {r = 0.683, g = 0.915, b = 1.000, a = 0.502}, -- #aee9ff80
 		}
 	},
+	{
+		type = "recipe",
+		name = "tungsten-carbide",
+		category = "advanced-smelting",
+		subgroup = "vulcanus-processes",
+		order = "c[tungsten]-b[tungsten-carbide]",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "tungsten-ore", amount = 1},
+		  {type = "item", name = "carbon", amount = 1}
+		},
+		energy_required = 1,
+		results = {{type="item", name="tungsten-carbide", amount=1}},
+		allow_productivity = true
+	 },
 	--Vulcanus fluids
 	{
       type = "recipe",
@@ -2867,7 +3020,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "molten-silicon", amount = 20, fluidbox_multiplier = 10},
-		  {type = "fluid", name = "hydrochloric-acid", amount = 10, fluidbox_multiplier = 10},
+		  {type = "fluid", name = "hydrochloric-acid", amount = 8, fluidbox_multiplier = 10},
 		},
 		energy_required = 3.2,
 		allow_decomposition = false,
@@ -3262,7 +3415,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "water", amount = 30},
-		  {type = "fluid", name = "red-mud", amount = 10},
+		  {type = "fluid", name = "red-mud", amount = 16},
 		},
 		results =
 		{
@@ -3400,14 +3553,14 @@ data:extend({
 		order = "k[alumina]",
 		auto_recycle = false,
 		energy_required = 4,
-		surface_conditions =
-		{
-		  {
-			property = "pressure",
-			min = 1000,
-			max = 1000
-		  }
-		},
+		--surface_conditions =
+		--{
+		-- {
+		--	property = "pressure",
+		--	min = 1000,
+		--	max = 1000
+		--  }
+		--},
 		ingredients = {
 			{type = "item", name = "stone", amount = 50 },
 			{type = "fluid", name = "sulfuric-acid", amount = 5},
@@ -3423,40 +3576,73 @@ data:extend({
 		type = "recipe",
 		name = "amalgamate-regolith",
 		icon = "__outer_moons__/graphics/icons/amalgamate-regolith.png",
-		category = "advanced-crafting",
+		category = "electrolysis",
 		subgroup = "selene-processes",
 		order = "a[selene]-a[amalgamate-regolith]",
 		auto_recycle = false,
-		energy_required = 5,
-		ingredients = {{type = "item", name = "metallic-regolith", amount = 3}},
+		energy_required = 2,
+		ingredients = {{type = "item", name = "metallic-regolith", amount = 10}},
 		results = {
-			{type="item", name="stone", amount=1, probability=0.5, show_details_in_recipe_tooltip = false},
-			{type="item", name="silicon-ore", amount=1, probability=0.45, show_details_in_recipe_tooltip = false},
-			{type="item", name="alumina", amount=1, probability=0.4, show_details_in_recipe_tooltip = false},
-			{type="item", name="iron-ore", amount=1, probability=0.35, show_details_in_recipe_tooltip = false},
-			{type="item", name="copper-ore", amount=1, probability=0.3, show_details_in_recipe_tooltip = false},
-			{type="item", name="nickel-ore", amount=1, probability=0.25, show_details_in_recipe_tooltip = false},
-			{type="item", name="magnesium-ore", amount=1, probability=0.2, show_details_in_recipe_tooltip = false},
-			{type="item", name="sulfur", amount=1, probability=0.15, show_details_in_recipe_tooltip = false},
-			--{type="item", name="aluminum-ore", amount=1, probability=0.03},
-			--{type="item", name="titanium-ore", amount=1, probability=0.02},
-			{type="item", name="uranium-ore", amount=1, probability=0.05, show_details_in_recipe_tooltip = false}
+			{type="item", name="iron-ore", amount_min=1, amount_max=3, probability=0.5, show_details_in_recipe_tooltip = false},
+			{type="item", name="silicon-ore", amount_min=1, amount_max=3, probability=0.4, show_details_in_recipe_tooltip = false},
+			{type="item", name="copper-ore", amount_min=1, amount_max=3, probability=0.35, show_details_in_recipe_tooltip = false},
+			{type="item", name="alumina", amount_min=1, amount_max=3, probability=0.3, show_details_in_recipe_tooltip = false},
+			{type="item", name="magnesium-ore", amount_min=1, amount_max=3, probability=0.25, show_details_in_recipe_tooltip = false},
+			{type="item", name="nickel-ore", amount_min=1, amount_max=3, probability=0.2, show_details_in_recipe_tooltip = false},
+			{type="item", name="lead-ore", amount_min=1, amount_max=3, probability=0.15, show_details_in_recipe_tooltip = false},
+			{type="item", name="sulfur", amount_min=1, amount_max=5, probability=0.1, show_details_in_recipe_tooltip = false},
+			--{type="item", name="uranium-ore", amount=1, probability=0.05, show_details_in_recipe_tooltip = false}
 		},
 		allow_productivity = true,
 		enabled = false
 	},
 	{
 		type = "recipe",
-		name = "solid-fuel-from-aluminum",
-		icon = "__outer_moons__/graphics/icons/solid-fuel-from-aluminum.png",
+		name = "regolith-stone",
+		icon = "__outer_moons__/graphics/icons/regolith-stone.png",
+		category = "crafting-with-fluid",
+		subgroup = "selene-processes",
+		order = "a[selene]-b[regolith-stone]",
+		auto_recycle = false,
+		energy_required = 1,
+		ingredients = {
+			{type = "item", name = "metallic-regolith", amount = 10},
+			{type = "fluid", name = "water", amount = 50},
+		},
+		results = {
+			{type="item", name="concrete", amount=10 }
+		},
+		allow_productivity = true,
+		enabled = false
+	},
+	{
+		type = "recipe",
+		name = "regolith-uranium",
+		icon = "__outer_moons__/graphics/icons/regolith-uranium.png",
+		category = "advanced-crafting",
+		subgroup = "selene-processes",
+		order = "a[selene]-b[regolith-uranium]",
+		auto_recycle = false,
+		energy_required = 3,
+		ingredients = {{type = "item", name = "metallic-regolith", amount = 20}},
+		results = {
+			{type="item", name="uranium-ore", amount_min=1, amount_max=5 }
+		},
+		allow_productivity = true,
+		enabled = false
+	},
+	{
+		type = "recipe",
+		name = "solid-fuel-from-magnesium",
+		icon = "__outer_moons__/graphics/icons/solid-fuel-from-magnesium.png",
 		energy_required = 1,
 		enabled = false,
-		category = "chemistry-or-cryogenics",
+		category = "robotics",
 		subgroup = "selene-processes",
-		order = "b[selene]-h[solid-fuel-from-aluminum]",
+		order = "b[selene]-h[solid-fuel-from-magnesium]",
 		ingredients =
 		{
-		  {type = "item", name = "aluminum-plate", amount = 5}
+		  {type = "item", name = "magnesium-plate", amount = 4}
 		},
 		results =
 		{
@@ -3470,22 +3656,59 @@ data:extend({
 		  tertiary = {r = 0.370, g = 0.362, b = 0.362, a = 1.000}, -- #5e5c5cff
 		  quaternary = {r = 0.192, g = 0.210, b = 0.308, a = 1.000}, -- #30354eff
 		}
+	},	
+	{
+		type = "recipe",
+		name = "thermite-explosives",
+		category = "robotics",
+		subgroup = "selene-processes",
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.968, g = 0.381, b = 0.259, a = 1.000}, -- #f66142ff
+		  secondary = {r = 0.892, g = 0.664, b = 0.534, a = 1.000}, -- #e3a988ff
+		  tertiary = {r = 1.000, g = 0.978, b = 0.513, a = 1.000}, -- #fff982ff
+		  quaternary = {r = 0.210, g = 0.170, b = 0.013, a = 1.000}, -- #352b03ff
+		},
+		energy_required = 4,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "dry-ice", amount = 2},
+		  {type = "item", name = "aluminum-plate", amount = 4},
+		  {type = "item", name = "magnesium-plate", amount = 6}
+		},
+		results = {{type="item", name="explosives", amount=3}},
+		allow_productivity = true
 	},
 	{
 		type = "recipe",
-		name = "oxygen-rocket-fuel",
+		name = "cliff-explosives",
+		--category = "",
+		enabled = false,
+		energy_required = 8,
+		ingredients =
+		{
+		  {type = "item", name = "explosives", amount = 10},
+		  {type = "item", name = "water-barrel", amount = 1},
+		  {type = "item", name = "lye", amount = 8},		  
+		},
+		results = {{type="item", name="cliff-explosives", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "hydrogen-rocket-fuel",
 		icon = "__outer_moons__/graphics/icons/oxygen-rocket-fuel.png",
 		energy_required = 5,
 		enabled = false,
 		category = "chemistry-or-cryogenics",
 		subgroup = "selene-processes",
-		order = "b[selene]-i[oxygen-rocket-fuel]",
+		order = "b[selene]-i[hydrogen-rocket-fuel]",
 		ingredients =
 		{
 		  {type = "item", name = "solid-fuel", amount = 10},
-		  {type="fluid", name = "oxygen", amount= 50},
+		  {type="fluid", name = "hydrogen", amount= 30},
 		},
-		results = {{type="item", name="rocket-fuel", amount=1}},
+		results = {{type="item", name="rocket-fuel", amount=2}},
 		allow_productivity = true,
 		crafting_machine_tint =
 		{
@@ -3547,6 +3770,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "industrial-furnace",
+		category = "assembly-or-robotics",
 		ingredients = {{type = "item", name = "invar-plate", amount = 20}, {type = "item", name = "advanced-circuit", amount = 5}, {type = "item", name = "refined-concrete", amount = 10}},
 		results = {{type="item", name="industrial-furnace", amount=1}},
 		energy_required = 10,
@@ -3588,6 +3812,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "solar-panel",
+		category = "electronics",
 		energy_required = 10,
 		enabled = false,
 		ingredients =
@@ -3742,7 +3967,7 @@ data:extend({
 		{
 		  {type = "item", name = "tungsten-carbide", amount = 50},
 		  {type = "item", name = "invar-plate", amount = 50},
-		  {type = "item", name = "processing-unit", amount = 30},
+		  {type = "item", name = "processing-unit", amount = 5},
 		  {type = "item", name = "refined-concrete", amount = 20},
 		  {type = "fluid", name = "lubricant", amount = 20}
 		},
@@ -3845,8 +4070,9 @@ data:extend({
 	},
 	{
 		type = "recipe",
-		name = "adv-assembling-machine",
-		icon = "__outer_moons__/graphics/icons/adv-assembler.png",
+		name = "electrorefinery",
+		icon = "__outer_moons__/graphics/icons/electrorefinery.png",
+		category = "assembly-or-robotics",
 		enabled = false,
 		energy_required = 20,
 		surface_conditions =
@@ -3859,9 +4085,33 @@ data:extend({
 		},
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 30},
+		  {type = "item", name = "processing-unit", amount = 5},
+		  {type = "item", name = "magnesium-plate", amount = 50},
+		  {type = "item", name = "aluminum-cable", amount = 20},
+		  {type = "item", name = "electrolytic-plant", amount = 1}
+		},
+		results = {{type="item", name="electrorefinery", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "adv-assembling-machine",
+		icon = "__outer_moons__/graphics/icons/adv-assembler.png",
+		category = "assembly-or-robotics",
+		enabled = false,
+		energy_required = 20,
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 150,
+			max = 150
+		  }
+		},
+		ingredients =
+		{
+		  {type = "item", name = "processing-unit", amount = 5},
 		  {type = "item", name = "magnalium-plate", amount = 50},
-		  {type = "item", name = "electric-engine-unit", amount = 15},
+		  {type = "item", name = "spark-plug", amount = 4},
 		  {type = "item", name = "bulk-inserter", amount = 2}
 		},
 		results = {{type="item", name="adv-assembling-machine", amount=1}}
@@ -3961,17 +4211,17 @@ data:extend({
 		{
 		  {
 			property = "pressure",
-			min = 100,
-			max = 100
+			min = 150,
+			max = 150
 		  }
 		},
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "aluminum-plate", amount = 3},
-		  {type = "item", name = "titanium-plate", amount = 2},
-		  {type = "item", name = "solar-panel", amount = 1},
-		  {type = "fluid", name = "oxygen", amount = 50},
+		  {type = "item", name = "silicon-wafer", amount = 2},
+		  {type = "item", name = "magnalium-plate", amount = 1},
+		  {type = "item", name = "caelium-plate", amount = 1},
+		  {type = "fluid", name = "oxygen", amount = 80},
 		},
 		energy_required = 10,
 		results = {{type="item", name="lunar-science-pack", amount=1}},
@@ -4443,7 +4693,7 @@ data:extend({
 		energy_required = 50,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 10},
+		  {type = "item", name = "processing-unit", amount = 5},
 		  {type = "item", name = "explosives", amount = 10},
 		  {type = "item", name = "uranium-235", amount = 30}
 		},
@@ -4505,8 +4755,8 @@ data:extend({
 		energy_required = 25,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 60},
-		  {type = "item", name = "silicon-carbide", amount = 40},
+		  {type = "item", name = "processing-unit", amount = 50},
+		  {type = "item", name = "magnalium-plate", amount = 40},
 		  {type = "item", name = "low-density-structure", amount = 30},
 		  {type = "item", name = "power-armor", amount = 1},
 		},
@@ -4521,8 +4771,8 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "power-armor-mk2", amount = 1},
-		  {type = "item", name = "computing-core", amount = 100},
-		  {type = "item", name = "tungsten-carbide", amount = 50},
+		  {type = "item", name = "computing-core", amount = 60},
+		  {type = "item", name = "tungsten-carbide", amount = 60},
 		  {type = "item", name = "carbon-fiber", amount = 50},
 		  {type = "item", name = "supercapacitor", amount = 50}
 		},
@@ -4680,7 +4930,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "personal-roboport-equipment", amount = 5},
-		  {type = "item", name = "processing-unit", amount = 100},
+		  {type = "item", name = "processing-unit", amount = 20},
 		  {type = "item", name = "low-density-structure", amount = 20},
 		  {type = "item", name = "solid-state-battery", amount = 60}
 		},
@@ -4707,7 +4957,7 @@ data:extend({
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "processing-unit", amount = 5},
+		  {type = "item", name = "processing-unit", amount = 1},
 		  {type = "item", name = "titanium-plate", amount = 10}
 		},
 		results = {{type="item", name="energy-shield-equipment", amount=1}}
@@ -5827,6 +6077,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "burner-inserter",
+		category = "crafting-or-robotics",
 		ingredients =
 		{
 		  {type = "item", name = "lead-plate", amount = 1},
@@ -5838,6 +6089,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "inserter",
+		category = "crafting-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -5851,6 +6103,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "long-handed-inserter",
+		category = "crafting-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -5865,6 +6118,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "fast-inserter",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -5878,6 +6132,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "fast-long-handed-inserter",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -5892,6 +6147,7 @@ data:extend({
 	
 	{
 		type = "recipe",
+		category = "assembly-or-robotics",
 		name = "bulk-inserter",
 		enabled = false,
 		ingredients =
@@ -5905,6 +6161,7 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		category = "assembly-or-robotics",
 		name = "bulk-long-handed-inserter",
 		enabled = false,
 		ingredients =

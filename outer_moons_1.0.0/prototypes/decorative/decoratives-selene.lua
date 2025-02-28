@@ -360,11 +360,12 @@ data:extend{
       mining_time = 3,
       results =
       {
-        {type = "item", name = "stone", amount_min = 8, amount_max = 24},
-        {type = "item", name = "iron-ore", amount_min = 6, amount_max = 18},
-        {type = "item", name = "copper-ore", amount_min = 4, amount_max = 12},
-        {type = "item", name = "silicon-ore", amount_min = 3, amount_max = 9},
-        {type = "item", name = "alumina", amount_min = 2, amount_max = 6}
+        {type = "item", name = "iron-ore", amount_min = 8, amount_max = 24},
+        {type = "item", name = "copper-ore", amount_min = 6, amount_max = 18},
+        {type = "item", name = "nickel-ore", amount_min = 4, amount_max = 12},
+        {type = "item", name = "lead-ore", amount_min = 3, amount_max = 9},
+        {type = "item", name = "ice", amount_min = 2, amount_max = 6},
+        {type = "item", name = "dry-ice", amount_min = 2, amount_max = 6}
       },
     },
     map_color = {129, 105, 78},
@@ -556,11 +557,12 @@ data:extend{
       mining_time = 2,
 	  results =
       {
-        {type = "item", name = "stone", amount_min = 5, amount_max = 10},
-        {type = "item", name = "iron-ore", amount_min = 4, amount_max = 8},
-        {type = "item", name = "copper-ore", amount_min = 3, amount_max = 6},
-        {type = "item", name = "silicon-ore", amount_min = 2, amount_max = 4},
-        {type = "item", name = "alumina", amount_min = 1, amount_max = 2}
+        {type = "item", name = "iron-ore", amount_min = 5, amount_max = 10},
+        {type = "item", name = "copper-ore", amount_min = 4, amount_max = 8},
+        {type = "item", name = "nickel-ore", amount_min = 3, amount_max = 6},
+        {type = "item", name = "lead-ore", amount_min = 2, amount_max = 4},
+        {type = "item", name = "ice", amount_min = 1, amount_max = 2},
+        {type = "item", name = "dry-ice", amount_min = 1, amount_max = 2},
       },
     },
     resistances =

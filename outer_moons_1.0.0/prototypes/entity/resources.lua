@@ -277,8 +277,6 @@ data:extend({
 			  mining_particle = "stone-particle",
 			  mining_time = 5,
 			  result = "titanium-ore",
-			  fluid_amount = 10,
-			  required_fluid = "hydrochloric-acid"
 		  },
 		  walking_sound = sounds.ore,
 		  mining_visualisation_tint = {r = 161/256, g = 126/256, b = 122/256, a = 1.000},
