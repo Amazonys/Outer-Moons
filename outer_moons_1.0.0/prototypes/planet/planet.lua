@@ -1209,7 +1209,7 @@ data:extend(
     from = "nauvis",
     to = "vulcanus",
     order = "b",
-    length = 25000,
+    length = 20000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_vulcanus)
   },
   {
@@ -1229,7 +1229,7 @@ data:extend(
     from = "nauvis",
     to = "fulgora",
     order = "d",
-    length = 40000,
+    length = 25000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.nauvis_fulgora)
   },
   {
@@ -1239,7 +1239,7 @@ data:extend(
     from = "vulcanus",
     to = "gleba",
     order = "e",
-    length = 40000,
+    length = 25000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.vulcanus_gleba)
   },
   {
@@ -1249,7 +1249,7 @@ data:extend(
     from = "gleba",
     to = "fulgora",
     order = "f",
-    length = 30000,
+    length = 20000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_fulgora)
   },
   {
@@ -1259,7 +1259,7 @@ data:extend(
     from = "gleba",
     to = "cronus",
     order = "g",
-    length = 120000,
+    length = 60000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.gleba_aquilo)
   },
   {
@@ -1269,7 +1269,7 @@ data:extend(
     from = "fulgora",
     to = "cronus",
     order = "h",
-    length = 100000,
+    length = 50000,
     asteroid_spawn_definitions = asteroid_util.spawn_definitions(asteroid_util.fulgora_aquilo)
   },
   {

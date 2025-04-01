@@ -665,7 +665,7 @@ data:extend({
     },
     allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
     crafting_categories = {"metallurgy", "pressing", "crafting-with-fluid-or-metallurgy", "metallurgy-or-assembling", "adv-metallurgy", "metallurgy-or-adv-metallurgy"},
-    crafting_speed = 4,
+    crafting_speed = 5,
     energy_source =
     {
       type = "electric",

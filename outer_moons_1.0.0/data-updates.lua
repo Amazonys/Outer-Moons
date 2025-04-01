@@ -830,10 +830,10 @@ data.raw.technology["foundry"].effects =
 	type = "unlock-recipe",
 	recipe = "casting-aluminum-cable"
   },
-  {
-	type = "unlock-recipe",
-	recipe = "casting-fiber-optic"
-  },
+  --{
+	--type = "unlock-recipe",
+	--recipe = "casting-fiber-optic"
+  --},
   {
 	type = "unlock-recipe",
 	recipe = "casting-pipe"
@@ -907,8 +907,34 @@ data.raw.technology["planet-discovery-fulgora"].effects =
   {
 	type = "unlock-recipe",
 	recipe = "sludge-separation"
+  },  
+  {
+	type = "unlock-recipe",
+	recipe = "amalgamate-microplastic"
   },
 }
+data.raw.technology["power-armor-mk2"].prerequisites = { "lunar-science-pack", "power-armor", "military-4" }
+data.raw.technology["electromagnetic-plant"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "electromagnetic-plant",
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "superconductor",
+  },
+}
+data.raw.technology["power-armor-mk2"].unit.ingredients =
+{
+   {"automation-science-pack",      1},
+   {"logistic-science-pack",        1},
+   {"chemical-science-pack",        1},
+   {"utility-science-pack",         1},
+   {"space-science-pack",           1},   
+   {"lunar-science-pack",   	    1}
+}
+data.raw.technology["electromagnetic-science-pack"].prerequisites = { "solid-state-battery" }
 data.raw["tile"]["oil-ocean-shallow"].fluid = "sludge"
 data.raw["tile"]["oil-ocean-deep"].fluid = "sludge"
 data.raw.technology["planet-discovery-fulgora"].unit.ingredients =
@@ -979,7 +1005,7 @@ data.raw.technology["transport-belt-capacity-2"].unit.ingredients =
    {"lunar-science-pack",   		1}
 }
 
-data.raw.technology["stack-inserter"].effects =
+data.raw.technology["calcite-processing"].effects =
 {
   {
 	type = "unlock-recipe",
@@ -1062,9 +1088,7 @@ data.raw.resource["sulfuric-acid-geyser"].order = "a-b-c[sulfuric-acid-geyser]"
 data.raw.resource["lithium-brine"].order = "a-b-e[lithium-brine]"
 data.raw.resource["fluorine-vent"].order = "a-b-f[fluorine-vent]"
 data.raw.recipe["molten-iron-from-lava"].icon = "__outer_moons__/graphics/icons/fluid/molten-iron-from-lava.png"
-data.raw.recipe["steam-condensation"].subgroup = "phase-recipes"
 data.raw.recipe["ice-melting"].subgroup = "phase-recipes"
-data.raw.recipe["acid-neutralisation"].subgroup = "phase-recipes"
 
 data.raw.recipe["burner-inserter"].enabled = false
 data.raw.recipe["iron-chest"].enabled = false
@@ -1298,7 +1322,6 @@ data.raw.item["laser-turret"].order = "b[turret]-c[laser-turret]"
 
 --Pressure fix
 data.raw.recipe["metallurgic-science-pack"].surface_conditions = { { property = "pressure", min = 2000, max = 2000 } }
-data.raw.recipe["big-mining-drill"].surface_conditions = { { property = "pressure", min = 2000, max = 2000 } }
 
 
 data.raw.recipe["iron-bacteria"].surface_conditions = { { property = "pressure", min = 2500, max = 2500 } }
@@ -1320,6 +1343,7 @@ data.raw["simple-entity"]["huge-volcanic-rock"].minable =
 	{type = "item", name = "tungsten-ore", amount_min = 5, amount_max = 15},
 	{type = "item", name = "nickel-ore", amount_min = 4, amount_max = 12},
 	{type = "item", name = "lead-ore", amount_min = 3, amount_max = 9},
+	{type = "item", name = "stone", amount_min = 3, amount_max = 30},
   },
 }
 
@@ -1334,6 +1358,7 @@ data.raw["simple-entity"]["big-volcanic-rock"].minable =
 	{type = "item", name = "tungsten-ore", amount_min = 3, amount_max = 6},
 	{type = "item", name = "nickel-ore", amount_min = 2, amount_max = 4},
 	{type = "item", name = "lead-ore", amount_min = 1, amount_max = 2},
+	{type = "item", name = "stone", amount_min = 3, amount_max = 12},
   }
 }
 

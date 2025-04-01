@@ -792,6 +792,34 @@ data:extend(
   },
   {
     type = "technology",
+    name = "solid-state-battery",
+    icon = "__outer_moons__/graphics/technology/solid-state-battery.png",
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+	  {
+		type = "unlock-recipe",
+		recipe = "electrolyte",
+	  },
+	  {
+        type = "unlock-recipe",
+        recipe = "supercapacitor"
+      },
+	  {
+        type = "unlock-recipe",
+        recipe = "solid-state-battery"
+      },
+    },
+    prerequisites = {"electromagnetic-plant"},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "superconductor"
+    }
+  },
+  {
+    type = "technology",
     name = "slipstack",
     icon = "__outer_moons__/graphics/technology/slipstack.png",
     icon_size = 256,

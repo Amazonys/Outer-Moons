@@ -418,6 +418,7 @@ data:extend({
 		name = "concrete",
 		energy_required = 10,
 		enabled = false,
+		auto_recycle = false,
 		category = "crafting-with-fluid",
 		ingredients =
 		{
@@ -1021,7 +1022,7 @@ data:extend({
 		{
 		  {type = "fluid", name = "sulfur-dioxide", amount = 50},
 		  {type = "fluid", name = "water", amount = 50},
-		  --{type = "item", name = "iron-plate", amount = 1},
+		  {type = "item", name = "iron-plate", amount = 1},
 		},
 		results =
 		{
@@ -1777,7 +1778,7 @@ data:extend({
 			{type = "item", name = "silicon-carbide", amount = 1},
 			{type = "item", name = "iron-plate", amount = 1},
 		},
-		results = {{type="item", name="firearm-magazine", amount=1}},
+		results = {{type="item", name="firearm-magazine", amount=2}},
 		allow_productivity = true
 	},
 	--Metal Chemistry
@@ -2421,6 +2422,7 @@ data:extend({
 		order = "j",
 		energy_required = 15,
 		enabled = false,
+		auto_recycle = false,
 		ingredients =
 		{
 		  {type = "item", name = "magnalium-plate", amount = 5},
@@ -2637,6 +2639,70 @@ data:extend({
 		results = {{type="item", name="tungsten-carbide", amount=1}},
 		allow_productivity = true
 	 },
+	 {
+		type = "recipe",
+		name = "acid-neutralisation",
+		icon = "__space-age__/graphics/icons/fluid/acid-neutralisation.png",
+		category = "chemistry-or-cryogenics",
+		subgroup = "phase-recipes",
+		order = "d[other-chemistry]-a[acid-neutralisation]",
+		auto_recycle = false,
+		enabled = false,
+		hide_from_player_crafting = true,
+		ingredients =
+		{
+		  {type = "item", name = "calcite", amount = 1},
+		  {type = "fluid", name = "sulfuric-acid", amount = 100},
+		},
+		energy_required = 5,
+		results =
+		{
+		  {type = "fluid", name = "steam", amount = 200, temperature = 500}
+		},
+		allow_productivity = false,
+		always_show_products = true,
+		show_amount_in_title = false,
+		allow_decomposition = false,
+		crafting_machine_tint =
+		{
+		  primary = {r = 1.000, g = 0.912, b = 0.036, a = 1.000}, -- #ffe809ff
+		  secondary = {r = 0.707, g = 0.797, b = 0.335, a = 1.000}, -- #b4cb55ff
+		  tertiary = {r = 0.681, g = 0.635, b = 0.486, a = 1.000}, -- #ada17bff
+		  quaternary = {r = 1.000, g = 0.804, b = 0.000, a = 1.000}, -- #ffcd00ff
+		}
+	},
+	{
+		type = "recipe",
+		name = "steam-condensation",
+		icon = "__space-age__/graphics/icons/fluid/steam-condensation.png",
+		localised_name = {"recipe-name.steam-condensation"},
+		category = "chemistry-or-cryogenics",
+		subgroup = "phase-recipes",
+		order = "d[other-chemistry]-b[steam-condensation]",
+		auto_recycle = false,
+		enabled = false,
+		hide_from_player_crafting = true,
+		ingredients =
+		{
+		  {type = "fluid", name = "steam", amount = 500},
+		},
+		energy_required = 1,
+		results =
+		{
+		  {type = "fluid", name = "water", amount = 100},
+		},
+		always_show_products = true,
+		show_amount_in_title = false,
+		allow_decomposition = false,
+		allow_quality = false,
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.409, g = 0.694, b = 0.895, a = 1.000}, -- #68b0e4ff
+		  secondary = {r = 1.000, g = 1.000, b = 1.000, a = 1.000}, -- #fffefeff
+		  tertiary = {r = 0.540, g = 0.520, b = 0.520, a = 1.000}, -- #898484ff
+		  quaternary = {r = 0.750, g = 0.750, b = 0.750, a = 1.000}, -- #bfbfbfff
+		}
+	},
 	--Vulcanus fluids
 	{
       type = "recipe",
@@ -2652,8 +2718,8 @@ data:extend({
       },
       results =
       {
-        {type = "fluid", name = "sulfur-dioxide", amount = 45},
-        {type = "fluid", name = "steam", amount = 75},
+        {type = "fluid", name = "sulfur-dioxide", amount = 20},
+        {type = "fluid", name = "steam", amount = 100},
         {type = "fluid", name = "carbon-dioxide", amount = 30},
       },
       subgroup = "separation-recipes",
@@ -3020,7 +3086,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "molten-silicon", amount = 20, fluidbox_multiplier = 10},
-		  {type = "fluid", name = "hydrochloric-acid", amount = 8, fluidbox_multiplier = 10},
+		  --{type = "fluid", name = "hydrochloric-acid", amount = 8, fluidbox_multiplier = 10},
 		},
 		energy_required = 3.2,
 		allow_decomposition = false,
@@ -3104,8 +3170,9 @@ data:extend({
 		enabled = false,
 		ingredients =
 		{
-		  {type = "fluid", name = "molten-iron", amount = 15, fluidbox_multiplier = 10},
-		  {type = "fluid", name = "molten-tungsten", amount = 5, fluidbox_multiplier = 10}
+		  {type = "fluid", name = "molten-iron", amount = 20, fluidbox_multiplier = 10},
+		  {type = "item", name = "carbon", amount = 1, fluidbox_multiplier = 10},
+		  --{type = "fluid", name = "molten-tungsten", amount = 5, fluidbox_multiplier = 10}
 		},
 		energy_required = 5,
 		allow_decomposition = false,
@@ -3287,6 +3354,7 @@ data:extend({
 		order = "d[casting]-e[casting-fiber-optic]",
 		icon = "__outer_moons__/graphics/icons/fluid/casting-fiber-optic.png",
 		enabled = false,
+		hidden = true,
 		ingredients =
 		{
 		  {type = "fluid", name = "molten-silicon", amount = 5, fluidbox_multiplier = 5},
@@ -3637,6 +3705,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/solid-fuel-from-magnesium.png",
 		energy_required = 1,
 		enabled = false,
+		auto_recycle = false,
 		category = "robotics",
 		subgroup = "selene-processes",
 		order = "b[selene]-h[solid-fuel-from-magnesium]",
@@ -3794,6 +3863,30 @@ data:extend({
 		  {type = "item", name = "iron-plate", amount = 3}
 		},
 		results = {{type="item", name="burner-mining-drill", amount=1}}
+	},
+	{
+		type = "recipe",
+		name = "big-mining-drill",
+		category = "metallurgy",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 2000,
+			max = 2000
+		  }
+		},
+		enabled = false,
+		energy_required = 30,
+		ingredients =
+		{
+		  {type = "item", name = "electric-mining-drill", amount = 1},
+		  {type = "fluid", name = "molten-iron", amount = 200},
+		  {type = "item", name = "tungsten-carbide", amount = 20},
+		  {type = "item", name = "electric-engine-unit", amount = 10},
+		  {type = "item", name = "integrated-circuit", amount = 10},
+		},
+		results = {{type="item", name="big-mining-drill", amount=1}}
 	},
 	{
 		type = "recipe",
@@ -4256,6 +4349,30 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "metallurgic-science-pack",
+		category = "metallurgy",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 2000,
+			max = 2000
+		  }
+		},
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "tungsten-carbide", amount = 1},
+		  {type = "item", name = "tungsten-plate", amount = 2},
+		  {type = "fluid", name = "molten-nickel", amount = 100},
+		  {type = "fluid", name = "molten-aluminum", amount = 100},
+		},
+		energy_required = 10,
+		results = {{type="item", name="metallurgic-science-pack", amount=1}},
+		allow_productivity = true
+	},
+	{
+		type = "recipe",
 		name = "genetic-science-pack",
 		category = "genetics",
 		surface_conditions =
@@ -4334,7 +4451,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "mischmetal-plate", amount = 10},
-		 -- {type = "item", name = "thorium-232", amount = 1},
+		  {type = "item", name = "thorium-232", amount = 1},
 		  {type = "fluid", name = "fusion-plasma", amount = 10}
 		},
 		results = {{type="item", name="promethium-science-pack", amount=10}},
@@ -5975,10 +6092,10 @@ data:extend({
       },
       results =
       {
-        {type = "fluid", name = "heavy-oil", amount = 45},
-        {type = "fluid", name = "water", amount = 5},
-        {type = "item", name = "microplastic", amount = 10},
-        {type = "item", name = "sulfur", amount = 1}
+        {type = "fluid", name = "heavy-oil", amount = 65},
+        {type = "fluid", name = "aromatics", amount = 30},
+        {type = "fluid", name = "water", amount = 105},
+        {type = "item", name = "microplastic", amount_min = 4, amount_max = 8},
       },
       subgroup = "separation-recipes",
       order = "a[separation]-b[fulgoran-sludge-separation]",
@@ -5995,13 +6112,14 @@ data:extend({
 	{
 		type = "recipe",
 		name = "electrolyte",
-		category = "electrolysis",
+		category = "electromagnetics",
 		subgroup = "fulgora-processes",
 		order = "b[holmium]-e[electrolyte]",
 		energy_required = 5,
 		ingredients =
 		{
-		  {type = "item", name = "stone", amount = 1},
+		  {type = "item", name = "stone-brick", amount = 1},
+		  {type = "item", name = "plastic-bar", amount = 1},
 		  {type = "fluid", name = "heavy-oil", amount = 10},
 		  {type = "fluid", name = "holmium-solution", amount = 10},
 		},
@@ -6018,7 +6136,7 @@ data:extend({
       energy_required = 5,
       ingredients =
       {
-        {type = "item", name = "microplastic", amount = 5}
+        {type = "item", name = "microplastic", amount = 20}
       },
       results =
       {
@@ -6046,7 +6164,7 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "holmium-plate", amount = 1},
-		  {type = "item", name = "copper-plate", amount = 1},
+		  {type = "item", name = "aluminum-cable", amount = 1},
 		  {type = "item", name = "plastic-bar", amount = 1},
 		  {type = "fluid", name = "aromatics", amount = 5},
 		},
@@ -6059,17 +6177,32 @@ data:extend({
 		name = "supercapacitor",
 		category = "electromagnetics",
 		subgroup = "fulgora-processes",
-		order = "b[holmium]-f[supercapacitor]",
+		order = "b[holmium]-g[supercapacitor]",
 		energy_required = 10,
 		ingredients =
 		{
-		  {type = "item", name = "holmium-plate", amount = 2},
-		  {type = "item", name = "superconductor", amount = 2},
-		  {type = "item", name = "integrated-circuit", amount = 4},
-		  {type = "item", name = "solid-state-battery", amount = 1},
-		  {type = "fluid", name = "electrolyte", amount = 10},
+		  {type = "item", name = "superconductor", amount = 1},
+		  {type = "item", name = "plastic-bar", amount = 2},
+		  {type = "item", name = "advanced-circuit", amount = 1},
+		  {type = "item", name = "solid-state-battery", amount = 2},
 		},
 		results = {{type="item", name="supercapacitor", amount=1}},
+		allow_productivity = true,
+		enabled = false
+	},
+	{
+		type = "recipe",
+		name = "solid-state-battery",
+		category = "electromagnetics",
+		subgroup = "fulgora-processes",
+		order = "b[holmium]-f[solid-state-battery]",
+		energy_required = 10,
+		ingredients =
+		{
+		  {type = "item", name = "superconductor", amount = 2},
+		  {type = "fluid", name = "electrolyte", amount = 20},
+		},
+		results = {{type="item", name="solid-state-battery", amount=1}},
 		allow_productivity = true,
 		enabled = false
 	},
@@ -6396,12 +6529,13 @@ data:extend({
 		{
 		  {type = "item", name = "iron-gear-wheel",        amount = 1, probability = 0.20, show_details_in_recipe_tooltip = false},
 		  {type = "item", name = "concrete",               amount = 1, probability = 0.06, show_details_in_recipe_tooltip = false},
-		  {type = "item", name = "stone",                  amount = 1, probability = 0.04, show_details_in_recipe_tooltip = false},
 		  {type = "item", name = "steel-plate",            amount = 1, probability = 0.04, show_details_in_recipe_tooltip = false},
 		  {type = "item", name = "battery",                amount = 1, probability = 0.04, show_details_in_recipe_tooltip = false},
-		  {type = "item", name = "copper-cable",           amount = 1, probability = 0.03, show_details_in_recipe_tooltip = false},
+		  {type = "item", name = "aluminum-cable",         amount = 1, probability = 0.04, show_details_in_recipe_tooltip = false},
+		  {type = "item", name = "stone",                  amount = 1, probability = 0.03, show_details_in_recipe_tooltip = false},
 		  {type = "item", name = "advanced-circuit",       amount = 1, probability = 0.03, show_details_in_recipe_tooltip = false},
 		  {type = "item", name = "processing-unit",        amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
+		  {type = "item", name = "electric-engine-unit",   amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
 		  {type = "item", name = "solid-fuel",             amount = 1, probability = 0.02, show_details_in_recipe_tooltip = false},
 		  {type = "item", name = "low-density-structure",  amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
 		  {type = "item", name = "holmium-ore",            amount = 1, probability = 0.01, show_details_in_recipe_tooltip = false},
@@ -6412,6 +6546,7 @@ data:extend({
 		type = "recipe",
 		name = "transport-belt",
 		energy_required = 1,
+		category = "pressing",
 		enabled = false,
 		ingredients =
 		{
@@ -6423,6 +6558,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "fast-transport-belt",
+		category = "pressing",
 		energy_required = 2,
 		enabled = false,
 		ingredients =
@@ -6436,7 +6572,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "express-transport-belt",
-		category = "crafting-with-fluid",
+		category = "crafting-with-fluid-or-metallurgy",
 		energy_required = 3,
 		enabled = false,
 		ingredients =
@@ -6522,6 +6658,7 @@ data:extend({
 		type = "recipe",
 		name = "underground-belt",
 		enabled = false,
+		category = "pressing",
 		energy_required = 1,
 		ingredients =
 		{
@@ -6535,6 +6672,7 @@ data:extend({
 		type = "recipe",
 		name = "fast-underground-belt",
 		energy_required = 2,
+		category = "pressing",
 		enabled = false,
 		ingredients =
 		{
@@ -6548,7 +6686,7 @@ data:extend({
 		type = "recipe",
 		name = "express-underground-belt",
 		energy_required = 3,
-		category = "crafting-with-fluid",
+		category = "crafting-with-fluid-or-metallurgy",
 		enabled = false,
 		ingredients =
 		{
@@ -6632,6 +6770,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "splitter",
+		category = "pressing",
 		enabled = false,
 		energy_required = 1,
 		ingredients =
@@ -6646,6 +6785,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "fast-splitter",
+		category = "pressing",
 		enabled = false,
 		energy_required = 2,
 		ingredients =
@@ -6660,7 +6800,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "express-splitter",
-		category = "crafting-with-fluid",
+		category = "crafting-with-fluid-or-metallurgy",
 		enabled = false,
 		energy_required = 3,
 		ingredients =
