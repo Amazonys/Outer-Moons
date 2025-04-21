@@ -917,8 +917,8 @@ data:extend(
    {
       control = "gleba_plants",
       order = "a[tree]-b[forest]-a",
-      probability_expression = "min(0.1, 0.15 * (1 - gleba_plants_noise) * control:gleba_plants:size)",
-      richness_expression = "random_penalty_at(2, 2)",
+      probability_expression = "min(0.2, 0.25 * (1 - gleba_plants_noise) * control:gleba_plants:size)",
+      richness_expression = "random_penalty_at(1, 3)",
       tile_restriction = {"natural-yumako-soil", "artificial-yumako-soil", "overgrowth-yumako-soil"}
     },
     variations = gleba_tree_variations("funneltrunk", 5, 4),
@@ -1119,7 +1119,7 @@ data:extend(
       control = "gleba_plants",
       order = "a[tree]-b[forest]-b",
       probability_expression = "min(0.1, 0.15 * (1 - gleba_plants_noise) * control:gleba_plants:size)",
-      richness_expression = "random_penalty_at(2, 2)",
+      richness_expression = "random_penalty_at(1, 3)",
       tile_restriction = {"natural-jellynut-soil", "artificial-jellynut-soil", "overgrowth-jellynut-soil"}
     },
     variations = gleba_tree_variations("yumako-tree", 8, 4, 1.3),

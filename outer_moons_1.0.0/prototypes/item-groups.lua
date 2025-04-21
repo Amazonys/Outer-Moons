@@ -93,6 +93,24 @@ data:extend(
   },
   {
     type = "item-subgroup",
+    name = "agriculture-intermediates",
+    group = "agriculture",
+    order = "dd"
+  },
+  {
+    type = "item-subgroup",
+    name = "bioflux-intermediates",
+    group = "agriculture",
+    order = "dd"
+  },
+  {
+    type = "item-subgroup",
+    name = "bacteria",
+    group = "agriculture",
+    order = "dg"
+  },
+  {
+    type = "item-subgroup",
     name = "fulgora-agriculture",
     group = "agriculture",
     order = "e"

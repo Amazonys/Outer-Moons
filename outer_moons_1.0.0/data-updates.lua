@@ -951,6 +951,152 @@ data.raw.technology["planet-discovery-aquilo"].prerequisites =
   "heating-tower"
 }
 
+-- Modules
+data.raw.technology["speed-module-2"].prerequisites =
+{
+  "speed-module",
+  "lunar-science-pack",
+}
+data.raw.technology["speed-module-2"].unit =
+{
+  count = 500,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"space-science-pack", 1},
+	{"lunar-science-pack", 1}
+  },
+  time = 30
+}
+
+data.raw.technology["speed-module-3"].prerequisites =
+{
+  --"computing-core",
+  --"quantum-supercomputer",
+  "speed-module-2",
+  "lunar-science-pack",
+  "pneumatic-science-pack", 
+}
+data.raw.technology["speed-module-3"].unit.ingredients =
+{
+  {"automation-science-pack", 1},
+  {"logistic-science-pack", 1},
+  {"chemical-science-pack", 1},
+  {"space-science-pack", 1},
+  {"lunar-science-pack", 1},
+  {"pneumatic-science-pack", 1},
+}
+
+data.raw.technology["efficiency-module-2"].prerequisites =
+{
+  "efficiency-module",
+  "agricultural-science-pack",
+}
+data.raw.technology["efficiency-module-2"].unit =
+{
+  count = 500,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"space-science-pack", 1},
+	{"agricultural-science-pack", 1}
+  },
+  time = 30
+}
+
+data.raw.technology["efficiency-module-3"].prerequisites =
+{
+  --"computing-core",
+  --"quantum-supercomputer",  
+  "efficiency-module-2",
+  "agricultural-science-pack",
+  "genetic-science-pack", 
+}
+data.raw.technology["efficiency-module-3"].unit.ingredients =
+{
+  {"automation-science-pack", 1},
+  {"logistic-science-pack", 1},
+  {"chemical-science-pack", 1},
+  {"space-science-pack", 1},
+  {"agricultural-science-pack", 1},
+  {"genetic-science-pack", 1},
+}
+
+data.raw.technology["productivity-module-2"].prerequisites =
+{
+  "productivity-module",
+  "metallurgic-science-pack",
+}
+data.raw.technology["productivity-module-2"].unit =
+{
+  count = 500,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"space-science-pack", 1},
+	{"metallurgic-science-pack", 1}
+  },
+  time = 30
+}
+
+data.raw.technology["productivity-module-3"].prerequisites =
+{
+  --"computing-core",
+  --"quantum-supercomputer",
+  "productivity-module-2",
+  "metallurgic-science-pack",
+  "material-science-pack", 
+}
+data.raw.technology["productivity-module-3"].unit.ingredients =
+{
+  {"automation-science-pack", 1},
+  {"logistic-science-pack", 1},
+  {"chemical-science-pack", 1},
+  {"space-science-pack", 1},
+  {"metallurgic-science-pack", 1},
+  {"material-science-pack", 1},
+}
+data.raw.technology["quality-module-2"].prerequisites =
+{
+  "quality-module",
+  "electromagnetic-science-pack",
+}
+data.raw.technology["quality-module-2"].unit =
+{
+  count = 500,
+  ingredients =
+  {
+	{"automation-science-pack", 1},
+	{"logistic-science-pack", 1},
+	{"chemical-science-pack", 1},
+	{"space-science-pack", 1},
+	{"electromagnetic-science-pack", 1}
+  },
+  time = 30
+}
+data.raw.technology["quality-module-3"].prerequisites =
+{
+  --"computing-core",
+  --"quantum-supercomputer",
+  "quality-module-2",
+  "electromagnetic-science-pack",
+  "cryogenic-science-pack", 
+}
+data.raw.technology["quality-module-3"].unit.ingredients =
+{
+  {"automation-science-pack", 1},
+  {"logistic-science-pack", 1},
+  {"chemical-science-pack", 1},
+  {"space-science-pack", 1},
+  {"electromagnetic-science-pack", 1},
+  {"cryogenic-science-pack", 1},
+}
 -- Stack inserter
 data.raw.technology["stack-inserter"].effects =
 {
@@ -1023,27 +1169,6 @@ data.raw.technology["calcite-processing"].effects =
 	type = "unlock-recipe",
 	recipe = "volcanic-gas-separation"
   },
-}
--- Productivity 3
-data.raw.technology["productivity-module-3"].prerequisites =
-{
-  "productivity-module-2",
-  "kovarex-enrichment-process",
-  "lunar-science-pack", 
-  "metallurgic-science-pack", 
-  "agricultural-science-pack", 
-  "electromagnetic-science-pack"
-}
-data.raw.technology["productivity-module-3"].unit.ingredients =
-{
-  {"automation-science-pack", 1},
-  {"logistic-science-pack", 1},
-  {"chemical-science-pack", 1},
-  {"space-science-pack", 1},
-  {"lunar-science-pack", 1},
-  {"metallurgic-science-pack", 1},
-  {"agricultural-science-pack", 1},
-  {"electromagnetic-science-pack", 1}
 }
 
 -- Agricultural Science Pack doesn't spoil
@@ -1131,8 +1256,10 @@ data.raw.item["centrifuge"].icon = "__outer_moons__/graphics/icons/centrifuge.pn
 data.raw.item["tungsten-plate"].icon = "__outer_moons__/graphics/icons/tungsten-plate.png"
 data.raw.item["tungsten-carbide"].icon = "__outer_moons__/graphics/icons/tungsten-carbide.png"
 
-data.raw["assembling-machine"]["electromagnetic-plant"].crafting_categories = {"electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling", "electronics-quantum",}
-data.raw["assembling-machine"]["foundry"].crafting_categories = {"metallurgy", "pressing", "crafting-with-fluid-or-metallurgy", "metallurgy-or-assembling", "metallurgy-or-adv-metallurgy"}
+data.raw.recipe["small-lamp"].category = "electronics-or-assembling"
+
+data.raw.item["substation"].stack_size = 50
+data.raw.item["substation"].weight = 20 * kg
 
 data.raw.item["lab"].subgroup = "labs"
 data.raw.item["biolab"].subgroup = "labs"
@@ -1246,6 +1373,7 @@ data.raw.item["tree-seed"].subgroup = "nauvis-agriculture"
 data.raw.item["tree-seed"].order = "b[nauvis-agriculture]-a[wood-processing]"
 data.raw.item["biter-egg"].subgroup = "nauvis-agriculture"
 data.raw.item["biter-egg"].order = "b[nauvis-agriculture]-d[nutrients-from-biter-egg]"
+data.raw.tree["water-cane"].minable.results = { {type = "item", name = "wood", amount = 1}, {type = "item", name = "nutrients", amount = 1}, }
 
 data.raw.item["ice-platform"].order = "c[landfill]-i[ice-platform]"
 data.raw.item["foundation"].order = "c[landfill]-j[foundation]"
@@ -1256,37 +1384,43 @@ data.raw.recipe["uranium-fuel-cell"].category = "centrifuging"
 
 data.raw.recipe["molten-iron"].subgroup = "vulcanus-fluid"
 data.raw.recipe["molten-copper"].subgroup = "vulcanus-fluid"
+data.raw.recipe["casting-iron"].icon = "__outer_moons__/graphics/icons/fluid/casting-iron.png"
 data.raw.recipe["casting-iron"].subgroup = "vulcanus-casting"
+data.raw.recipe["casting-copper"].icon = "__outer_moons__/graphics/icons/fluid/casting-copper.png"
 data.raw.recipe["casting-copper"].subgroup = "vulcanus-casting"
+data.raw.recipe["casting-iron-gear-wheel"].icon = "__outer_moons__/graphics/icons/fluid/casting-iron-gear-wheel.png"
 data.raw.recipe["casting-iron-gear-wheel"].subgroup = "vulcanus-products"
 data.raw.recipe["casting-iron-gear-wheel"].order = "d[casting]-a[casting-iron-gear-wheel]"
+data.raw.recipe["casting-iron-stick"].icon = "__outer_moons__/graphics/icons/fluid/casting-iron-stick.png"
 data.raw.recipe["casting-iron-stick"].subgroup = "vulcanus-products"
 data.raw.recipe["casting-iron-stick"].order = "d[casting]-b[casting-iron-stick]"
+data.raw.recipe["casting-copper-cable"].icon = "__outer_moons__/graphics/icons/fluid/casting-copper-cable.png"
 data.raw.recipe["casting-copper-cable"].subgroup = "vulcanus-products"
 data.raw.recipe["casting-copper-cable"].order = "d[casting]-c[casting-copper-cable]"
 
-data.raw.recipe["nutrients-from-spoilage"].subgroup = "agriculture-products"
+data.raw.recipe["nutrients-from-spoilage"].subgroup = "agriculture-processes"
 data.raw.recipe["nutrients-from-spoilage"].order = "c[nutrients]-b[nutrients-from-spoilage]"
-data.raw.recipe["nutrients-from-bioflux"].subgroup = "agriculture-products"
+data.raw.recipe["nutrients-from-bioflux"].subgroup = "agriculture-processes"
 data.raw.recipe["nutrients-from-bioflux"].order = "c[nutrients]-a[nutrients-from-bioflux]"
 --data.raw.item["nutrients"].subgroup = "agriculture-products"
 data.raw.item["nutrients"].order = "a[agriculture]-h[nutrients]"
 --data.raw.item["spoilage"].subgroup = "agriculture-products"
 data.raw.item["spoilage"].order = "a[agriculture]-i[spoilage]"
-data.raw.item["copper-bacteria"].order = "c[bacteria]-b[copper-bacteria]"
-data.raw.item["iron-bacteria"].order = "c[bacteria]-a[iron-bacteria]"
-
+data.raw.item["copper-bacteria"].subgroup = "bacteria"
+data.raw.item["copper-bacteria"].order = "b[copper-bacteria]"
+data.raw.item["iron-bacteria"].subgroup = "bacteria"
+data.raw.item["iron-bacteria"].order = "a[iron-bacteria]"
+data.raw.recipe["iron-bacteria-cultivation"].subgroup = "bacteria"
+data.raw.recipe["iron-bacteria-cultivation"].order = "b[bacteria]"
+data.raw.recipe["copper-bacteria-cultivation"].subgroup = "bacteria"
+data.raw.recipe["copper-bacteria-cultivation"].order = "d[bacteria]"
 --data.raw.item["carbon-fiber"].hidden_in_factoriopedia = true
 --data.raw.item["iron-bacteria"].hidden_in_factoriopedia = true
 --data.raw.item["copper-bacteria"].hidden_in_factoriopedia = true
-data.raw.item["carbon-fiber"].subgroup = "gleba-general"
+data.raw.item["carbon-fiber"].subgroup = "bioflux-intermediates"
 data.raw.item["carbon-fiber"].order = "h[carbon-fiber]"
 
-data.raw.recipe["copper-bacteria"].subgroup = "agriculture-products"
-data.raw.recipe["copper-bacteria"].order = "b[organic-products]-f[copper-bacteria]"
-data.raw.recipe["copper-bacteria"].icon = "__outer_moons__/graphics/icons/mash-copper.png"
-data.raw.recipe["copper-bacteria-cultivation"].order = "c[bacteria]-b[cultivation]-b[copper]"
-data.raw.recipe["iron-bacteria-cultivation"].order = "c[bacteria]-b[cultivation]-a[iron]"
+
 
 data.raw.item["foundry"].order = "f[recycler]"
 data.raw.item["recycler"].order = "h[recycler]"
@@ -1313,7 +1447,10 @@ data.raw.cliff["cliff-feronia"].order = "i"
 data.raw.cliff["selene-crater-cliff"].order = "j"
 data.raw.cliff["crater-cliff"].order = "k"
 
-data.raw["space-platform-starter-pack"]["space-platform-starter-pack"].subgroup = "space-related"
+data.raw["space-platform-starter-pack"]["space-platform-starter-pack"].subgroup = "space-platform"
+data.raw["space-platform-starter-pack"]["space-platform-starter-pack"].order = "a"
+data.raw["space-platform-hub"]["space-platform-hub"].subgroup = "planets"
+data.raw["space-platform-hub"]["space-platform-hub"].order = "z"
 
 --Flamethrower
 data.raw["fluid-turret"]["flamethrower-turret"].attack_parameters.fluids = { {type = "crude-oil"},  {type = "heavy-oil", damage_modifier = 1.05}, {type = "light-oil", damage_modifier = 1.1}, {type = "ethanol", damage_modifier = 1.1} }
@@ -1324,11 +1461,11 @@ data.raw.item["laser-turret"].order = "b[turret]-c[laser-turret]"
 data.raw.recipe["metallurgic-science-pack"].surface_conditions = { { property = "pressure", min = 2000, max = 2000 } }
 
 
-data.raw.recipe["iron-bacteria"].surface_conditions = { { property = "pressure", min = 2500, max = 2500 } }
 data.raw.recipe["iron-bacteria-cultivation"].surface_conditions = { { property = "pressure", min = 2500, max = 2500 } }
-data.raw.recipe["copper-bacteria"].surface_conditions = { { property = "pressure", min = 2500, max = 2500 } }
 data.raw.recipe["copper-bacteria-cultivation"].surface_conditions = { { property = "pressure", min = 2500, max = 2500 } }
 data.raw.recipe["pentapod-egg"].surface_conditions = { { property = "pressure", min = 2500, max = 2500 } }
+data.raw.item["pentapod-egg"].subgroup = "agriculture-processes"
+data.raw.item["pentapod-egg"].order = "f[pentapod-egg]"
 data.raw.recipe["agricultural-science-pack"].surface_conditions = { { property = "pressure", min = 2500, max = 2500 } }
 
 --Decal gathering fix
@@ -1404,6 +1541,10 @@ data.raw.recipe["solid-fuel-from-heavy-oil"].hidden = true
 data.raw.recipe["solid-fuel-from-light-oil"].hidden = true
 
 data.raw.recipe["casting-low-density-structure"].hidden = true
+
+data.raw["combat-robot"]["defender"].time_to_live = 60 * 180
+data.raw["combat-robot"]["distractor"].time_to_live = 60 * 240
+data.raw["combat-robot"]["destroyer"].time_to_live = 60 * 300
 
 --Barrels
 

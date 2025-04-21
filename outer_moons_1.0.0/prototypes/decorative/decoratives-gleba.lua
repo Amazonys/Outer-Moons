@@ -1,5 +1,6 @@
 local hit_effects = require ("__base__.prototypes.entity.hit-effects")
-local sounds = require ("__base__.prototypes.entity.sounds")
+local base_sounds = require ("__base__.prototypes.entity.sounds")
+local base_tile_sounds = require("__base__/prototypes/tile/tile-sounds")
 local decorative_trigger_effects = require("__base__.prototypes.decorative.decorative-trigger-effects")
 
 --[[
@@ -16,6 +17,8 @@ local decorative_trigger_effects = require("__base__.prototypes.decorative.decor
 ]]
 
 local decal_tile_layer = 255
+local decal_opacity_over_water = 0.4
+local water_decal_opacity_over_water = 0.7
 
 -- All gleba tiles must be in the land or water lists. (Shallow water is water)
 -- they must be global scope for a later test.
@@ -291,7 +294,7 @@ data:extend{
     order = "b[cover]-b[yellow-lichen]-c[1]",
     collision_box = {{-0.5, -0.4}, {0.5, 0.4}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -308,7 +311,7 @@ data:extend{
     order = "b[cover]-b[yellow-lichen]-b[3]",
     collision_box = {{-1, -0.8}, {1, 0.8}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -325,7 +328,7 @@ data:extend{
     order = "b[cover]-b[yellow-lichen]-a[6]",
     collision_box = {{-2, -1.6}, {2, 1.6}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -341,7 +344,7 @@ data:extend{
     type = "optimized-decorative",
     order = "b[cover]-a[yellow-lichen-cups]-c[1]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -357,7 +360,7 @@ data:extend{
     type = "optimized-decorative",
     order = "b[cover]-a[yellow-lichen-cups]-b[3]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -373,7 +376,7 @@ data:extend{
     type = "optimized-decorative",
     order = "b[cover]-a[yellow-lichen-cups]-a[6]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -390,7 +393,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_cliff_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "object",
     autoplace =
@@ -405,7 +408,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_cliff_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "object",
     autoplace =
@@ -419,7 +422,7 @@ data:extend{
     type = "optimized-decorative",
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_mask = dec_cliff_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "object",
     autoplace =
@@ -434,7 +437,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.5, -0.4}, {0.5, 0.4}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -451,7 +454,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-1, -0.8}, {1, 0.8}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -468,7 +471,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-2, -1.6}, {2, 1.6}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -485,7 +488,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.5, -0.4}, {0.5, 0.4}},
     collision_mask = dec_land_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -502,7 +505,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-1, -0.8}, {1, 0.8}},
     collision_mask = dec_land_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -519,7 +522,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-2, -1.6}, {2, 1.6}},
     collision_mask = dec_land_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -536,7 +539,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.2, -0.2}, {0.2, 0.2}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
     {
@@ -552,7 +555,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.45, -0.45}, {0.45, 0.45}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
     {
@@ -568,7 +571,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.2, -0.2}, {0.2, 0.2}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
     {
@@ -584,7 +587,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.45, -0.45}, {0.45, 0.45}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
     {
@@ -600,7 +603,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.2, -0.2}, {0.2, 0.2}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
     {
@@ -616,7 +619,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.45, -0.45}, {0.45, 0.45}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
     {
@@ -633,7 +636,7 @@ data:extend{
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_shallow_cliff_collision(),
     render_layer = "object",
-    walking_sound = sounds.plant,
+    walking_sound = base_tile_sounds.walking.plant,
     trigger_effect = decorative_trigger_effects.red_pita(),
     autoplace =
     {
@@ -772,7 +775,7 @@ data:extend{
     collision_box = {{-0.2, -0.2}, {0.2, 0.2}},
     collision_mask = dec_cliff_collision(),
     render_layer = "decorative",
-    walking_sound = sounds.plant,
+    walking_sound = base_tile_sounds.walking.plant,
     trigger_effect = decorative_trigger_effects.green_asterisk(),
     autoplace =
     {
@@ -950,7 +953,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "object",
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
@@ -966,7 +969,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_land_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "object",
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
@@ -982,7 +985,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_cliff_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "object",
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
@@ -998,7 +1001,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_cliff_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "object",
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
@@ -1014,7 +1017,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_shallow_cliff_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "object",
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
@@ -1030,7 +1033,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
@@ -1047,7 +1050,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
@@ -1062,7 +1065,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
@@ -1090,7 +1093,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_shallow_cliff_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "object",
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
@@ -1106,7 +1109,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_shallow_cliff_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "object",
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
@@ -1122,7 +1125,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "decorative",
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace =
@@ -1140,7 +1143,7 @@ data:extend{
     order = "a[polycephalum]-a[slime]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.plant,
+    walking_sound = base_tile_sounds.walking.plant,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     autoplace = {
       order = "d[decorative]-c[trivial]-c[cover]-c[outer]",
@@ -1708,7 +1711,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
@@ -1726,7 +1729,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
@@ -1743,7 +1746,7 @@ data:extend{
     order = "b[cover]-a[yellow-lichen-cups]-c[1]",
     collision_box = {{-0.4, -0.4}, {0.4, 0.4}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -1762,7 +1765,7 @@ data:extend{
     order = "b[cover]-a[yellow-lichen-cups]-b[3]",
     collision_box = {{-1.4, -1.4}, {1.4, 1.4}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -1780,7 +1783,7 @@ data:extend{
     order = "b[cover]-a[yellow-lichen-cups]-a[6]",
     collision_box = {{-2.4, -2.4}, {2.4, 2.4}},
     collision_mask = dec_default_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -1798,7 +1801,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.5, -0.4}, {0.5, 0.4}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -1817,7 +1820,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-1, -0.8}, {1, 0.8}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -1836,7 +1839,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-2, -1.6}, {2, 1.6}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -1855,7 +1858,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-0.5, -0.4}, {0.5, 0.4}},
     collision_mask = dec_land_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -1873,7 +1876,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-1, -0.8}, {1, 0.8}},
     collision_mask = dec_land_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -1891,7 +1894,7 @@ data:extend{
     order = "XxX[decorative]-a[grass]-b[carpet]",
     collision_box = {{-2, -1.6}, {2, 1.6}},
     collision_mask = dec_land_collision(),
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer,
@@ -2273,44 +2276,46 @@ data:extend{
       },
     }
   },
- -- NERVE ROOTS DENSE
+-- NERVE ROOTS DENSE
   {
     name = "nerve-roots-dense",
     type = "optimized-decorative",
     order = "b[decorative]-b[red-desert-decal]",
     collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
     collision_mask = dec_default_collision(),
+    walking_sound = base_tile_sounds.walking.plant,
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
+    opacity_over_water = decal_opacity_over_water,
     autoplace = {
       probability_expression = 0
     },
     pictures =
     {
-      --NERV-dense
+      --NERVE-dense
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots/nerv-root-dense-01.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots/nerve-root-dense-01.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots/nerv-root-dense-02.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots/nerve-root-dense-02.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots/nerv-root-dense-03.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots/nerve-root-dense-03.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots/nerv-root-dense-04.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots/nerve-root-dense-04.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
@@ -2326,37 +2331,39 @@ data:extend{
     order = "b[decorative]-b[red-desert-decal]",
     collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
     collision_mask = dec_default_collision(),
+    walking_sound = base_tile_sounds.walking.plant,
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
+    opacity_over_water = decal_opacity_over_water,
     autoplace = {
       probability_expression = 0
     },
     pictures =
     {
-      --NERV-light
+      --NERVE-light
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots/nerv-root-light-01.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots/nerve-root-light-01.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots/nerv-root-light-02.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots/nerve-root-light-02.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots/nerv-root-light-03.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots/nerve-root-light-03.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots/nerv-root-light-04.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots/nerve-root-light-04.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
@@ -2365,45 +2372,47 @@ data:extend{
 
     }
   },
- -- NERVE ROOTS VEINS DENSE
+ -- RED NERVE ROOTS VEINS DENSE
   {
-    name = "nerve-roots-veins-dense",
+    name = "red-nerve-roots-veins-dense",
     type = "optimized-decorative",
     order = "b[decorative]-b[red-desert-decal]",
     collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
     collision_mask = dec_default_collision(),
+    walking_sound = base_tile_sounds.walking.plant,
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
+    opacity_over_water = decal_opacity_over_water,
     autoplace = {
-      tile_restriction = gleba_land_tiles,
+      tile_restriction = {"lowland-red-vein-2", "lowland-red-vein-3", "lowland-red-vein-4"},
       probability_expression = "grpi(0.2) + gleba_select(gleba_nerve_veins + gleba_temperature_normalised  - clamp(gleba_decorative_knockout, 0, 1), 0.6, 2, 0.1, 0, 1)",
     },
     pictures =
     {
-      --NERV-dense
+      --NERVE-dense
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots-veins/nerv-root-veins-dense-01.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/red-nerve-root-veins-dense-01.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots-veins/nerv-root-veins-dense-02.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/red-nerve-root-veins-dense-02.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots-veins/nerv-root-veins-dense-03.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/red-nerve-root-veins-dense-03.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots-veins/nerv-root-veins-dense-04.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/red-nerve-root-veins-dense-04.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
@@ -2412,51 +2421,242 @@ data:extend{
 
     }
   },
- -- NERVE ROOTS VEINS SPARSE
+ -- RED NERVE ROOTS VEINS SPARSE
   {
-    name = "nerve-roots-veins-sparse",
+    name = "red-nerve-roots-veins-sparse",
+    type = "optimized-decorative",
+    order = "b[decorative]-b[red-desert-decal]",
+    collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    collision_mask = dec_default_collision(),
+    walking_sound = base_tile_sounds.walking.plant,
+    render_layer = "decals",
+    tile_layer = decal_tile_layer - 1,
+    opacity_over_water = decal_opacity_over_water,
+    autoplace = {
+      tile_restriction = {"lowland-red-vein-2", "lowland-red-vein-3", "lowland-red-vein-4"},
+      probability_expression = "grpi(0.2) + gleba_select(gleba_nerve_veins + gleba_temperature_normalised  - clamp(gleba_decorative_knockout, 0, 1), 0.2, 0.6, 0.2, 0, 1)",
+    },
+    pictures =
+    {
+      --NERVE-sparse
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/red-nerve-root-veins-light-01.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/red-nerve-root-veins-light-02.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/red-nerve-root-veins-light-03.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/red-nerve-root-veins-light-04.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+    }
+  },
+  -- PURPLE NERVE ROOTS VEINS DENSE
+  {
+    name = "purple-nerve-roots-veins-dense",
     type = "optimized-decorative",
     order = "b[decorative]-b[red-desert-decal]",
     collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
     collision_mask = dec_default_collision(),
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
+    opacity_over_water = 1 - ((1 - decal_opacity_over_water) / 2),
     autoplace = {
-      tile_restriction = gleba_land_tiles,
-      probability_expression = "grpi(0.2) + gleba_select(gleba_nerve_veins + gleba_temperature_normalised  - clamp(gleba_decorative_knockout, 0, 1), 0.2, 0.6, 0.2, 0, 1)",
+      tile_restriction = {"wetland-jellynut"},
+      probability_expression = "grpi(0.1) + gleba_select(gleba_nerve_veins + gleba_temperature_normalised  - clamp(gleba_decorative_knockout, 0, 1), 0.2, 0.6, 0.2, 0, 0.8)",
     },
     pictures =
     {
-      --NERV-sparse
+      --NERVE-dense
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots-veins/nerv-root-veins-light-01.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/purple-nerve-root-veins-dense-01.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots-veins/nerv-root-veins-light-02.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/purple-nerve-root-veins-dense-02.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots-veins/nerv-root-veins-light-03.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/purple-nerve-root-veins-dense-03.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
       {
-        filename = "__space-age__/graphics/decorative/nerv-roots-veins/nerv-root-veins-light-04.png",
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/purple-nerve-root-veins-dense-04.png",
         width = 1536,
         height = 990,
         shift = util.by_pixel(0, -0.25),
         scale = 0.5
       },
 
+    }
+  },
+ -- PURPLE NERVE ROOTS VEINS SPARSE
+  {
+    name = "purple-nerve-roots-veins-sparse",
+    type = "optimized-decorative",
+    order = "b[decorative]-b[red-desert-decal]",
+    collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    collision_mask = dec_default_collision(),
+    render_layer = "decals",
+    tile_layer = decal_tile_layer - 1,
+    opacity_over_water = 1 - ((1 - decal_opacity_over_water) / 2),
+    autoplace = {
+      tile_restriction = {"wetland-jellynut", "lowland-red-vein-dead", "wetland-red-tentacle"},
+      probability_expression = "grpi(0.1) + gleba_select(gleba_nerve_veins + gleba_temperature_normalised  - clamp(gleba_decorative_knockout, 0, 1), 0.2, 0.6, 0.2, 0, 1)",
+    },
+    pictures =
+    {
+      --NERVE-sparse
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/purple-nerve-root-veins-light-01.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/purple-nerve-root-veins-light-02.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/purple-nerve-root-veins-light-03.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/purple-nerve-root-veins-light-04.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+    }
+  },
+  -- CREAM NERVE ROOTS VEINS DENSE
+  {
+    name = "cream-nerve-roots-veins-dense",
+    type = "optimized-decorative",
+    order = "b[decorative]-b[red-desert-decal]",
+    collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    collision_mask = dec_default_collision(),
+    render_layer = "decals",
+    tile_layer = decal_tile_layer - 1,
+    opacity_over_water = decal_opacity_over_water,
+    autoplace = {
+      tile_restriction = {"lowland-cream-red", "lowland-red-vein", "lowland-red-infection"},
+      probability_expression = "grpi(0.2) + gleba_select(gleba_nerve_veins + gleba_temperature_normalised  - clamp(gleba_decorative_knockout, 0, 1), 0.6, 2, 0.1, 0, 1)",
+    },
+    pictures =
+    {
+      --NERVE-dense
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/cream-nerve-root-veins-dense-01.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/cream-nerve-root-veins-dense-02.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/cream-nerve-root-veins-dense-03.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/cream-nerve-root-veins-dense-04.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+
+    }
+  },
+ -- CREAM NERVE ROOTS VEINS SPARSE
+  {
+    name = "cream-nerve-roots-veins-sparse",
+    type = "optimized-decorative",
+    order = "b[decorative]-b[red-desert-decal]",
+    collision_box = {{-2.5, -2.5}, {2.5, 2.5}},
+    collision_mask = dec_default_collision(),
+    render_layer = "decals",
+    tile_layer = decal_tile_layer - 1,
+    opacity_over_water = decal_opacity_over_water,
+    autoplace = {
+      tile_restriction = {"lowland-cream-cauliflower", "lowland-dead-skin", "lowland-cream-red", "lowland-red-vein", "lowland-red-infection"},
+      probability_expression = "grpi(0.2) + gleba_select(gleba_nerve_veins + gleba_temperature_normalised  - clamp(gleba_decorative_knockout, 0, 1), 0.2, 0.6, 0.2, 0, 1)",
+    },
+    pictures =
+    {
+      --NERVE-sparse
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/cream-nerve-root-veins-light-01.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/cream-nerve-root-veins-light-02.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/cream-nerve-root-veins-light-03.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
+      {
+        filename = "__space-age__/graphics/decorative/nerve-roots-veins/cream-nerve-root-veins-light-04.png",
+        width = 1536,
+        height = 990,
+        shift = util.by_pixel(0, -0.25),
+        scale = 0.5
+      },
     }
   },
  -- WHITE CARPET GRASS
@@ -2467,7 +2667,7 @@ data:extend{
     collision_box = {{-2, -2}, {2, 2}},
     collision_mask = dec_default_collision(),
     grows_through_rail_path = true,
-    walking_sound = sounds.carpet_grass,
+    walking_sound = base_tile_sounds.walking.carpet_grass,
     trigger_effect = decorative_trigger_effects.green_carpet_grass(),
     autoplace =
     {
@@ -3208,7 +3408,7 @@ data:extend{
     -- order = "a[polycephalum]-a[slime]",
     collision_box = {{-0.2, -0.2}, {0.2, 0.2}},
     collision_mask = dec_shallow_collision(),
-    walking_sound = sounds.plant,
+    walking_sound = base_tile_sounds.walking.plant,
     -- trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
@@ -3224,7 +3424,7 @@ data:extend{
     -- order = "a[polycephalum]-a[slime]",
     collision_mask = dec_shallow_collision(),
     collision_box = {{-0.2, -0.2}, {0.2, 0.2}},
-    walking_sound = sounds.plant,
+    walking_sound = base_tile_sounds.walking.plant,
     -- trigger_effect = decorative_trigger_effects.brown_carpet_grass(),
     render_layer = "decals",
     tile_layer = decal_tile_layer - 1,
@@ -3270,7 +3470,7 @@ data:extend{
     },
     map_color = {129, 105, 78},
     count_as_rock_for_filtered_deconstruction = true,
-    mined_sound = sounds.deconstruct_bricks(1.0),
+    mined_sound = base_sounds.deconstruct_bricks(1.0),
     impact_category = "stone",
     pictures =
     {
@@ -3425,7 +3625,7 @@ data:extend{
     },
     map_color = {129, 105, 78},
     count_as_rock_for_filtered_deconstruction = true,
-    mined_sound = sounds.deconstruct_bricks(1.0),
+    mined_sound = base_sounds.deconstruct_bricks(1.0),
     impact_category = "stone",
     pictures =
     {
@@ -3536,6 +3736,161 @@ data:extend{
       },
       {
         filename = "__space-age__/graphics/entity/stromatolite/copper/stromatolite-16.png",
+        width = 209,
+        height = 154,
+        shift = {0.351562, -0.1},
+        scale = 0.4
+      }
+    }
+  },
+  -- NICKEL STROMATOLITE
+  {
+    name = "nickel-stromatolite",
+    type = "simple-entity",
+    flags = {"placeable-neutral", "placeable-off-grid"},
+    icon = "__outer_moons__/graphics/icons/nickel-stromatolite.png",
+    subgroup = "grass",
+    order = "b[decorative]-l[rock]-a[big]",
+    collision_box = {{-0.5, -0.5}, {0.5, 0.5}},
+    selection_box = {{-0.7, -0.7}, {0.7, 0.7}},
+    collision_mask = {layers={player=true, ground_tile=true, train=true, is_object=true, is_lower_object=true}},
+    damaged_trigger_effect = hit_effects.rock(),
+    render_layer = "object",
+    max_health = 500,
+    autoplace = {
+      probability_expression = "gleba_select(gleba_nickel_stromatolite - clamp(gleba_decorative_knockout, 0, 1), 1.3, 2, 0.2, 0, 1)"
+    },
+    dying_trigger_effect = decorative_trigger_effects.big_rock(),
+    minable =
+    {
+      mining_particle = "stone-particle",
+      mining_time = 0.4,
+      results = {
+        {type = "item", name = "stone", amount_min = 3, amount_max = 7},
+        {type = "item", name = "nickel-ore", amount_min = 13, amount_max = 17},
+        {type = "item", name = "nickel-bacteria", amount_min = 23, amount_max = 37}
+      }
+    },
+    resistances =
+    {
+      {
+        type = "fire",
+        percent = 100
+      }
+    },
+    map_color = {129, 105, 78},
+    count_as_rock_for_filtered_deconstruction = true,
+    mined_sound = base_sounds.deconstruct_bricks(1.0),
+    impact_category = "stone",
+    pictures =
+    {
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-01.png",
+        width = 209,
+        height = 138,
+        shift = {0.304688, -0.4},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-02.png",
+        width = 165,
+        height = 129,
+        shift = {0.0, 0.0390625},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-03.png",
+        width = 151,
+        height = 139,
+        shift = {0.151562, 0.0},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-04.png",
+        width = 216,
+        height = 110,
+        shift = {0.390625, 0.0},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-05.png",
+        width = 154,
+        height = 147,
+        shift = {0.328125, 0.0703125},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-06.png",
+        width = 154,
+        height = 132,
+        shift = {0.16875, -0.1},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-07.png",
+        width = 193,
+        height = 130,
+        shift = {0.3, -0.2},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-08.png",
+        width = 136,
+        height = 117,
+        shift = {0.0, 0.0},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-09.png",
+        width = 157,
+        height = 115,
+        shift = {0.1, 0.0},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-10.png",
+        width = 198,
+        height = 153,
+        shift = {0.325, -0.1},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-11.png",
+        width = 190,
+        height = 115,
+        shift = {0.453125, 0.0},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-12.png",
+        width = 229,
+        height = 126,
+        shift = {0.539062, -0.015625},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-13.png",
+        width = 151,
+        height = 125,
+        shift = {0.0703125, 0.179688},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-14.png",
+        width = 137,
+        height = 117,
+        shift = {0.160938, 0.0},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-15.png",
+        width = 201,
+        height = 141,
+        shift = {0.242188, -0.195312},
+        scale = 0.4
+      },
+      {
+        filename = "__outer_moons__/graphics/entity/stromatolite/nickel/stromatolite-16.png",
         width = 209,
         height = 154,
         shift = {0.351562, -0.1},

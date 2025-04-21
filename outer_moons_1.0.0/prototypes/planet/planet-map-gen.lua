@@ -155,8 +155,8 @@ planet_map_gen.gleba = function()
       enemy_base_frequency = "gleba_enemy_base_frequency",
       ["entity:phosphate:richness"] = "gleba_stone_richness",
       ["entity:phosphate:probability"] = "gleba_stone_probability",
-      ["entity:lead-ore:richness"] = "gleba_lead_richness",
-      ["entity:lead-ore:probability"] = "gleba_lead_probability",
+	--["entity:lead-ore:richness"] = "gleba_lead_richness",
+	--["entity:lead-ore:probability"] = "gleba_lead_probability",
 
       ["decorative:red-desert-bush:probability"] = "gleba_red_desert_bush_probability",
       ["decorative:white-desert-bush:probability"] = "gleba_white_desert_bush_probability",
@@ -176,7 +176,7 @@ planet_map_gen.gleba = function()
     autoplace_controls =
     {
       ["gleba_stone"] = {},
-      ["gleba_lead"] = {},
+      --["gleba_lead"] = {},
       ["gleba_plants"] = {},
       ["gleba_enemy_base"] = {},
       ["gleba_water"] = {},
@@ -277,8 +277,12 @@ planet_map_gen.gleba = function()
           ["barnacles-decal"] = {},
           ["coral-stunted"] = {},
           ["coral-stunted-grey"] = {},
-          ["nerve-roots-veins-dense"] = {},
-          ["nerve-roots-veins-sparse"] = {},
+          ["red-nerve-roots-veins-dense"] = {},
+          ["red-nerve-roots-veins-sparse"] = {},
+          ["purple-nerve-roots-veins-dense"] = {},
+          ["purple-nerve-roots-veins-sparse"] = {},
+          ["cream-nerve-roots-veins-dense"] = {},
+          ["cream-nerve-roots-veins-sparse"] = {},
           ["yellow-coral"] = {},
           ["solo-barnacle"] = {},
           ["curly-roots-orange"] = {},
@@ -318,9 +322,10 @@ planet_map_gen.gleba = function()
         settings =
         {
           ["phosphate"] = {},
-          ["lead-ore"] = {},
+          --["lead-ore"] = {},
           ["iron-stromatolite"] = {},
-          ["copper-stromatolite"] = {}
+          ["copper-stromatolite"] = {},
+          ["nickel-stromatolite"] = {}
         }
       }
     }

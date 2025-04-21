@@ -1165,7 +1165,15 @@ data:extend{
       region_box = "gleba_select(gleba_aux, -1, 0.4, 0.1, -10, 1) - 1"
     }
   },
-
+  {
+    type = "noise-expression",
+    name = "gleba_nickel_stromatolite",
+    expression = "region_box - gleba_scrub_noise",
+    local_expressions =
+    { -- plateau potential: -10 to 0
+      region_box = "gleba_select(gleba_aux, 0.3, 0.7, 0.1, -10, 1) - 1"
+    }
+  },
 }
 
 --- GLEBA resources

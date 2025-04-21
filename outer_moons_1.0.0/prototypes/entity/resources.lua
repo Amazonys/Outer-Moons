@@ -290,6 +290,7 @@ data:extend({
 	resource(
 		{
 		  name = "phosphate",
+		  --icon = "__outer_moons__/graphics/icons/pyromorphite.png",
 		  order = "b",
 		  map_color = {r = 158/256, g = 103/256, b = 75/256, a = 1.000},
 		  minable =
@@ -297,8 +298,12 @@ data:extend({
 			  mining_particle = "stone-particle",
 			  mining_time = 1.5,
 			  result = "phosphate",
-			  fluid_amount = 10,
-			  required_fluid = "sulfuric-acid"
+			--  results = {
+			--	{type="item", name="phosphate", amount_min=1, amount_max=3, show_details_in_recipe_tooltip = false},
+			--	{type="item", name="lead-ore", amount_min=1, amount_max=5, show_details_in_recipe_tooltip = false},
+			-- }
+			  --fluid_amount = 10,
+			  --required_fluid = "sulfuric-acid"
 		  },
 		  walking_sound = sounds.ore,
 		  mining_visualisation_tint = {r = 158/256, g = 103/256, b = 75/256, a = 1.000},

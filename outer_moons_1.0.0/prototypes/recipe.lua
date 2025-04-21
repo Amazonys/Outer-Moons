@@ -109,6 +109,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "medium-electric-pole",
+		category = "electronics-or-assembling",
 		enabled = false,
 		ingredients =
 		{
@@ -121,6 +122,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "big-electric-pole",
+		category = "electronics-or-assembling",
 		enabled = false,
 		ingredients =
 		{
@@ -133,6 +135,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "substation",
+		category = "electronics-or-assembling",
 		enabled = false,
 		ingredients =
 		{
@@ -236,6 +239,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "passive-provider-chest",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -248,6 +252,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "active-provider-chest",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -260,6 +265,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "storage-chest",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -272,6 +278,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "buffer-chest",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -284,6 +291,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "requester-chest",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -296,6 +304,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "roboport",
+		category = "assembly-or-robotics",
 		enabled = false,
 		energy_required = 5,
 		ingredients =
@@ -663,7 +672,7 @@ data:extend({
 		allow_productivity = true,
 		icon = "__outer_moons__/graphics/icons/fluid/carbon-gasification.png",
 		subgroup = "hydrocarbon-recipes",
-		order = "a[oil-processing]-c[carbon-gasification]"
+		order = "a[oil-processing]-d[carbon-gasification]"
 	},
 	{
 		type = "recipe",
@@ -711,7 +720,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/fluid/methane-reforming.png",
 		
 		subgroup = "hydrocarbon-recipes",
-		order = "b[hydrocarbons]-a[methane-reforming]",		
+		order = "a[oil-processing]-c[methane-reforming]",		
 		crafting_machine_tint =
 		{
 		  primary = {r = 0.69, g = 0.55, b = 0.42, a = 1.000}, -- #fefeffff
@@ -772,8 +781,8 @@ data:extend({
 		allow_productivity = true,
 		icon = "__outer_moons__/graphics/icons/fluid/methanol-processing.png",
 		
-		subgroup = "hydrocarbon-recipes",
-		order = "b[hydrocarbons]-d[methanol-processing]",		
+		subgroup = "fluid-recipes",
+		order = "z[methanol-processing]",		
 		crafting_machine_tint =
 		{
 		  primary = {r = 0.69, g = 0.55, b = 0.42, a = 1.000}, -- #fefeffff
@@ -1172,11 +1181,12 @@ data:extend({
 		ingredients =
 		{
 		  {type = "fluid", name = "methane", amount = 10},
-		  {type = "fluid", name = "chlorine", amount = 15}
+		  {type = "fluid", name = "chlorine", amount = 30}
 		},
 		results =
 		{
 		  {type = "fluid", name = "chloroform", amount = 10},
+		  {type = "fluid", name = "hydrochloric-acid", amount = 30},
 		},
 		allow_productivity = true,
 		main_product = "chloroform",
@@ -1211,6 +1221,65 @@ data:extend({
 		},
 		allow_productivity = true,
 		main_product = "hydrofluoric-acid",
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.378, g = 0.677, b = 0.359, a = 1.000},
+		  secondary = {r = 0.378, g = 0.851, b = 0.341, a = 1.000},
+		  tertiary = {r = 0.478, g = 0.741, b = 0.571, a = 1.000},
+		  quaternary = {r = 0.290, g = 0.734, b = 0.455, a = 1.000},
+		}
+	},
+	{
+		type = "recipe",
+		name = "tetrafluoroethylene",
+		icon = "__outer_moons__/graphics/icons/fluid/tetrafluoroethylene.png",
+		category = "chemistry-or-cryogenics",
+		subgroup = "fluorine-recipes",
+		order = "f[fluorine]-c[tetrafluoroethylene]",
+		energy_required = 4,
+		enabled = false,
+		hide_from_player_crafting = true,
+		ingredients =
+		{
+		  {type = "fluid", name = "fluoroform", amount = 20},
+		},
+		results =
+		{
+		  {type = "fluid", name = "tetrafluoroethylene", amount = 10},
+		  {type = "fluid", name = "hydrofluoric-acid", amount = 20},
+		},
+		allow_productivity = true,
+		main_product = "tetrafluoroethylene",
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.378, g = 0.677, b = 0.359, a = 1.000},
+		  secondary = {r = 0.378, g = 0.851, b = 0.341, a = 1.000},
+		  tertiary = {r = 0.478, g = 0.741, b = 0.571, a = 1.000},
+		  quaternary = {r = 0.290, g = 0.734, b = 0.455, a = 1.000},
+		}
+	},
+	{
+		type = "recipe",
+		name = "fluoroform",
+		icon = "__outer_moons__/graphics/icons/fluid/fluoroform.png",
+		category = "chemistry-or-cryogenics",
+		subgroup = "fluorine-recipes",
+		order = "f[fluorine]-d[fluoroform]",
+		energy_required = 4,
+		enabled = false,
+		hide_from_player_crafting = true,
+		ingredients =
+		{
+		  {type = "fluid", name = "chloroform", amount = 10},
+		  {type = "fluid", name = "hydrofluoric-acid", amount = 30}
+		},
+		results =
+		{
+		  {type = "fluid", name = "fluoroform", amount = 10},
+		  {type = "fluid", name = "hydrochloric-acid", amount = 30},
+		},
+		allow_productivity = true,
+		main_product = "fluoroform",
 		crafting_machine_tint =
 		{
 		  primary = {r = 0.378, g = 0.677, b = 0.359, a = 1.000},
@@ -1325,7 +1394,7 @@ data:extend({
 		},
 		results =
 		{
-		  {type = "item", name = "plastic-bar", amount = 5}
+		  {type = "item", name = "plastic-bar", amount = 6}
 		},
 		allow_productivity = true,
 		crafting_machine_tint =
@@ -1596,6 +1665,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/steel-titanium-plate.png",
 		category = "alloying",
 		subgroup = "selene-resources",
+		order = "g",
 		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
@@ -1654,6 +1724,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/selene-caelium-plate.png",
 		category = "advanced-smelting",
 		subgroup = "selene-resources",
+		order = "h",
 		enabled = false,
 		auto_recycle = false,
 		energy_required = 4,
@@ -2450,6 +2521,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "rocket-silo",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -2466,6 +2538,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "cargo-landing-pad",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -2479,6 +2552,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "space-platform-foundation",
+		category = "assembly-or-robotics",
 		energy_required = 10,
 		enabled = false,
 		category = "crafting",
@@ -2493,6 +2567,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "space-platform-starter-pack",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -2506,6 +2581,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "cargo-bay",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -2519,6 +2595,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "asteroid-collector",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -2532,6 +2609,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "crusher",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -2545,6 +2623,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "thruster",
+		category = "assembly-or-robotics",
 		enabled = false,
 		ingredients =
 		{
@@ -2740,7 +2819,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/fluid/molten-iron-from-lava.png",
 		category = "metallurgy",
 		subgroup = "lava-fluid",
-		order = "a[melting]-a[lava-a]",
+		order = "b[melting]-a[lava-a]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2759,10 +2838,10 @@ data:extend({
 	{
 		type = "recipe",
 		name = "molten-copper-from-lava",
-		icon = "__space-age__/graphics/icons/fluid/molten-copper-from-lava.png",
+		icon = "__outer_moons__/graphics/icons/fluid/molten-copper-from-lava.png",
 		category = "metallurgy",
 		subgroup = "lava-fluid",
-		order = "a[melting]-a[lava-b]",
+		order = "b[melting]-a[lava-b]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2784,7 +2863,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/fluid/molten-lead-from-lava.png",
 		category = "metallurgy",
 		subgroup = "lava-fluid",
-		order = "a[melting]-a[lava-c]",
+		order = "b[melting]-a[lava-c]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2806,7 +2885,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/fluid/molten-nickel-from-lava.png",
 		category = "metallurgy",
 		subgroup = "lava-fluid",
-		order = "a[melting]-a[lava-d]",
+		order = "b[melting]-a[lava-d]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2828,7 +2907,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/fluid/molten-aluminum-from-lava.png",
 		category = "metallurgy",
 		subgroup = "lava-fluid",
-		order = "a[melting]-a[lava-e]",
+		order = "b[melting]-a[lava-e]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2850,7 +2929,7 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/fluid/molten-silicon-from-lava.png",
 		category = "metallurgy",
 		subgroup = "lava-fluid",
-		order = "a[melting]-a[lava-e]",
+		order = "b[melting]-a[lava-e]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2873,7 +2952,7 @@ data:extend({
 		name = "molten-lead",
 		category = "metallurgy",
 		subgroup = "vulcanus-fluid",
-		order = "a[melting]-d[molten-lead]",
+		order = "b[melting]-d[molten-lead]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2895,7 +2974,7 @@ data:extend({
 		name = "molten-nickel",
 		category = "metallurgy",
 		subgroup = "vulcanus-fluid",
-		order = "a[melting]-e[molten-nickel]",
+		order = "b[melting]-e[molten-nickel]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2917,7 +2996,7 @@ data:extend({
 		name = "molten-aluminum",
 		category = "metallurgy",
 		subgroup = "vulcanus-fluid",
-		order = "a[melting]-f[molten-aluminum]",
+		order = "b[melting]-f[molten-aluminum]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2939,7 +3018,7 @@ data:extend({
 		name = "molten-silicon",
 		category = "metallurgy",
 		subgroup = "vulcanus-fluid",
-		order = "a[melting]-g[molten-silicon]",
+		order = "b[melting]-g[molten-silicon]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2961,7 +3040,7 @@ data:extend({
 		name = "molten-titanium",
 		category = "metallurgy",
 		subgroup = "vulcanus-fluid",
-		order = "a[melting]-h[molten-titanium]",
+		order = "b[melting]-h[molten-titanium]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -2983,7 +3062,7 @@ data:extend({
 		name = "molten-magnesium",
 		category = "metallurgy",
 		subgroup = "vulcanus-fluid",
-		order = "a[melting]-i[molten-magnesium]",
+		order = "b[melting]-i[molten-magnesium]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -3005,7 +3084,7 @@ data:extend({
 		name = "molten-tungsten",
 		category = "metallurgy",
 		subgroup = "vulcanus-fluid",
-		order = "a[melting]-j[molten-tungsten]",
+		order = "b[melting]-j[molten-tungsten]",
 		auto_recycle = false,
 		enabled = false,
 		ingredients =
@@ -3729,8 +3808,10 @@ data:extend({
 	{
 		type = "recipe",
 		name = "thermite-explosives",
+		icon = "__outer_moons__/graphics/icons/thermite-explosives.png",
 		category = "robotics",
 		subgroup = "selene-processes",
+		order = "b[selene]-g[thermite-explosives]",
 		crafting_machine_tint =
 		{
 		  primary = {r = 0.968, g = 0.381, b = 0.259, a = 1.000}, -- #f66142ff
@@ -3766,7 +3847,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "hydrogen-rocket-fuel",
-		icon = "__outer_moons__/graphics/icons/oxygen-rocket-fuel.png",
+		icon = "__outer_moons__/graphics/icons/hydrogen-rocket-fuel.png",
 		energy_required = 5,
 		enabled = false,
 		category = "chemistry-or-cryogenics",
@@ -3891,6 +3972,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "beacon",
+		category = "electronics-or-assembling",
 		enabled = false,
 		energy_required = 15,
 		ingredients =
@@ -4373,31 +4455,27 @@ data:extend({
 	},
 	{
 		type = "recipe",
-		name = "genetic-science-pack",
-		category = "genetics",
+		name = "material-science-pack",
+		category = "adv-metallurgy",
 		surface_conditions =
 		{
 		  {
 			property = "pressure",
-			min = 1200,
-			max = 1200
+			min = 500,
+			max = 500
 		  }
 		},
 		enabled = false,
 		ingredients =
 		{
-		  {type = "item", name = "cobalt-plate", amount = 2},
-		  {type = "fluid", name = "adenine", amount = 10},
-		  {type = "fluid", name = "thymine", amount = 10},
-		  {type = "fluid", name = "guanine", amount = 10},
-		  {type = "fluid", name = "cytosine", amount = 10},
+		  {type = "item", name = "osmiridium-plate", amount = 1},
+		  {type = "item", name = "arsenene", amount = 2},
+		  {type = "fluid", name = "perchlorate", amount = 10},
 		},
 		energy_required = 10,
-		results = {{type="item", name="genetic-science-pack", amount=1}},
+		results = {{type="item", name="material-science-pack", amount=1}},
 		allow_productivity = true
 	},
-	
-	
 	{
 		type = "recipe",
 		name = "cryogenic-science-pack",
@@ -4433,6 +4511,71 @@ data:extend({
 		  quaternary = {r = 0.100, g = 0.300, b = 0.500, a = 1.000}, -- #194c7fff
 		}
 	},
+	{
+		type = "recipe",
+		name = "pneumatic-science-pack",
+		category = "synthesis",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 5000,
+			max = 5000
+		  }
+		},
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "graphene", amount = 1},
+		  {type = "item", name = "nanotube", amount = 2},
+		  {type = "item", name = "beryllium-plate", amount = 1},
+		},
+		energy_required = 10,
+		results = {{type="item", name="pneumatic-science-pack", amount=1}},
+		allow_productivity = true
+	},
+	{
+		type = "recipe",
+		name = "genetic-science-pack",
+		category = "genetics",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 1200,
+			max = 1200
+		  }
+		},
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "cobalt-plate", amount = 2},
+		  {type = "fluid", name = "adenine", amount = 10},
+		  {type = "fluid", name = "thymine", amount = 10},
+		  {type = "fluid", name = "guanine", amount = 10},
+		  {type = "fluid", name = "cytosine", amount = 10},
+		},
+		energy_required = 10,
+		results = {{type="item", name="genetic-science-pack", amount=1}},
+		allow_productivity = true
+	},
+	{
+		type = "recipe",
+		name = "particle-science-pack",
+		category = "particle-physics",
+		enabled = false,
+		ingredients =
+		{
+		  {type = "fluid", name = "proton-stream", amount = 2},
+		  {type = "fluid", name = "neutron-stream", amount = 2},
+		  {type = "fluid", name = "electron-stream", amount = 2},
+		},
+		energy_required = 10,
+		results = {{type="item", name="particle-science-pack", amount=1}},
+		allow_productivity = true
+	},
+	
+	
 	{
 		type = "recipe",
 		name = "promethium-science-pack",
@@ -5138,7 +5281,7 @@ data:extend({
         {type = "item", name = "funnelbranch", amount = 3},
       },
       subgroup = "agriculture-processes",
-      order = "b[agriculture]-d[funnelwood-processing]",
+      order = "d[agriculture]-d[funnelwood-processing]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -5166,7 +5309,7 @@ data:extend({
         {type = "fluid", name = "slipgoo", amount = 10},
       },
       subgroup = "agriculture-processes",
-      order = "b[agriculture]-a[slipstack-polyp-processing]",
+      order = "d[agriculture]-a[slipstack-polyp-processing]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -5181,7 +5324,7 @@ data:extend({
 		icon = "__space-age__/graphics/icons/yumako-processing.png",
 		category = "organic-or-hand-crafting",
 		subgroup = "agriculture-processes",
-		order = "b[agriculture]-f[yumako-processing]",
+		order = "d[agriculture]-f[yumako-processing]",
 		enabled = false,
 		allow_productivity = true,
 		energy_required = 1,
@@ -5216,7 +5359,7 @@ data:extend({
         {type = "fluid", name = "mawslush", amount = 15},
       },
       subgroup = "agriculture-processes",
-      order = "b[agriculture]-e[mawpouch-processing]",
+      order = "d[agriculture]-e[mawpouch-processing]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -5242,7 +5385,7 @@ data:extend({
         {type = "item", name = "frondstrand", amount = 5},
       },
       subgroup = "agriculture-processes",
-      order = "b[agriculture]-h[frondstalk-processing]",
+      order = "d[agriculture]-h[frondstalk-processing]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -5268,7 +5411,7 @@ data:extend({
         {type = "item", name = "jelly", amount = 3},
       },
       subgroup = "agriculture-processes",
-      order = "b[agriculture]-c[jellynut-processing]",
+      order = "d[agriculture]-c[jellynut-processing]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -5294,7 +5437,7 @@ data:extend({
         {type = "item", name = "boompowder", amount = 5},
       },
       subgroup = "agriculture-processes",
-      order = "b[agriculture]-g[boompuff-bulb-processing]",
+      order = "d[agriculture]-g[boompuff-bulb-processing]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -5312,15 +5455,15 @@ data:extend({
       energy_required = 5,
       ingredients =
       {
-        {type = "item", name = "teflilly", amount = 5},
+        {type = "item", name = "teflilly", amount = 1},
       },
       results =
       {
 		{type = "item", name = "teflilly-seed", amount = 1, probability = 0.02},
-        {type = "fluid", name = "tetrafluoroethylene", amount = 10},
+        {type = "item", name = "tefpetal", amount = 6},
       },
       subgroup = "agriculture-processes",
-      order = "b[agriculture]-b[teflilly-processing]",
+      order = "d[agriculture]-b[teflilly-processing]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -5329,6 +5472,58 @@ data:extend({
         secondary = {r = 0.75, g = 0.76, b = 0.52, a = 1.000}
       }
     },  
+	{
+      type = "recipe",
+      name = "mawslush-chloroform",
+      category = "organic",
+      icon = "__outer_moons__/graphics/icons/mawslush-chloroform.png",
+      enabled = false,
+      energy_required = 12,
+      ingredients =
+      {
+        {type = "fluid", name = "mawslush", amount = 15, fluidbox_multiplier = 10},
+        {type = "item", name = "carbon", amount = 5},
+      },
+      results =
+      {
+        {type = "fluid", name = "chloroform", amount = 5},
+      },
+      subgroup = "agriculture-products",
+      order = "a[organic-processing]-e[mawslush-chloroform]",
+      allow_productivity = true,
+      auto_recycle = false,
+      crafting_machine_tint =
+      {
+        primary = {r = 0.62, g = 0.11, b = 0.38, a = 1.000},
+        secondary = {r = 0.72, g = 0.21, b = 0.48, a = 1.000}
+      }
+    },		
+	{
+      type = "recipe",
+      name = "mawslush-crystallization",
+      category = "organic",
+      icon = "__outer_moons__/graphics/icons/mawslush-crystallization.png",
+      enabled = false,
+      energy_required = 12,
+      ingredients =
+      {
+        {type = "fluid", name = "mawslush", amount = 10, fluidbox_multiplier = 10},
+        {type = "item", name = "bioflux", amount = 1},
+      },
+      results =
+      {
+        {type = "item", name = "potassium-salt", amount = 2},
+      },
+      subgroup = "agriculture-intermediates",
+      order = "e[mawslush-crystallization]",
+      allow_productivity = true,
+      auto_recycle = false,
+      crafting_machine_tint =
+      {
+        primary = {r = 0.62, g = 0.11, b = 0.38, a = 1.000},
+        secondary = {r = 0.72, g = 0.21, b = 0.48, a = 1.000}
+      }
+    },	
     {
       type = "recipe",
       name = "glycerol-extraction",
@@ -5338,7 +5533,7 @@ data:extend({
       energy_required = 12,
       ingredients =
       {
-        {type = "item", name = "yumako-mash", amount = 10},
+        --{type = "item", name = "yumako-mash", amount = 15},
         {type = "item", name = "bioflux", amount = 2},
         {type = "fluid", name = "mawslush", amount = 30, fluidbox_multiplier = 10},
       },
@@ -5346,8 +5541,8 @@ data:extend({
       {
         {type = "fluid", name = "glycerol", amount = 20},
       },
-      subgroup = "agriculture-products",
-      order = "b[organic-products]-e[glycerol-extraction]",
+      subgroup = "bioflux-intermediates",
+      order = "e[glycerol-extraction]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -5360,19 +5555,19 @@ data:extend({
       type = "recipe",
       name = "bioslurry",
       category = "organic-or-chemistry",
-      icon = "__space-age__/graphics/icons/bioflux.png",
+      icon = "__outer_moons__/graphics/icons/fluid/gleba-bioslurry.png",
       enabled = false,
       energy_required = 12,
       ingredients =
 	  {
-        {type = "item", name = "sunnylattice", amount = 10},
-        {type = "item", name = "jelly", amount = 5},
+        {type = "item", name = "jelly", amount = 10},
+        {type = "item", name = "yumako-mash", amount = 5},
         {type = "fluid", name = "slipgoo", amount = 20, fluidbox_multiplier = 10},
         {type = "fluid", name = "mawslush", amount = 30, fluidbox_multiplier = 10},
 	  },
       results =
       {
-        {type = "item", name = "bioflux", amount = 4},
+        {type = "fluid", name = "bioslurry", amount = 10},
       },
       allow_productivity = true,
       auto_recycle = false,
@@ -5391,7 +5586,7 @@ data:extend({
       energy_required = 8,
       ingredients =
 	  {
-        {type = "item", name = "fertilizer", amount = 10},
+        --{type = "item", name = "fertilizer", amount = 10},
         {type = "fluid", name = "water", amount = 10, fluidbox_multiplier = 10},
         {type = "fluid", name = "bioslurry", amount = 15, fluidbox_multiplier = 10},
 	  },
@@ -5416,15 +5611,15 @@ data:extend({
       energy_required = 12,
       ingredients =
       {
-        {type = "fluid", name = "slipgoo", amount = 6, fluidbox_multiplier = 10},
-        {type = "fluid", name = "water", amount = 10, fluidbox_multiplier = 10},
+        {type = "item", name = "spoilage", amount = 5},
+        {type = "item", name = "stone", amount = 1},
       },
       results =
       {
         {type = "item", name = "nitrocalcite", amount = 2},
       },
-      subgroup = "agriculture-products",
-      order = "a[organic-products]-a[nitrocalcite]",
+      subgroup = "gleba-general",
+      order = "e[nitrocalcite]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -5437,7 +5632,7 @@ data:extend({
 		type = "recipe",
 		name = "carbon-fiber",
 		category = "organic",
-		subgroup = "gleba-general",
+		subgroup = "bioflux-intermediates",
 		order = "h[carbon-fiber]",
 		auto_recycle = false,
 		energy_required = 5,
@@ -5462,8 +5657,8 @@ data:extend({
 		name = "burnt-spoilage",
 		icon = "__outer_moons__/graphics/icons/frondstrand-splitting.png",
 		category = "organic",
-		subgroup = "agriculture-products",
-		order = "b[organic-products]-h[burnt-spoilage]",
+		subgroup = "agriculture-intermediates",
+		order = "h[burnt-spoilage]",
 		auto_recycle = false,
 		energy_required = 12,
 		ingredients =
@@ -5485,21 +5680,21 @@ data:extend({
 	{
 		type = "recipe",
 		name = "ethanol-synthesis",
-		icon = "__outer_moons__/graphics/icons/ethanol-synthesis.png",
+		icon = "__outer_moons__/graphics/icons/fluid/ethanol-synthesis.png",
 		category = "organic",
-		subgroup = "agriculture-products",
-		order = "b[organic-products]-c[ethanol-synthesis]",
+		subgroup = "bioflux-intermediates",
+		order = "f[ethanol-synthesis]",
 		auto_recycle = false,
 		enabled = false,
 		allow_productivity = true,
 		energy_required = 10,
 		ingredients =
 		{
+		  {type = "item", name = "yumako-mash", amount = 10},
 		  {type = "fluid", name = "water", amount = 20},
-		  {type = "item", name =  "nutrients", amount = 10},
-		  {type = "item", name =  "jelly", amount = 5},
+		  {type = "item", name =  "bioflux", amount = 1},
 		},
-		results = {{type="fluid", name="ethanol", amount=25}},
+		results = {{type="fluid", name="ethanol", amount=15}},
 		crafting_machine_tint =
 		{
 		  primary = {r = 0.47, g = 0.68, b = 0.55, a = 1.000}, 
@@ -5511,8 +5706,8 @@ data:extend({
 		name = "rocket-fuel-from-jelly",
 		icon = "__outer_moons__/graphics/icons/biofuel.png",
 		category = "organic",
-		subgroup = "gleba-general",
-		order = "e[biofuel]",
+		subgroup = "bioflux-intermediates",
+		order = "c[biofuel]",
 		auto_recycle = false,
 		enabled = false,
 		allow_productivity = true,
@@ -5536,19 +5731,43 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/fluid/biolubricant.png",
 		category = "organic",
 		subgroup = "agriculture-products",
-		order = "b[organic-products]-a[biolubricant]",
+		order = "a[biolubricant]",
 		auto_recycle = false,
 		energy_required = 3,
 		enabled = false,
 		ingredients =
 		{
 		  {type = "fluid", name = "slipgoo", amount = 20, fluidbox_multiplier = 10},
-		  {type = "fluid", name = "water", amount = 5, fluidbox_multiplier = 10},
-		  {type = "item", name = "bioflux", amount = 1}
+		  {type = "fluid", name = "water", amount = 10, fluidbox_multiplier = 10},
 		},
 		results =
 		{
-		  {type = "fluid", name="lubricant", amount = 10}
+		  {type = "fluid", name="lubricant", amount = 20}
+		},
+		allow_productivity = true,
+		crafting_machine_tint =
+		{
+		  primary = {r = 0, g = 1, b = 0, a = 1.000},
+		  secondary = {r = 0.3, g = 1, b = 0.3, a = 1.000},
+		}
+	},
+	{
+		type = "recipe",
+		name = "tefpetal-extraction",
+		icon = "__outer_moons__/graphics/icons/tefpetal-breakdown.png",
+		category = "organic",
+		subgroup = "agriculture-intermediates",
+		order = "b[tefpetal-extraction]",
+		auto_recycle = false,
+		energy_required = 3,
+		enabled = false,
+		ingredients =
+		{
+		  {type = "item", name = "tefpetal", amount = 10}
+		},
+		results =
+		{
+		  {type = "fluid", name = "hydrofluoric-acid", amount = 20},
 		},
 		allow_productivity = true,
 		crafting_machine_tint =
@@ -5562,7 +5781,7 @@ data:extend({
 		name = "bioplastic",
 		icon = "__outer_moons__/graphics/icons/bioplastic.png",
 		category = "organic",
-		subgroup = "agriculture-products",
+		subgroup = "bioflux-intermediates",
 		order = "b[organic-products]-b[bioplastic]",
 		auto_recycle = false,
 		enabled = false,
@@ -5570,10 +5789,10 @@ data:extend({
 		energy_required = 2,
 		ingredients =
 		{
-		  {type = "item", name = "sunnylattice", amount = 4},
-		  {type = "item", name = "jelly", amount = 3}
+		  {type = "fluid", name = "tetrafluoroethylene", amount = 30},
+		  {type = "item", name = "bioflux", amount = 1}
 		},
-		results = {{type="item", name="plastic-bar", amount=2}},
+		results = {{type="item", name="plastic-bar", amount=5}},
 		crafting_machine_tint =
 		{
 		  primary = {r = 0.722, g = 0.621, b = 0.655, a = 1.000},
@@ -5585,7 +5804,7 @@ data:extend({
 		name = "biosulfur",
 		icon = "__outer_moons__/graphics/icons/biosulfur.png",
 		category = "organic",
-		subgroup = "gleba-general",
+		subgroup = "bioflux-intermediates",
 		order = "g[biosulfur]",
 		auto_recycle = false,
 		enabled = false,
@@ -5594,10 +5813,10 @@ data:extend({
 		ingredients =
 		{
 		  {type = "item", name = "boompowder", amount = 5},
+		  {type = "fluid", name = "water", amount = 10, fluidbox_multiplier = 10},
 		  {type = "item", name = "bioflux", amount = 1},
-		  {type = "fluid", name = "water", amount = 10},
 		},
-		results = {{type="fluid", name="sulfuric-acid", amount=2}},
+		results = {{type="fluid", name="sulfuric-acid", amount=10}},
 		crafting_machine_tint =
 		{
 		  primary = {r = 1, g = 1, b = 0, a = 1.000},
@@ -5621,8 +5840,8 @@ data:extend({
 		allow_productivity = true,
 		auto_recycle = false,
 		energy_required = 8,
-		subgroup = "agriculture-products",
-		order = "b[organic-products]-g[biogrenades]",
+		subgroup = "agriculture-intermediates",
+		order = "g[biogrenades]",
 		ingredients =
 		{
 		  {type = "item", name = "boompowder", amount = 12},
@@ -5634,15 +5853,7 @@ data:extend({
 		type = "recipe",
 		name = "niter-synthesis",
 		icon = "__outer_moons__/graphics/icons/niter-synthesis.png",
-		category = "organic",
-		surface_conditions =
-		{
-		  {
-			property = "pressure",
-			min = 2500,
-			max = 2500
-		  }
-		},
+		category = "organic-or-chemistry",
 		enabled = false,
 		allow_productivity = true,
 		auto_recycle = false,
@@ -5729,19 +5940,19 @@ data:extend({
 			max = 2500
 		  }
 		},
-		subgroup = "agriculture-products",
-		order = "b[organic-products]-d[iron-bacteria]",
+		subgroup = "agriculture-intermediates",
+		order = "d[iron-bacteria]",
 		enabled = false,
 		allow_productivity = true,
 		energy_required = 1,
 		ingredients =
 		{
-		  {type = "item", name = "funnelbranch", amount = 6},
+		  {type = "item", name = "funnelbranch", amount = 5},
 		},
 		results =
 		{
 		  {type = "item", name = "iron-bacteria", amount = 1, probability = 0.1 },
-		  {type = "item", name = "spoilage", amount = 4}
+		  {type = "item", name = "spoilage", amount = 1}
 		},
 		crafting_machine_tint =
 		{
@@ -5751,28 +5962,211 @@ data:extend({
 	},
 	{
 		type = "recipe",
-		name = "silicon-extraction",
-		icon = "__outer_moons__/graphics/icons/funnelbranch-silicon.png",
+		name = "biowall",
+		icon = "__outer_moons__/graphics/icons/biowall.png",
 		category = "organic",
-		subgroup = "gleba-general",
-		order = "d[silicon-extraction]",
+		subgroup = "bioflux-intermediates",
+		order = "d[biowall]",
 		enabled = false,
 		allow_productivity = true,
 		energy_required = 1,
 		ingredients =
 		{
-		  {type = "item", name = "funnelbranch", amount = 10},
+		  {type = "item", name = "funnelbranch", amount = 8},
 		  {type = "item", name = "bioflux", amount = 1},
 		},
 		results =
 		{
-		  {type = "item", name = "silicon-ore", amount = 2}
+		  {type = "item", name = "stone-wall", amount = 2}
 		},
 		crafting_machine_tint =
 		{
-		  primary = {r = 0.59, g = 0.54, b = 0.66, a = 1.000}, -- #007fffff
-		  secondary = {r = 0.54, g = 0.49, b = 0.61, a = 1.000}, -- #1868d1ff
+		  primary = {r = 0.000, g = 0.500, b = 1.000, a = 1.000}, -- #007fffff
+		  secondary = {r = 0.095, g = 0.412, b = 0.822, a = 1.000}, -- #1868d1ff
 		}
+	},
+	{
+		type = "recipe",
+		name = "nickel-bacteria",
+		icon = "__outer_moons__/graphics/icons/jelly-nickel.png",
+		category = "organic-or-hand-crafting",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 2500,
+			max = 2500
+		  }
+		},
+		subgroup = "agriculture-intermediates",
+		order = "c[nickel-bacteria]",
+		enabled = false,
+		allow_productivity = true,
+		energy_required = 1,
+		ingredients =
+		{
+		  {type = "item", name = "jelly", amount = 4},
+		},
+		results =
+		{
+		  {type = "item", name = "nickel-bacteria", amount = 1, probability = 0.1 },
+		  {type = "item", name = "spoilage", amount = 1}
+		},
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.000, g = 0.500, b = 1.000, a = 1.000}, -- #007fffff
+		  secondary = {r = 0.095, g = 0.822, b = 0.412, a = 1.000}, -- #1868d1ff
+		},
+	},
+	{
+		type = "recipe",
+		name = "copper-bacteria",
+		icon = "__outer_moons__/graphics/icons/mash-copper.png",
+		category = "organic-or-hand-crafting",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 2500,
+			max = 2500
+		  }
+		},
+		subgroup = "agriculture-intermediates",
+		order = "f[copper-bacteria]",
+		enabled = false,
+		allow_productivity = true,
+		energy_required = 1,
+		ingredients =
+		{
+		  {type = "item", name = "yumako-mash", amount = 3},
+		},
+		results =
+		{
+		  {type = "item", name = "copper-bacteria", amount = 1, probability = 0.1 },
+		  {type = "item", name = "spoilage", amount = 1}
+		},
+		--main_product = "copper-bacteria",
+		crafting_machine_tint =
+		{
+		  primary = {r = 1.000, g = 0.457, b = 0.000, a = 1.000}, -- #ff7400ff
+		  secondary = {r = 1.000, g = 0.196, b = 0.000, a = 1.000}, -- #ff3100ff
+		}
+	},
+	{
+		type = "recipe",
+		name = "nickel-bacteria-cultivation",
+		icon = "__outer_moons__/graphics/icons/nickel-bacteria-cultivation.png",
+		category = "organic",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 2500,
+			max = 2500
+		  }
+		},
+		subgroup = "bacteria",
+		order = "f[bacteria]",
+		enabled = false,
+		allow_productivity = true,
+		result_is_always_fresh = true,
+		energy_required = 4,
+		ingredients =
+		{
+		  {type = "item", name = "nickel-bacteria", amount = 1},
+		  {type = "item", name = "bioflux", amount = 1}
+		},
+		results =
+		{
+		  {type = "item", name = "nickel-bacteria", amount = 4}
+		},
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.000, g = 0.500, b = 1.000, a = 1.000}, -- #007fffff
+		  secondary = {r = 0.095, g = 0.822, b = 0.412, a = 1.000}, -- #1868d1ff
+		},
+		show_amount_in_title = false
+	},
+	{
+		type = "recipe",
+		name = "pyromorphitic-extraction",
+		icon = "__outer_moons__/graphics/icons/pyromorphitic-extraction.png",
+		category = "organic-or-chemistry", --chemistry-or-cryogenics
+		subgroup = "gleba-general",
+		order = "ab[pyromorphitic-extraction]",
+		enabled = false,
+		allow_productivity = true,
+		result_is_always_fresh = true,
+		energy_required = 4,
+		ingredients =
+		{
+		  {type = "item", name = "phosphate", amount = 50},
+		  {type = "fluid", name = "sulfuric-acid", amount = 5}
+		},
+		results =
+		{
+		  {type="item", name="lead-ore", amount_min = 2, amount_max = 10 }
+		},
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.440, g = 0.322, b = 0.306, a = 1.000}, -- #007fffff
+		  secondary = {r = 0.440, g = 0.322, b = 0.306, a = 1.000}, -- #1868d1ff
+		},
+		show_amount_in_title = false
+	},
+	{
+		type = "recipe",
+		name = "phosphasilenic-extraction",
+		icon = "__outer_moons__/graphics/icons/phosphasilenic-extraction.png",
+		category = "chemistry-or-cryogenics", --organic-or-chemistry
+		subgroup = "gleba-general",
+		order = "ac[phosphasilenic-extraction]",
+		enabled = false,
+		allow_productivity = true,
+		result_is_always_fresh = true,
+		energy_required = 4,
+		ingredients =
+		{
+		  {type = "item", name = "phosphate", amount = 50},
+		  {type = "fluid", name = "sulfuric-acid", amount = 5}
+		},
+		results =
+		{
+		  {type="item", name="silicon-ore", amount_min = 2, amount_max = 10 }
+		},
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.440, g = 0.322, b = 0.306, a = 1.000}, -- #007fffff
+		  secondary = {r = 0.440, g = 0.322, b = 0.306, a = 1.000}, -- #1868d1ff
+		},
+		show_amount_in_title = false
+	},
+	{
+		type = "recipe",
+		name = "berlinitic-extraction",
+		icon = "__outer_moons__/graphics/icons/berlinitic-extraction.png",
+		category = "chemistry-or-cryogenics", --organic-or-chemistry
+		subgroup = "gleba-general",
+		order = "ad[berlinitic-extraction]",
+		enabled = false,
+		allow_productivity = true,
+		result_is_always_fresh = true,
+		energy_required = 4,
+		ingredients =
+		{
+		  {type = "item", name = "phosphate", amount = 50},
+		  {type = "fluid", name = "sulfuric-acid", amount = 5}
+		},
+		results =
+		{
+		  {type="item", name="alumina", amount_min = 2, amount_max = 10 }
+		},
+		crafting_machine_tint =
+		{
+		  primary = {r = 0.440, g = 0.322, b = 0.306, a = 1.000}, -- #007fffff
+		  secondary = {r = 0.440, g = 0.322, b = 0.306, a = 1.000}, -- #1868d1ff
+		},
+		show_amount_in_title = false
 	},
 	--Soils
 	{
@@ -5796,10 +6190,10 @@ data:extend({
 		energy_required = 4,
 		ingredients =
 		{
-		  {type = "item", name = "phosphate", amount = 10},
+		  {type = "item", name = "phosphate", amount = 20},
 		  {type = "item", name = "nitrocalcite", amount = 6},
 		  {type = "item", name = "potassium-salt", amount = 4},
-		  {type = "item", name = "nutrients", amount = 3}
+		  {type = "item", name = "nutrients", amount = 10}
 		},
 		results = {{type="item", name="fertilizer", amount=10}}
 	},
@@ -5809,13 +6203,13 @@ data:extend({
 		icon = "__outer_moons__/graphics/icons/stone-synthesis.png",
 		category = "smelting",
 		subgroup = "gleba-general",
-		order = "f[stone-synthesis]",
+		order = "d[stone-synthesis]",
 		surface_conditions =
 		{
 		  {
 			property = "pressure",
 			min = 2500,
-			max = 5000
+			max = 2500
 		  }
 		},
 		enabled = false,
@@ -5824,11 +6218,62 @@ data:extend({
 		energy_required = 8,
 		ingredients =
 		{
-		  {type = "item", name = "calcite", amount = 3}
+		  {type = "item", name = "calcite", amount = 3},
 		},
 		results = {{type="item", name="stone", amount=1}}
 	},
-	
+	{
+		type = "recipe",
+		name = "concrete-synthesis",
+		icon = "__outer_moons__/graphics/icons/slipconcrete.png",
+		category = "organic",
+		subgroup = "agriculture-intermediates",
+		order = "a[concrete-synthesis]",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 2500,
+			max = 2500
+		  }
+		},
+		enabled = false,
+		allow_productivity = true,
+		auto_recycle = false,
+		energy_required = 8,
+		ingredients =
+		{
+		  {type = "item", name = "stone-brick", amount = 5},
+		  {type = "fluid", name = "slipgoo", amount = 20, fluidbox_multiplier = 10},
+		},
+		results = {{type="item", name="concrete", amount=10}}
+	},
+	{
+		type = "recipe",
+		name = "refined-concrete-synthesis",
+		icon = "__outer_moons__/graphics/icons/refined-slipconcrete.png",
+		category = "organic",
+		subgroup = "bioflux-intermediates",
+		order = "a[stone-synthesis]",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 2500,
+			max = 2500
+		  }
+		},
+		enabled = false,
+		allow_productivity = true,
+		auto_recycle = false,
+		energy_required = 8,
+		ingredients =
+		{
+		  {type = "item", name = "concrete", amount = 20},
+		  {type = "fluid", name = "slipgoo", amount = 20, fluidbox_multiplier = 10},
+		},
+		results = {{type="item", name="refined-concrete", amount=10}}
+	},
 	{
 		type = "recipe",
 		name = "artificial-cuticle-soil",
@@ -6094,8 +6539,9 @@ data:extend({
       {
         {type = "fluid", name = "heavy-oil", amount = 65},
         {type = "fluid", name = "aromatics", amount = 30},
-        {type = "fluid", name = "water", amount = 105},
-        {type = "item", name = "microplastic", amount_min = 4, amount_max = 8},
+        {type = "fluid", name = "water", amount = 55},
+        {type = "item", name = "microplastic", amount_min = 4, amount_max = 12},
+        {type = "item", name = "sulfur", amount_min = 2, amount_max = 6},
       },
       subgroup = "separation-recipes",
       order = "a[separation]-b[fulgoran-sludge-separation]",
@@ -6114,7 +6560,7 @@ data:extend({
 		name = "electrolyte",
 		category = "electromagnetics",
 		subgroup = "fulgora-processes",
-		order = "b[holmium]-e[electrolyte]",
+		order = "c[holmium]-a[electrolyte]",
 		energy_required = 5,
 		ingredients =
 		{
@@ -6136,14 +6582,14 @@ data:extend({
       energy_required = 5,
       ingredients =
       {
-        {type = "item", name = "microplastic", amount = 20}
+        {type = "item", name = "microplastic", amount = 10}
       },
       results =
       {
         {type = "item", name = "plastic-bar", amount = 1}
       },
       subgroup = "fulgora-processes",
-      order = "b[chemistry-fulgora]-a[amalgamate-microplastic]",
+      order = "b[chemistry-fulgora]-b[amalgamate-microplastic]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =
@@ -6159,7 +6605,7 @@ data:extend({
 		name = "superconductor",
 		category = "electromagnetics",
 		subgroup = "fulgora-processes",
-		order = "b[holmium]-d[superconductor]",
+		order = "c[holmium]-b[superconductor]",
 		energy_required = 5,
 		ingredients =
 		{
@@ -6177,7 +6623,7 @@ data:extend({
 		name = "supercapacitor",
 		category = "electromagnetics",
 		subgroup = "fulgora-processes",
-		order = "b[holmium]-g[supercapacitor]",
+		order = "c[holmium]-c[supercapacitor]",
 		energy_required = 10,
 		ingredients =
 		{
@@ -6194,8 +6640,8 @@ data:extend({
 		type = "recipe",
 		name = "solid-state-battery",
 		category = "electromagnetics",
-		subgroup = "fulgora-processes",
-		order = "b[holmium]-f[solid-state-battery]",
+		subgroup = "chemical-product",
+		order = "e[solid-state-battery]",
 		energy_required = 10,
 		ingredients =
 		{
@@ -6520,7 +6966,7 @@ data:extend({
 		},
 		category = "recycling-or-hand-crafting",
 		subgroup = "fulgora-processes",
-		order = "a[trash]-a[trash-recycling]",
+		order = "a[trash]-b[trash-recycling]",
 		enabled = false,
 		auto_recycle = false,
 		energy_required = 0.2,
@@ -6890,6 +7336,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "arithmetic-combinator",
+		category = "electronics-or-assembling",
 		enabled = false,
 		ingredients =
 		{
@@ -6901,6 +7348,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "decider-combinator",
+		category = "electronics-or-assembling",
 		enabled = false,
 		ingredients =
 		{
@@ -6912,6 +7360,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "constant-combinator",
+		category = "electronics-or-assembling",
 		enabled = false,
 		ingredients =
 		{
@@ -6923,6 +7372,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "selector-combinator",
+		category = "electronics-or-assembling",
 		enabled = false,
 		ingredients =
 		{
@@ -6934,6 +7384,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "power-switch",
+		category = "electronics-or-assembling",
 		enabled = false,
 		energy_required = 2,
 		ingredients =
@@ -6947,6 +7398,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "programmable-speaker",
+		category = "electronics-or-assembling",
 		enabled = false,
 		energy_required = 2,
 		ingredients =
@@ -6961,6 +7413,7 @@ data:extend({
 	{
 		type = "recipe",
 		name = "display-panel",
+		category = "electronics-or-assembling",
 		ingredients = {{type = "item", name = "plastic-bar", amount = 2}, {type = "item", name = "small-lamp", amount = 4}, {type = "item", name = "integrated-circuit", amount = 1}},
 		results = {{type="item", name="display-panel", amount=1}},
 		enabled = false
@@ -7310,7 +7763,7 @@ data:extend({
         {type = "item", name = "sunnylattice", amount = 1},
       },
       subgroup = "aiolos-agriculture",
-      order = "b[agriculture]-b[sunnycomb-processing]",
+      order = "c[agriculture]-b[sunnycomb-processing]",
       allow_productivity = true,
       auto_recycle = false,
       crafting_machine_tint =

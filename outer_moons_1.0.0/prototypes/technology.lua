@@ -1257,6 +1257,91 @@ data:extend(
       entity = "jellystem"
     }
   },
+  -- Late-game science
+  {
+    type = "technology",
+    name = "material-science-pack",
+    icon = "__outer_moons__/graphics/technology/material-science-pack.png",
+    icon_size = 256,
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "material-science-pack",
+      },
+    },
+    prerequisites = {"planet-discovery-mefitis"},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "megafoundry"
+    }
+  },
+  {
+    type = "technology",
+    name = "pneumatic-science-pack",
+    icon = "__outer_moons__/graphics/technology/pneumatic-science-pack.png",
+    icon_size = 256,
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "pneumatic-science-pack",
+      },
+    },
+    prerequisites = {"planet-discovery-aiolos"},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "synthesizer"
+    }
+  },
+  {
+    type = "technology",
+    name = "genetic-science-pack",
+    icon = "__outer_moons__/graphics/technology/genetic-science-pack.png",
+    icon_size = 256,
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "genetic-science-pack",
+      },
+    },
+    prerequisites = {"planet-discovery-feronia"},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "gene-chamber"
+    }
+  },
+  {
+    type = "technology",
+    name = "particle-science-pack",
+    icon = "__outer_moons__/graphics/technology/particle-science-pack.png",
+    icon_size = 256,
+    icon_size = 256,
+    essential = true,
+    effects =
+    {
+      {
+        type = "unlock-recipe",
+        recipe = "particle-science-pack",
+      },
+    },
+    prerequisites = {"material-science-pack", "cryogenic-science-pack", "pneumatic-science-pack", "genetic-science-pack",},
+    research_trigger =
+    {
+      type = "craft-item",
+      item = "particle-collider"
+    }
+  },
   -- Infinites
   {
     type = "technology",

@@ -501,9 +501,9 @@ data:extend(
   {
     type = "fluid",
     name = "lava",
-    icon = "__space-age__/graphics/icons/fluid/lava.png",
+    icon = "__outer_moons__/graphics/icons/fluid/lava.png",
     subgroup = "lava-fluid",
-    order = "i[vulcanus]-b[lava]",
+    order = "a[lava]",
     default_temperature = 1500,
     max_temperature = 4000,
     heat_capacity = "0.01kJ",
@@ -514,7 +514,7 @@ data:extend(
   {
     type = "fluid",
     name = "molten-iron",
-    icon = "__space-age__/graphics/icons/fluid/molten-iron.png",
+    icon = "__outer_moons__/graphics/icons/fluid/molten-iron.png",
     subgroup = "vulcanus-fluid",
     order = "i[vulcanus]-c[molten-iron]",
     default_temperature = 1500,
@@ -527,7 +527,7 @@ data:extend(
   {
     type = "fluid",
     name = "molten-copper",
-    icon = "__space-age__/graphics/icons/fluid/molten-copper.png",
+    icon = "__outer_moons__/graphics/icons/fluid/molten-copper.png",
     subgroup = "vulcanus-fluid",
     order = "i[vulcanus]-d[molten-copper]",
     default_temperature = 1100,
@@ -730,8 +730,8 @@ data:extend(
     default_temperature = 15,
     max_temperature = 2000,
     heat_capacity = "0.01kJ",
-    base_color = {0.53, 0.1, 53},
-    flow_color = {0.93, 0.68, 0.73},
+    base_color = {0.6, 0.37, 0.42},
+    flow_color = {0.6, 0.37, 0.42},
     auto_barrel = false,
   },
   {
@@ -743,8 +743,8 @@ data:extend(
     default_temperature = 15,
     max_temperature = 500,
     heat_capacity = "0.01kJ",
-    base_color = {0.8, 0.01, 0.2},
-    flow_color = {0.99, 0.01, 0.3},
+    base_color = {0.34, 0.01, 0.16},
+    flow_color = {0.34, 0.01, 0.16},
     auto_barrel = false
   },
   --- Mefitis  
@@ -1019,6 +1019,48 @@ data:extend(
     fuel_value = "500kJ",
     base_color = {0.0, 0.1, 0.53},
     flow_color = {0.2, 0.68, 0.93},
+    auto_barrel = false
+  },
+  {
+    type = "fluid",
+    name = "proton-stream",
+    icon = "__outer_moons__/graphics/icons/fluid/proton.png",
+    subgroup = "space-fluid",
+    order = "zz[space]-a[proton]",
+    default_temperature = 1000000,
+    max_temperature = 10000000,
+    heat_capacity = "25J",
+    fuel_value = "500kJ",
+    base_color = {0.78, 0.21, 0.21},
+    flow_color = {0.78, 0.21, 0.21},
+    auto_barrel = false
+  },
+  {
+    type = "fluid",
+    name = "neutron-stream",
+    icon = "__outer_moons__/graphics/icons/fluid/neutron.png",
+    subgroup = "space-fluid",
+    order = "zz[space]-b[neutron]",
+    default_temperature = 1000000,
+    max_temperature = 10000000,
+    heat_capacity = "25J",
+    fuel_value = "500kJ",
+    base_color = {0.5, 0.5, 0.5},
+    flow_color = {0.5, 0.5, 0.5},
+    auto_barrel = false
+  },
+  {
+    type = "fluid",
+    name = "electron-stream",
+    icon = "__outer_moons__/graphics/icons/fluid/electron.png",
+    subgroup = "space-fluid",
+    order = "zz[space]-c[electron]",
+    default_temperature = 1000000,
+    max_temperature = 10000000,
+    heat_capacity = "25J",
+    fuel_value = "500kJ",
+    base_color = {0.78, 0.74, 0.21},
+    flow_color = {0.78, 0.74, 0.21},
     auto_barrel = false
   },
 })

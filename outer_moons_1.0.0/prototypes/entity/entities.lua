@@ -4632,7 +4632,7 @@ data:extend({
         damaged_trigger_effect = hit_effects.entity(),
         module_slots = 5,
 		allowed_effects = {"consumption", "speed", "productivity", "pollution", "quality"},
-        crafting_categories = { "quantum", "electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling", "assembly-electronics-quantum", "electronics-quantum" },
+        crafting_categories = { "quantum", "electromagnetics", "electronics", "electronics-with-fluid", "electronics-or-assembling", "assembly-electronics-quantum", "hand-assembly-electronics-quantum", "electronics-quantum" },
         crafting_speed = 4,
 		heating_energy = "500kW",
         --show_recipe_icon = false,

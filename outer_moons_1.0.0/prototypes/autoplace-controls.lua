@@ -172,14 +172,14 @@ data:extend(
     order = "d-a",
     category = "resource"
   },
-  {
-    type = "autoplace-control",
-    name = "gleba_lead",
-    localised_name = {"", "[entity=lead-ore] ", {"entity-name.lead-ore"}},
-    richness = true,
-    order = "d-b",
-    category = "resource"
-  },
+  --{
+  --  type = "autoplace-control",
+  --  name = "gleba_lead",
+  --  localised_name = {"", "[entity=lead-ore] ", {"entity-name.lead-ore"}},
+  -- richness = true,
+  --  order = "d-b",
+  --  category = "resource"
+  --},
   --- Fulgora
   {
     type = "autoplace-control",
