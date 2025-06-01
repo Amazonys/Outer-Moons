@@ -4092,6 +4092,57 @@ data:extend({
 	},
 	{
 		type = "recipe",
+		name = "heating-tower",
+		energy_required = 10,
+		ingredients =
+		{
+		  {type = "item", name = "boiler", amount = 2},
+		  {type = "item", name = "heat-pipe", amount = 5},
+		  {type = "item", name = "concrete", amount = 20},
+		},
+		results = {{type="item", name="heating-tower", amount=1}},
+		enabled = false
+	},
+	{
+		type = "recipe",
+		name = "biochamber",
+		category = "organic-or-assembling",
+		surface_conditions =
+		{
+		  {
+			property = "pressure",
+			min = 2500,
+			max = 2500
+		  }
+		},
+		energy_required = 20,
+		ingredients =
+		{
+		  {type = "item", name = "nutrients", amount = 5},
+		  {type = "item", name = "pentapod-egg", amount = 1},
+		  {type = "item", name = "iron-plate", amount = 20},
+		  {type = "item", name = "electronic-circuit", amount = 5},
+		  {type = "item", name = "landfill", amount = 1}
+		},
+		results = {{type="item", name="biochamber", amount=1}},
+		enabled = false
+	},
+	{
+		type = "recipe",
+		name = "agricultural-tower",
+		energy_required = 10,
+		ingredients =
+		{
+		  {type = "item", name = "steel-plate", amount = 10},
+		  {type = "item", name = "electronic-circuit", amount = 3},
+		  {type = "item", name = "spoilage", amount = 20},
+		  {type = "item", name = "landfill", amount = 1}
+		},
+		results = {{type="item", name="agricultural-tower", amount=1}},
+		enabled = false
+	},
+	{
+		type = "recipe",
 		name = "electrolytic-plant",
 		enabled = false,
 		ingredients =

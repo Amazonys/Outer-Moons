@@ -1171,6 +1171,30 @@ data.raw.technology["calcite-processing"].effects =
   },
 }
 
+
+data.raw.technology["heating-tower"].research_trigger =
+{
+  type = "mine-entity",
+  entity = "nickel-stromatolite"
+}
+data.raw.technology["biochamber"].prerequisites = { "planet-discovery-gleba" }
+data.raw.technology["biochamber"].research_trigger =
+{
+  type = "mine-entity",
+  entity = "copper-stromatolite"
+}
+data.raw.technology["biochamber"].effects =
+{
+  {
+	type = "unlock-recipe",
+	recipe = "biochamber"
+  },
+  {
+	type = "unlock-recipe",
+	recipe = "pentapod-egg"
+  }
+}
+
 -- Agricultural Science Pack doesn't spoil
 data.raw.tool["agricultural-science-pack"].spoil_result = nil
 data.raw.tool["agricultural-science-pack"].spoil_result = nil
